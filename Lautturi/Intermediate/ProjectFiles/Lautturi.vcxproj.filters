@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Lautturi.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{00BCEFC2-0547-4B62-9853-B4BC1F2DBCD4}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Lautturi.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\LautturiEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{41FE40B1-C8A9-4A16-93C8-12788AE36464}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Lautturi">
+      <UniqueIdentifier>{280BFB93-E82F-4968-9062-32D837D23BC7}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Lautturi\Lautturi.Build.cs">
+      <Filter>Source\Lautturi</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Lautturi\Lautturi.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\Lautturi.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\LautturiGameModeBase.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\LautturiGameModeBase.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
