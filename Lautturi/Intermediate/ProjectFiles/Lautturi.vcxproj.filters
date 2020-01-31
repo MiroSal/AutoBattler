@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Lautturi.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{00BCEFC2-0547-4B62-9853-B4BC1F2DBCD4}</UniqueIdentifier>
+      <UniqueIdentifier>{3DA54881-C096-4F15-8F2F-891DD3FBB984}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Lautturi.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{41FE40B1-C8A9-4A16-93C8-12788AE36464}</UniqueIdentifier>
+      <UniqueIdentifier>{DA9A0A71-EF92-455C-BC3E-2CCFB461C2FC}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -23,9 +23,21 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
     <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{280BFB93-E82F-4968-9062-32D837D23BC7}</UniqueIdentifier>
+      <UniqueIdentifier>{9C01CF27-67EF-4375-93EA-6BDF3E63CE64}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Lautturi\ActivationInterface.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\CharacterBase.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\CharacterBase.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Lautturi\Lautturi.Build.cs">
       <Filter>Source\Lautturi</Filter>
     </None>
@@ -41,5 +53,26 @@
     <ClInclude Include="..\..\Source\Lautturi\LautturiGameModeBase.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\MouseController.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\MouseController.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\PlayerPawn.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\PlayerPawn.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\SoulCard.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\SoulCard.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\Lautturi\ActivationInterface.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </None>
   </ItemGroup>
 </Project>
