@@ -14,6 +14,8 @@
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\MouseController.cpp.obj"
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\PlayerPawn.cpp.obj"
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\SoulCard.cpp.obj"
+"E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\SoulSlot.cpp.obj"
+"E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\SoulTrialManager.cpp.obj"
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\ActivationInterface.gen.cpp.obj"
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\CharacterBase.gen.cpp.obj"
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\Lautturi.init.gen.cpp.obj"
@@ -21,6 +23,8 @@
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\MouseController.gen.cpp.obj"
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\PlayerPawn.gen.cpp.obj"
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\SoulCard.gen.cpp.obj"
+"E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\SoulSlot.gen.cpp.obj"
+"E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\SoulTrialManager.gen.cpp.obj"
 "E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\Default.rc2.res"
 /OUT:"E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Development\Lautturi\UE4Editor-Lautturi.lib"
 /INCLUDE:IMPLEMENT_MODULE_Lautturi

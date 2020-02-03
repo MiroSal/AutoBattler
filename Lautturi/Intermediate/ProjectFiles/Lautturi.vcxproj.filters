@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Lautturi.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{3DA54881-C096-4F15-8F2F-891DD3FBB984}</UniqueIdentifier>
+      <UniqueIdentifier>{592C0549-21D8-4F72-AFC9-03F9E07D2CE4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Lautturi.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{DA9A0A71-EF92-455C-BC3E-2CCFB461C2FC}</UniqueIdentifier>
+      <UniqueIdentifier>{500804EE-FE95-4FD6-99BF-3085CFAA123C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,8 +27,11 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{9C01CF27-67EF-4375-93EA-6BDF3E63CE64}</UniqueIdentifier>
+      <UniqueIdentifier>{4D6524E1-20B8-4154-AD37-C6035131AB31}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
     <ClInclude Include="..\..\Source\Lautturi\ActivationInterface.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
@@ -71,8 +74,17 @@
     <ClInclude Include="..\..\Source\Lautturi\SoulCard.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
-    <None Include="..\..\Source\Lautturi\ActivationInterface.cpp">
+    <ClCompile Include="..\..\Source\Lautturi\SoulSlot.cpp">
       <Filter>Source\Lautturi</Filter>
-    </None>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\SoulSlot.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\SoulTrialManager.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\SoulTrialManager.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
