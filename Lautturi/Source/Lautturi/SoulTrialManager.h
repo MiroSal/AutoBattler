@@ -20,7 +20,7 @@ class LAUTTURI_API USoulTrialManager : public UObject
 private:
 
 	TArray<ASoulCard*> ChosenSouls;
-
+	 
 public:
 
 	UFUNCTION()
