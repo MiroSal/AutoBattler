@@ -4,8 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "SoulCard.h"
 #include "SoulTrialManager.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSoulAddedToJourneyDelegate, ASoulCard*, SoulCard);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFerryIsFullDelegate, bool, bCanClick);
 /**
  * 
  */
@@ -16,12 +19,16 @@ class LAUTTURI_API USoulTrialManager : public UObject
 
 private:
 
-
-
+	TArray<ASoulCard*> ChosenSouls;
 
 public:
 
+	UFUNCTION()
+	void AddSoulToJourney(ASoulCard* Soul);
 
+	void Initialize();
 
-	
+	FSoulAddedToJourneyDelegate SoulAddedToJourneyDelegate;
+
+	FFerryIsFullDelegate FerryIsFullDelegate;
 };

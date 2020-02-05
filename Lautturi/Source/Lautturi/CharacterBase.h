@@ -16,7 +16,8 @@ public:
 	// Sets default values for this character's properties
 	ACharacterBase();
 
-	virtual bool Activate(AActor* ActorToDeactivate) override;
+	virtual bool Clicked(AActor* ActorToDeactivate) override;
+	virtual bool DoubleClicked() override;
 	virtual bool Deactivate() override;
 
 protected:
@@ -26,6 +27,4 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-
 };

@@ -5,12 +5,15 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "CharacterBase.h"
-#include "Components/StaticMeshComponent.h"
-#include "Components/SceneComponent.h"
 #include "Materials/Material.h"
 #include "SoulCard.generated.h"
 
 class ASoulSlot;
+class USceneComponent;
+class UTextRenderComponent;
+class UStaticMeshComponent;
+class USoulTrialManager;
+class ALautturiGameModeBase;
 
 UCLASS()
 class LAUTTURI_API ASoulCard : public ACharacterBase
@@ -25,9 +28,15 @@ private:
 	UPROPERTY(VisibleAnywhere)
 		UStaticMeshComponent* SoulMesh;
 
+	UPROPERTY(VisibleAnywhere)
+		UTextRenderComponent* StatsText;
+
+	UPROPERTY(VisibleAnywhere)
+		UTextRenderComponent* SoulStatusText;
+	;
 	UPROPERTY(EditAnywhere)
 		bool bHasCoin;
-	
+
 	UPROPERTY(EditAnywhere)
 		bool bIsAlive;
 
@@ -37,12 +46,19 @@ private:
 	UPROPERTY(EditAnywhere)
 		int32 Sin;
 
-		UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere)
 		int32 Str;
 
+	UPROPERTY()
 		ASoulSlot* CurrentSlot;
 
-		void RandomizeStats();
+	UPROPERTY()
+		USoulTrialManager* SoulTrialManager;
+
+	UPROPERTY()
+		ALautturiGameModeBase* GameMode;
+
+	void RandomizeStats();
 
 
 public:
@@ -63,7 +79,8 @@ public:
 	UPROPERTY(EditAnywhere)
 		UMaterial* NoCoinColor;
 
-	virtual bool Activate(AActor* ActorToDeactivate) override;
+	virtual bool Clicked(AActor* ActorToDeactivate) override;
+	virtual bool DoubleClicked() override;
 	virtual bool Deactivate() override;
 
 	bool HasCoin();
@@ -75,6 +92,12 @@ public:
 	int32 GetStr();
 
 	ASoulSlot* GetCurrentSlot();
+
+	UPROPERTY()
+	bool bCanBeClicked;
+
+	UFUNCTION()
+		void CanClick(bool bCanClick);
 
 protected:
 	// Called when the game starts or when spawned

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Lautturi.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{592C0549-21D8-4F72-AFC9-03F9E07D2CE4}</UniqueIdentifier>
+      <UniqueIdentifier>{0A916771-85A6-4AD2-AD55-D0D1CA9ED104}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Lautturi.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{500804EE-FE95-4FD6-99BF-3085CFAA123C}</UniqueIdentifier>
+      <UniqueIdentifier>{C1A491E1-87A4-44BE-8ACF-37F8D187093D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{4D6524E1-20B8-4154-AD37-C6035131AB31}</UniqueIdentifier>
+      <UniqueIdentifier>{4624722E-AF12-43D4-9B1E-814C336D2EEA}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp">
       <Filter>Source\Lautturi</Filter>
@@ -86,5 +86,15 @@
     <ClInclude Include="..\..\Source\Lautturi\SoulTrialManager.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\Lautturi\Ferry.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\Lautturi\Ferry.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

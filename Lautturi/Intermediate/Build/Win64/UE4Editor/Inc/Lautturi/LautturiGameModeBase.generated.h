@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define LAUTTURI_LautturiGameModeBase_generated_h
 
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_SPARSE_DATA
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_RPC_WRAPPERS
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_SPARSE_DATA
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_RPC_WRAPPERS
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesALautturiGameModeBase(); \
 	friend struct Z_Construct_UClass_ALautturiGameModeBase_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(ALautturiGameModeBase)
 
 
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_INCLASS \
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesALautturiGameModeBase(); \
 	friend struct Z_Construct_UClass_ALautturiGameModeBase_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(ALautturiGameModeBase)
 
 
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ALautturiGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ALautturiGameModeBase) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ALautturiGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,28 +60,31 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ALautturiGameModeBase); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ALautturiGameModeBase)
 
 
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_12_PROLOG
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_GENERATED_BODY_LEGACY \
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__SoulTrialManager() { return STRUCT_OFFSET(ALautturiGameModeBase, SoulTrialManager); }
+
+
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_13_PROLOG
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_SPARSE_DATA \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_RPC_WRAPPERS \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_INCLASS \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_PRIVATE_PROPERTY_OFFSET \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_SPARSE_DATA \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_RPC_WRAPPERS \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_INCLASS \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_GENERATED_BODY \
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_SPARSE_DATA \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
-	Lautturi_Source_Lautturi_LautturiGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_PRIVATE_PROPERTY_OFFSET \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_SPARSE_DATA \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_INCLASS_NO_PURE_DECLS \
+	Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -45,12 +45,12 @@ void APlayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	PlayerInputComponent->BindAction("LeftButtonPressed", IE_Pressed, this, &APlayerPawn::LeftMouseButtonPressed);
+	PlayerInputComponent->BindAction("LeftButtonPressed", IE_DoubleClick, this, &APlayerPawn::LeftMouseButtonDoubleClicked);
 
 }
 
 void APlayerPawn::LeftMouseButtonPressed()
 {
-
 	if (IsValid(World))
 	{
 		if (IsValid(Controller))
@@ -73,7 +73,62 @@ void APlayerPawn::LeftMouseButtonPressed()
 				IActivationInterface* ActivationInterface = Cast<IActivationInterface>(ActorToActivate);
 				if (ActivationInterface)
 				{
-					ActivationInterface->Activate(LastActiveActor);
+					ActivationInterface->Clicked(LastActiveActor);
+				}
+				else
+				{
+					ActivationInterface = Cast<IActivationInterface>(LastActiveActor);
+					if (ActivationInterface)
+					{
+						ActivationInterface->Deactivate();
+					}
+				}
+			}
+			else
+			{
+				IActivationInterface* ActivationInterface = Cast<IActivationInterface>(ActorToActivate);
+				if (ActivationInterface)
+				{
+					ActivationInterface->Deactivate();
+				}
+			}
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("Controller is not valid!!"));
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("World is not valid!!"));
+	}
+}
+
+void APlayerPawn::LeftMouseButtonDoubleClicked()
+{
+	if (IsValid(World))
+	{
+		if (IsValid(Controller))
+		{
+			//LineTrace to check if hit Actor in level
+			FVector Start;
+			FVector Direction;
+			Controller->GetMousePosition(Start.X, Start.Y);
+			Controller->DeprojectMousePositionToWorld(Start, Direction);
+			FVector End = Start + Direction * 2000;
+
+			FHitResult Hit;
+			FCollisionQueryParams Params;
+			World->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, Params);
+			if (IsValid(Hit.GetActor()))
+			{
+				//If linetrace hits actor check if it has interface that can activate Actor.
+				AActor* LastActiveActor = ActorToActivate;
+				ActorToActivate = Hit.GetActor();
+				IActivationInterface* ActivationInterface = Cast<IActivationInterface>(ActorToActivate);
+				if (ActivationInterface)
+				{
+					ActivationInterface->DoubleClicked();
 				}
 				else
 				{

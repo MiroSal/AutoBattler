@@ -23,6 +23,7 @@ class LAUTTURI_API IActivationInterface
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 
-	virtual bool Activate(AActor* ActorToDeactivate);
+	virtual bool Clicked(AActor* ActorToDeactivate);
+	virtual bool DoubleClicked();
 	virtual bool Deactivate();
 };

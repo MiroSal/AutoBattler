@@ -9,6 +9,10 @@
 #include "SoulCard.h"
 #include "SoulSlot.generated.h"
 
+class USoulTrialManager;
+class ALautturiGameModeBase;
+class ASoulCard;
+
 UCLASS()
 class LAUTTURI_API ASoulSlot : public AActor
 {
@@ -25,12 +29,21 @@ private:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<ASoulCard> SoulCardToSpawn;
 
-	
+	ASoulCard* SoulInSlot;
+
+	UPROPERTY()
+		USoulTrialManager* SoulTrialManager;
+
+	UPROPERTY()
+		ALautturiGameModeBase* GameMode;
+
 public:	
 	// Sets default values for this actor's properties
 	ASoulSlot();
 
 	void CreateNewSoulToSlot();
+
+	void RemoveSoulFromSlot(bool bDestroySoul);
 
 protected:
 	// Called when the game starts or when spawned

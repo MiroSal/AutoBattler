@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "SoulTrialManager.h"
 #include "LautturiGameModeBase.generated.h"
 
 /**
@@ -13,5 +14,18 @@ UCLASS()
 class LAUTTURI_API ALautturiGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+private:
+
+	UPROPERTY()
+	USoulTrialManager* SoulTrialManager;
+
+public:
+	virtual void BeginPlay() override;
+
+	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
+
+
+	USoulTrialManager* GetSoulTrialManager();
 	
 };

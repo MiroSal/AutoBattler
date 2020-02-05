@@ -3,6 +3,9 @@
 
 #include "SoulSlot.h"
 #include "Engine/World.h"
+#include "SoulTrialManager.h"
+#include "LautturiGameModeBase.h"
+
 
 // Sets default values
 ASoulSlot::ASoulSlot()
@@ -22,28 +25,31 @@ void ASoulSlot::BeginPlay()
 {
 	Super::BeginPlay();
 
+	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
+	SoulTrialManager = GameMode->GetSoulTrialManager();
+	if (!IsValid(SoulTrialManager))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("SoulTrialManager is not valid!!"));
+	}
 	CreateNewSoulToSlot();
-
 }
 
 // Called every frame
 void ASoulSlot::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
-
 
 void ASoulSlot::CreateNewSoulToSlot()
 {
-
 	UWorld* World = GetWorld();
 	if (IsValid(World))
 	{
-		if (SoulCardToSpawn)
+		if (SoulCardToSpawn && SoulInSlot == nullptr)
 		{
-			ASoulCard* NewSoul =World->SpawnActor<ASoulCard>(SoulCardToSpawn, ArrowComponent->GetComponentLocation(), FRotator::ZeroRotator);
+			ASoulCard* NewSoul = World->SpawnActor<ASoulCard>(SoulCardToSpawn, ArrowComponent->GetComponentLocation(), FRotator::ZeroRotator);
 			NewSoul->Initialize(this);
+			SoulInSlot = NewSoul;
 		}
 		else
 		{
@@ -55,3 +61,14 @@ void ASoulSlot::CreateNewSoulToSlot()
 		UE_LOG(LogTemp, Error, TEXT("World is not valid!!"));
 	}
 }
+
+void ASoulSlot::RemoveSoulFromSlot(bool bDestroySoul)
+{
+	if (bDestroySoul)
+	{
+		SoulInSlot->Destroy();
+	}
+	SoulInSlot = nullptr;
+	CreateNewSoulToSlot();
+}
+

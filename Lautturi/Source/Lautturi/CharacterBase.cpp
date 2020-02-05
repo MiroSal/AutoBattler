@@ -16,10 +16,16 @@ ACharacterBase::ACharacterBase()
 //	UE_LOG(LogTemp, Warning, TEXT("Override this function!"));
 //}
 
-bool ACharacterBase::Activate(AActor* ActorToDeactivate)
+bool ACharacterBase::Clicked(AActor* ActorToDeactivate)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override this function!"));
 
+	return true;
+}
+
+bool ACharacterBase::DoubleClicked()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Override this function!"));
 	return true;
 }
 
