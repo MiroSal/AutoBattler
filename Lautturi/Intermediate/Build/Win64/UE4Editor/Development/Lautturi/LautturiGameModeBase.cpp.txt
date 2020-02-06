@@ -20,4 +20,6 @@ E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Inc\Lautturi\ActivationI
 E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Inc\Lautturi\CharacterBase.generated.h
 E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Inc\Lautturi\SoulCard.generated.h
 E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Inc\Lautturi\SoulTrialManager.generated.h
+e:\lautturi\lautturi\source\lautturi\CombatManager.h
+E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Inc\Lautturi\CombatManager.generated.h
 E:\Lautturi\Lautturi\Intermediate\Build\Win64\UE4Editor\Inc\Lautturi\LautturiGameModeBase.generated.h

@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "SoulTrialManager.h"
+#include "CombatManager.h"
 #include "LautturiGameModeBase.generated.h"
 
 /**
@@ -20,6 +21,9 @@ private:
 	UPROPERTY()
 	USoulTrialManager* SoulTrialManager;
 
+	UPROPERTY()
+		UCombatManager* CombatManager;
+
 public:
 	virtual void BeginPlay() override;
 
@@ -27,5 +31,7 @@ public:
 
 
 	USoulTrialManager* GetSoulTrialManager();
+
+	UCombatManager* GetCombatManager();
 	
 };

@@ -16,9 +16,34 @@ void ALautturiGameModeBase::InitGame(const FString & MapName, const FString & Op
 
 	SoulTrialManager = NewObject<USoulTrialManager>();
 	SoulTrialManager->Initialize();
+	CombatManager = NewObject<UCombatManager>();
+	CombatManager->Initialize();
+
 }
 
 USoulTrialManager * ALautturiGameModeBase::GetSoulTrialManager()
 {
-	return SoulTrialManager;
+	if (IsValid(CombatManager))
+	{
+		return SoulTrialManager;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("SoulTrialManager is not valid, maybe not created yet!!"));
+	}
+	return nullptr;
+}
+
+UCombatManager * ALautturiGameModeBase::GetCombatManager()
+{
+	if (IsValid(CombatManager))
+	{
+		return CombatManager;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("CombatManager is not valid, maybe not created yet!!"));
+	}
+
+	return nullptr;
 }

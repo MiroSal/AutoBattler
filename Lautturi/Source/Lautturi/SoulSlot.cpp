@@ -48,7 +48,7 @@ void ASoulSlot::CreateNewSoulToSlot()
 		if (SoulCardToSpawn && SoulInSlot == nullptr)
 		{
 			ASoulCard* NewSoul = World->SpawnActor<ASoulCard>(SoulCardToSpawn, ArrowComponent->GetComponentLocation(), FRotator::ZeroRotator);
-			NewSoul->Initialize(this);
+			NewSoul->Initialize(this, bCreatedSoulCanBeClicked);
 			SoulInSlot = NewSoul;
 		}
 		else

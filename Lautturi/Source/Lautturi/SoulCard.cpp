@@ -6,6 +6,7 @@
 #include "Components/SceneComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "SoulTrialManager.h"
+#include "CombatManager.h"
 #include "LautturiGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "SoulSlot.h"
@@ -29,12 +30,13 @@ ASoulCard::ASoulCard()
 	SoulStatusText->SetupAttachment(RootComponent);
 }
 
-void ASoulCard::Initialize(ASoulSlot* SoulSlot)
+void ASoulCard::Initialize(ASoulSlot* SoulSlot, bool bCanClick)
 {
 	CurrentSlot = SoulSlot;
-	bCanBeClicked = true;
+	bCanBeClicked = bCanClick;
 
 	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
+
 	SoulTrialManager = GameMode->GetSoulTrialManager();
 	if (!IsValid(SoulTrialManager))
 	{
@@ -42,6 +44,13 @@ void ASoulCard::Initialize(ASoulSlot* SoulSlot)
 	}
 
 	SoulTrialManager->FerryIsFullDelegate.AddDynamic(this, &ASoulCard::CanClick);
+
+	CombatManager = GameMode->GetCombatManager();
+	if (!IsValid(CombatManager))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("CombatManager is not valid!!"));
+	}
+
 
 	RandomizeStats();
 }
@@ -96,6 +105,8 @@ void ASoulCard::RandomizeStats()
 	Sin = FMath::RandRange(0, 10);
 	Str = FMath::RandRange(0, 10);
 
+	PassiveSkillType = ESkillType::Heal;
+
 	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Hp, Sin, Str);
 
 	StatsText->SetText(FText::FromString(Stats));
@@ -141,23 +152,21 @@ bool ASoulCard::Clicked(AActor* ActorToDeactivate)
 
 bool ASoulCard::DoubleClicked()
 {
-	UE_LOG(LogTemp, Warning, TEXT("DoubleClicked"));
-
-
-	//if (LastActorClicked == this)
-	//{
+	if (bCanBeClicked)
+	{
 		if (GameMode != nullptr)
 		{
 			if (IsValid(SoulTrialManager))
 			{
 				SoulTrialManager->AddSoulToJourney(this);
+				CombatManager->RegisterToListener(FSoulData(this, PassiveSkillType));
 			}
 			else
 			{
 				UE_LOG(LogTemp, Warning, TEXT("SoulTrialManager is not Valid"));
 			}
 		}
-	//}
+	}
 	return false;
 }
 

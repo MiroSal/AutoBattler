@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 	LAUTTURI_API UClass* Z_Construct_UClass_ALautturiGameModeBase();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_Lautturi();
+	LAUTTURI_API UClass* Z_Construct_UClass_UCombatManager_NoRegister();
 	LAUTTURI_API UClass* Z_Construct_UClass_USoulTrialManager_NoRegister();
 // End Cross Module References
 	void ALautturiGameModeBase::StaticRegisterNativesALautturiGameModeBase()
@@ -32,6 +33,10 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CombatManager_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CombatManager;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SoulTrialManager_MetaData[];
 #endif
@@ -54,12 +59,19 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_CombatManager_MetaData[] = {
+		{ "ModuleRelativePath", "LautturiGameModeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_CombatManager = { "CombatManager", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALautturiGameModeBase, CombatManager), Z_Construct_UClass_UCombatManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_CombatManager_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_CombatManager_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_SoulTrialManager_MetaData[] = {
 		{ "ModuleRelativePath", "LautturiGameModeBase.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_SoulTrialManager = { "SoulTrialManager", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALautturiGameModeBase, SoulTrialManager), Z_Construct_UClass_USoulTrialManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_SoulTrialManager_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_SoulTrialManager_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ALautturiGameModeBase_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_CombatManager,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_SoulTrialManager,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ALautturiGameModeBase_Statics::StaticCppClassTypeInfo = {
@@ -89,7 +101,7 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ALautturiGameModeBase, 2452447778);
+	IMPLEMENT_CLASS(ALautturiGameModeBase, 2799767569);
 	template<> LAUTTURI_API UClass* StaticClass<ALautturiGameModeBase>()
 	{
 		return ALautturiGameModeBase::StaticClass();

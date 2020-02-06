@@ -29,6 +29,7 @@ private:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<ASoulCard> SoulCardToSpawn;
 
+	UPROPERTY()
 	ASoulCard* SoulInSlot;
 
 	UPROPERTY()
@@ -37,11 +38,14 @@ private:
 	UPROPERTY()
 		ALautturiGameModeBase* GameMode;
 
+	void CreateNewSoulToSlot();
+
+	UPROPERTY(EditAnywhere)
+		bool bCreatedSoulCanBeClicked = true;
+
 public:	
 	// Sets default values for this actor's properties
 	ASoulSlot();
-
-	void CreateNewSoulToSlot();
 
 	void RemoveSoulFromSlot(bool bDestroySoul);
 

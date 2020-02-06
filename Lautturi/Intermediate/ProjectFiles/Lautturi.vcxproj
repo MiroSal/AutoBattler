@@ -276,10 +276,12 @@
     <ClInclude Include="..\..\Source\Lautturi\ActivationInterface.h" />
     <ClCompile Include="..\..\Source\Lautturi\CharacterBase.cpp" />
     <ClInclude Include="..\..\Source\Lautturi\CharacterBase.h" />
-    <None Include="..\..\Source\Lautturi\Lautturi.Build.cs" />
+    <ClCompile Include="..\..\Source\Lautturi\CombatManager.cpp" />
     <ClCompile Include="..\..\Source\Lautturi\Ferry.cpp" />
-    <ClCompile Include="..\..\Source\Lautturi\Lautturi.cpp" />
+    <ClInclude Include="..\..\Source\Lautturi\CombatManager.h" />
     <ClInclude Include="..\..\Source\Lautturi\Ferry.h" />
+    <None Include="..\..\Source\Lautturi\Lautturi.Build.cs" />
+    <ClCompile Include="..\..\Source\Lautturi\Lautturi.cpp" />
     <ClInclude Include="..\..\Source\Lautturi\Lautturi.h" />
     <ClCompile Include="..\..\Source\Lautturi\LautturiGameModeBase.cpp" />
     <ClInclude Include="..\..\Source\Lautturi\LautturiGameModeBase.h" />
@@ -291,6 +293,8 @@
     <ClInclude Include="..\..\Source\Lautturi\SoulCard.h" />
     <ClCompile Include="..\..\Source\Lautturi\SoulSlot.cpp" />
     <ClInclude Include="..\..\Source\Lautturi\SoulSlot.h" />
+    <ClCompile Include="..\..\Source\Lautturi\SoulSlotComponent.cpp" />
+    <ClInclude Include="..\..\Source\Lautturi\SoulSlotComponent.h" />
     <ClCompile Include="..\..\Source\Lautturi\SoulTrialManager.cpp" />
     <ClInclude Include="..\..\Source\Lautturi\SoulTrialManager.h" />
   </ItemGroup>

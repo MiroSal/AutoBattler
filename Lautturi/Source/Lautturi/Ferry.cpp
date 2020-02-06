@@ -70,6 +70,7 @@ void AFerry::AddSoulToFerry(ASoulCard * Soul)
 		if (SoulSpots[i].Soul==nullptr)
 		{
 			SoulSpots[i].Soul = Soul;
+			Soul->CanClick(false);
 			Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());
 			
 			ASoulSlot* Slot = Soul->GetCurrentSlot();

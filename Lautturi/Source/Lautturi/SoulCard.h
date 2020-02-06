@@ -14,6 +14,15 @@ class UTextRenderComponent;
 class UStaticMeshComponent;
 class USoulTrialManager;
 class ALautturiGameModeBase;
+class UCombatManager;
+
+UENUM(BlueprintType)
+enum class ESkillType :uint8
+{
+	Heal,
+	Sin,
+};
+
 
 UCLASS()
 class LAUTTURI_API ASoulCard : public ACharacterBase
@@ -33,7 +42,7 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 		UTextRenderComponent* SoulStatusText;
-	;
+	
 	UPROPERTY(EditAnywhere)
 		bool bHasCoin;
 
@@ -56,10 +65,17 @@ private:
 		USoulTrialManager* SoulTrialManager;
 
 	UPROPERTY()
+		UCombatManager* CombatManager;
+
+	UPROPERTY()
 		ALautturiGameModeBase* GameMode;
+
+	UPROPERTY()
+		ESkillType PassiveSkillType;
 
 	void RandomizeStats();
 
+	bool bCanBeClicked;
 
 public:
 	// Sets default values for this character's properties
@@ -77,7 +93,7 @@ public:
 		UMaterial* AliveColor;	//temp
 
 	UPROPERTY(EditAnywhere)
-		UMaterial* NoCoinColor;
+		UMaterial* NoCoinColor;//temp
 
 	virtual bool Clicked(AActor* ActorToDeactivate) override;
 	virtual bool DoubleClicked() override;
@@ -85,7 +101,7 @@ public:
 
 	bool HasCoin();
 
-	void Initialize(ASoulSlot* SoulSlot);
+	void Initialize(ASoulSlot* SoulSlot, bool bCanClick);
 
 	int32 GetHp();
 	int32 GetSin();
@@ -93,11 +109,9 @@ public:
 
 	ASoulSlot* GetCurrentSlot();
 
-	UPROPERTY()
-	bool bCanBeClicked;
 
 	UFUNCTION()
-		void CanClick(bool bCanClick);
+	void CanClick(bool bCanClick);
 
 protected:
 	// Called when the game starts or when spawned
