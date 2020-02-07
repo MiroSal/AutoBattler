@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Lautturi.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{4CE104BF-8499-461F-BD7D-4C2B07D5EF9C}</UniqueIdentifier>
+      <UniqueIdentifier>{81F5BA79-8ABE-4086-8D19-2443A4AC8C90}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Lautturi.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{2DA43FDD-BE4F-42CD-9DAD-E8A88D2D0B5D}</UniqueIdentifier>
+      <UniqueIdentifier>{1303EC71-4B7C-4FE5-881A-A2E32938ADF9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{9707F2E7-9E20-439F-A9E7-0B1E6E5DFFE8}</UniqueIdentifier>
+      <UniqueIdentifier>{9B50BC2B-7D98-469F-B64E-848370C019CA}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp">
       <Filter>Source\Lautturi</Filter>
@@ -41,10 +41,19 @@
     <ClInclude Include="..\..\Source\Lautturi\CharacterBase.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\CombatManager.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\CombatManager.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Lautturi\Ferry.cpp">
       <Filter>Source\Lautturi</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Lautturi\Ferry.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Lautturi\Header.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
     <None Include="..\..\Source\Lautturi\Lautturi.Build.cs">
@@ -74,10 +83,22 @@
     <ClInclude Include="..\..\Source\Lautturi\PlayerPawn.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\SkillBase.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\SkillBase.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Lautturi\SkillTypeEnums.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Lautturi\SoulCard.cpp">
       <Filter>Source\Lautturi</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Lautturi\SoulCard.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Lautturi\SoulDataStruct.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Lautturi\SoulSlot.cpp">
@@ -98,15 +119,5 @@
     <ClInclude Include="..\..\Source\Lautturi\SoulTrialManager.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\Lautturi\CombatManager.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\Lautturi\CombatManager.cpp">
-      <Filter>Source\Lautturi</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

@@ -6,10 +6,19 @@
 #include "Components/SceneComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "SoulTrialManager.h"
+#include "SkillBase.h"
 #include "CombatManager.h"
 #include "LautturiGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "SoulSlot.h"
+
+void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
+{
+	if (ActionInfo.SkillType == PassiveSkill.GetDefaultObject()->GetSkillType())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
+	}
+}
 
 // Sets default values
 ASoulCard::ASoulCard()
@@ -51,6 +60,9 @@ void ASoulCard::Initialize(ASoulSlot* SoulSlot, bool bCanClick)
 		UE_LOG(LogTemp, Warning, TEXT("CombatManager is not valid!!"));
 	}
 
+	//TODO Remove when not needed, debug line for adding Souls to combatmanager listenerArray when making combat level
+	CombatManager->RegisterToListener(FSoulData(this, PassiveSkillType));
+	CombatManager->SkillUsedDelegate.AddDynamic(this, &ASoulCard::ActionSkillUsed);
 
 	RandomizeStats();
 }
@@ -65,12 +77,24 @@ void ASoulCard::CanClick(bool bCanClick)
 	bCanBeClicked = bCanClick;
 }
 
+void ASoulCard::ActivatePrimarySkill()
+{
+	if (IsValid(PrimarySkill))
+	{
+		PrimarySkill.GetDefaultObject()->ActivateSkill();
+	}
+}
+
+void ASoulCard::ActivatePassiveSkill()
+{
+	USkillBase* Skill = Cast<USkillBase>(PassiveSkill);
+	Skill->ActivateSkill();
+}
+
 // Called when the game starts or when spawned
 void ASoulCard::BeginPlay()
 {
 	Super::BeginPlay();
-
-
 }
 
 // Called every frame
@@ -110,7 +134,6 @@ void ASoulCard::RandomizeStats()
 	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Hp, Sin, Str);
 
 	StatsText->SetText(FText::FromString(Stats));
-
 }
 
 bool ASoulCard::Clicked(AActor* ActorToDeactivate)

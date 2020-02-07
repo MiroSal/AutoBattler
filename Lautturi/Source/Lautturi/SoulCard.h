@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "CharacterBase.h"
 #include "Materials/Material.h"
+#include "SkillTypeEnums.h"
+#include "SoulDataStruct.h"
 #include "SoulCard.generated.h"
 
 class ASoulSlot;
@@ -14,15 +16,8 @@ class UTextRenderComponent;
 class UStaticMeshComponent;
 class USoulTrialManager;
 class ALautturiGameModeBase;
+class USkillBase;
 class UCombatManager;
-
-UENUM(BlueprintType)
-enum class ESkillType :uint8
-{
-	Heal,
-	Sin,
-};
-
 
 UCLASS()
 class LAUTTURI_API ASoulCard : public ACharacterBase
@@ -77,6 +72,18 @@ private:
 
 	bool bCanBeClicked;
 
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<USkillBase> PrimarySkill;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<USkillBase> PassiveSkill;
+
+	UPROPERTY(EditAnywhere)
+		bool bTestAction=false;
+
+	UFUNCTION()
+	void ActionSkillUsed(FSoulData ActionInfo);
+
 public:
 	// Sets default values for this character's properties
 	ASoulCard();
@@ -109,9 +116,15 @@ public:
 
 	ASoulSlot* GetCurrentSlot();
 
-
 	UFUNCTION()
 	void CanClick(bool bCanClick);
+
+
+	UFUNCTION()
+		void ActivatePrimarySkill();
+
+	UFUNCTION()
+		void ActivatePassiveSkill();
 
 protected:
 	// Called when the game starts or when spawned

@@ -11,6 +11,7 @@
 #endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeLautturi_init() {}
+	LAUTTURI_API UFunction* Z_Construct_UDelegateFunction_Lautturi_SkillUsedDelegate__DelegateSignature();
 	LAUTTURI_API UFunction* Z_Construct_UDelegateFunction_Lautturi_SoulAddedToJourneyDelegate__DelegateSignature();
 	LAUTTURI_API UFunction* Z_Construct_UDelegateFunction_Lautturi_FerryIsFullDelegate__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_Lautturi()
@@ -19,6 +20,7 @@ void EmptyLinkFunctionForGeneratedCodeLautturi_init() {}
 		if (!ReturnPackage)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_Lautturi_SkillUsedDelegate__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_Lautturi_SoulAddedToJourneyDelegate__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_Lautturi_FerryIsFullDelegate__DelegateSignature,
 			};
@@ -27,8 +29,8 @@ void EmptyLinkFunctionForGeneratedCodeLautturi_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x06C901FA,
-				0xB06E9AF2,
+				0xF4799561,
+				0x2C8257BA,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

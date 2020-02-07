@@ -4,28 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "SoulCard.h"
+#include "SoulDataStruct.h"
 #include "CombatManager.generated.h"
 
-USTRUCT(BlueprintType)
-struct FSoulData
-{
-	GENERATED_BODY()
 
-public:
-
-	FSoulData(){}
-
-	FSoulData(ASoulCard* Soul, ESkillType Type)
-	{
-		SoulCard = Soul;
-		SkillType = Type;
-	}
-
-	ASoulCard* SoulCard;
-	ESkillType SkillType;
-};
-
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSkillUsedDelegate, FSoulData, SoulData);
 
 /**
  * 
@@ -36,12 +19,21 @@ class LAUTTURI_API UCombatManager : public UObject
 	GENERATED_BODY()
 
 private:
-	TArray<FSoulData> CombatSoulDatas;
+	TArray<FSoulData> CombatSoulListeners;
+	TArray<FSoulData*> ActionQueue;
+	FSoulData* CurrentSoulInAction;
+	int32 CurrentSoulIndexInAction;
 
 public:
 
+	void Initialize();
+
 	void RegisterToListener(FSoulData Data);
 
-	void Initialize();
+	void AddSkillActionToQueue(FSoulData ActionData);
+
+	void PopNextSkillActionFromQueue();
+
+	FSkillUsedDelegate SkillUsedDelegate;
 	
 };
