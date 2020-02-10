@@ -14,9 +14,14 @@
 
 void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
 {
+
 	if (ActionInfo.SkillType == PassiveSkill.GetDefaultObject()->GetSkillType())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
+		if (ActionInfo.SoulCard != this)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
+			CombatManager->AddSkillActionToQueue(FSoulData(this, PassiveSkill.GetDefaultObject()->GetSkillType()));
+		}
 	}
 }
 
@@ -60,11 +65,12 @@ void ASoulCard::Initialize(ASoulSlot* SoulSlot, bool bCanClick)
 		UE_LOG(LogTemp, Warning, TEXT("CombatManager is not valid!!"));
 	}
 
-	//TODO Remove when not needed, debug line for adding Souls to combatmanager listenerArray when making combat level
-	CombatManager->RegisterToListener(FSoulData(this, PassiveSkillType));
-	CombatManager->SkillUsedDelegate.AddDynamic(this, &ASoulCard::ActionSkillUsed);
-
 	RandomizeStats();
+
+	//TODO Remove when not needed, debug line for adding Souls to combatmanager listenerArray when making combat level
+	CombatManager->RegisterToListener(FSoulData(this, PassiveSkillType));	
+
+	CombatManager->SkillUsedDelegate.AddDynamic(this, &ASoulCard::ActionSkillUsed);
 }
 
 ASoulSlot * ASoulCard::GetCurrentSlot()
@@ -81,13 +87,23 @@ void ASoulCard::ActivatePrimarySkill()
 {
 	if (IsValid(PrimarySkill))
 	{
-		PrimarySkill.GetDefaultObject()->ActivateSkill();
+		USkillBase* Skill = NewObject<USkillBase>(this, * PrimarySkill);
+		Skill->Initialize(this, CombatManager);
+		if (IsValid(Skill))
+		{
+			Skill->ActivateSkill();
+		}
+		else
+		{
+				UE_LOG(LogTemp, Warning, TEXT("Skill was invalid"));
+		}
 	}
 }
 
 void ASoulCard::ActivatePassiveSkill()
 {
-	USkillBase* Skill = Cast<USkillBase>(PassiveSkill);
+	USkillBase* Skill = NewObject<USkillBase>(this, *PassiveSkill);
+	Skill->Initialize(this, CombatManager);	Skill->ActivateSkill();
 	Skill->ActivateSkill();
 }
 
@@ -129,7 +145,11 @@ void ASoulCard::RandomizeStats()
 	Sin = FMath::RandRange(0, 10);
 	Str = FMath::RandRange(0, 10);
 
-	PassiveSkillType = ESkillType::Heal;
+	//PassiveSkillType = ESkillType::Heal;
+	//PassiveSkill = AllPossibleSkills[FMath::RandRange(0, AllPossibleSkills.Num() - 1)];
+	//PrimarySkill = AllPossibleSkills[FMath::RandRange(0, AllPossibleSkills.Num() - 1)];
+	PassiveSkill.GetDefaultObject()->Initialize(this, CombatManager);
+	PrimarySkill.GetDefaultObject()->Initialize(this, CombatManager);
 
 	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Hp, Sin, Str);
 

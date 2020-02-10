@@ -16,12 +16,10 @@ void UCombatManager::RegisterToListener(FSoulData Data)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Listener Name: %s"), *CombatSoulListeners[i].SoulCard->GetFName().ToString());
 
-		//TODO remove this is a test launch
-		if (i == 4)
-		{
-			PopNextSkillActionFromQueue();
-			UE_LOG(LogTemp, Warning, TEXT("Launch"));
-		}
+	}
+	if (CombatSoulListeners.Num() == 5)
+	{
+		PopNextSkillActionFromQueue();
 	}
 }
 
@@ -29,31 +27,48 @@ void UCombatManager::AddSkillActionToQueue(FSoulData ActionData)
 {
 	if (IsValid(ActionData.SoulCard))
 	{
-		ActionQueue.Add(&ActionData);
+		ActionQueue.Add(ActionData);
+		UE_LOG(LogTemp, Warning, TEXT("Skill Action In Queue: %i"), ActionQueue.Num());
 	}
 }
 
 void UCombatManager::PopNextSkillActionFromQueue()
 {
-	if (ActionQueue.Num() <= 0)
+	if (ActionQueue.Num() > 0)
 	{
+		FSoulData Data = ActionQueue.Pop();
+		ASoulCard* Soul = Cast<ASoulCard>(Data.SoulCard);
+		if (IsValid(Soul))
+		{
+			//SkillUsedDelegate.Broadcast(*Data);
+			Data.SoulCard->ActivatePassiveSkill();
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("ActionQueue data is not valid"));
+		}
+	}
+	else if (/*ActionQueue.Num() <= 0*/testrun)
+	{
+		testrun = false;
 		++CurrentSoulIndexInAction;
-		if (CurrentSoulIndexInAction > CombatSoulListeners.Num())
+		if (CurrentSoulIndexInAction >= CombatSoulListeners.Num())
 		{
 			CurrentSoulIndexInAction = 0;
 		}
 		if (IsValid(CombatSoulListeners[CurrentSoulIndexInAction].SoulCard))
 		{
 			FSoulData Data = CombatSoulListeners[CurrentSoulIndexInAction];
-			CombatSoulListeners[CurrentSoulIndexInAction].SoulCard->ActivatePrimarySkill();
-			SkillUsedDelegate.Broadcast(Data);
+			if (IsValid(Data.SoulCard))
+			{
+				SkillUsedDelegate.Broadcast(Data);
+				CombatSoulListeners[CurrentSoulIndexInAction].SoulCard->ActivatePrimarySkill();
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("CombatSoulListeners data is not valid"));
+			}
 		}
-	}
-	else if (ActionQueue.Num() > 0)
-	{
-		FSoulData* Data = ActionQueue.Pop();
-		Data->SoulCard->ActivatePassiveSkill();
-		SkillUsedDelegate.Broadcast(*Data);
 	}
 	else
 	{

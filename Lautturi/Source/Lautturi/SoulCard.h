@@ -75,8 +75,14 @@ private:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<USkillBase> PrimarySkill;
 
+	UPROPERTY()
+		USkillBase* Primary;
+
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<USkillBase> PassiveSkill;
+
+	UPROPERTY(EditAnywhere)
+		TArray<TSubclassOf<USkillBase>> AllPossibleSkills;
 
 	UPROPERTY(EditAnywhere)
 		bool bTestAction=false;

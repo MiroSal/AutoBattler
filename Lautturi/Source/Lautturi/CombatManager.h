@@ -19,10 +19,16 @@ class LAUTTURI_API UCombatManager : public UObject
 	GENERATED_BODY()
 
 private:
+	UPROPERTY()
 	TArray<FSoulData> CombatSoulListeners;
-	TArray<FSoulData*> ActionQueue;
+	UPROPERTY()
+	TArray<FSoulData> ActionQueue;
 	FSoulData* CurrentSoulInAction;
+	UPROPERTY()
 	int32 CurrentSoulIndexInAction;
+
+	//TODO temp remove
+	bool testrun = true;
 
 public:
 
@@ -30,10 +36,13 @@ public:
 
 	void RegisterToListener(FSoulData Data);
 
+	UFUNCTION()
 	void AddSkillActionToQueue(FSoulData ActionData);
 
+	UFUNCTION()
 	void PopNextSkillActionFromQueue();
 
+	UPROPERTY()
 	FSkillUsedDelegate SkillUsedDelegate;
 	
 };
