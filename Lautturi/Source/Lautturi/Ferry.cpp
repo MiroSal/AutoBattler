@@ -6,7 +6,7 @@
 #include "Components/SceneComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "SoulTrialManager.h"
-#include "SoulSlot.h"
+#include "BaseSlot.h"
 #include "LautturiGameModeBase.h"
 
 
@@ -73,8 +73,8 @@ void AFerry::AddSoulToFerry(ASoulCard * Soul)
 			Soul->CanClick(false);
 			Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());
 			
-			ASoulSlot* Slot = Soul->GetCurrentSlot();
-			Slot->RemoveSoulFromSlot(false);
+			ABaseSlot* Slot = Soul->GetCurrentSlot();
+			Slot->RemoveCharacterFromSlot(false);
 			return;
 		}
 	}

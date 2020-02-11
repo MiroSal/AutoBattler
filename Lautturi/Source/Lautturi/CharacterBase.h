@@ -5,7 +5,15 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "ActivationInterface.h"
+#include "SkillTypeEnums.h"
 #include "CharacterBase.generated.h"
+
+class ABaseSlot;
+class UCombatManager;
+class ALautturiGameModeBase;
+class USoulTrialManager;
+class USceneComponent;
+class UStaticMeshComponent;
 
 UCLASS()
 class LAUTTURI_API ACharacterBase : public AActor, public IActivationInterface
@@ -24,7 +32,33 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+	UPROPERTY()
+		USceneComponent* ObjRoot;
+
+	UPROPERTY(VisibleAnywhere)
+		UStaticMeshComponent* SoulMesh;
+
+	UPROPERTY()
+		USoulTrialManager* SoulTrialManager;
+
+	UPROPERTY()
+		UCombatManager* CombatManager;
+
+	UPROPERTY()
+		ALautturiGameModeBase* GameMode;
+
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	virtual void ActivatePrimarySkill();
+
+	virtual void ActivatePassiveSkill();
+
+	virtual void Initialize(ABaseSlot* Slot, bool bCanClick);
+
+	virtual ESkillType GetPrimarySkillType();
+	virtual ESkillType GetPassiveSkillType();
+
 };

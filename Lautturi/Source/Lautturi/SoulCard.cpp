@@ -2,8 +2,6 @@
 
 
 #include "SoulCard.h"
-#include "Components/StaticMeshComponent.h"
-#include "Components/SceneComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "SoulTrialManager.h"
 #include "SkillBase.h"
@@ -11,16 +9,19 @@
 #include "LautturiGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "SoulSlot.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/SceneComponent.h"
+
+#define GETENUMSTRING(etype, evalue) ( (FindObject<UEnum>(ANY_PACKAGE, TEXT(etype), true) != nullptr) ? FindObject<UEnum>(ANY_PACKAGE, TEXT(etype), true)->GetEnumName((int32)evalue) : FString("Invalid - are you sure enum uses UENUM() macro?") )
 
 void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
 {
-
-	if (ActionInfo.SkillType == PassiveSkill.GetDefaultObject()->GetSkillType())
+	if (ActionInfo.SkillType == PassiveSkill->GetSkillType())
 	{
-		if (ActionInfo.SoulCard != this)
+		if (ActionInfo.CharacterBase != this)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
-			CombatManager->AddSkillActionToQueue(FSoulData(this, PassiveSkill.GetDefaultObject()->GetSkillType()));
+			CombatManager->AddSkillActionToQueue(FSoulData(this, PassiveSkill->GetSkillType()));
 		}
 	}
 }
@@ -31,49 +32,29 @@ ASoulCard::ASoulCard()
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	ObjRoot = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-	RootComponent = ObjRoot;
-
-	SoulMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SoulMesh"));
-	SoulMesh->SetupAttachment(RootComponent);
-
 	StatsText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("StatsText"));
 	StatsText->SetupAttachment(RootComponent);
 
 	SoulStatusText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("SoulStatusText"));
 	SoulStatusText->SetupAttachment(RootComponent);
+
 }
 
-void ASoulCard::Initialize(ASoulSlot* SoulSlot, bool bCanClick)
+void ASoulCard::Initialize(ABaseSlot* Slot, bool bCanClick)
 {
-	CurrentSlot = SoulSlot;
+	Super::Initialize(Slot, bCanClick);
+
+	CurrentSlot = Slot;
 	bCanBeClicked = bCanClick;
 
-	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
-
-	SoulTrialManager = GameMode->GetSoulTrialManager();
-	if (!IsValid(SoulTrialManager))
-	{
-		UE_LOG(LogTemp, Warning, TEXT("SoulTrialManager is not valid!!"));
-	}
-
 	SoulTrialManager->FerryIsFullDelegate.AddDynamic(this, &ASoulCard::CanClick);
-
-	CombatManager = GameMode->GetCombatManager();
-	if (!IsValid(CombatManager))
-	{
-		UE_LOG(LogTemp, Warning, TEXT("CombatManager is not valid!!"));
-	}
-
 	RandomizeStats();
-
 	//TODO Remove when not needed, debug line for adding Souls to combatmanager listenerArray when making combat level
-	CombatManager->RegisterToListener(FSoulData(this, PassiveSkillType));	
-
+	CombatManager->RegisterSoulListener(this);
 	CombatManager->SkillUsedDelegate.AddDynamic(this, &ASoulCard::ActionSkillUsed);
 }
 
-ASoulSlot * ASoulCard::GetCurrentSlot()
+ABaseSlot* ASoulCard::GetCurrentSlot()
 {
 	return CurrentSlot;
 }
@@ -87,24 +68,26 @@ void ASoulCard::ActivatePrimarySkill()
 {
 	if (IsValid(PrimarySkill))
 	{
-		USkillBase* Skill = NewObject<USkillBase>(this, * PrimarySkill);
-		Skill->Initialize(this, CombatManager);
-		if (IsValid(Skill))
-		{
-			Skill->ActivateSkill();
-		}
-		else
-		{
-				UE_LOG(LogTemp, Warning, TEXT("Skill was invalid"));
-		}
+		PrimarySkill->ActivateSkill();
 	}
 }
 
 void ASoulCard::ActivatePassiveSkill()
 {
-	USkillBase* Skill = NewObject<USkillBase>(this, *PassiveSkill);
-	Skill->Initialize(this, CombatManager);	Skill->ActivateSkill();
-	Skill->ActivateSkill();
+	if (IsValid(PassiveSkill))
+	{
+		PassiveSkill->ActivateSkill();
+	}
+}
+
+ESkillType ASoulCard::GetPrimarySkillType()
+{
+	return PrimarySkill->GetSkillType();
+}
+
+ESkillType ASoulCard::GetPassiveSkillType()
+{
+	return PassiveSkill->GetSkillType();
 }
 
 // Called when the game starts or when spawned
@@ -117,7 +100,6 @@ void ASoulCard::BeginPlay()
 void ASoulCard::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 void ASoulCard::RandomizeStats()
 {
@@ -145,11 +127,10 @@ void ASoulCard::RandomizeStats()
 	Sin = FMath::RandRange(0, 10);
 	Str = FMath::RandRange(0, 10);
 
-	//PassiveSkillType = ESkillType::Heal;
-	//PassiveSkill = AllPossibleSkills[FMath::RandRange(0, AllPossibleSkills.Num() - 1)];
-	//PrimarySkill = AllPossibleSkills[FMath::RandRange(0, AllPossibleSkills.Num() - 1)];
-	PassiveSkill.GetDefaultObject()->Initialize(this, CombatManager);
-	PrimarySkill.GetDefaultObject()->Initialize(this, CombatManager);
+	PassiveSkill = NewObject<USkillBase>(this, AllPossibleSkills[FMath::RandRange(0, AllPossibleSkills.Num() - 1)]);
+	PrimarySkill = NewObject<USkillBase>(this, AllPossibleSkills[FMath::RandRange(0, AllPossibleSkills.Num() - 1)]);
+	PassiveSkill->Initialize(this, CombatManager);
+	PrimarySkill->Initialize(this, CombatManager);
 
 	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Hp, Sin, Str);
 
@@ -165,7 +146,7 @@ bool ASoulCard::Clicked(AActor* ActorToDeactivate)
 		if (bIsAlive && LastActorClicked == this)//if Soul is still alive and has Activationinterface so that can be clicked with mouse
 		{
 			LastActorClicked->Deactivate();
-			CurrentSlot->RemoveSoulFromSlot(true);
+			CurrentSlot->RemoveCharacterFromSlot(true);
 		}
 		else if (!bHasCoin && LastActorClicked)//if soul has no coin and has Activationinterface so that can be clicked with mouse
 		{
@@ -174,8 +155,8 @@ bool ASoulCard::Clicked(AActor* ActorToDeactivate)
 			{
 				if (!Soul->HasCoin() && Soul != this)//if last clicked soul dont have coin and it is not this
 				{
-					Soul->GetCurrentSlot()->RemoveSoulFromSlot(true);
-					CurrentSlot->RemoveSoulFromSlot(true);
+					Soul->GetCurrentSlot()->RemoveCharacterFromSlot(true);
+					CurrentSlot->RemoveCharacterFromSlot(true);
 				}
 			}
 		}
@@ -202,7 +183,7 @@ bool ASoulCard::DoubleClicked()
 			if (IsValid(SoulTrialManager))
 			{
 				SoulTrialManager->AddSoulToJourney(this);
-				CombatManager->RegisterToListener(FSoulData(this, PassiveSkillType));
+				CombatManager->RegisterSoulListener(this);
 			}
 			else
 			{

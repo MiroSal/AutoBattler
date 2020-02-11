@@ -19,8 +19,8 @@ D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Chara
 e:\lautturi\lautturi\source\lautturi\CharacterBase.h
 e:\lautturi\lautturi\source\lautturi\ActivationInterface.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\ActivationInterface.generated.h
-e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\CharacterBase.generated.h
 e:\lautturi\lautturi\source\lautturi\SkillTypeEnums.h
+e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\CharacterBase.generated.h
 e:\lautturi\lautturi\source\lautturi\SoulDataStruct.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\SoulDataStruct.generated.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\SoulCard.generated.h

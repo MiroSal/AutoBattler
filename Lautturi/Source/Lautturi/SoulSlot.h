@@ -4,50 +4,28 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Components/ArrowComponent.h"
-#include "Components/SceneComponent.h"
-#include "SoulCard.h"
+#include "BaseSlot.h"
 #include "SoulSlot.generated.h"
 
-class USoulTrialManager;
-class ALautturiGameModeBase;
+
 class ASoulCard;
 
 UCLASS()
-class LAUTTURI_API ASoulSlot : public AActor
+class LAUTTURI_API ASoulSlot : public ABaseSlot
 {
 	GENERATED_BODY()
 
 private:
 
-	UPROPERTY()
-	USceneComponent* ObjRoot;
-
-	UPROPERTY()
-	UArrowComponent* ArrowComponent;
-
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<ASoulCard> SoulCardToSpawn;
-
-	UPROPERTY()
-	ASoulCard* SoulInSlot;
-
-	UPROPERTY()
-		USoulTrialManager* SoulTrialManager;
-
-	UPROPERTY()
-		ALautturiGameModeBase* GameMode;
-
-	void CreateNewSoulToSlot();
-
-	UPROPERTY(EditAnywhere)
-		bool bCreatedSoulCanBeClicked = true;
+	//UPROPERTY(EditAnywhere)
+		//bool bCreatedSoulCanBeClicked = true;
 
 public:	
 	// Sets default values for this actor's properties
 	ASoulSlot();
+	virtual void CreateNewCharacteToSlot() override;
 
-	void RemoveSoulFromSlot(bool bDestroySoul);
+	virtual void RemoveCharacterFromSlot(bool bDestroyCharacter) override;
 
 protected:
 	// Called when the game starts or when spawned

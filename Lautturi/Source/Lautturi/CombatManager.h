@@ -7,11 +7,21 @@
 #include "SoulDataStruct.h"
 #include "CombatManager.generated.h"
 
+class ACharacterBase;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSkillUsedDelegate, FSoulData, SoulData);
 
+
+UENUM()
+enum class ETurnEnum :uint8
+{
+	Player,
+	Enemy,
+	None
+};
+
 /**
- * 
+ *
  */
 UCLASS()
 class LAUTTURI_API UCombatManager : public UObject
@@ -20,12 +30,29 @@ class LAUTTURI_API UCombatManager : public UObject
 
 private:
 	UPROPERTY()
-	TArray<FSoulData> CombatSoulListeners;
+		TArray<ACharacterBase*> CombatCharacterListeners;
+
 	UPROPERTY()
-	TArray<FSoulData> ActionQueue;
+		TArray<ACharacterBase*> CombatEnemyListeners;
+
+	UPROPERTY()
+		int32 CurrentSoulIndexInAction;
+
+	UPROPERTY()
+		int32 CurrentEnemyIndexInAction;
+
+	UPROPERTY()
+		TArray<ACharacterBase*> CurrentListenerList;
+
+	UPROPERTY()
+		TArray<FSoulData> ActionQueue;
+
 	FSoulData* CurrentSoulInAction;
+
 	UPROPERTY()
-	int32 CurrentSoulIndexInAction;
+		ETurnEnum CurrentTurn;
+
+	void ChangeTurn();
 
 	//TODO temp remove
 	bool testrun = true;
@@ -34,15 +61,17 @@ public:
 
 	void Initialize();
 
-	void RegisterToListener(FSoulData Data);
+	void RegisterSoulListener(ACharacterBase* Character);
+
+	void RegisterEnemyListener(ACharacterBase* Character);
 
 	UFUNCTION()
-	void AddSkillActionToQueue(FSoulData ActionData);
+		void AddSkillActionToQueue(FSoulData ActionData);
 
 	UFUNCTION()
-	void PopNextSkillActionFromQueue();
+		void PopNextSkillActionFromQueue();
 
 	UPROPERTY()
-	FSkillUsedDelegate SkillUsedDelegate;
-	
+		FSkillUsedDelegate SkillUsedDelegate;
+
 };

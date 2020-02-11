@@ -2,30 +2,36 @@
 
 #include "CombatManager.h"
 #include "SoulCard.h"
+#include "CharacterBase.h"
+
 
 void UCombatManager::Initialize()
 {
 	CurrentSoulIndexInAction = 0;
+	CurrentEnemyIndexInAction = 0;
+	CurrentTurn = ETurnEnum::Enemy;
 }
 
-void UCombatManager::RegisterToListener(FSoulData Data)
+void UCombatManager::RegisterSoulListener(ACharacterBase* Character)
 {
-	CombatSoulListeners.Add(Data);
+	CombatCharacterListeners.Add(Character);
 
-	for (int32 i = 0; i < CombatSoulListeners.Num(); i++)
+	if (CombatCharacterListeners.Num() == 5)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Listener Name: %s"), *CombatSoulListeners[i].SoulCard->GetFName().ToString());
+	}
+}
 
-	}
-	if (CombatSoulListeners.Num() == 5)
-	{
-		PopNextSkillActionFromQueue();
-	}
+void UCombatManager::RegisterEnemyListener(ACharacterBase * Character)
+{
+	CombatEnemyListeners.Add(Character);
+
+			PopNextSkillActionFromQueue();
+
 }
 
 void UCombatManager::AddSkillActionToQueue(FSoulData ActionData)
 {
-	if (IsValid(ActionData.SoulCard))
+	if (IsValid(ActionData.CharacterBase))
 	{
 		ActionQueue.Add(ActionData);
 		UE_LOG(LogTemp, Warning, TEXT("Skill Action In Queue: %i"), ActionQueue.Num());
@@ -37,41 +43,79 @@ void UCombatManager::PopNextSkillActionFromQueue()
 	if (ActionQueue.Num() > 0)
 	{
 		FSoulData Data = ActionQueue.Pop();
-		ASoulCard* Soul = Cast<ASoulCard>(Data.SoulCard);
-		if (IsValid(Soul))
+		ACharacterBase* Character = Cast<ACharacterBase>(Data.CharacterBase);
+		if (IsValid(Character))
 		{
-			//SkillUsedDelegate.Broadcast(*Data);
-			Data.SoulCard->ActivatePassiveSkill();
+			//SkillUsedDelegate.Broadcast(FSoulData(Character,Character->GetPrimarySkillType()));
+			Character->ActivatePassiveSkill();
 		}
 		else
 		{
 			UE_LOG(LogTemp, Warning, TEXT("ActionQueue data is not valid"));
 		}
 	}
-	else if (/*ActionQueue.Num() <= 0*/testrun)
+	else if (ActionQueue.Num() <= 0)
 	{
-		testrun = false;
+		UE_LOG(LogTemp, Warning, TEXT("RoundEnded"));
+		ChangeTurn();
+	}
+
+}
+void UCombatManager::ChangeTurn()
+{
+	ACharacterBase* Character= nullptr;
+
+	switch (CurrentTurn)
+	{
+	case ETurnEnum::Player:
+
+		CurrentTurn = ETurnEnum::Enemy;
+		++CurrentEnemyIndexInAction;
+
+		if (CurrentEnemyIndexInAction >= CombatEnemyListeners.Num())
+		{
+			CurrentEnemyIndexInAction = 0;
+		}
+		else if (CombatEnemyListeners.Num()<=0)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("No Enemy Listeners"));
+			break;
+		}
+
+		Character = Cast<ACharacterBase>(CombatEnemyListeners[CurrentEnemyIndexInAction]);
+
+		break;
+	case ETurnEnum::Enemy:
+
+		CurrentTurn = ETurnEnum::Player;
 		++CurrentSoulIndexInAction;
-		if (CurrentSoulIndexInAction >= CombatSoulListeners.Num())
+
+		if (CurrentSoulIndexInAction >= CombatCharacterListeners.Num())
 		{
 			CurrentSoulIndexInAction = 0;
 		}
-		if (IsValid(CombatSoulListeners[CurrentSoulIndexInAction].SoulCard))
+		else if (CombatCharacterListeners.Num() <= 0)
 		{
-			FSoulData Data = CombatSoulListeners[CurrentSoulIndexInAction];
-			if (IsValid(Data.SoulCard))
-			{
-				SkillUsedDelegate.Broadcast(Data);
-				CombatSoulListeners[CurrentSoulIndexInAction].SoulCard->ActivatePrimarySkill();
-			}
-			else
-			{
-				UE_LOG(LogTemp, Warning, TEXT("CombatSoulListeners data is not valid"));
-			}
+			UE_LOG(LogTemp, Warning, TEXT("No Soul Listeners"));
+			break;
 		}
+
+		Character = Cast<ACharacterBase>(CombatCharacterListeners[CurrentSoulIndexInAction]);
+
+		break;
+	case ETurnEnum::None:
+		break;
+	default:
+		break;
+	}
+
+	if (IsValid(Character))
+	{
+		SkillUsedDelegate.Broadcast(FSoulData(Character, Character->GetPrimarySkillType()));
+		Character->ActivatePrimarySkill();
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Something odd happened"));
+		UE_LOG(LogTemp, Warning, TEXT("CombatSoulListeners data is not valid"));
 	}
 }

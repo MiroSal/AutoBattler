@@ -10,10 +10,8 @@
 #include "SoulDataStruct.h"
 #include "SoulCard.generated.h"
 
-class ASoulSlot;
-class USceneComponent;
+class ABaseSlot;
 class UTextRenderComponent;
-class UStaticMeshComponent;
 class USoulTrialManager;
 class ALautturiGameModeBase;
 class USkillBase;
@@ -25,12 +23,6 @@ class LAUTTURI_API ASoulCard : public ACharacterBase
 	GENERATED_BODY()
 
 private:
-
-	UPROPERTY()
-		USceneComponent* ObjRoot;
-
-	UPROPERTY(VisibleAnywhere)
-		UStaticMeshComponent* SoulMesh;
 
 	UPROPERTY(VisibleAnywhere)
 		UTextRenderComponent* StatsText;
@@ -54,16 +46,7 @@ private:
 		int32 Str;
 
 	UPROPERTY()
-		ASoulSlot* CurrentSlot;
-
-	UPROPERTY()
-		USoulTrialManager* SoulTrialManager;
-
-	UPROPERTY()
-		UCombatManager* CombatManager;
-
-	UPROPERTY()
-		ALautturiGameModeBase* GameMode;
+		ABaseSlot* CurrentSlot;
 
 	UPROPERTY()
 		ESkillType PassiveSkillType;
@@ -72,14 +55,14 @@ private:
 
 	bool bCanBeClicked;
 
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<USkillBase> PrimarySkill;
+	UPROPERTY()
+	USkillBase* PrimarySkill;
+
+	UPROPERTY()
+	USkillBase* PassiveSkill;
 
 	UPROPERTY()
 		USkillBase* Primary;
-
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<USkillBase> PassiveSkill;
 
 	UPROPERTY(EditAnywhere)
 		TArray<TSubclassOf<USkillBase>> AllPossibleSkills;
@@ -114,23 +97,26 @@ public:
 
 	bool HasCoin();
 
-	void Initialize(ASoulSlot* SoulSlot, bool bCanClick);
+	virtual void Initialize(ABaseSlot* Slot, bool bCanClick)override;
 
 	int32 GetHp();
 	int32 GetSin();
 	int32 GetStr();
 
-	ASoulSlot* GetCurrentSlot();
+	ABaseSlot* GetCurrentSlot();
 
 	UFUNCTION()
 	void CanClick(bool bCanClick);
 
+	UFUNCTION()
+		virtual void ActivatePrimarySkill() override;
 
 	UFUNCTION()
-		void ActivatePrimarySkill();
+		virtual void ActivatePassiveSkill() override;
 
-	UFUNCTION()
-		void ActivatePassiveSkill();
+	virtual ESkillType GetPrimarySkillType() override;
+
+	virtual ESkillType GetPassiveSkillType() override;
 
 protected:
 	// Called when the game starts or when spawned

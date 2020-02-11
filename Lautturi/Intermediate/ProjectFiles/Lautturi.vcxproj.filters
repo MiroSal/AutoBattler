@@ -120,4 +120,20 @@
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\Lautturi\EnemyBase.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Lautturi\BaseSlot.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\Lautturi\EnemyBase.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Lautturi\BaseSlot.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
