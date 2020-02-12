@@ -6,6 +6,8 @@
 #include "UObject/Interface.h"
 #include "ActivationInterface.generated.h"
 
+class ABaseSlot;
+
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
 class UActivationInterface : public UInterface
@@ -24,6 +26,7 @@ class LAUTTURI_API IActivationInterface
 public:
 
 	virtual bool Clicked(AActor* ActorToDeactivate);
-	virtual bool DoubleClicked();
+	virtual bool DoubleClicked(AActor* ActorToDeactivate);
 	virtual bool Deactivate();
+	virtual ABaseSlot* GetSlot();
 };

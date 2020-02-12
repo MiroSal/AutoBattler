@@ -28,7 +28,7 @@ bool ACharacterBase::Clicked(AActor* ActorToDeactivate)
 	return true;
 }
 
-bool ACharacterBase::DoubleClicked()
+bool ACharacterBase::DoubleClicked(AActor* ActorToDeactivate)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override DoubleClicked function if needed!"));
 	return true;
@@ -54,12 +54,19 @@ void ACharacterBase::Tick(float DeltaTime)
 
 void ACharacterBase::ActivatePrimarySkill()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Override ActivatePrimarySkill function!"));
+	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::ActivatePrimarySkill() function!"));
 }
 
 void ACharacterBase::ActivatePassiveSkill()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Override ActivatePassiveSkill function!"));
+	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::ActivatePassiveSkill() function!"));
+}
+
+ABaseSlot * ACharacterBase::GetSlot()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::GetSlot() function!"));
+
+	return nullptr;
 }
 
 void ACharacterBase::Initialize(ABaseSlot * Slot, bool bCanClick)

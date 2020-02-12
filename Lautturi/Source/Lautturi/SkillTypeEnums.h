@@ -9,6 +9,7 @@ enum class ESkillType :uint8
 	SinAll,
 	SinSingle,
 	buffAll,
-	buffSingle
+	buffSingle,
+	None
 	
 };

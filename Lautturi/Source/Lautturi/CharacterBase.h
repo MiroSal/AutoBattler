@@ -25,7 +25,7 @@ public:
 	ACharacterBase();
 
 	virtual bool Clicked(AActor* ActorToDeactivate) override;
-	virtual bool DoubleClicked() override;
+	virtual bool DoubleClicked(AActor* ActorToDeactivate) override;
 	virtual bool Deactivate() override;
 
 protected:
@@ -55,6 +55,8 @@ public:
 	virtual void ActivatePrimarySkill();
 
 	virtual void ActivatePassiveSkill();
+
+	virtual ABaseSlot* GetSlot();
 
 	virtual void Initialize(ABaseSlot* Slot, bool bCanClick);
 

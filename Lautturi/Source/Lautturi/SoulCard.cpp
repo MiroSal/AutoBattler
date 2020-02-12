@@ -68,6 +68,7 @@ void ASoulCard::ActivatePrimarySkill()
 {
 	if (IsValid(PrimarySkill))
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Activateing Primary"));
 		PrimarySkill->ActivateSkill();
 	}
 }
@@ -76,8 +77,15 @@ void ASoulCard::ActivatePassiveSkill()
 {
 	if (IsValid(PassiveSkill))
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Activateing Passive"));
+
 		PassiveSkill->ActivateSkill();
 	}
+}
+
+ABaseSlot * ASoulCard::GetSlot()
+{
+	return CurrentSlot;
 }
 
 ESkillType ASoulCard::GetPrimarySkillType()
@@ -142,25 +150,29 @@ bool ASoulCard::Clicked(AActor* ActorToDeactivate)
 	if (bCanBeClicked)
 	{
 		IActivationInterface* LastActorClicked = Cast<IActivationInterface>(ActorToDeactivate);
-
-		if (bIsAlive && LastActorClicked == this)//if Soul is still alive and has Activationinterface so that can be clicked with mouse
+		ASoulCard* Soul = Cast<ASoulCard>(ActorToDeactivate);
+		if (IsValid(Soul))
 		{
-			LastActorClicked->Deactivate();
-			CurrentSlot->RemoveCharacterFromSlot(true);
-		}
-		else if (!bHasCoin && LastActorClicked)//if soul has no coin and has Activationinterface so that can be clicked with mouse
-		{
-			ASoulCard* Soul = Cast<ASoulCard>(ActorToDeactivate);
-			if (IsValid(Soul))
+			if (bIsAlive && LastActorClicked == this)//if Soul is still alive and has Activationinterface so that can be clicked with mouse
 			{
-				if (!Soul->HasCoin() && Soul != this)//if last clicked soul dont have coin and it is not this
+				LastActorClicked->Deactivate();
+				//CurrentSlot->RemoveCharacterFromSlot(true);
+			}
+			else if (Soul->bIsAlive && LastActorClicked != this)
+			{
+				LastActorClicked->Deactivate();
+			}
+			else if (!bHasCoin && LastActorClicked)//if soul has no coin and has Activationinterface so that can be clicked with mouse
+			{
+				if (!Soul->HasCoin() && Soul != this && !bHasCoin && !bIsAlive)//if last clicked soul dont have coin and it is not this
 				{
 					Soul->GetCurrentSlot()->RemoveCharacterFromSlot(true);
 					CurrentSlot->RemoveCharacterFromSlot(true);
 				}
 			}
 		}
-		else if (LastActorClicked)//deactivates last activated actor before activating next
+
+		if (LastActorClicked)//deactivates last activated actor before activating next
 		{
 			LastActorClicked->Deactivate();
 		}
@@ -174,22 +186,22 @@ bool ASoulCard::Clicked(AActor* ActorToDeactivate)
 	}
 }
 
-bool ASoulCard::DoubleClicked()
+bool ASoulCard::DoubleClicked(AActor* ActorToDeactivate)
 {
 	if (bCanBeClicked)
 	{
-		if (GameMode != nullptr)
+		IActivationInterface* LastActorClicked = Cast<IActivationInterface>(ActorToDeactivate);
+
+		if (bIsAlive && LastActorClicked == this)//if Soul is still alive and has Activationinterface so that can be clicked with mouse
 		{
-			if (IsValid(SoulTrialManager))
-			{
-				SoulTrialManager->AddSoulToJourney(this);
-				CombatManager->RegisterSoulListener(this);
-			}
-			else
-			{
-				UE_LOG(LogTemp, Warning, TEXT("SoulTrialManager is not Valid"));
-			}
+			LastActorClicked->Deactivate();
+			CurrentSlot->RemoveCharacterFromSlot(true);
 		}
+
+		//TODO add these to mouse drop
+		//SoulTrialManager->AddSoulToJourney(this);
+		//CombatManager->RegisterSoulListener(this);
+
 	}
 	return false;
 }

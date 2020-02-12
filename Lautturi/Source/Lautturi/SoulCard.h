@@ -55,14 +55,11 @@ private:
 
 	bool bCanBeClicked;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere)
 	USkillBase* PrimarySkill;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere)
 	USkillBase* PassiveSkill;
-
-	UPROPERTY()
-		USkillBase* Primary;
 
 	UPROPERTY(EditAnywhere)
 		TArray<TSubclassOf<USkillBase>> AllPossibleSkills;
@@ -92,7 +89,7 @@ public:
 		UMaterial* NoCoinColor;//temp
 
 	virtual bool Clicked(AActor* ActorToDeactivate) override;
-	virtual bool DoubleClicked() override;
+	virtual bool DoubleClicked(AActor* ActorToDeactivate) override;
 	virtual bool Deactivate() override;
 
 	bool HasCoin();
@@ -113,6 +110,9 @@ public:
 
 	UFUNCTION()
 		virtual void ActivatePassiveSkill() override;
+
+	UFUNCTION()
+	virtual ABaseSlot* GetSlot() override;
 
 	virtual ESkillType GetPrimarySkillType() override;
 

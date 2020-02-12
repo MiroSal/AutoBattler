@@ -20,6 +20,12 @@ private:
 	UWorld* World;
 	AMouseController* Controller;
 	AActor* ActorToActivate;
+	AActor* LastActiveActor;
+
+	bool bDragged;
+	AActor* DraggedActor;
+	float DragTimer;
+
 
 public:
 	// Sets default values for this pawn's properties
@@ -37,6 +43,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void LeftMouseButtonPressed();
+	void LeftMouseButtonReleased();
 	void LeftMouseButtonDoubleClicked();
 
 };
