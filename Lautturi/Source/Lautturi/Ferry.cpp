@@ -60,7 +60,6 @@ void AFerry::BeginPlay()
 	SoulSpots.Add(FFerrySoulSpot(SoulSpot3,nullptr));
 	SoulSpots.Add(FFerrySoulSpot(SoulSpot4,nullptr));
 	SoulSpots.Add(FFerrySoulSpot(SoulSpot5,nullptr));
-
 }
 
 void AFerry::AddSoulToFerry(ASoulCard * Soul)
@@ -71,11 +70,50 @@ void AFerry::AddSoulToFerry(ASoulCard * Soul)
 		{
 			SoulSpots[i].Soul = Soul;
 			Soul->CanClick(false);
-			Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());
-			
+			Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());		
 			ABaseSlot* Slot = Soul->GetCurrentSlot();
 			Slot->RemoveCharacterFromSlot(false);
+
 			return;
+		}
+	}
+}
+
+bool AFerry::ActorCanBeDropped(AActor * ActorToDrop)
+{
+	if (IsValid(ActorToDrop))
+	{
+		for (int32 i = 0; i < SoulSpots.Num(); i++)
+		{
+			if (!IsValid(SoulSpots[i].Soul))
+			{
+				ActorToDrop->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());
+
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+void AFerry::ActorDrop(AActor * ActorToDrop)
+{
+	ASoulCard* Soul = Cast<ASoulCard>(ActorToDrop);
+
+	if (IsValid(Soul))
+	{
+		for (int32 i = 0; i < SoulSpots.Num(); i++)
+		{
+			if (!IsValid(SoulSpots[i].Soul))
+			{
+				Soul->CanClick(false);
+				Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());
+				SoulSpots[i].Soul = Soul;
+				ABaseSlot* Slot = Soul->GetCurrentSlot();
+				Slot->RemoveCharacterFromSlot(false);
+
+				return;
+			}
 		}
 	}
 }

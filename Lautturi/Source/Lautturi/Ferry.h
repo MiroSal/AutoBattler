@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "SoulCard.h"
+#include "DropZoneInterface.h"
 #include "Ferry.generated.h"
 
 class USceneComponent;
@@ -37,7 +38,7 @@ public:
 
 
 UCLASS()
-class LAUTTURI_API AFerry : public AActor
+class LAUTTURI_API AFerry : public AActor, public IDropZoneInterface
 {
 	GENERATED_BODY()
 
@@ -70,6 +71,10 @@ private:
 
 	UFUNCTION()
 	void AddSoulToFerry(ASoulCard* Soul);
+
+	virtual bool ActorCanBeDropped(AActor* ActorToDrop);
+
+	virtual void ActorDrop(AActor* ActorToDrop);
 
 public:
 	// Sets default values for this actor's properties

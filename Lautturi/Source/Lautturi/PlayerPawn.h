@@ -7,6 +7,7 @@
 #include "Components/InputComponent.h"
 #include "Engine/World.h"
 #include "MouseController.h"
+#include "DropZoneInterface.h"
 #include "CharacterBase.h"
 #include "PlayerPawn.generated.h"
 
@@ -25,6 +26,8 @@ private:
 	bool bDragged;
 	AActor* DraggedActor;
 	float DragTimer;
+
+	IDropZoneInterface* DropZoneInterface;
 
 
 public:
