@@ -26,7 +26,6 @@ void UCombatManager::RegisterEnemyListener(ACharacterBase * Character)
 	CombatEnemyListeners.Add(Character);
 
 			PopNextSkillActionFromQueue();
-
 }
 
 void UCombatManager::AddSkillActionToQueue(FSoulData ActionData)
@@ -56,10 +55,36 @@ void UCombatManager::PopNextSkillActionFromQueue()
 	}
 	else if (ActionQueue.Num() <= 0)
 	{
+		ACharacterBase* Character = nullptr;
+		switch (CurrentTurn)
+		{
+		case ETurnEnum::Player:
+			 Character = CombatCharacterListeners[CurrentSoulIndexInAction];	
+			break;
+		case ETurnEnum::Enemy:
+			Character = CombatEnemyListeners[CurrentEnemyIndexInAction];
+			break;
+		case ETurnEnum::None:
+			break;
+		default:
+			break;
+		}
+
+		if (IsValid(Character))
+		{
+			Character->Attack();
+		}
 		UE_LOG(LogTemp, Warning, TEXT("RoundEnded"));
 		ChangeTurn();
 	}
-
+}
+TArray<ACharacterBase*> UCombatManager::GetAllEnemies()
+{
+	return CombatEnemyListeners;
+}
+TArray<ACharacterBase*> UCombatManager::GetAllSouls()
+{
+	return CombatCharacterListeners;
 }
 void UCombatManager::ChangeTurn()
 {

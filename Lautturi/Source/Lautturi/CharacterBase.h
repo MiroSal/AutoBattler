@@ -47,6 +47,9 @@ protected:
 	UPROPERTY()
 		ALautturiGameModeBase* GameMode;
 
+	UPROPERTY(EditAnywhere, Category="Character Stats")
+		int32 Health;
+
 
 public:
 	// Called every frame
@@ -62,5 +65,14 @@ public:
 
 	virtual ESkillType GetPrimarySkillType();
 	virtual ESkillType GetPassiveSkillType();
+
+	virtual void HealthReduce(int32 Amount);
+
+	virtual void HealthAdd(int32 Amount);
+
+	virtual void Attack();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void AttackBlueprint();
 
 };

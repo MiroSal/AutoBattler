@@ -37,9 +37,6 @@ private:
 		bool bIsAlive;
 
 	UPROPERTY(EditAnywhere)
-		int32 Hp;
-
-	UPROPERTY(EditAnywhere)
 		int32 Sin;
 
 	UPROPERTY(EditAnywhere)
@@ -96,7 +93,6 @@ public:
 
 	virtual void Initialize(ABaseSlot* Slot, bool bCanClick)override;
 
-	int32 GetHp();
 	int32 GetSin();
 	int32 GetStr();
 
@@ -117,6 +113,15 @@ public:
 	virtual ESkillType GetPrimarySkillType() override;
 
 	virtual ESkillType GetPassiveSkillType() override;
+
+	UFUNCTION(BlueprintCallable)
+		virtual void HealthReduce(int32 Amount) override;
+
+	UFUNCTION(BlueprintCallable)
+		virtual void HealthAdd(int32 Amount) override;
+
+	UFUNCTION()
+		virtual void Attack() override;
 
 protected:
 	// Called when the game starts or when spawned

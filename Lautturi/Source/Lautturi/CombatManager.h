@@ -36,10 +36,10 @@ private:
 		TArray<ACharacterBase*> CombatEnemyListeners;
 
 	UPROPERTY()
-		int32 CurrentSoulIndexInAction;
+		int32 CurrentSoulIndexInAction = 0;
 
 	UPROPERTY()
-		int32 CurrentEnemyIndexInAction;
+		int32 CurrentEnemyIndexInAction = 0;
 
 	UPROPERTY()
 		TArray<ACharacterBase*> CurrentListenerList;
@@ -52,7 +52,6 @@ private:
 	UPROPERTY()
 		ETurnEnum CurrentTurn;
 
-	void ChangeTurn();
 
 	//TODO temp remove
 	bool testrun = true;
@@ -67,11 +66,18 @@ public:
 
 	UFUNCTION()
 		void AddSkillActionToQueue(FSoulData ActionData);
+	
+	UFUNCTION()
+	void ChangeTurn();
 
 	UFUNCTION()
 		void PopNextSkillActionFromQueue();
 
 	UPROPERTY()
 		FSkillUsedDelegate SkillUsedDelegate;
+
+	TArray<ACharacterBase*> GetAllEnemies();
+
+	TArray<ACharacterBase*> GetAllSouls();
 
 };

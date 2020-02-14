@@ -100,4 +100,19 @@ ESkillType ACharacterBase::GetPassiveSkillType()
 	return ESkillType();
 }
 
+void ACharacterBase::HealthReduce(int32 Amount)
+{
+	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::HealthReduce(int32 Amount) function!"));
+}
+
+void ACharacterBase::HealthAdd(int32 Amount)
+{
+	UE_LOG(LogTemp, Warning, TEXT("Override AACharacterBase::HealthAdd(int32 Amount) function!"));
+}
+
+void ACharacterBase::Attack()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::Attack() function!"));
+}
+
 

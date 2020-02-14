@@ -16,12 +16,15 @@
 
 void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
 {
-	if (ActionInfo.SkillType == PassiveSkill->GetSkillType())
+	if (Health > 0)
 	{
-		if (ActionInfo.CharacterBase != this)
+		if (ActionInfo.SkillType == PassiveSkill->GetSkillType())
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
-			CombatManager->AddSkillActionToQueue(FSoulData(this, PassiveSkill->GetSkillType()));
+			if (ActionInfo.CharacterBase != this)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
+				CombatManager->AddSkillActionToQueue(FSoulData(this, PassiveSkill->GetSkillType()));
+			}
 		}
 	}
 }
@@ -66,20 +69,29 @@ void ASoulCard::CanClick(bool bCanClick)
 
 void ASoulCard::ActivatePrimarySkill()
 {
-	if (IsValid(PrimarySkill))
+	if (Health > 0)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Activateing Primary"));
-		PrimarySkill->ActivateSkill();
+		if (IsValid(PrimarySkill))
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Activating Primary"));
+			PrimarySkill->ActivateSkill();
+		}
+	}
+	else
+	{
+		CombatManager->ChangeTurn();
 	}
 }
 
 void ASoulCard::ActivatePassiveSkill()
 {
-	if (IsValid(PassiveSkill))
+	if (Health > 0)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Activateing Passive"));
-
-		PassiveSkill->ActivateSkill();
+		if (IsValid(PassiveSkill))
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Activating Passive"));
+			PassiveSkill->ActivateSkill();
+		}
 	}
 }
 
@@ -131,7 +143,7 @@ void ASoulCard::RandomizeStats()
 		SoulStatusText->SetText(FText::FromString(TEXT("Coin")));
 	}
 
-	Hp = FMath::RandRange(0, 10);
+	Health = FMath::RandRange(1, 10);
 	Sin = FMath::RandRange(0, 10);
 	Str = FMath::RandRange(0, 10);
 
@@ -140,7 +152,7 @@ void ASoulCard::RandomizeStats()
 	PassiveSkill->Initialize(this, CombatManager);
 	PrimarySkill->Initialize(this, CombatManager);
 
-	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Hp, Sin, Str);
+	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
 
 	StatsText->SetText(FText::FromString(Stats));
 }
@@ -216,3 +228,29 @@ bool ASoulCard::HasCoin()
 {
 	return bHasCoin;
 }
+
+void ASoulCard::HealthReduce(int32 Amount)
+{
+	Health = Health - Amount;
+	UE_LOG(LogTemp, Warning, TEXT("Soul Takes %i Damage"), Amount);
+}
+
+void ASoulCard::HealthAdd(int32 Amount)
+{
+	Health = Health + Amount;
+}
+
+void ASoulCard::Attack()
+{
+	AttackBlueprint();
+	TArray<ACharacterBase*> Enemies = CombatManager->GetAllEnemies();
+	if (Enemies.Num() > 0)
+	{
+		ACharacterBase* Enemy = Enemies[FMath::RandRange(0, Enemies.Num() - 1)];
+		if (IsValid(Enemy))
+		{
+			Enemy->HealthReduce(Str);
+		}
+	}
+}
+
