@@ -11,7 +11,6 @@ class ACharacterBase;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSkillUsedDelegate, FSoulData, SoulData);
 
-
 UENUM()
 enum class ETurnEnum :uint8
 {
@@ -52,7 +51,6 @@ private:
 	UPROPERTY()
 		ETurnEnum CurrentTurn;
 
-
 	//TODO temp remove
 	bool testrun = true;
 
@@ -63,6 +61,8 @@ public:
 	void RegisterSoulListener(ACharacterBase* Character);
 
 	void RegisterEnemyListener(ACharacterBase* Character);
+
+	void UnRegisterFromListener(ACharacterBase* Character);
 
 	UFUNCTION()
 		void AddSkillActionToQueue(FSoulData ActionData);

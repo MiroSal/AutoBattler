@@ -29,10 +29,8 @@ void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
 	}
 }
 
-// Sets default values
 ASoulCard::ASoulCard()
 {
-	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	StatsText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("StatsText"));
@@ -40,7 +38,6 @@ ASoulCard::ASoulCard()
 
 	SoulStatusText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("SoulStatusText"));
 	SoulStatusText->SetupAttachment(RootComponent);
-
 }
 
 void ASoulCard::Initialize(ABaseSlot* Slot, bool bCanClick)
@@ -52,6 +49,7 @@ void ASoulCard::Initialize(ABaseSlot* Slot, bool bCanClick)
 
 	SoulTrialManager->FerryIsFullDelegate.AddDynamic(this, &ASoulCard::CanClick);
 	RandomizeStats();
+
 	//TODO Remove when not needed, debug line for adding Souls to combatmanager listenerArray when making combat level
 	CombatManager->RegisterSoulListener(this);
 	CombatManager->SkillUsedDelegate.AddDynamic(this, &ASoulCard::ActionSkillUsed);
@@ -76,6 +74,10 @@ void ASoulCard::ActivatePrimarySkill()
 			UE_LOG(LogTemp, Warning, TEXT("Activating Primary"));
 			PrimarySkill->ActivateSkill();
 		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Invalid primary skill"));
+		}
 	}
 	else
 	{
@@ -91,6 +93,10 @@ void ASoulCard::ActivatePassiveSkill()
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Activating Passive"));
 			PassiveSkill->ActivateSkill();
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Invalid passive skill"));
 		}
 	}
 }
@@ -253,4 +259,3 @@ void ASoulCard::Attack()
 		}
 	}
 }
-

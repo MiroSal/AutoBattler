@@ -6,10 +6,10 @@
 #include "GameFramework/Character.h"
 #include "ActivationInterface.h"
 #include "SkillTypeEnums.h"
+#include "CombatManager.h"
 #include "CharacterBase.generated.h"
 
 class ABaseSlot;
-class UCombatManager;
 class ALautturiGameModeBase;
 class USoulTrialManager;
 class USceneComponent;
@@ -21,7 +21,6 @@ class LAUTTURI_API ACharacterBase : public AActor, public IActivationInterface
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
 	ACharacterBase();
 
 	virtual bool Clicked(AActor* ActorToDeactivate) override;
@@ -29,7 +28,6 @@ public:
 	virtual bool Deactivate() override;
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	UPROPERTY()
@@ -50,9 +48,13 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Character Stats")
 		int32 Health;
 
+	UPROPERTY(EditAnywhere, Category = "Character Stats")
+		ETurnEnum CharacterType = ETurnEnum::None;
+
+	UPROPERTY()
+		ABaseSlot* CurrentSlot;
 
 public:
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void ActivatePrimarySkill();
@@ -60,6 +62,8 @@ public:
 	virtual void ActivatePassiveSkill();
 
 	virtual ABaseSlot* GetSlot();
+
+	ETurnEnum GetCharacterType();
 
 	virtual void Initialize(ABaseSlot* Slot, bool bCanClick);
 
@@ -75,4 +79,6 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void AttackBlueprint();
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnDeath();
 };

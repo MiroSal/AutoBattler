@@ -15,7 +15,6 @@ class UTextRenderComponent;
 class USoulTrialManager;
 class ALautturiGameModeBase;
 class USkillBase;
-class UCombatManager;
 
 UCLASS()
 class LAUTTURI_API ASoulCard : public ACharacterBase
@@ -43,9 +42,6 @@ private:
 		int32 Str;
 
 	UPROPERTY()
-		ABaseSlot* CurrentSlot;
-
-	UPROPERTY()
 		ESkillType PassiveSkillType;
 
 	void RandomizeStats();
@@ -59,31 +55,30 @@ private:
 	USkillBase* PassiveSkill;
 
 	UPROPERTY(EditAnywhere)
-		TArray<TSubclassOf<USkillBase>> AllPossibleSkills;
+	TArray<TSubclassOf<USkillBase>> AllPossibleSkills;
 
 	UPROPERTY(EditAnywhere)
-		bool bTestAction=false;
+	bool bTestAction=false;
 
 	UFUNCTION()
 	void ActionSkillUsed(FSoulData ActionInfo);
 
 public:
-	// Sets default values for this character's properties
 	ASoulCard();
 
 	//temp
 	UPROPERTY(EditAnywhere)
-		UMaterial* ActivatedColor;
+	UMaterial* ActivatedColor;
 
 	//temp
 	UPROPERTY(EditAnywhere)
-		UMaterial* DeactivatedColor;	//temp
+	UMaterial* DeactivatedColor;	//temp
 
 	UPROPERTY(EditAnywhere)
-		UMaterial* AliveColor;	//temp
+	UMaterial* AliveColor;	//temp
 
 	UPROPERTY(EditAnywhere)
-		UMaterial* NoCoinColor;//temp
+	UMaterial* NoCoinColor;//temp
 
 	virtual bool Clicked(AActor* ActorToDeactivate) override;
 	virtual bool DoubleClicked(AActor* ActorToDeactivate) override;
@@ -93,21 +88,18 @@ public:
 
 	virtual void Initialize(ABaseSlot* Slot, bool bCanClick)override;
 
-	int32 GetSin();
-	int32 GetStr();
-
 	ABaseSlot* GetCurrentSlot();
 
 	UFUNCTION()
 	void CanClick(bool bCanClick);
 
 	UFUNCTION()
-		virtual void ActivatePrimarySkill() override;
+	virtual void ActivatePrimarySkill() override;
 
 	UFUNCTION()
-		virtual void ActivatePassiveSkill() override;
+	virtual void ActivatePassiveSkill() override;
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	virtual ABaseSlot* GetSlot() override;
 
 	virtual ESkillType GetPrimarySkillType() override;
@@ -115,13 +107,13 @@ public:
 	virtual ESkillType GetPassiveSkillType() override;
 
 	UFUNCTION(BlueprintCallable)
-		virtual void HealthReduce(int32 Amount) override;
+	virtual void HealthReduce(int32 Amount) override;
 
 	UFUNCTION(BlueprintCallable)
-		virtual void HealthAdd(int32 Amount) override;
+	virtual void HealthAdd(int32 Amount) override;
 
 	UFUNCTION()
-		virtual void Attack() override;
+	virtual void Attack() override;
 
 protected:
 	// Called when the game starts or when spawned
@@ -130,5 +122,4 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 };

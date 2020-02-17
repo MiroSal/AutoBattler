@@ -4,12 +4,10 @@
 #include "CharacterBase.h"
 #include "BaseSlot.h"
 #include "SoulTrialManager.h"
-#include "CombatManager.h"
 #include "LautturiGameModeBase.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
 
-// Sets default values
 ACharacterBase::ACharacterBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -40,13 +38,11 @@ bool ACharacterBase::Deactivate()
 	return true;
 }
 
-// Called when the game starts or when spawned
 void ACharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-// Called every frame
 void ACharacterBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -69,6 +65,11 @@ ABaseSlot * ACharacterBase::GetSlot()
 	return nullptr;
 }
 
+ETurnEnum ACharacterBase::GetCharacterType()
+{
+	return CharacterType;
+}
+
 void ACharacterBase::Initialize(ABaseSlot * Slot, bool bCanClick)
 {
 	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
@@ -83,7 +84,6 @@ void ACharacterBase::Initialize(ABaseSlot * Slot, bool bCanClick)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("CombatManager is not valid!!"));
 	}
-
 }
 
 ESkillType ACharacterBase::GetPrimarySkillType()
@@ -114,5 +114,3 @@ void ACharacterBase::Attack()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::Attack() function!"));
 }
-
-
