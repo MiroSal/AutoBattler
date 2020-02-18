@@ -35,12 +35,6 @@ private:
 	UPROPERTY(EditAnywhere)
 		bool bIsAlive;
 
-	UPROPERTY(EditAnywhere)
-		int32 Sin;
-
-	UPROPERTY(EditAnywhere)
-		int32 Str;
-
 	UPROPERTY()
 		ESkillType PassiveSkillType;
 
@@ -114,6 +108,9 @@ public:
 
 	UFUNCTION()
 	virtual void Attack() override;
+
+	virtual void UpdateDataText() override;
+
 
 protected:
 	// Called when the game starts or when spawned

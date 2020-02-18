@@ -14,17 +14,17 @@ void UCombatManager::Initialize()
 void UCombatManager::RegisterSoulListener(ACharacterBase* Character)
 {
 	CombatCharacterListeners.Add(Character);
-
-	if (CombatCharacterListeners.Num() == 5)
-	{
-	}
 }
 
 void UCombatManager::RegisterEnemyListener(ACharacterBase * Character)
 {
 	CombatEnemyListeners.Add(Character);
-
-	PopNextSkillActionFromQueue();
+	UE_LOG(LogTemp, Warning, TEXT("EnemyRegister"));
+	if (testrun)
+	{
+		PopNextSkillActionFromQueue();
+		testrun = false;
+	}
 }
 
 void UCombatManager::UnRegisterFromListener(ACharacterBase * Character)
@@ -75,7 +75,7 @@ void UCombatManager::PopNextSkillActionFromQueue()
 		switch (CurrentTurn)
 		{
 		case ETurnEnum::Player:
-			 Character = CombatCharacterListeners[CurrentSoulIndexInAction];	
+			Character = CombatCharacterListeners[CurrentSoulIndexInAction];
 			break;
 		case ETurnEnum::Enemy:
 			Character = CombatEnemyListeners[CurrentEnemyIndexInAction];
@@ -97,9 +97,9 @@ void UCombatManager::PopNextSkillActionFromQueue()
 		}
 
 		UE_LOG(LogTemp, Warning, TEXT("RoundEnded"));
-		ChangeTurn();
 	}
 }
+
 TArray<ACharacterBase*> UCombatManager::GetAllEnemies()
 {
 	return CombatEnemyListeners;
@@ -112,7 +112,7 @@ TArray<ACharacterBase*> UCombatManager::GetAllSouls()
 
 void UCombatManager::ChangeTurn()
 {
-	ACharacterBase* Character= nullptr;
+	ACharacterBase* Character = nullptr;
 
 	switch (CurrentTurn)
 	{
@@ -125,20 +125,15 @@ void UCombatManager::ChangeTurn()
 		{
 			CurrentEnemyIndexInAction = 0;
 			Character = Cast<ACharacterBase>(CombatEnemyListeners[CurrentEnemyIndexInAction]);
-			if (Character)
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Character casted %s "), *Character->GetFName().ToString());
-
-			}
-			else
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Cast failed on Player turn"));
-			}
 		}
-		else if (CombatEnemyListeners.Num()<=0)
+		else if (CombatEnemyListeners.Num() <= 0)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("No Enemy Listeners"));
 			Character = nullptr;
+		}
+		else 
+		{
+			Character = Cast<ACharacterBase>(CombatEnemyListeners[CurrentEnemyIndexInAction]);
 		}
 		break;
 
@@ -151,16 +146,16 @@ void UCombatManager::ChangeTurn()
 		{
 			CurrentSoulIndexInAction = 0;
 			Character = Cast<ACharacterBase>(CombatCharacterListeners[CurrentSoulIndexInAction]);
-	
+
 		}
-		else if (CombatCharacterListeners.Num() > 0)
+		else if (CombatCharacterListeners.Num() <= 0)
 		{
-			Character = Cast<ACharacterBase>(CombatCharacterListeners[CurrentSoulIndexInAction]);
 			UE_LOG(LogTemp, Warning, TEXT("No Soul Listeners"));
+			Character = nullptr;
 		}
 		else
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Cast failed on Enemy turn"));
+			Character = Cast<ACharacterBase>(CombatCharacterListeners[CurrentSoulIndexInAction]);
 		}
 		break;
 

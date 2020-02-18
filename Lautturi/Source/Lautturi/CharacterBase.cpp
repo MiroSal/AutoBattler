@@ -114,3 +114,45 @@ void ACharacterBase::Attack()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::Attack() function!"));
 }
+
+void ACharacterBase::AttackEnd()
+{
+	CombatManager->ChangeTurn();
+}
+
+void ACharacterBase::UpdateDataText()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::UpdateDataText() function!"));
+}
+
+void ACharacterBase::StrAdd(int32 Amount)
+{
+	if (Str>=0)
+	{
+		Str = Str + Amount;
+	}
+}
+
+void ACharacterBase::StrReduce(int32 Amount)
+{
+	if (Str >= 0)
+	{
+		Str = Str - Amount;
+	}
+}
+
+void ACharacterBase::SinReduce(int32 Amount)
+{
+	if (Sin >= 0)
+	{
+		Sin = Sin - Amount;
+	}
+}
+
+void ACharacterBase::SinAdd(int32 Amount)
+{
+	if (Sin >= 0)
+	{
+		Sin = Sin + Amount;
+	}
+}

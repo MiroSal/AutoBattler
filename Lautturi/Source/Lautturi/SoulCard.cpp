@@ -71,7 +71,7 @@ void ASoulCard::ActivatePrimarySkill()
 	{
 		if (IsValid(PrimarySkill))
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Activating Primary"));
+			UE_LOG(LogTemp, Warning, TEXT("Activating Primary %s"), * PrimarySkill->GetFName().ToString());
 			PrimarySkill->ActivateSkill();
 		}
 		else
@@ -81,7 +81,7 @@ void ASoulCard::ActivatePrimarySkill()
 	}
 	else
 	{
-		CombatManager->ChangeTurn();
+		PrimarySkill->DeactivateSkill();
 	}
 }
 
@@ -91,13 +91,17 @@ void ASoulCard::ActivatePassiveSkill()
 	{
 		if (IsValid(PassiveSkill))
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Activating Passive"));
+			UE_LOG(LogTemp, Warning, TEXT("Activating Passive%s"), *PassiveSkill->GetFName().ToString());
 			PassiveSkill->ActivateSkill();
 		}
 		else
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Invalid passive skill"));
 		}
+	}
+	else
+	{
+		PassiveSkill->DeactivateSkill();
 	}
 }
 
@@ -238,16 +242,23 @@ bool ASoulCard::HasCoin()
 void ASoulCard::HealthReduce(int32 Amount)
 {
 	Health = Health - Amount;
-	UE_LOG(LogTemp, Warning, TEXT("Soul Takes %i Damage"), Amount);
+	DamageTaken(Amount);
+	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
+	StatsText->SetText(FText::FromString(Stats));
 }
 
 void ASoulCard::HealthAdd(int32 Amount)
 {
 	Health = Health + Amount;
+	HealthAdded(Amount);
+	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
+	StatsText->SetText(FText::FromString(Stats));
 }
 
 void ASoulCard::Attack()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Soul Attack"));
+
 	AttackBlueprint();
 	TArray<ACharacterBase*> Enemies = CombatManager->GetAllEnemies();
 	if (Enemies.Num() > 0)
@@ -258,4 +269,11 @@ void ASoulCard::Attack()
 			Enemy->HealthReduce(Str);
 		}
 	}
+}
+
+void ASoulCard::UpdateDataText()
+{
+	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
+	StatsText->SetText(FText::FromString(Stats));
+
 }

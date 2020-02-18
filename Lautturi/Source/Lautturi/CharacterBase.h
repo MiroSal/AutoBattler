@@ -30,10 +30,10 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		USceneComponent* ObjRoot;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		UStaticMeshComponent* SoulMesh;
 
 	UPROPERTY()
@@ -47,6 +47,12 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category="Character Stats")
 		int32 Health;
+
+	UPROPERTY(EditAnywhere, Category = "Character Stats")
+		int32 Sin;
+
+	UPROPERTY(EditAnywhere, Category = "Character Stats")
+		int32 Str;
 
 	UPROPERTY(EditAnywhere, Category = "Character Stats")
 		ETurnEnum CharacterType = ETurnEnum::None;
@@ -79,6 +85,30 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void AttackBlueprint();
 
+	UFUNCTION(BlueprintCallable)
+	void AttackEnd();
+
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnDeath();
+	void OnDeath();	
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void DamageTaken(int32 Amount);
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void HealthAdded(int32 Amount);
+
+	UFUNCTION(BlueprintCallable)
+	virtual void UpdateDataText();
+
+	UFUNCTION(BlueprintCallable)
+		void StrAdd(int32 Amount);
+
+	UFUNCTION(BlueprintCallable)
+		void StrReduce(int32 Amount);
+
+	UFUNCTION(BlueprintCallable)
+		void SinReduce(int32 Amount);
+
+	UFUNCTION(BlueprintCallable)
+		void SinAdd(int32 Amount);
 };
