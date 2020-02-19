@@ -100,14 +100,16 @@ ESkillType ACharacterBase::GetPassiveSkillType()
 	return ESkillType();
 }
 
-void ACharacterBase::HealthReduce(int32 Amount)
+bool ACharacterBase::HealthReduce(int32 Amount)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::HealthReduce(int32 Amount) function!"));
+	return false;
 }
 
-void ACharacterBase::HealthAdd(int32 Amount)
+bool ACharacterBase::HealthAdd(int32 Amount)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override AACharacterBase::HealthAdd(int32 Amount) function!"));
+	return false;
 }
 
 void ACharacterBase::Attack()
@@ -125,34 +127,48 @@ void ACharacterBase::UpdateDataText()
 	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::UpdateDataText() function!"));
 }
 
-void ACharacterBase::StrAdd(int32 Amount)
+bool ACharacterBase::StrAdd(int32 Amount)
 {
-	if (Str>=0)
+	if (Str >= 0 && Str < 10 && Health > 0)
 	{
-		Str = Str + Amount;
+
+		Str = FMath::Clamp(Str + Amount, 0, 10);;
+		return true;
 	}
+	return false;
 }
 
-void ACharacterBase::StrReduce(int32 Amount)
+bool ACharacterBase::StrReduce(int32 Amount)
 {
-	if (Str >= 0)
+	if (Str >= 0 && Str < 10 && Health > 0)
 	{
-		Str = Str - Amount;
+		Str = FMath::Clamp(Str + Amount, 0, 10);
+		return true;
 	}
+	return false;
 }
 
-void ACharacterBase::SinReduce(int32 Amount)
+bool ACharacterBase::SinReduce(int32 Amount)
 {
-	if (Sin >= 0)
+	if (Sin >= 0 && Sin < 10 && Health > 0)
 	{
-		Sin = Sin - Amount;
+		Sin = FMath::Clamp(Sin + Amount, 0, 10);
+		return true;
 	}
+	return false;
 }
 
-void ACharacterBase::SinAdd(int32 Amount)
+bool ACharacterBase::SinAdd(int32 Amount)
 {
-	if (Sin >= 0)
+	if (Sin >= 0 && Sin < 10 && Health > 0)
 	{
-		Sin = Sin + Amount;
+		Sin = FMath::Clamp(Sin + Amount, 0, 10);
+		return true;
 	}
+	return false;
+}
+
+int32 ACharacterBase::GetHealth()
+{
+	return Health;
 }

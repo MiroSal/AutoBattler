@@ -66,9 +66,9 @@ public:
 
 	UFUNCTION()
 		void AddSkillActionToQueue(FSoulData ActionData);
-	
+
 	UFUNCTION()
-	void ChangeTurn();
+		void ChangeTurn();
 
 	UFUNCTION()
 		void PopNextSkillActionFromQueue();
@@ -79,5 +79,13 @@ public:
 	TArray<ACharacterBase*> GetAllEnemies();
 
 	TArray<ACharacterBase*> GetAllSouls();
+
+	//TODO remove and make properly, this is hack for enemy count that is shown from enemy_BP
+	UPROPERTY()
+		int32 TotalEnemyCount = 5;
+
+	//TODO remove and make properly, this is hack for enemy count that is shown from enemy_BP
+	UPROPERTY()
+		int32 CurrentEnemyCount = 1;
 
 };

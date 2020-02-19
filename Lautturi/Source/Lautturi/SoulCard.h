@@ -101,10 +101,10 @@ public:
 	virtual ESkillType GetPassiveSkillType() override;
 
 	UFUNCTION(BlueprintCallable)
-	virtual void HealthReduce(int32 Amount) override;
+	virtual bool HealthReduce(int32 Amount) override;
 
 	UFUNCTION(BlueprintCallable)
-	virtual void HealthAdd(int32 Amount) override;
+	virtual bool HealthAdd(int32 Amount) override;
 
 	UFUNCTION()
 	virtual void Attack() override;

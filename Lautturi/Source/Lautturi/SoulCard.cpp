@@ -71,7 +71,7 @@ void ASoulCard::ActivatePrimarySkill()
 	{
 		if (IsValid(PrimarySkill))
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Activating Primary %s"), * PrimarySkill->GetFName().ToString());
+			UE_LOG(LogTemp, Warning, TEXT("Activating Primary %s"), *PrimarySkill->GetFName().ToString());
 			PrimarySkill->ActivateSkill();
 		}
 		else
@@ -131,6 +131,7 @@ void ASoulCard::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
+
 void ASoulCard::RandomizeStats()
 {
 	bHasCoin = FMath::RandRange(0, 1);
@@ -239,26 +240,39 @@ bool ASoulCard::HasCoin()
 	return bHasCoin;
 }
 
-void ASoulCard::HealthReduce(int32 Amount)
+bool ASoulCard::HealthReduce(int32 Amount)
 {
-	Health = Health - Amount;
-	DamageTaken(Amount);
-	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
-	StatsText->SetText(FText::FromString(Stats));
+	if (Health > 0)
+	{
+		Health = FMath::Clamp(Health - Amount, 0, 10);
+		DamageTaken(Amount);
+		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
+		StatsText->SetText(FText::FromString(Stats));
+		if (Health <= 0)
+		{
+			SoulMesh->SetMaterial(0, ActivatedColor);
+		}
+		return true;
+	}
+
+	return false;
 }
 
-void ASoulCard::HealthAdd(int32 Amount)
+bool ASoulCard::HealthAdd(int32 Amount)
 {
-	Health = Health + Amount;
-	HealthAdded(Amount);
-	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
-	StatsText->SetText(FText::FromString(Stats));
+	if (Health > 0 && Health < 10)
+	{
+		Health = FMath::Clamp(Health - Amount, 0, 10);
+		HealthAdded(Amount);
+		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
+		StatsText->SetText(FText::FromString(Stats));
+		return true;
+	}
+	return false;
 }
 
 void ASoulCard::Attack()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Soul Attack"));
-
 	AttackBlueprint();
 	TArray<ACharacterBase*> Enemies = CombatManager->GetAllEnemies();
 	if (Enemies.Num() > 0)

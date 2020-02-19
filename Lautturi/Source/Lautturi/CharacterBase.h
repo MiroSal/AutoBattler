@@ -76,9 +76,9 @@ public:
 	virtual ESkillType GetPrimarySkillType();
 	virtual ESkillType GetPassiveSkillType();
 
-	virtual void HealthReduce(int32 Amount);
+	virtual bool HealthReduce(int32 Amount);
 
-	virtual void HealthAdd(int32 Amount);
+	virtual bool HealthAdd(int32 Amount);
 
 	virtual void Attack();
 
@@ -101,14 +101,17 @@ public:
 	virtual void UpdateDataText();
 
 	UFUNCTION(BlueprintCallable)
-		void StrAdd(int32 Amount);
+		bool StrAdd(int32 Amount);
 
 	UFUNCTION(BlueprintCallable)
-		void StrReduce(int32 Amount);
+		bool StrReduce(int32 Amount);
 
 	UFUNCTION(BlueprintCallable)
-		void SinReduce(int32 Amount);
+		bool SinReduce(int32 Amount);
 
 	UFUNCTION(BlueprintCallable)
-		void SinAdd(int32 Amount);
+		bool SinAdd(int32 Amount);
+
+	UFUNCTION(BlueprintCallable)
+		int32 GetHealth();
 };

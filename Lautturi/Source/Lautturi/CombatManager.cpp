@@ -88,7 +88,14 @@ void UCombatManager::PopNextSkillActionFromQueue()
 
 		if (IsValid(Character))
 		{
-			Character->Attack();
+			if (Character->GetHealth() > 0)
+			{
+				Character->Attack();
+			}
+			else
+			{
+				ChangeTurn();
+			}
 			UE_LOG(LogTemp, Warning, TEXT("Character: %s attacks"), *Character->GetFName().ToString());
 		}
 		else
@@ -131,7 +138,7 @@ void UCombatManager::ChangeTurn()
 			UE_LOG(LogTemp, Warning, TEXT("No Enemy Listeners"));
 			Character = nullptr;
 		}
-		else 
+		else
 		{
 			Character = Cast<ACharacterBase>(CombatEnemyListeners[CurrentEnemyIndexInAction]);
 		}
