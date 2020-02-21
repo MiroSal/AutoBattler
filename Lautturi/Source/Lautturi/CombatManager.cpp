@@ -20,9 +20,13 @@ void UCombatManager::RegisterEnemyListener(ACharacterBase * Character)
 {
 	CombatEnemyListeners.Add(Character);
 	UE_LOG(LogTemp, Warning, TEXT("EnemyRegister"));
+
+	//TODO remove,for testing
 	if (testrun)
 	{
-		PopNextSkillActionFromQueue();
+		CurrentSoulInAction = Character;
+		Character->StartTurn();
+		//PopNextSkillActionFromQueue();
 		testrun = false;
 	}
 }
@@ -132,6 +136,7 @@ void UCombatManager::ChangeTurn()
 		{
 			CurrentEnemyIndexInAction = 0;
 			Character = Cast<ACharacterBase>(CombatEnemyListeners[CurrentEnemyIndexInAction]);
+
 		}
 		else if (CombatEnemyListeners.Num() <= 0)
 		{
@@ -175,7 +180,15 @@ void UCombatManager::ChangeTurn()
 
 	if (IsValid(Character))
 	{
+
+		if (IsValid(CurrentSoulInAction))
+		{
+			CurrentSoulInAction->EndTurn();
+		}
+
+		CurrentSoulInAction = Character;
 		SkillUsedDelegate.Broadcast(FSoulData(Character, Character->GetPrimarySkillType()));
+		Character->StartTurn();
 		Character->ActivatePrimarySkill();
 	}
 	else

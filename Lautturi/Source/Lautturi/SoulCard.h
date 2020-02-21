@@ -24,9 +24,6 @@ class LAUTTURI_API ASoulCard : public ACharacterBase
 private:
 
 	UPROPERTY(VisibleAnywhere)
-		UTextRenderComponent* StatsText;
-
-	UPROPERTY(VisibleAnywhere)
 		UTextRenderComponent* SoulStatusText;
 	
 	UPROPERTY(EditAnywhere)
@@ -110,6 +107,15 @@ public:
 	virtual void Attack() override;
 
 	virtual void UpdateDataText() override;
+
+
+	UFUNCTION()
+		void CombatInitialize(ACharacterBase* Character);
+
+	UFUNCTION()
+		virtual USkillBase* GetPassiveSkill() override;
+	UFUNCTION()
+		virtual USkillBase* GetPrimarySkill() override;
 
 
 protected:

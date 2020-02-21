@@ -2,30 +2,34 @@
 
 
 #include "LautturiGameModeBase.h"
+#include "Engine/World.h"
 #include "UObject/UObjectGlobals.h"
 
 
 void ALautturiGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
+	UE_LOG(LogTemp, Error, TEXT("GHamemode"));
+	TArray<AActor*> Actors;
+	GetSeamlessTravelActorList(true, Actors);
+	Actors.Add(this);
+
 }
 
 void ALautturiGameModeBase::InitGame(const FString & MapName, const FString & Options, FString & ErrorMessage)
 {
 	Super::InitGame(MapName, Options, ErrorMessage);
 
-	SoulTrialManager = NewObject<USoulTrialManager>();
-	SoulTrialManager->Initialize();
-	CombatManager = NewObject<UCombatManager>();
-	CombatManager->Initialize();
-
+	Gameinstance = Cast<ULautturiGameInstance>(GetWorld()->GetGameInstance());
 }
 
 USoulTrialManager * ALautturiGameModeBase::GetSoulTrialManager()
 {
-	if (IsValid(CombatManager))
+
+
+	if (Gameinstance)
 	{
-		return SoulTrialManager;
+		return Gameinstance->GetSoulTrialManager();
 	}
 	else
 	{
@@ -36,9 +40,9 @@ USoulTrialManager * ALautturiGameModeBase::GetSoulTrialManager()
 
 UCombatManager * ALautturiGameModeBase::GetCombatManager()
 {
-	if (IsValid(CombatManager))
+	if (Gameinstance)
 	{
-		return CombatManager;
+		return Gameinstance->GetCombatManager();
 	}
 	else
 	{

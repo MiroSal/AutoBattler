@@ -7,6 +7,7 @@
 #include "LautturiGameModeBase.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
+#include "SkillBase.h"
 
 ACharacterBase::ACharacterBase()
 {
@@ -17,6 +18,9 @@ ACharacterBase::ACharacterBase()
 
 	SoulMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SoulMesh"));
 	SoulMesh->SetupAttachment(RootComponent);
+
+	StatsText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("StatsText"));
+	StatsText->SetupAttachment(RootComponent);
 }
 
 bool ACharacterBase::Clicked(AActor* ActorToDeactivate)
@@ -171,4 +175,29 @@ bool ACharacterBase::SinAdd(int32 Amount)
 int32 ACharacterBase::GetHealth()
 {
 	return Health;
+}
+
+int32 ACharacterBase::GetSin()
+{
+	return Sin;
+}
+
+int32 ACharacterBase::GetStr()
+{
+	return Str;
+}
+
+USkillBase * ACharacterBase::GetPassiveSkill()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Override GetPassiveSkill() function!"));
+
+
+	return nullptr;
+}
+
+USkillBase * ACharacterBase::GetPrimarySkill()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Override GetPrimarySkill() function!"));
+
+	return nullptr;
 }

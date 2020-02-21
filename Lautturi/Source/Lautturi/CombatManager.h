@@ -46,15 +46,15 @@ private:
 	UPROPERTY()
 		TArray<FSoulData> ActionQueue;
 
-	FSoulData* CurrentSoulInAction;
+	ACharacterBase* CurrentSoulInAction;
 
 	UPROPERTY()
 		ETurnEnum CurrentTurn;
 
-	//TODO temp remove
-	bool testrun = true;
 
 public:
+	//TODO temp remove
+	bool testrun = true;
 
 	void Initialize();
 
@@ -70,7 +70,7 @@ public:
 	UFUNCTION()
 		void ChangeTurn();
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 		void PopNextSkillActionFromQueue();
 
 	UPROPERTY()

@@ -6,6 +6,7 @@ D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameMod
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+e:\lautturi\lautturi\source\lautturi\LautturiGameInstance.h
 e:\lautturi\lautturi\source\lautturi\SoulTrialManager.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
@@ -19,6 +20,8 @@ D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Chara
 e:\lautturi\lautturi\source\lautturi\CharacterBase.h
 e:\lautturi\lautturi\source\lautturi\ActivationInterface.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\ActivationInterface.generated.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h
+D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TextRenderComponent.generated.h
 e:\lautturi\lautturi\source\lautturi\SkillTypeEnums.h
 e:\lautturi\lautturi\source\lautturi\CombatManager.h
 e:\lautturi\lautturi\source\lautturi\SoulDataStruct.h
@@ -27,4 +30,5 @@ e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\CombatManag
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\CharacterBase.generated.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\SoulCard.generated.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\SoulTrialManager.generated.h
+e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\LautturiGameInstance.generated.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\LautturiGameModeBase.generated.h

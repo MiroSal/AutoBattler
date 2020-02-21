@@ -64,7 +64,7 @@ void AFerry::BeginPlay()
 
 void AFerry::AddSoulToFerry(ASoulCard * Soul)
 {
-	for (int32 i = 0; i < SoulSpots.Num(); i++)
+	/*for (int32 i = 0; i < SoulSpots.Num(); i++)
 	{
 		if (SoulSpots[i].Soul==nullptr)
 		{
@@ -76,7 +76,7 @@ void AFerry::AddSoulToFerry(ASoulCard * Soul)
 
 			return;
 		}
-	}
+	}*/
 }
 
 bool AFerry::ActorCanBeDropped(AActor * ActorToDrop)
@@ -109,6 +109,7 @@ void AFerry::ActorDrop(AActor * ActorToDrop)
 				Soul->CanClick(false);
 				Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());
 				SoulSpots[i].Soul = Soul;
+				SoulTrialManager->AddSoulToJourney(Soul);
 				ABaseSlot* Slot = Soul->GetCurrentSlot();
 				Slot->RemoveCharacterFromSlot(false);
 

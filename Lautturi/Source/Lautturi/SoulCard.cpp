@@ -2,7 +2,6 @@
 
 
 #include "SoulCard.h"
-#include "Components/TextRenderComponent.h"
 #include "SoulTrialManager.h"
 #include "SkillBase.h"
 #include "CombatManager.h"
@@ -20,7 +19,7 @@ void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
 	{
 		if (ActionInfo.SkillType == PassiveSkill->GetSkillType())
 		{
-			if (ActionInfo.CharacterBase != this)
+			if (ActionInfo.CharacterBase != this && Cast<ASoulCard>(ActionInfo.CharacterBase))
 			{
 				UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
 				CombatManager->AddSkillActionToQueue(FSoulData(this, PassiveSkill->GetSkillType()));
@@ -32,9 +31,6 @@ void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
 ASoulCard::ASoulCard()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
-	StatsText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("StatsText"));
-	StatsText->SetupAttachment(RootComponent);
 
 	SoulStatusText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("SoulStatusText"));
 	SoulStatusText->SetupAttachment(RootComponent);
@@ -163,7 +159,7 @@ void ASoulCard::RandomizeStats()
 	PassiveSkill->Initialize(this, CombatManager);
 	PrimarySkill->Initialize(this, CombatManager);
 
-	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
+	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), Health, Sin, Str,*PrimarySkill->GetSkillInfo(),*PassiveSkill->GetSkillInfo());
 
 	StatsText->SetText(FText::FromString(Stats));
 }
@@ -246,7 +242,7 @@ bool ASoulCard::HealthReduce(int32 Amount)
 	{
 		Health = FMath::Clamp(Health - Amount, 0, 10);
 		DamageTaken(Amount);
-		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
+		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), Health, Sin, Str, *PrimarySkill->GetSkillInfo(), *PassiveSkill->GetSkillInfo());
 		StatsText->SetText(FText::FromString(Stats));
 		if (Health <= 0)
 		{
@@ -264,7 +260,7 @@ bool ASoulCard::HealthAdd(int32 Amount)
 	{
 		Health = FMath::Clamp(Health - Amount, 0, 10);
 		HealthAdded(Amount);
-		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
+		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), Health, Sin, Str, *PrimarySkill->GetSkillInfo(), *PassiveSkill->GetSkillInfo());
 		StatsText->SetText(FText::FromString(Stats));
 		return true;
 	}
@@ -287,7 +283,30 @@ void ASoulCard::Attack()
 
 void ASoulCard::UpdateDataText()
 {
-	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), Health, Sin, Str);
+	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), Health, Sin, Str, *PrimarySkill->GetSkillInfo(), *PassiveSkill->GetSkillInfo());
+	StatsText->SetText(FText::FromString(Stats));
 	StatsText->SetText(FText::FromString(Stats));
 
+}
+
+void ASoulCard::CombatInitialize(ACharacterBase* Character)
+{
+	Health = Character->GetHealth();
+	Sin = Character->GetSin();
+	Str = Character->GetStr();
+	PassiveSkill = Character->GetPassiveSkill();
+	PrimarySkill = Character->GetPrimarySkill();
+	bCanBeClicked = false;
+
+	UpdateDataText();
+}
+
+USkillBase * ASoulCard::GetPassiveSkill()
+{
+	return PassiveSkill;
+}
+
+USkillBase * ASoulCard::GetPrimarySkill()
+{
+	return PrimarySkill;
 }

@@ -4,8 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "SoulTrialManager.h"
-#include "CombatManager.h"
+#include "LautturiGameInstance.h"
 #include "LautturiGameModeBase.generated.h"
 
 /**
@@ -18,20 +17,17 @@ class LAUTTURI_API ALautturiGameModeBase : public AGameModeBase
 
 private:
 
-	UPROPERTY()
-	USoulTrialManager* SoulTrialManager;
-
-	UPROPERTY()
-		UCombatManager* CombatManager;
+	ULautturiGameInstance* Gameinstance;
 
 public:
 	virtual void BeginPlay() override;
 
 	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
 
-
+	UFUNCTION(BlueprintCallable)
 	USoulTrialManager* GetSoulTrialManager();
 
-	UCombatManager* GetCombatManager();
+	UFUNCTION(BlueprintCallable)
+		UCombatManager* GetCombatManager();
 	
 };

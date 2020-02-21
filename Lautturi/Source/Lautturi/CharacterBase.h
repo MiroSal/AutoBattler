@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "ActivationInterface.h"
+#include "Components/TextRenderComponent.h"
 #include "SkillTypeEnums.h"
 #include "CombatManager.h"
 #include "CharacterBase.generated.h"
@@ -14,6 +15,7 @@ class ALautturiGameModeBase;
 class USoulTrialManager;
 class USceneComponent;
 class UStaticMeshComponent;
+class USkillBase;
 
 UCLASS()
 class LAUTTURI_API ACharacterBase : public AActor, public IActivationInterface
@@ -35,6 +37,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		UStaticMeshComponent* SoulMesh;
+
+	UPROPERTY(VisibleAnywhere)
+		UTextRenderComponent* StatsText;
 
 	UPROPERTY()
 		USoulTrialManager* SoulTrialManager;
@@ -114,4 +119,19 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 		int32 GetHealth();
+	UFUNCTION(BlueprintCallable)
+		int32 GetSin();
+	UFUNCTION(BlueprintCallable)
+		int32 GetStr();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void StartTurn();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void EndTurn();
+
+		virtual USkillBase* GetPassiveSkill();	
+
+		virtual USkillBase* GetPrimarySkill();
+
 };
