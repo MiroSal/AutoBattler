@@ -13,7 +13,7 @@
 // Sets default values
 AFerry::AFerry()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 
@@ -45,7 +45,15 @@ void AFerry::BeginPlay()
 	Super::BeginPlay();
 
 	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
-	SoulTrialManager = GameMode->GetSoulTrialManager();
+	if (IsValid(GameMode))
+	{
+		SoulTrialManager = GameMode->GetSoulTrialManager();
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("GameMode is not valid!!"));
+	}
+
 	if (IsValid(SoulTrialManager))
 	{
 		SoulTrialManager->SoulAddedToJourneyDelegate.AddDynamic(this, &AFerry::AddSoulToFerry);
@@ -54,12 +62,12 @@ void AFerry::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("SoulTrialManager is not valid!!"));
 	}
-	
-	SoulSpots.Add(FFerrySoulSpot(SoulSpot1,nullptr));
-	SoulSpots.Add(FFerrySoulSpot(SoulSpot2,nullptr));
-	SoulSpots.Add(FFerrySoulSpot(SoulSpot3,nullptr));
-	SoulSpots.Add(FFerrySoulSpot(SoulSpot4,nullptr));
-	SoulSpots.Add(FFerrySoulSpot(SoulSpot5,nullptr));
+
+	SoulSpots.Add(FFerrySoulSpot(SoulSpot1, nullptr));
+	SoulSpots.Add(FFerrySoulSpot(SoulSpot2, nullptr));
+	SoulSpots.Add(FFerrySoulSpot(SoulSpot3, nullptr));
+	SoulSpots.Add(FFerrySoulSpot(SoulSpot4, nullptr));
+	SoulSpots.Add(FFerrySoulSpot(SoulSpot5, nullptr));
 }
 
 void AFerry::AddSoulToFerry(ASoulCard * Soul)
@@ -70,7 +78,7 @@ void AFerry::AddSoulToFerry(ASoulCard * Soul)
 		{
 			SoulSpots[i].Soul = Soul;
 			Soul->CanClick(false);
-			Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());		
+			Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());
 			ABaseSlot* Slot = Soul->GetCurrentSlot();
 			Slot->RemoveCharacterFromSlot(false);
 

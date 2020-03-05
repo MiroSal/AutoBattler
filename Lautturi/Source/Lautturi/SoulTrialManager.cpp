@@ -3,16 +3,16 @@
 
 #include "SoulTrialManager.h"
 #include "LautturiGameModeBase.h"
+#include "CharacterBase.h"
 #include "LautturiGameInstance.h"
+
 
 void USoulTrialManager::AddSoulToJourney(ASoulCard* Soul)
 {
 	if (ChosenSouls.Num() <= 5)
-	{
-
-		ULautturiGameInstance *Gameinstance = Cast<ULautturiGameInstance>(GetWorld()->GetGameInstance());
-		Gameinstance->SoulsToJourney.Add(Soul, false);
-
+	{		
+		SoulsToJourney.Add(Soul, false);
+		ChosenSouls.Add(FChosenSoul(Soul, false));
 
 		if (ChosenSouls.Num() >= 5)
 		{
@@ -25,6 +25,7 @@ void USoulTrialManager::AddSoulToJourney(ASoulCard* Soul)
 		}
 	}
 }
+
 void USoulTrialManager::Initialize()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Soultrial Initialized"));
@@ -32,29 +33,17 @@ void USoulTrialManager::Initialize()
 
 ASoulCard * USoulTrialManager::GetChosenSoul()
 {
+	ASoulCard* SoulToSend= nullptr;
 
-
-	for (FChosenSoul Soul : ChosenSouls)
-	{
-		if (Soul.bHasBeenSpawned == false)
-		{
-			Soul.bHasBeenSpawned = true;
-			return Soul.Soul;
-		}
-	}
-
-	ULautturiGameInstance *Gameinstance = Cast<ULautturiGameInstance>(GetWorld()->GetGameInstance());
-	TMap<ASoulCard*, bool> JourneySouls = Gameinstance->SoulsToJourney;
-
-	for (TPair<ASoulCard*, bool> Soul : JourneySouls)
+	for (TPair<ASoulCard*, bool> Soul : SoulsToJourney)
 	{
 		if (Soul.Value == false)
 		{
 			if (IsValid(Soul.Key))
 			{
 				UE_LOG(LogTemp, Warning, TEXT("Gameinstance thing: %s "), *Soul.Key->GetFName().ToString());
-				Soul.Value = true;
-				return Soul.Key;
+				SoulToSend = Soul.Key;
+				break;
 			}
 			else
 			{
@@ -64,5 +53,31 @@ ASoulCard * USoulTrialManager::GetChosenSoul()
 		}
 	}
 
+
+	if (IsValid(SoulToSend))
+	{
+		SoulsToJourney.Remove(SoulToSend);
+		return SoulToSend;
+	}
+
 	return nullptr;
+}
+
+void USoulTrialManager::AddTrialSoulList(ACharacterBase * Soul)
+{
+	TrialSouls.Add(Cast<ASoulCard>(Soul));
+}
+
+void USoulTrialManager::RemoveTrialSoulList(ACharacterBase * Soul)
+{
+
+	TrialSouls.Remove(Cast<ASoulCard>(Soul));
+}
+
+void USoulTrialManager::DestoryAllOnTrialSoulsList()
+{
+	for (ASoulCard* Soul : TrialSouls)
+	{
+		Soul->Destroy();
+	}
 }

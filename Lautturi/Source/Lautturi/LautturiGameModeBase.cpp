@@ -9,11 +9,6 @@
 void ALautturiGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Error, TEXT("GHamemode"));
-	TArray<AActor*> Actors;
-	GetSeamlessTravelActorList(true, Actors);
-	Actors.Add(this);
-
 }
 
 void ALautturiGameModeBase::InitGame(const FString & MapName, const FString & Options, FString & ErrorMessage)
@@ -25,8 +20,6 @@ void ALautturiGameModeBase::InitGame(const FString & MapName, const FString & Op
 
 USoulTrialManager * ALautturiGameModeBase::GetSoulTrialManager()
 {
-
-
 	if (Gameinstance)
 	{
 		return Gameinstance->GetSoulTrialManager();

@@ -12,7 +12,11 @@ struct FSoulData
 
 public:
 
-	FSoulData() {}
+	FSoulData() 
+	{
+		CharacterBase = nullptr;
+		SkillType = ESkillType::None;
+	}
 
 	FSoulData(ACharacterBase* Character, ESkillType Type)
 	{

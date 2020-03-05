@@ -4,29 +4,13 @@
 #include "SoulCard.h"
 #include "SoulTrialManager.h"
 #include "SkillBase.h"
+#include "BaseSlot.h"
+#include "CharacterBase.h"
 #include "CombatManager.h"
 #include "LautturiGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
-#include "SoulSlot.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
-
-#define GETENUMSTRING(etype, evalue) ( (FindObject<UEnum>(ANY_PACKAGE, TEXT(etype), true) != nullptr) ? FindObject<UEnum>(ANY_PACKAGE, TEXT(etype), true)->GetEnumName((int32)evalue) : FString("Invalid - are you sure enum uses UENUM() macro?") )
-
-void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
-{
-	if (Health > 0)
-	{
-		if (ActionInfo.SkillType == PassiveSkill->GetSkillType())
-		{
-			if (ActionInfo.CharacterBase != this && Cast<ASoulCard>(ActionInfo.CharacterBase))
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
-				CombatManager->AddSkillActionToQueue(FSoulData(this, PassiveSkill->GetSkillType()));
-			}
-		}
-	}
-}
 
 ASoulCard::ASoulCard()
 {
@@ -34,6 +18,21 @@ ASoulCard::ASoulCard()
 
 	SoulStatusText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("SoulStatusText"));
 	SoulStatusText->SetupAttachment(RootComponent);
+}
+
+void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
+{
+	if (Health > 0)
+	{
+		if (ActionInfo.SkillType == PassiveSkill->GetActivateSkillType())
+		{
+			if (Cast<ASoulCard>(ActionInfo.CharacterBase))
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
+				CombatManager->AddSkillActionToQueue(FSoulData(this, PassiveSkill->GetSkillType()));
+			}
+		}
+	}
 }
 
 void ASoulCard::Initialize(ABaseSlot* Slot, bool bCanClick)
@@ -45,10 +44,6 @@ void ASoulCard::Initialize(ABaseSlot* Slot, bool bCanClick)
 
 	SoulTrialManager->FerryIsFullDelegate.AddDynamic(this, &ASoulCard::CanClick);
 	RandomizeStats();
-
-	//TODO Remove when not needed, debug line for adding Souls to combatmanager listenerArray when making combat level
-	CombatManager->RegisterSoulListener(this);
-	CombatManager->SkillUsedDelegate.AddDynamic(this, &ASoulCard::ActionSkillUsed);
 }
 
 ABaseSlot* ASoulCard::GetCurrentSlot()
@@ -154,14 +149,12 @@ void ASoulCard::RandomizeStats()
 	Sin = FMath::RandRange(0, 10);
 	Str = FMath::RandRange(0, 10);
 
-	PassiveSkill = NewObject<USkillBase>(this, AllPossibleSkills[FMath::RandRange(0, AllPossibleSkills.Num() - 1)]);
-	PrimarySkill = NewObject<USkillBase>(this, AllPossibleSkills[FMath::RandRange(0, AllPossibleSkills.Num() - 1)]);
+	PassiveSkill = NewObject<USkillBase>(this, AllPossiblePassiveSkills[FMath::RandRange(0, AllPossiblePassiveSkills.Num() - 1)]);
+	PrimarySkill = NewObject<USkillBase>(this, AllPossiblePrimarySkills[FMath::RandRange(0, AllPossiblePrimarySkills.Num() - 1)]);
 	PassiveSkill->Initialize(this, CombatManager);
 	PrimarySkill->Initialize(this, CombatManager);
 
-	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), Health, Sin, Str,*PrimarySkill->GetSkillInfo(),*PassiveSkill->GetSkillInfo());
-
-	StatsText->SetText(FText::FromString(Stats));
+	UpdateDataText();
 }
 
 bool ASoulCard::Clicked(AActor* ActorToDeactivate)
@@ -184,7 +177,7 @@ bool ASoulCard::Clicked(AActor* ActorToDeactivate)
 			else if (!bHasCoin && LastActorClicked)//if soul has no coin and has Activationinterface so that can be clicked with mouse
 			{
 				if (!Soul->HasCoin() && Soul != this && !bHasCoin && !bIsAlive)//if last clicked soul dont have coin and it is not this
-				{
+				{				
 					Soul->GetCurrentSlot()->RemoveCharacterFromSlot(true);
 					CurrentSlot->RemoveCharacterFromSlot(true);
 				}
@@ -242,8 +235,8 @@ bool ASoulCard::HealthReduce(int32 Amount)
 	{
 		Health = FMath::Clamp(Health - Amount, 0, 10);
 		DamageTaken(Amount);
-		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), Health, Sin, Str, *PrimarySkill->GetSkillInfo(), *PassiveSkill->GetSkillInfo());
-		StatsText->SetText(FText::FromString(Stats));
+		UpdateDataText();
+
 		if (Health <= 0)
 		{
 			SoulMesh->SetMaterial(0, ActivatedColor);
@@ -258,10 +251,10 @@ bool ASoulCard::HealthAdd(int32 Amount)
 {
 	if (Health > 0 && Health < 10)
 	{
-		Health = FMath::Clamp(Health - Amount, 0, 10);
+		Health = FMath::Clamp(Health + Amount, 0, 10);
 		HealthAdded(Amount);
-		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), Health, Sin, Str, *PrimarySkill->GetSkillInfo(), *PassiveSkill->GetSkillInfo());
-		StatsText->SetText(FText::FromString(Stats));
+		UpdateDataText();
+
 		return true;
 	}
 	return false;
@@ -285,18 +278,23 @@ void ASoulCard::UpdateDataText()
 {
 	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), Health, Sin, Str, *PrimarySkill->GetSkillInfo(), *PassiveSkill->GetSkillInfo());
 	StatsText->SetText(FText::FromString(Stats));
-	StatsText->SetText(FText::FromString(Stats));
-
 }
 
 void ASoulCard::CombatInitialize(ACharacterBase* Character)
 {
-	Health = Character->GetHealth();
-	Sin = Character->GetSin();
-	Str = Character->GetStr();
-	PassiveSkill = Character->GetPassiveSkill();
-	PrimarySkill = Character->GetPrimarySkill();
-	bCanBeClicked = false;
+	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
+	CombatManager = GameMode->GetCombatManager();
+
+	//TODO Remove when not needed, debug line for adding Souls to combatmanager listenerArray when making combat level
+	if (CombatManager)
+	{
+		CombatManager->RegisterSoulListener(this);
+		CombatManager->SkillUsedDelegate.AddDynamic(this, &ASoulCard::ActionSkillUsed);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("CombatManager is not valid SoulCard.cpp"));
+	}
 
 	UpdateDataText();
 }

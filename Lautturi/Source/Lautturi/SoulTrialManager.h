@@ -7,6 +7,8 @@
 #include "SoulCard.h"
 #include "SoulTrialManager.generated.h"
 
+class ACharacterBase;
+
 USTRUCT(BlueprintType)
 struct FChosenSoul
 {
@@ -49,6 +51,12 @@ private:
 	TArray<FChosenSoul> ChosenSouls;
 
 	UPROPERTY()
+	TArray<ASoulCard*> TrialSouls;
+
+	UPROPERTY()
+	TMap<ASoulCard*, bool> SoulsToJourney;
+
+	UPROPERTY()
 		ASoulCard* SoulTest;
 public:
 
@@ -63,5 +71,14 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	ASoulCard* GetChosenSoul();
+
+	UFUNCTION()
+		void AddTrialSoulList(ACharacterBase* Soul);
+
+	UFUNCTION()
+		void RemoveTrialSoulList(ACharacterBase* Soul);	
+	
+	UFUNCTION(BlueprintCallable)
+		void DestoryAllOnTrialSoulsList();
 
 };

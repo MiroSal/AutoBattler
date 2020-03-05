@@ -21,6 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 	LAUTTURI_API UClass* Z_Construct_UClass_UCombatManager_NoRegister();
 	LAUTTURI_API UFunction* Z_Construct_UFunction_ALautturiGameModeBase_GetSoulTrialManager();
 	LAUTTURI_API UClass* Z_Construct_UClass_USoulTrialManager_NoRegister();
+	LAUTTURI_API UClass* Z_Construct_UClass_ULautturiGameInstance_NoRegister();
 // End Cross Module References
 	void ALautturiGameModeBase::StaticRegisterNativesALautturiGameModeBase()
 	{
@@ -106,6 +107,11 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Gameinstance_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Gameinstance;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -126,6 +132,15 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_Gameinstance_MetaData[] = {
+		{ "ModuleRelativePath", "LautturiGameModeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_Gameinstance = { "Gameinstance", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALautturiGameModeBase, Gameinstance), Z_Construct_UClass_ULautturiGameInstance_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_Gameinstance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_Gameinstance_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ALautturiGameModeBase_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALautturiGameModeBase_Statics::NewProp_Gameinstance,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ALautturiGameModeBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ALautturiGameModeBase>::IsAbstract,
 	};
@@ -135,11 +150,11 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		FuncInfo,
-		nullptr,
+		Z_Construct_UClass_ALautturiGameModeBase_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		UE_ARRAY_COUNT(FuncInfo),
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ALautturiGameModeBase_Statics::PropPointers),
 		0,
 		0x009002ACu,
 		METADATA_PARAMS(Z_Construct_UClass_ALautturiGameModeBase_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ALautturiGameModeBase_Statics::Class_MetaDataParams))
@@ -153,7 +168,7 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ALautturiGameModeBase, 2585828255);
+	IMPLEMENT_CLASS(ALautturiGameModeBase, 424295944);
 	template<> LAUTTURI_API UClass* StaticClass<ALautturiGameModeBase>()
 	{
 		return ALautturiGameModeBase::StaticClass();

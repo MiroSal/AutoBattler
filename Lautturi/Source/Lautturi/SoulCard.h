@@ -32,9 +32,6 @@ private:
 	UPROPERTY(EditAnywhere)
 		bool bIsAlive;
 
-	UPROPERTY()
-		ESkillType PassiveSkillType;
-
 	void RandomizeStats();
 
 	bool bCanBeClicked;
@@ -46,7 +43,9 @@ private:
 	USkillBase* PassiveSkill;
 
 	UPROPERTY(EditAnywhere)
-	TArray<TSubclassOf<USkillBase>> AllPossibleSkills;
+	TArray<TSubclassOf<USkillBase>> AllPossiblePrimarySkills;
+	UPROPERTY(EditAnywhere)
+	TArray<TSubclassOf<USkillBase>> AllPossiblePassiveSkills;
 
 	UPROPERTY(EditAnywhere)
 	bool bTestAction=false;

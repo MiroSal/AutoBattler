@@ -62,7 +62,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Character Stats")
 		ETurnEnum CharacterType = ETurnEnum::None;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere,Category = "Character Stats")
 		ABaseSlot* CurrentSlot;
 
 public:
@@ -90,6 +90,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void AttackBlueprint();
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetActiveDecal();
+
 	UFUNCTION(BlueprintCallable)
 	void AttackEnd();
 
@@ -110,6 +113,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 		bool StrReduce(int32 Amount);
+
+	UFUNCTION(BlueprintCallable)
+		void StrSet(int32 Amount);
 
 	UFUNCTION(BlueprintCallable)
 		bool SinReduce(int32 Amount);
@@ -133,5 +139,8 @@ public:
 		virtual USkillBase* GetPassiveSkill();	
 
 		virtual USkillBase* GetPrimarySkill();
+
+		UFUNCTION(BLueprintCallable)
+			void SetCurrentSlot(ABaseSlot* NewCurrentSlot);
 
 };

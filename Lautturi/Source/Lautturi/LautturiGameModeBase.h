@@ -17,6 +17,7 @@ class LAUTTURI_API ALautturiGameModeBase : public AGameModeBase
 
 private:
 
+	UPROPERTY()
 	ULautturiGameInstance* Gameinstance;
 
 public:

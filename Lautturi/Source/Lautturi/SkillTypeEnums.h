@@ -4,12 +4,9 @@
 UENUM()
 enum class ESkillType :uint8
 {
-	HealAll,
-	HealSingle,
-	SinAll,
-	SinSingle,
-	buffAll,
-	buffSingle,
+	Heal,
+	Sin,
+	Buff,
 	None
 	
 };

@@ -48,13 +48,13 @@ private:
 
 	ACharacterBase* CurrentSoulInAction;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere)
 		ETurnEnum CurrentTurn;
 
 
 public:
-	//TODO temp remove
-	bool testrun = true;
+
+	bool FirstTurn = true;
 
 	void Initialize();
 
@@ -67,7 +67,7 @@ public:
 	UFUNCTION()
 		void AddSkillActionToQueue(FSoulData ActionData);
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 		void ChangeTurn();
 
 	UFUNCTION(BlueprintCallable)

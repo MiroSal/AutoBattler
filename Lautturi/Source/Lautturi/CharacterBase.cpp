@@ -8,6 +8,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
 #include "SkillBase.h"
+#include "CombatManager.h"
 
 ACharacterBase::ACharacterBase()
 {
@@ -144,19 +145,25 @@ bool ACharacterBase::StrAdd(int32 Amount)
 
 bool ACharacterBase::StrReduce(int32 Amount)
 {
-	if (Str >= 0 && Str < 10 && Health > 0)
+	if (Str >= 0 && Str <= 10 && Health > 0)
 	{
-		Str = FMath::Clamp(Str + Amount, 0, 10);
+		Str = FMath::Clamp(Str - Amount, 0, 10);
 		return true;
 	}
 	return false;
 }
 
+void ACharacterBase::StrSet(int32 Amount)
+{
+	Str=Amount;
+
+}
+
 bool ACharacterBase::SinReduce(int32 Amount)
 {
-	if (Sin >= 0 && Sin < 10 && Health > 0)
+	if (Sin >= 0 && Sin <= 10 && Health > 0)
 	{
-		Sin = FMath::Clamp(Sin + Amount, 0, 10);
+		Sin = FMath::Clamp(Sin - Amount, 0, 10);
 		return true;
 	}
 	return false;
@@ -200,4 +207,9 @@ USkillBase * ACharacterBase::GetPrimarySkill()
 	UE_LOG(LogTemp, Warning, TEXT("Override GetPrimarySkill() function!"));
 
 	return nullptr;
+}
+
+void ACharacterBase::SetCurrentSlot(ABaseSlot * NewCurrentSlot)
+{
+	CurrentSlot = NewCurrentSlot;
 }

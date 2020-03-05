@@ -21,7 +21,11 @@ struct FFerrySoulSpot
 
 public:
 
-	FFerrySoulSpot() {}
+	FFerrySoulSpot()
+	{
+		SoulSpot = nullptr;
+		Soul = nullptr;
+	}
 
 	FFerrySoulSpot(UArrowComponent* Spot, ASoulCard* SoulToAdd)
 	{
@@ -70,7 +74,7 @@ private:
 	TArray<FFerrySoulSpot> SoulSpots;
 
 	UFUNCTION()
-	void AddSoulToFerry(ASoulCard* Soul);
+		void AddSoulToFerry(ASoulCard* Soul);
 
 	virtual bool ActorCanBeDropped(AActor* ActorToDrop);
 
