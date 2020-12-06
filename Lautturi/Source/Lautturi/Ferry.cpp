@@ -9,34 +9,29 @@
 #include "BaseSlot.h"
 #include "LautturiGameModeBase.h"
 
-
 // Sets default values
 AFerry::AFerry()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
-
-
-	ObjRoot = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-	RootComponent = ObjRoot;
+	Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+	SetRootComponent(Root);
 
 	FerryMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FerryMesh"));
-	FerryMesh->SetupAttachment(RootComponent);
+	FerryMesh->SetupAttachment(GetRootComponent());
 
 	SoulSpot1 = CreateDefaultSubobject<UArrowComponent>(TEXT("Slot1"));
-	SoulSpot1->SetupAttachment(RootComponent);
+	if (IsValid(SoulSpot1)){ SoulSpot1->SetupAttachment(GetRootComponent());}
 
 	SoulSpot2 = CreateDefaultSubobject<UArrowComponent>(TEXT("Slot2"));
-	SoulSpot2->SetupAttachment(RootComponent);
+	if (IsValid(SoulSpot2)) { SoulSpot2->SetupAttachment(GetRootComponent()); }
 
 	SoulSpot3 = CreateDefaultSubobject<UArrowComponent>(TEXT("Slot3"));
-	SoulSpot3->SetupAttachment(RootComponent);
+	if (IsValid(SoulSpot3)) { SoulSpot3->SetupAttachment(GetRootComponent()); }
 
 	SoulSpot4 = CreateDefaultSubobject<UArrowComponent>(TEXT("Slot4"));
-	SoulSpot4->SetupAttachment(RootComponent);
+	if (IsValid(SoulSpot4)) { SoulSpot4->SetupAttachment(GetRootComponent()); }
 
 	SoulSpot5 = CreateDefaultSubobject<UArrowComponent>(TEXT("Slot5"));
-	SoulSpot5->SetupAttachment(RootComponent);
+	if (IsValid(SoulSpot5)) { SoulSpot5->SetupAttachment(GetRootComponent()); }
 }
 
 // Called when the game starts or when spawned
@@ -44,47 +39,11 @@ void AFerry::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
-	if (IsValid(GameMode))
-	{
-		SoulTrialManager = GameMode->GetSoulTrialManager();
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("GameMode is not valid!!"));
-	}
-
-	if (IsValid(SoulTrialManager))
-	{
-		SoulTrialManager->SoulAddedToJourneyDelegate.AddDynamic(this, &AFerry::AddSoulToFerry);
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("SoulTrialManager is not valid!!"));
-	}
-
 	SoulSpots.Add(FFerrySoulSpot(SoulSpot1, nullptr));
 	SoulSpots.Add(FFerrySoulSpot(SoulSpot2, nullptr));
 	SoulSpots.Add(FFerrySoulSpot(SoulSpot3, nullptr));
 	SoulSpots.Add(FFerrySoulSpot(SoulSpot4, nullptr));
 	SoulSpots.Add(FFerrySoulSpot(SoulSpot5, nullptr));
-}
-
-void AFerry::AddSoulToFerry(ASoulCard * Soul)
-{
-	/*for (int32 i = 0; i < SoulSpots.Num(); i++)
-	{
-		if (SoulSpots[i].Soul==nullptr)
-		{
-			SoulSpots[i].Soul = Soul;
-			Soul->CanClick(false);
-			Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());
-			ABaseSlot* Slot = Soul->GetCurrentSlot();
-			Slot->RemoveCharacterFromSlot(false);
-
-			return;
-		}
-	}*/
 }
 
 bool AFerry::ActorCanBeDropped(AActor * ActorToDrop)
@@ -106,9 +65,10 @@ bool AFerry::ActorCanBeDropped(AActor * ActorToDrop)
 
 void AFerry::ActorDrop(AActor * ActorToDrop)
 {
+	USoulTrialManager* SoulTrialManager = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode())->GetSoulTrialManager();
 	ASoulCard* Soul = Cast<ASoulCard>(ActorToDrop);
 
-	if (IsValid(Soul))
+	if (IsValid(Soul) && IsValid(SoulTrialManager))
 	{
 		for (int32 i = 0; i < SoulSpots.Num(); i++)
 		{
@@ -120,16 +80,8 @@ void AFerry::ActorDrop(AActor * ActorToDrop)
 				SoulTrialManager->AddSoulToJourney(Soul);
 				ABaseSlot* Slot = Soul->GetCurrentSlot();
 				Slot->RemoveCharacterFromSlot(false);
-
 				return;
 			}
 		}
 	}
 }
-
-// Called every frame
-void AFerry::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
-

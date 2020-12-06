@@ -8,7 +8,7 @@
 #include "LautturiGameModeBase.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class LAUTTURI_API ALautturiGameModeBase : public AGameModeBase
@@ -18,7 +18,7 @@ class LAUTTURI_API ALautturiGameModeBase : public AGameModeBase
 private:
 
 	UPROPERTY()
-	ULautturiGameInstance* Gameinstance;
+		ULautturiGameInstance* Gameinstance;
 
 public:
 	virtual void BeginPlay() override;
@@ -26,9 +26,9 @@ public:
 	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
 
 	UFUNCTION(BlueprintCallable)
-	USoulTrialManager* GetSoulTrialManager();
+		USoulTrialManager* GetSoulTrialManager();
 
 	UFUNCTION(BlueprintCallable)
 		UCombatManager* GetCombatManager();
-	
+
 };

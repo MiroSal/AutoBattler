@@ -6,7 +6,6 @@
 #include "GameFramework/Pawn.h"
 #include "Components/InputComponent.h"
 #include "Engine/World.h"
-#include "MouseController.h"
 #include "DropZoneInterface.h"
 #include "CharacterBase.h"
 #include "PlayerPawn.generated.h"
@@ -19,7 +18,7 @@ class LAUTTURI_API APlayerPawn : public APawn
 private:
 
 	UWorld* World;
-	AMouseController* Controller;
+	APlayerController* Controller;
 	AActor* ActorToActivate;
 	AActor* LastActiveActor;
 

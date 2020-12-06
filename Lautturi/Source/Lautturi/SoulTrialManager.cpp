@@ -10,7 +10,7 @@
 void USoulTrialManager::AddSoulToJourney(ASoulCard* Soul)
 {
 	if (ChosenSouls.Num() <= 5)
-	{		
+	{
 		SoulsToJourney.Add(Soul, false);
 		ChosenSouls.Add(FChosenSoul(Soul, false));
 
@@ -33,7 +33,7 @@ void USoulTrialManager::Initialize()
 
 ASoulCard * USoulTrialManager::GetChosenSoul()
 {
-	ASoulCard* SoulToSend= nullptr;
+	ASoulCard* SoulToSend = nullptr;
 
 	for (TPair<ASoulCard*, bool> Soul : SoulsToJourney)
 	{
@@ -78,6 +78,9 @@ void USoulTrialManager::DestoryAllOnTrialSoulsList()
 {
 	for (ASoulCard* Soul : TrialSouls)
 	{
-		Soul->Destroy();
+		if (IsValid(Soul))
+		{
+			Soul->Destroy();
+		}
 	}
 }

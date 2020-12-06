@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Lautturi.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{707FACFD-72F3-47F9-95F2-2B5A53CF9E2E}</UniqueIdentifier>
+      <UniqueIdentifier>{EF70BA46-CE42-491E-A5FE-4C4D3DC51B12}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Lautturi.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{F27A225A-66F3-4F36-AB28-703B1829B95D}</UniqueIdentifier>
+      <UniqueIdentifier>{F6DDFE85-6C8B-4C09-B04F-B1CFAEF2331F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{5C0FC5E5-1E26-479C-BF14-FB4C3A2B691C}</UniqueIdentifier>
+      <UniqueIdentifier>{B0BCE701-0BD7-489B-9330-D7AABA0607CE}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp">
       <Filter>Source\Lautturi</Filter>
@@ -93,12 +93,6 @@
       <Filter>Source\Lautturi</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Lautturi\LautturiGameModeBase.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\MouseController.cpp">
-      <Filter>Source\Lautturi</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\MouseController.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Lautturi\PlayerPawn.cpp">

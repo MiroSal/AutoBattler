@@ -7,6 +7,7 @@
 #include "DropZoneInterface.h"
 #include "DrawDebugHelpers.h"
 #include "BaseSlot.h"
+#include "GameFramework/PlayerController.h"
 
 
 // Sets default values
@@ -28,7 +29,7 @@ void APlayerPawn::BeginPlay()
 		UE_LOG(LogTemp, Error, TEXT("World is not valid!!"));
 	}
 
-	Controller = Cast<AMouseController>(World->GetFirstPlayerController());
+	Controller = Cast<APlayerController>(World->GetFirstPlayerController());
 	if (!IsValid(Controller))
 	{
 		UE_LOG(LogTemp, Error, TEXT("PlayerController is not valid!!"));

@@ -294,8 +294,6 @@
     <ClInclude Include="..\..\Source\Lautturi\LautturiGameInstance.h"/>
     <ClCompile Include="..\..\Source\Lautturi\LautturiGameModeBase.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\LautturiGameModeBase.h"/>
-    <ClCompile Include="..\..\Source\Lautturi\MouseController.cpp"/>
-    <ClInclude Include="..\..\Source\Lautturi\MouseController.h"/>
     <ClCompile Include="..\..\Source\Lautturi\PlayerPawn.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\PlayerPawn.h"/>
     <ClCompile Include="..\..\Source\Lautturi\SkillBase.cpp"/>

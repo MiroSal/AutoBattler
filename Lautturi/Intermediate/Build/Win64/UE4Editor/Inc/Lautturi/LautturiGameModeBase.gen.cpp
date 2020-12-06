@@ -125,7 +125,7 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALautturiGameModeBase_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
+		{ "Comment", "/**\n *\n */" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "LautturiGameModeBase.h" },
 		{ "ModuleRelativePath", "LautturiGameModeBase.h" },
@@ -168,7 +168,7 @@ void EmptyLinkFunctionForGeneratedCodeLautturiGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ALautturiGameModeBase, 424295944);
+	IMPLEMENT_CLASS(ALautturiGameModeBase, 1285192795);
 	template<> LAUTTURI_API UClass* StaticClass<ALautturiGameModeBase>()
 	{
 		return ALautturiGameModeBase::StaticClass();

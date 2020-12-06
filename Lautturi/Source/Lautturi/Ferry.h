@@ -8,12 +8,6 @@
 #include "DropZoneInterface.h"
 #include "Ferry.generated.h"
 
-class USceneComponent;
-class UStaticMeshComponent;
-class USoulTrialManager;
-class ALautturiGameModeBase;
-class UArrowComponent;
-
 USTRUCT(BlueprintType)
 struct FFerrySoulSpot
 {
@@ -21,25 +15,15 @@ struct FFerrySoulSpot
 
 public:
 
-	FFerrySoulSpot()
-	{
-		SoulSpot = nullptr;
-		Soul = nullptr;
-	}
-
-	FFerrySoulSpot(UArrowComponent* Spot, ASoulCard* SoulToAdd)
-	{
-		SoulSpot = Spot;
-		Soul = SoulToAdd;
-	}
+	FFerrySoulSpot(){SoulSpot = nullptr; Soul = nullptr;}
+	FFerrySoulSpot(UArrowComponent* Spot, ASoulCard* SoulToAdd){SoulSpot = Spot; Soul = SoulToAdd;}
 
 	UPROPERTY()
-		UArrowComponent* SoulSpot;
+		class UArrowComponent* SoulSpot;
 
 	UPROPERTY()
-		ASoulCard* Soul;
+		class ASoulCard* Soul;
 };
-
 
 UCLASS()
 class LAUTTURI_API AFerry : public AActor, public IDropZoneInterface
@@ -49,47 +33,34 @@ class LAUTTURI_API AFerry : public AActor, public IDropZoneInterface
 private:
 
 	UPROPERTY()
-		USceneComponent* ObjRoot;
+		class USceneComponent* Root;
 
 	UPROPERTY(VisibleAnywhere)
-		UStaticMeshComponent* FerryMesh;
-
-	UPROPERTY()
-		USoulTrialManager* SoulTrialManager;
-
-	UPROPERTY()
-		ALautturiGameModeBase* GameMode;
+		class UStaticMeshComponent* FerryMesh;
 
 	UPROPERTY(VisibleAnywhere)
-		UArrowComponent* SoulSpot1;
+		class UArrowComponent* SoulSpot1;
 	UPROPERTY(VisibleAnywhere)
-		UArrowComponent* SoulSpot2;
+		class UArrowComponent* SoulSpot2;
 	UPROPERTY(VisibleAnywhere)
-		UArrowComponent* SoulSpot3;
+		class UArrowComponent* SoulSpot3;
 	UPROPERTY(VisibleAnywhere)
-		UArrowComponent* SoulSpot4;
+		class UArrowComponent* SoulSpot4;
 	UPROPERTY(VisibleAnywhere)
-		UArrowComponent* SoulSpot5;
+		class UArrowComponent* SoulSpot5;
 
 	TArray<FFerrySoulSpot> SoulSpots;
-
-	UFUNCTION()
-		void AddSoulToFerry(ASoulCard* Soul);
 
 	virtual bool ActorCanBeDropped(AActor* ActorToDrop);
 
 	virtual void ActorDrop(AActor* ActorToDrop);
 
-public:
-	// Sets default values for this actor's properties
-	AFerry();
-
 protected:
-	// Called when the game starts or when spawned
+
 	virtual void BeginPlay() override;
 
+
 public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	AFerry();
 
 };
