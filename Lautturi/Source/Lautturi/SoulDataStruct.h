@@ -3,7 +3,6 @@
 #include "SkillTypeEnums.h"
 #include "SoulDataStruct.generated.h"
 
-class ACharacterBase;
 
 USTRUCT()
 struct FSoulData
@@ -18,12 +17,12 @@ public:
 		SkillType = ESkillType::None;
 	}
 
-	FSoulData(ACharacterBase* Character, ESkillType Type)
+	FSoulData(class ACharacterBase* Character, ESkillType Type)
 	{
 		CharacterBase = Character;
 		SkillType = Type;
 	}
 
-	ACharacterBase* CharacterBase;
+	class ACharacterBase* CharacterBase;
 	ESkillType SkillType;
 };

@@ -7,8 +7,6 @@
 #include "SoulCard.h"
 #include "SoulTrialManager.generated.h"
 
-class ACharacterBase;
-
 USTRUCT(BlueprintType)
 struct FChosenSoul
 {
@@ -60,7 +58,8 @@ private:
 		ASoulCard* SoulTest;
 public:
 
-	UFUNCTION()
+	USoulTrialManager();
+
 	void AddSoulToJourney(ASoulCard* Soul);
 
 	void Initialize();
@@ -69,16 +68,18 @@ public:
 
 	FFerryIsFullDelegate FerryIsFullDelegate;
 
-	UFUNCTION(BlueprintCallable)
-	ASoulCard* GetChosenSoul();
+	UFUNCTION()
+		void AddTrialSoulList(class ACharacterBase* Soul);
 
 	UFUNCTION()
-		void AddTrialSoulList(ACharacterBase* Soul);
-
-	UFUNCTION()
-		void RemoveTrialSoulList(ACharacterBase* Soul);	
+		void RemoveTrialSoulList(class ACharacterBase* Soul);	
 	
 	UFUNCTION(BlueprintCallable)
 		void DestoryAllOnTrialSoulsList();
+
+	//Getters&&Setters
+public:
+	UFUNCTION(BlueprintCallable)
+		ASoulCard* GetChosenSoul();
 
 };

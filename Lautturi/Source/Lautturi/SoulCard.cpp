@@ -1,9 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "SoulCard.h"
 #include "SoulTrialManager.h"
-#include "SkillBase.h"
 #include "BaseSlot.h"
 #include "CharacterBase.h"
 #include "CombatManager.h"
@@ -14,10 +12,16 @@
 
 ASoulCard::ASoulCard()
 {
-	PrimaryActorTick.bCanEverTick = true;
-
 	SoulStatusText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("SoulStatusText"));
 	SoulStatusText->SetupAttachment(RootComponent);
+
+	bHasCoin = false;
+	bIsAlive = true;
+	bTestAction = false;
+	bCanBeClicked = true;
+
+	PrimarySkill = nullptr;
+	PassiveSkill = nullptr;
 }
 
 void ASoulCard::ActionSkillUsed(FSoulData ActionInfo)
@@ -46,11 +50,6 @@ void ASoulCard::Initialize(ABaseSlot* Slot, bool bCanClick)
 	RandomizeStats();
 }
 
-ABaseSlot* ASoulCard::GetCurrentSlot()
-{
-	return CurrentSlot;
-}
-
 void ASoulCard::CanClick(bool bCanClick)
 {
 	bCanBeClicked = bCanClick;
@@ -63,7 +62,7 @@ void ASoulCard::ActivatePrimarySkill()
 		if (IsValid(PrimarySkill))
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Activating Primary %s"), *PrimarySkill->GetFName().ToString());
-			PrimarySkill->ActivateSkill();
+			PrimarySkill->BP_ActivateSkill();
 		}
 		else
 		{
@@ -83,7 +82,7 @@ void ASoulCard::ActivatePassiveSkill()
 		if (IsValid(PassiveSkill))
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Activating Passive%s"), *PassiveSkill->GetFName().ToString());
-			PassiveSkill->ActivateSkill();
+			PassiveSkill->BP_ActivateSkill();
 		}
 		else
 		{
@@ -94,33 +93,6 @@ void ASoulCard::ActivatePassiveSkill()
 	{
 		PassiveSkill->DeactivateSkill();
 	}
-}
-
-ABaseSlot * ASoulCard::GetSlot()
-{
-	return CurrentSlot;
-}
-
-ESkillType ASoulCard::GetPrimarySkillType()
-{
-	return PrimarySkill->GetSkillType();
-}
-
-ESkillType ASoulCard::GetPassiveSkillType()
-{
-	return PassiveSkill->GetSkillType();
-}
-
-// Called when the game starts or when spawned
-void ASoulCard::BeginPlay()
-{
-	Super::BeginPlay();
-}
-
-// Called every frame
-void ASoulCard::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
 }
 
 void ASoulCard::RandomizeStats()
@@ -190,7 +162,6 @@ bool ASoulCard::Clicked(AActor* ActorToDeactivate)
 		}
 		Mesh->SetMaterial(0, ActivatedColor);
 		return true;
-
 	}
 	else
 	{
@@ -297,14 +268,4 @@ void ASoulCard::CombatInitialize(ACharacterBase* Character)
 	}
 
 	UpdateDataText();
-}
-
-USkillBase * ASoulCard::GetPassiveSkill()
-{
-	return PassiveSkill;
-}
-
-USkillBase * ASoulCard::GetPrimarySkill()
-{
-	return PrimarySkill;
 }

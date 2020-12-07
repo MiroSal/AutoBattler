@@ -28,6 +28,8 @@ e:\lautturi\lautturi\source\lautturi\SoulDataStruct.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\SoulDataStruct.generated.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\CombatManager.generated.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\CharacterBase.generated.h
+e:\lautturi\lautturi\source\lautturi\SkillBase.h
+e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\SkillBase.generated.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\SoulCard.generated.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\SoulTrialManager.generated.h
 e:\lautturi\lautturi\intermediate\build\win64\ue4editor\inc\lautturi\LautturiGameInstance.generated.h

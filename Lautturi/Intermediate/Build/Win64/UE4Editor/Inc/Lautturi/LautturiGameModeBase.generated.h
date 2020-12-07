@@ -98,10 +98,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ALautturiGameModeBase); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ALautturiGameModeBase)
 
 
-#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__Gameinstance() { return STRUCT_OFFSET(ALautturiGameModeBase, Gameinstance); }
-
-
+#define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_PRIVATE_PROPERTY_OFFSET
 #define Lautturi_Source_Lautturi_LautturiGameModeBase_h_13_PROLOG
 #define Lautturi_Source_Lautturi_LautturiGameModeBase_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

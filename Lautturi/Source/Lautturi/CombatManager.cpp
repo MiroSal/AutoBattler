@@ -20,7 +20,6 @@ void UCombatManager::RegisterSoulListener(ACharacterBase* Character)
 void UCombatManager::RegisterEnemyListener(ACharacterBase * Character)
 {
 	CombatEnemyListeners.Add(Character);
-	UE_LOG(LogTemp, Warning, TEXT("EnemyRegister"));
 }
 
 void UCombatManager::UnRegisterFromListener(ACharacterBase * Character)
@@ -52,7 +51,6 @@ void UCombatManager::AddSkillActionToQueue(FSoulData ActionData)
 
 void UCombatManager::PopNextSkillActionFromQueue()
 {
-
 	if (ActionQueue.Num() > 0)
 	{
 		FSoulData Data = ActionQueue.Pop();
@@ -103,7 +101,6 @@ void UCombatManager::PopNextSkillActionFromQueue()
 		UE_LOG(LogTemp, Warning, TEXT("RoundEnded"));
 	}
 }
-
 
 void UCombatManager::ChangeTurn()
 {

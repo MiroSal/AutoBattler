@@ -7,8 +7,6 @@
 #include "SoulDataStruct.h"
 #include "CombatManager.generated.h"
 
-class ACharacterBase;
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSkillUsedDelegate, FSoulData, SoulData);
 
 UENUM()
@@ -19,9 +17,6 @@ enum class ETurnEnum :uint8
 	None
 };
 
-/**
- *
- */
 UCLASS()
 class LAUTTURI_API UCombatManager : public UObject
 {
@@ -46,11 +41,11 @@ private:
 	UPROPERTY()
 		TArray<FSoulData> ActionQueue;
 
-	ACharacterBase* CurrentSoulInAction;
+	UPROPERTY()
+		class ACharacterBase* CurrentSoulInAction;
 
 	UPROPERTY(VisibleAnywhere)
 		ETurnEnum CurrentTurn;
-
 
 public:
 
@@ -76,10 +71,6 @@ public:
 	UPROPERTY()
 		FSkillUsedDelegate SkillUsedDelegate;
 
-	TArray<ACharacterBase*> GetAllEnemies();
-
-	TArray<ACharacterBase*> GetAllSouls();
-
 	//TODO remove and make properly, this is hack for enemy count that is shown from enemy_BP
 	UPROPERTY()
 		int32 TotalEnemyCount = 5;
@@ -87,5 +78,12 @@ public:
 	//TODO remove and make properly, this is hack for enemy count that is shown from enemy_BP
 	UPROPERTY()
 		int32 CurrentEnemyCount = 1;
+
+//Getter&&Setters
+public:
+
+	TArray<ACharacterBase*> GetAllEnemies();
+
+	TArray<ACharacterBase*> GetAllSouls();
 
 };

@@ -84,7 +84,6 @@ void APlayerPawn::LeftMouseButtonPressed()
 {
 	if (IsValid(Controller) && !IsValid(DraggedActor))
 	{
-		//TODO same code as above, merge in to 1 function
 		//LineTrace to check if hit Actor in level
 		FVector Start;
 		FVector Direction;
@@ -176,7 +175,6 @@ void APlayerPawn::LeftMouseButtonDoubleClicked()
 {
 	if (IsValid(Controller))
 	{
-		//TODO remove dublicated code and make function from linetracing
 		//LineTrace to check if hit Actor in level
 		FVector Start;
 		FVector Direction;

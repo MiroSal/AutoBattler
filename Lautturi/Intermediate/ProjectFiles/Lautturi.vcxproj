@@ -286,7 +286,6 @@
     <ClInclude Include="..\..\Source\Lautturi\EnemyBase.h"/>
     <ClCompile Include="..\..\Source\Lautturi\Ferry.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\Ferry.h"/>
-    <ClInclude Include="..\..\Source\Lautturi\Header.h"/>
     <None Include="..\..\Source\Lautturi\Lautturi.Build.cs"/>
     <ClCompile Include="..\..\Source\Lautturi\Lautturi.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\Lautturi.h"/>
