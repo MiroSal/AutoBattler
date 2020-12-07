@@ -14,20 +14,38 @@ ACharacterBase::ACharacterBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	ObjRoot = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-	RootComponent = ObjRoot;
+	Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+	if (Root)
+	{
+		SetRootComponent(Root);
+	}
 
-	SoulMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SoulMesh"));
-	SoulMesh->SetupAttachment(RootComponent);
+	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	if (Mesh)
+	{
+		Mesh->SetupAttachment(GetRootComponent());
+	}
 
 	StatsText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("StatsText"));
-	StatsText->SetupAttachment(RootComponent);
+	if (StatsText)
+	{
+		StatsText->SetupAttachment(RootComponent);
+	}
+}
+
+void ACharacterBase::Initialize(ABaseSlot * Slot, bool bCanClick)
+{
+	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
+	check(IsValid(GameMode));
+	SoulTrialManager = GameMode->GetSoulTrialManager();
+	check(IsValid(SoulTrialManager))
+	CombatManager = GameMode->GetCombatManager();
+	check(IsValid(CombatManager))
 }
 
 bool ACharacterBase::Clicked(AActor* ActorToDeactivate)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override Clicked function if needed!"));
-
 	return true;
 }
 
@@ -43,16 +61,6 @@ bool ACharacterBase::Deactivate()
 	return true;
 }
 
-void ACharacterBase::BeginPlay()
-{
-	Super::BeginPlay();
-}
-
-void ACharacterBase::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
-
 void ACharacterBase::ActivatePrimarySkill()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::ActivatePrimarySkill() function!"));
@@ -61,48 +69,6 @@ void ACharacterBase::ActivatePrimarySkill()
 void ACharacterBase::ActivatePassiveSkill()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::ActivatePassiveSkill() function!"));
-}
-
-ABaseSlot * ACharacterBase::GetSlot()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::GetSlot() function!"));
-
-	return nullptr;
-}
-
-ETurnEnum ACharacterBase::GetCharacterType()
-{
-	return CharacterType;
-}
-
-void ACharacterBase::Initialize(ABaseSlot * Slot, bool bCanClick)
-{
-	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
-	SoulTrialManager = GameMode->GetSoulTrialManager();
-	if (!IsValid(SoulTrialManager))
-	{
-		UE_LOG(LogTemp, Warning, TEXT("SoulTrialManager is not valid!!"));
-	}
-
-	CombatManager = GameMode->GetCombatManager();
-	if (!IsValid(CombatManager))
-	{
-		UE_LOG(LogTemp, Warning, TEXT("CombatManager is not valid!!"));
-	}
-}
-
-ESkillType ACharacterBase::GetPrimarySkillType()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override GetPrimarySkillType function!"));
-
-	return ESkillType();
-}
-
-ESkillType ACharacterBase::GetPassiveSkillType()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override GetPassiveSkillType function!"));
-
-	return ESkillType();
 }
 
 bool ACharacterBase::HealthReduce(int32 Amount)
@@ -122,21 +88,20 @@ void ACharacterBase::Attack()
 	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::Attack() function!"));
 }
 
-void ACharacterBase::AttackEnd()
-{
-	CombatManager->ChangeTurn();
-}
-
 void ACharacterBase::UpdateDataText()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::UpdateDataText() function!"));
+}
+
+void ACharacterBase::AttackEnd()
+{
+	CombatManager->ChangeTurn();
 }
 
 bool ACharacterBase::StrAdd(int32 Amount)
 {
 	if (Str >= 0 && Str < 10 && Health > 0)
 	{
-
 		Str = FMath::Clamp(Str + Amount, 0, 10);;
 		return true;
 	}
@@ -155,8 +120,7 @@ bool ACharacterBase::StrReduce(int32 Amount)
 
 void ACharacterBase::StrSet(int32 Amount)
 {
-	Str=Amount;
-
+	Str = Amount;
 }
 
 bool ACharacterBase::SinReduce(int32 Amount)
@@ -192,21 +156,6 @@ int32 ACharacterBase::GetSin()
 int32 ACharacterBase::GetStr()
 {
 	return Str;
-}
-
-USkillBase * ACharacterBase::GetPassiveSkill()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override GetPassiveSkill() function!"));
-
-
-	return nullptr;
-}
-
-USkillBase * ACharacterBase::GetPrimarySkill()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override GetPrimarySkill() function!"));
-
-	return nullptr;
 }
 
 void ACharacterBase::SetCurrentSlot(ABaseSlot * NewCurrentSlot)

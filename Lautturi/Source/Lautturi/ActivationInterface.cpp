@@ -6,23 +6,23 @@
 bool IActivationInterface::Clicked(AActor* ActorToDeactivate)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override IActivationInterface::Clicked(AActor* ActorToDeactivate) function!"));
-	return true;
+	return false;
 }
 
 bool IActivationInterface::DoubleClicked(AActor* ActorToDeactivate)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override IActivationInterface::DoubleClicked() function!"));
-	return true;
+	return false;
 }
 
 bool IActivationInterface::Deactivate()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override IActivationInterface::Deactivate() function!"))
-	return true;
+	return false;
 }
 
 ABaseSlot * IActivationInterface::GetSlot()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Override IActivationInterface::GetSlot() function!"));
-	return nullptr;
+	return false;
 }

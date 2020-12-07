@@ -138,7 +138,7 @@ void ASoulCard::RandomizeStats()
 		{
 			SoulStatusText->SetText(FText::FromString(TEXT("NoCoin")));
 		}
-		SoulMesh->SetMaterial(0, DeactivatedColor);
+		Mesh->SetMaterial(0, DeactivatedColor);
 	}
 	else
 	{
@@ -188,7 +188,7 @@ bool ASoulCard::Clicked(AActor* ActorToDeactivate)
 		{
 			LastActorClicked->Deactivate();
 		}
-		SoulMesh->SetMaterial(0, ActivatedColor);
+		Mesh->SetMaterial(0, ActivatedColor);
 		return true;
 
 	}
@@ -220,7 +220,7 @@ bool ASoulCard::DoubleClicked(AActor* ActorToDeactivate)
 
 bool ASoulCard::Deactivate()
 {
-	SoulMesh->SetMaterial(0, DeactivatedColor);
+	Mesh->SetMaterial(0, DeactivatedColor);
 	return  true;
 }
 
@@ -239,7 +239,7 @@ bool ASoulCard::HealthReduce(int32 Amount)
 
 		if (Health <= 0)
 		{
-			SoulMesh->SetMaterial(0, ActivatedColor);
+			Mesh->SetMaterial(0, ActivatedColor);
 		}
 		return true;
 	}
@@ -262,7 +262,7 @@ bool ASoulCard::HealthAdd(int32 Amount)
 
 void ASoulCard::Attack()
 {
-	AttackBlueprint();
+	BP_Attack();
 	TArray<ACharacterBase*> Enemies = CombatManager->GetAllEnemies();
 	if (Enemies.Num() > 0)
 	{

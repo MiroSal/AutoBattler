@@ -4,10 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "Components/InputComponent.h"
-#include "Engine/World.h"
 #include "DropZoneInterface.h"
-#include "CharacterBase.h"
 #include "PlayerPawn.generated.h"
 
 UCLASS()
@@ -16,8 +13,6 @@ class LAUTTURI_API APlayerPawn : public APawn
 	GENERATED_BODY()
 
 private:
-
-	UWorld* World;
 	APlayerController* Controller;
 	AActor* ActorToActivate;
 	AActor* LastActiveActor;
@@ -27,7 +22,6 @@ private:
 	float DragTimer;
 
 	IDropZoneInterface* DropZoneInterface;
-
 
 public:
 	// Sets default values for this pawn's properties

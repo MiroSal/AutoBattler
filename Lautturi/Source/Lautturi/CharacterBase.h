@@ -10,47 +10,30 @@
 #include "CombatManager.h"
 #include "CharacterBase.generated.h"
 
-class ABaseSlot;
-class ALautturiGameModeBase;
-class USoulTrialManager;
-class USceneComponent;
-class UStaticMeshComponent;
-class USkillBase;
-
 UCLASS()
 class LAUTTURI_API ACharacterBase : public AActor, public IActivationInterface
 {
 	GENERATED_BODY()
-
-public:
-	ACharacterBase();
-
-	virtual bool Clicked(AActor* ActorToDeactivate) override;
-	virtual bool DoubleClicked(AActor* ActorToDeactivate) override;
-	virtual bool Deactivate() override;
-
 protected:
-	virtual void BeginPlay() override;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		class USceneComponent* Root;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		USceneComponent* ObjRoot;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		UStaticMeshComponent* SoulMesh;
+		class UStaticMeshComponent* Mesh;
 
 	UPROPERTY(VisibleAnywhere)
-		UTextRenderComponent* StatsText;
+		class UTextRenderComponent* StatsText;
 
 	UPROPERTY()
-		USoulTrialManager* SoulTrialManager;
+		class USoulTrialManager* SoulTrialManager;
 
 	UPROPERTY()
-		UCombatManager* CombatManager;
+		class UCombatManager* CombatManager;
 
 	UPROPERTY()
-		ALautturiGameModeBase* GameMode;
+		class ALautturiGameModeBase* GameMode;
 
-	UPROPERTY(EditAnywhere, Category="Character Stats")
+	UPROPERTY(EditAnywhere, Category = "Character Stats")
 		int32 Health;
 
 	UPROPERTY(EditAnywhere, Category = "Character Stats")
@@ -62,51 +45,65 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Character Stats")
 		ETurnEnum CharacterType = ETurnEnum::None;
 
-	UPROPERTY(VisibleAnywhere,Category = "Character Stats")
+	UPROPERTY(VisibleAnywhere, Category = "Character Stats")
 		ABaseSlot* CurrentSlot;
 
 public:
-	virtual void Tick(float DeltaTime) override;
+	ACharacterBase();
+	virtual void Initialize(ABaseSlot* Slot, bool bCanClick);
+	virtual bool Clicked(AActor* ActorToDeactivate) override;
+	virtual bool DoubleClicked(AActor* ActorToDeactivate) override;
+	virtual bool Deactivate() override;
+
+public:
 
 	virtual void ActivatePrimarySkill();
-
 	virtual void ActivatePassiveSkill();
 
-	virtual ABaseSlot* GetSlot();
-
-	ETurnEnum GetCharacterType();
-
-	virtual void Initialize(ABaseSlot* Slot, bool bCanClick);
-
-	virtual ESkillType GetPrimarySkillType();
-	virtual ESkillType GetPassiveSkillType();
-
 	virtual bool HealthReduce(int32 Amount);
-
 	virtual bool HealthAdd(int32 Amount);
 
 	virtual void Attack();
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void AttackBlueprint();
-
-	UFUNCTION(BlueprintImplementableEvent)
-	void SetActiveDecal();
+		void BP_Attack();
 
 	UFUNCTION(BlueprintCallable)
-	void AttackEnd();
+		void AttackEnd();
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnDeath();	
-	
+		void SetActiveDecal();
+
 	UFUNCTION(BlueprintImplementableEvent)
-	void DamageTaken(int32 Amount);
-	
+		void DamageTaken(int32 Amount);
+
 	UFUNCTION(BlueprintImplementableEvent)
-	void HealthAdded(int32 Amount);
+		void OnDeath();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void HealthAdded(int32 Amount);
 
 	UFUNCTION(BlueprintCallable)
-	virtual void UpdateDataText();
+		virtual void UpdateDataText();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void StartTurn();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void EndTurn();
+
+//Getter&&Setters
+public:
+
+	FORCEINLINE ETurnEnum GetCharacterType() { return CharacterType; };
+	FORCEINLINE virtual ESkillType GetPrimarySkillType() { UE_LOG(LogTemp, Warning, TEXT("Override GetPrimarySkillType function!")); return ESkillType(); };
+	FORCEINLINE virtual ESkillType GetPassiveSkillType() { UE_LOG(LogTemp, Warning, TEXT("Override GetPassiveSkillType function!")); return ESkillType(); };
+	FORCEINLINE virtual class ABaseSlot* GetSlot() { UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::GetSlot() function!")); return nullptr; };
+	FORCEINLINE virtual class USkillBase* GetPassiveSkill() { UE_LOG(LogTemp, Warning, TEXT("Override GetPassiveSkill() function!")); return nullptr; };
+	FORCEINLINE virtual class USkillBase* GetPrimarySkill() { UE_LOG(LogTemp, Warning, TEXT("Override GetPrimarySkill() function!")); return nullptr; };
+
+	UFUNCTION(BlueprintCallable)
+		void SetCurrentSlot(ABaseSlot* NewCurrentSlot);
 
 	UFUNCTION(BlueprintCallable)
 		bool StrAdd(int32 Amount);
@@ -125,22 +122,10 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 		int32 GetHealth();
+
 	UFUNCTION(BlueprintCallable)
 		int32 GetSin();
+
 	UFUNCTION(BlueprintCallable)
 		int32 GetStr();
-
-	UFUNCTION(BlueprintImplementableEvent)
-		void StartTurn();
-
-	UFUNCTION(BlueprintImplementableEvent)
-		void EndTurn();
-
-		virtual USkillBase* GetPassiveSkill();	
-
-		virtual USkillBase* GetPrimarySkill();
-
-		UFUNCTION(BLueprintCallable)
-			void SetCurrentSlot(ABaseSlot* NewCurrentSlot);
-
 };

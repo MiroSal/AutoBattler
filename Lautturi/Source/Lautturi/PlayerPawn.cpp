@@ -1,14 +1,15 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "PlayerPawn.h"
 #include "GameFramework/Pawn.h"
 #include "ActivationInterface.h"
 #include "DropZoneInterface.h"
 #include "DrawDebugHelpers.h"
 #include "BaseSlot.h"
+#include "CharacterBase.h"
+#include "Engine/World.h"
+#include "Components/InputComponent.h"
 #include "GameFramework/PlayerController.h"
-
 
 // Sets default values
 APlayerPawn::APlayerPawn()
@@ -22,18 +23,8 @@ APlayerPawn::APlayerPawn()
 void APlayerPawn::BeginPlay()
 {
 	Super::BeginPlay();
-
-	World = GetWorld();
-	if (!IsValid(World))
-	{
-		UE_LOG(LogTemp, Error, TEXT("World is not valid!!"));
-	}
-
-	Controller = Cast<APlayerController>(World->GetFirstPlayerController());
-	if (!IsValid(Controller))
-	{
-		UE_LOG(LogTemp, Error, TEXT("PlayerController is not valid!!"));
-	}
+	Controller = Cast<APlayerController>(GetWorld()->GetFirstPlayerController());
+	check(IsValid(Controller))
 }
 
 // Called every frame
@@ -46,7 +37,7 @@ void APlayerPawn::Tick(float DeltaTime)
 		//TODO remove magic number
 		if (DragTimer > 0.25f)
 		{
-			//LineTrace to check if hit Actor in level
+			//LineTrace to check if linetrace is hitting Actor in level
 			FVector Start;
 			FVector Direction;
 			Controller->GetMousePosition(Start.X, Start.Y);
@@ -55,7 +46,7 @@ void APlayerPawn::Tick(float DeltaTime)
 
 			TArray<FHitResult> Hits;
 			FCollisionQueryParams Params;
-			World->LineTraceMultiByChannel(Hits, Start, End, ECC_GameTraceChannel1, Params);
+			GetWorld()->LineTraceMultiByChannel(Hits, Start, End, ECC_GameTraceChannel1, Params);
 
 			for (int32 i = 0; i < Hits.Num(); i++)
 			{
@@ -69,7 +60,7 @@ void APlayerPawn::Tick(float DeltaTime)
 
 			//TODO why LineTracing used only to set location??
 			FHitResult Hit;
-			World->LineTraceSingleByChannel(Hit, Start, End, ECC_GameTraceChannel2, Params);
+			GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_GameTraceChannel2, Params);
 
 			if (IsValid(Hit.GetActor()))
 			{
@@ -91,35 +82,33 @@ void APlayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 void APlayerPawn::LeftMouseButtonPressed()
 {
-	if (IsValid(World))
+	if (IsValid(Controller) && !IsValid(DraggedActor))
 	{
-		if (IsValid(Controller) && !IsValid(DraggedActor))
-		{
-			//LineTrace to check if hit Actor in level
-			FVector Start;
-			FVector Direction;
-			Controller->GetMousePosition(Start.X, Start.Y);
-			Controller->DeprojectMousePositionToWorld(Start, Direction);
-			FVector End = Start + Direction * 2000;
+		//TODO same code as above, merge in to 1 function
+		//LineTrace to check if hit Actor in level
+		FVector Start;
+		FVector Direction;
+		Controller->GetMousePosition(Start.X, Start.Y);
+		Controller->DeprojectMousePositionToWorld(Start, Direction);
+		FVector End = Start + Direction * 2000;
 
-			FHitResult Hit;
-			FCollisionQueryParams Params;
-			World->LineTraceSingleByChannel(Hit, Start, End, ECC_GameTraceChannel2, Params);
-			if (IsValid(Hit.GetActor()))
+		FHitResult Hit;
+		FCollisionQueryParams Params;
+		GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_GameTraceChannel2, Params);
+		if (IsValid(Hit.GetActor()))
+		{
+			DraggedActor = Hit.GetActor();
+			bDragged = true;
+			DragTimer = 0.f;
+			LastActiveActor = ActorToActivate;
+			ActorToActivate = Hit.GetActor();
+		}
+		else
+		{
+			IActivationInterface* ActivationInterface = Cast<IActivationInterface>(ActorToActivate);
+			if (ActivationInterface)
 			{
-				DraggedActor = Hit.GetActor();
-				bDragged = true;
-				DragTimer = 0.f;
-				LastActiveActor = ActorToActivate;
-				ActorToActivate = Hit.GetActor();
-			}
-			else
-			{
-				IActivationInterface* ActivationInterface = Cast<IActivationInterface>(ActorToActivate);
-				if (ActivationInterface)
-				{
-					ActivationInterface->Deactivate();
-				}
+				ActivationInterface->Deactivate();
 			}
 		}
 	}
@@ -185,49 +174,45 @@ void APlayerPawn::LeftMouseButtonReleased()
 
 void APlayerPawn::LeftMouseButtonDoubleClicked()
 {
-	if (IsValid(World))
+	if (IsValid(Controller))
 	{
-		if (IsValid(Controller))
-		{
-			//LineTrace to check if hit Actor in level
-			FVector Start;
-			FVector Direction;
-			Controller->GetMousePosition(Start.X, Start.Y);
-			Controller->DeprojectMousePositionToWorld(Start, Direction);
-			FVector End = Start + Direction * 2000;
+		//TODO remove dublicated code and make function from linetracing
+		//LineTrace to check if hit Actor in level
+		FVector Start;
+		FVector Direction;
+		Controller->GetMousePosition(Start.X, Start.Y);
+		Controller->DeprojectMousePositionToWorld(Start, Direction);
+		FVector End = Start + Direction * 2000;
 
-			FHitResult Hit;
-			FCollisionQueryParams Params;
-			World->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, Params);
-			if (IsValid(Hit.GetActor()))
+		FHitResult Hit;
+		FCollisionQueryParams Params;
+		GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, Params);
+		if (IsValid(Hit.GetActor()))
+		{
+			//If linetrace hits actor check if it has interface that can activate Actor.
+			LastActiveActor = ActorToActivate;
+			ActorToActivate = Hit.GetActor();
+			IActivationInterface* ActivationInterface = Cast<IActivationInterface>(ActorToActivate);
+			if (ActivationInterface)
 			{
-				//If linetrace hits actor check if it has interface that can activate Actor.
-				LastActiveActor = ActorToActivate;
-				ActorToActivate = Hit.GetActor();
-				IActivationInterface* ActivationInterface = Cast<IActivationInterface>(ActorToActivate);
-				if (ActivationInterface)
-				{
-					ActivationInterface->DoubleClicked(LastActiveActor);
-				}
-				else
-				{
-					ActivationInterface = Cast<IActivationInterface>(LastActiveActor);
-					if (ActivationInterface)
-					{
-						ActivationInterface->Deactivate();
-					}
-				}
+				ActivationInterface->DoubleClicked(LastActiveActor);
 			}
 			else
 			{
-				IActivationInterface* ActivationInterface = Cast<IActivationInterface>(ActorToActivate);
+				ActivationInterface = Cast<IActivationInterface>(LastActiveActor);
 				if (ActivationInterface)
 				{
 					ActivationInterface->Deactivate();
 				}
 			}
 		}
+		else
+		{
+			IActivationInterface* ActivationInterface = Cast<IActivationInterface>(ActorToActivate);
+			if (ActivationInterface)
+			{
+				ActivationInterface->Deactivate();
+			}
+		}
 	}
 }
-
-
