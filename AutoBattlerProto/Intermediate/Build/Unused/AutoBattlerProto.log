@@ -1,0 +1,49 @@
+﻿  Using 'git status' to determine working set for adaptive non-unity build (E:\Lautturi).
+  Parsing headers for AutoBattlerProtoEditor
+    Running UnrealHeaderTool "E:\Lautturi\AutoBattlerProto\AutoBattlerProto.uproject" "E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\AutoBattlerProtoEditor\Development\AutoBattlerProtoEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+  Reflection code generated for AutoBattlerProtoEditor in 4,7589025 seconds
+  Building AutoBattlerProtoEditor...
+  Using Visual Studio 2017 14.16.27035 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.16299.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  [Upgrade]
+  [Upgrade] Using backward-compatible build settings. The latest version of UE4 sets the following values by default, which may require code changes:
+  [Upgrade]     bLegacyPublicIncludePaths = false                 => Omits subfolders from public include paths to reduce compiler command line length. (Previously: true).
+  [Upgrade]     ShadowVariableWarningLevel = WarningLevel.Error   => Treats shadowed variable warnings as errors. (Previously: WarningLevel.Warning).
+  [Upgrade]     PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs   => Set in build.cs files to enables IWYU-style PCH model. See https://docs.unrealengine.com/en-US/Programming/BuildTools/UnrealBuildTool/IWYU/index.html. (Previously: PCHUsageMode.UseSharedPCHs).
+  [Upgrade] Suppress this message by setting 'DefaultBuildSettings = BuildSettingsVersion.V2;' in AutoBattlerProtoEditor.Target.cs, and explicitly overriding settings that differ from the new defaults.
+  [Upgrade]
+  Building 29 actions with 24 processes...
+    [1/29] DropZoneInterface.cpp
+    [2/29] ActivationInterface.cpp
+    [3/29] DropZoneInterface.gen.cpp
+    [4/29] PlayerPawn.gen.cpp
+    [5/29] BaseSlot.gen.cpp
+    [6/29] ActivationInterface.gen.cpp
+    [7/29] CombatManager.gen.cpp
+    [8/29] SkillBase.gen.cpp
+    [9/29] SkillBase.cpp
+E:\Lautturi\AutoBattlerProto\Source\Lautturi\SkillBase.cpp(17): warning C4458: declaration of 'CombatManager' hides class member
+    e:\lautturi\autobattlerproto\source\lautturi\SkillBase.h(28): note: see declaration of 'USkillBase::CombatManager'
+    [10/29] EnemyBase.gen.cpp
+    [11/29] CharacterBase.gen.cpp
+    [12/29] AutoBattlerProtoGameInstance.cpp
+    [13/29] PlayerPawn.cpp
+    [14/29] EnemyBase.cpp
+    [15/29] AutoBattlerProtoGameInstance.gen.cpp
+    [16/29] CombatManager.cpp
+    [17/29] Ferry.gen.cpp
+    [18/29] SoulTrialManager.gen.cpp
+    [19/29] AutoBattlerProtoGameModeBase.cpp
+    [20/29] CharacterBase.cpp
+    [21/29] AutoBattlerProtoGameModeBase.gen.cpp
+    [22/29] BaseSlot.cpp
+    [23/29] Ferry.cpp
+    [24/29] SoulCard.cpp
+    [25/29] SoulCard.gen.cpp
+    [26/29] SoulTrialManager.cpp
+    [27/29] UE4Editor-AutoBattlerProto.lib
+       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.exp
+    [28/29] UE4Editor-AutoBattlerProto.dll
+       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.exp
+    [29/29] AutoBattlerProtoEditor.target
+  Total time in Parallel executor: 3,37 seconds
+  Total execution time: 8,61 seconds
