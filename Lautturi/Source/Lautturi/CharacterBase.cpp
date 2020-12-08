@@ -4,7 +4,7 @@
 #include "CharacterBase.h"
 #include "BaseSlot.h"
 #include "SoulTrialManager.h"
-#include "LautturiGameModeBase.h"
+#include "AutoBattlerProtoGameModeBase.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
 #include "SkillBase.h"
@@ -35,7 +35,7 @@ ACharacterBase::ACharacterBase()
 
 void ACharacterBase::Initialize(ABaseSlot * Slot, bool bCanClick)
 {
-	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
+	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
 	check(IsValid(GameMode));
 	SoulTrialManager = GameMode->GetSoulTrialManager();
 	check(IsValid(SoulTrialManager))

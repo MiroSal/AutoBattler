@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F2C7C346-AA6C-4D8E-961C-E116C82FE447}</ProjectGuid>
+    <ProjectGuid>{5C55B521-8B81-4C6B-AD2B-159C1474389F}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>Lautturi</RootNamespace>
     <PlatformToolset>v141</PlatformToolset>
@@ -274,6 +274,10 @@
     <None Include="..\..\Config\DefaultInput.ini"/>
     <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\ActivationInterface.h"/>
+    <ClCompile Include="..\..\Source\Lautturi\AutoBattlerProtoGameInstance.cpp"/>
+    <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProtoGameInstance.h"/>
+    <ClCompile Include="..\..\Source\Lautturi\AutoBattlerProtoGameModeBase.cpp"/>
+    <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProtoGameModeBase.h"/>
     <ClCompile Include="..\..\Source\Lautturi\BaseSlot.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\BaseSlot.h"/>
     <ClCompile Include="..\..\Source\Lautturi\CharacterBase.cpp"/>
@@ -289,10 +293,6 @@
     <None Include="..\..\Source\Lautturi\Lautturi.Build.cs"/>
     <ClCompile Include="..\..\Source\Lautturi\Lautturi.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\Lautturi.h"/>
-    <ClCompile Include="..\..\Source\Lautturi\LautturiGameInstance.cpp"/>
-    <ClInclude Include="..\..\Source\Lautturi\LautturiGameInstance.h"/>
-    <ClCompile Include="..\..\Source\Lautturi\LautturiGameModeBase.cpp"/>
-    <ClInclude Include="..\..\Source\Lautturi\LautturiGameModeBase.h"/>
     <ClCompile Include="..\..\Source\Lautturi\PlayerPawn.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\PlayerPawn.h"/>
     <ClCompile Include="..\..\Source\Lautturi\SkillBase.cpp"/>

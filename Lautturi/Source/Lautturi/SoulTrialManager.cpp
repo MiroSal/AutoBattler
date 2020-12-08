@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "SoulTrialManager.h"
-#include "LautturiGameModeBase.h"
+#include "AutoBattlerProtoGameModeBase.h"
 #include "CharacterBase.h"
-#include "LautturiGameInstance.h"
+#include "AutoBattlerProtoGameInstance.h"
 
 USoulTrialManager::USoulTrialManager()
 {

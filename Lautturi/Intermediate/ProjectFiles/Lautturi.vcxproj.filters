@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Lautturi.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{D06912F8-8B81-4CA1-BC40-10A85A9F89D1}</UniqueIdentifier>
+      <UniqueIdentifier>{076F7E75-0034-4B2B-95F0-774C59570A31}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Lautturi.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{9C7543C7-6C33-4344-93AF-AAC8889F153A}</UniqueIdentifier>
+      <UniqueIdentifier>{0CD92A83-EF18-490D-9A8E-064FA489356A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,12 +27,24 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{4E9F0B7D-7CB8-4292-89D5-536AD8C69032}</UniqueIdentifier>
+      <UniqueIdentifier>{624961BF-9D7F-4F5D-931C-2E595E5E9B6E}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp">
       <Filter>Source\Lautturi</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Lautturi\ActivationInterface.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\AutoBattlerProtoGameInstance.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProtoGameInstance.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\AutoBattlerProtoGameModeBase.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProtoGameModeBase.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Lautturi\BaseSlot.cpp">
@@ -78,18 +90,6 @@
       <Filter>Source\Lautturi</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Lautturi\Lautturi.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\LautturiGameInstance.cpp">
-      <Filter>Source\Lautturi</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\LautturiGameInstance.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\LautturiGameModeBase.cpp">
-      <Filter>Source\Lautturi</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\LautturiGameModeBase.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Lautturi\PlayerPawn.cpp">

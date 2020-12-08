@@ -31,7 +31,7 @@ protected:
 		class UCombatManager* CombatManager;
 
 	UPROPERTY()
-		class ALautturiGameModeBase* GameMode;
+		class AAutoBattlerProtoGameModeBase* GameMode;
 
 	UPROPERTY(EditAnywhere, Category = "Character Stats")
 		int32 Health;

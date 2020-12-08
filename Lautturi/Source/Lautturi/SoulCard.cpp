@@ -5,7 +5,7 @@
 #include "BaseSlot.h"
 #include "CharacterBase.h"
 #include "CombatManager.h"
-#include "LautturiGameModeBase.h"
+#include "AutoBattlerProtoGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
@@ -253,7 +253,7 @@ void ASoulCard::UpdateDataText()
 
 void ASoulCard::CombatInitialize(ACharacterBase* Character)
 {
-	GameMode = Cast<ALautturiGameModeBase>(GetWorld()->GetAuthGameMode());
+	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
 	CombatManager = GameMode->GetCombatManager();
 
 	//TODO Remove when not needed, debug line for adding Souls to combatmanager listenerArray when making combat level
