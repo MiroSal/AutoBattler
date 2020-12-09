@@ -309,7 +309,9 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USkillBase_Statics::Class_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
 		{ "IncludePath", "SkillBase.h" },
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "SkillBase.h" },
 	};
 #endif
@@ -384,7 +386,7 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USkillBase, 3850714688);
+	IMPLEMENT_CLASS(USkillBase, 3908853573);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<USkillBase>()
 	{
 		return USkillBase::StaticClass();

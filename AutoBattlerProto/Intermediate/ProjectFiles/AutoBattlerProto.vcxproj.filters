@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\AutoBattlerProto.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{2B1BB5B9-F3A9-4C73-B706-3BCC1ECB5448}</UniqueIdentifier>
+      <UniqueIdentifier>{16D97DC0-A736-4EEC-8551-B79B6C92DC74}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\AutoBattlerProto.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{4948D4F9-BE45-4902-8120-79B6877BE80D}</UniqueIdentifier>
+      <UniqueIdentifier>{FA81E19F-B851-4BE9-B2ED-441EB34A02F2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{E4E5E1CF-D634-4B8F-98C7-F43A41B4C64B}</UniqueIdentifier>
+      <UniqueIdentifier>{8DB603C3-A84B-46B1-B347-6BB2487403CD}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp">
       <Filter>Source\Lautturi</Filter>
