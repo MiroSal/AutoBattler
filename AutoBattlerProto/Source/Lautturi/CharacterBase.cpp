@@ -1,15 +1,14 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// Copyright © 2020 by Miro Salminen
 
 #include "CharacterBase.h"
-#include "BaseSlot.h"
-#include "SoulTrialManager.h"
-#include "AutoBattlerProtoGameModeBase.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/SceneComponent.h"
+#include "Components/TextRenderComponent.h"
+#include "AutoBattlerProtoGameModeBase.h"
+#include "SoulTrialManager.h"
+#include "SlotBase.h"
 #include "SkillBase.h"
-#include "CombatManager.h"
 
 ACharacterBase::ACharacterBase()
 {
@@ -32,116 +31,84 @@ ACharacterBase::ACharacterBase()
 	{
 		StatsText->SetupAttachment(RootComponent);
 	}
+
+	SoulTrialManager = nullptr;
+	CombatManager = nullptr;
+	GameMode = nullptr;
+
+	PrimarySkill = nullptr;
+	PassiveSkill = nullptr;
+
+	AllPossiblePrimarySkills = TArray<TSubclassOf<USkillBase>>();
+	AllPossiblePassiveSkills = TArray<TSubclassOf<USkillBase>>();
+
+	Health = 0;
+	Sin = 0;
+	Str = 0;
 }
 
-void ACharacterBase::Initialize(ABaseSlot * Slot, bool bCanClick)
+void ACharacterBase::Initialize(ASlotBase * Slot, bool bCanDrag)
 {
 	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
 	check(IsValid(GameMode));
+
 	SoulTrialManager = GameMode->GetSoulTrialManager();
-	check(IsValid(SoulTrialManager))
+	check(IsValid(SoulTrialManager));
+
 	CombatManager = GameMode->GetCombatManager();
-	check(IsValid(CombatManager))
-}
-
-bool ACharacterBase::Clicked(AActor* ActorToDeactivate)
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override Clicked function if needed!"));
-	return true;
-}
-
-bool ACharacterBase::DoubleClicked(AActor* ActorToDeactivate)
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override DoubleClicked function if needed!"));
-	return true;
-}
-
-bool ACharacterBase::Deactivate()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override Deactivate function if needed!"));
-	return true;
-}
-
-void ACharacterBase::ActivatePrimarySkill()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::ActivatePrimarySkill() function!"));
-}
-
-void ACharacterBase::ActivatePassiveSkill()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::ActivatePassiveSkill() function!"));
-}
-
-bool ACharacterBase::HealthReduce(int32 Amount)
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::HealthReduce(int32 Amount) function!"));
-	return false;
-}
-
-bool ACharacterBase::HealthAdd(int32 Amount)
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override AACharacterBase::HealthAdd(int32 Amount) function!"));
-	return false;
-}
-
-void ACharacterBase::Attack()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::Attack() function!"));
-}
-
-void ACharacterBase::UpdateDataText()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::UpdateDataText() function!"));
+	check(IsValid(CombatManager));
 }
 
 void ACharacterBase::AttackEnd()
 {
+	check(IsValid(CombatManager));
 	CombatManager->ChangeTurn();
 }
 
-bool ACharacterBase::StrAdd(int32 Amount)
+void ACharacterBase::RandomizeStats()
 {
-	if (Str >= 0 && Str < 10 && Health > 0)
+	Health = FMath::RandRange(1, 10);
+	Sin = FMath::RandRange(0, 10);
+	Str = FMath::RandRange(0, 10);
+	if (AllPossiblePassiveSkills.Num() > 0)
 	{
-		Str = FMath::Clamp(Str + Amount, 0, 10);;
-		return true;
+		PassiveSkill = NewObject<USkillBase>(this, AllPossiblePassiveSkills[FMath::RandRange(0, AllPossiblePassiveSkills.Num() - 1)]);
 	}
-	return false;
+
+	if (AllPossiblePrimarySkills.Num() > 0)
+	{
+		PrimarySkill = NewObject<USkillBase>(this, AllPossiblePrimarySkills[FMath::RandRange(0, AllPossiblePrimarySkills.Num() - 1)]);
+	}
+
+	if (IsValid(GetPassiveSkill()) && IsValid(GetPrimarySkill()) && IsValid(StatsText))
+	{
+		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), GetHealth(), GetSin(), GetStr(), *GetPrimarySkill()->GetSkillInfo(), *GetPassiveSkill()->GetSkillInfo());
+		StatsText->SetText(FText::FromString(Stats));
+	}
 }
 
-bool ACharacterBase::StrReduce(int32 Amount)
+void ACharacterBase::SetStr(int32 InStr)
 {
-	if (Str >= 0 && Str <= 10 && Health > 0)
+	if (GetStr() >= 0 && GetStr() <= 10 && Health > 0)
 	{
-		Str = FMath::Clamp(Str - Amount, 0, 10);
-		return true;
+		Str = FMath::Clamp(GetStr() - InStr, 0, 10);
 	}
-	return false;
 }
 
-void ACharacterBase::StrSet(int32 Amount)
+void ACharacterBase::SetSin(int32 InSin)
 {
-	Str = Amount;
+	if (GetSin() >= 0 && GetSin() <= 10 && Health > 0)
+	{
+		Sin = FMath::Clamp(GetSin() - InSin, 0, 10);
+	}
 }
 
-bool ACharacterBase::SinReduce(int32 Amount)
+void ACharacterBase::SetHealth(int32 InHealth)
 {
-	if (Sin >= 0 && Sin <= 10 && Health > 0)
+	if (GetHealth() > 0 && GetHealth() < 10)
 	{
-		Sin = FMath::Clamp(Sin - Amount, 0, 10);
-		return true;
+		Health = FMath::Clamp(GetHealth() + InHealth, 0, 10);
 	}
-	return false;
-}
-
-bool ACharacterBase::SinAdd(int32 Amount)
-{
-	if (Sin >= 0 && Sin < 10 && Health > 0)
-	{
-		Sin = FMath::Clamp(Sin + Amount, 0, 10);
-		return true;
-	}
-	return false;
 }
 
 int32 ACharacterBase::GetHealth()
@@ -159,7 +126,7 @@ int32 ACharacterBase::GetStr()
 	return Str;
 }
 
-void ACharacterBase::SetCurrentSlot(ABaseSlot * NewCurrentSlot)
+void ACharacterBase::SetCurrentSlot(ASlotBase * NewCurrentSlot)
 {
 	CurrentSlot = NewCurrentSlot;
 }

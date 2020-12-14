@@ -2,14 +2,10 @@ E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\Auto
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 E:\Lautturi\AutoBattlerProto\Source\Lautturi/CharacterBase.h
-D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
-D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
-D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
-D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
 e:\lautturi\autobattlerproto\source\lautturi\ActivationInterface.h
+e:\lautturi\autobattlerproto\source\lautturi\SlotBase.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\SlotBase.generated.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\ActivationInterface.generated.h
-D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h
-D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TextRenderComponent.generated.h
 e:\lautturi\autobattlerproto\source\lautturi\SkillTypeEnums.h
 e:\lautturi\autobattlerproto\source\lautturi\CombatManager.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
@@ -19,4 +15,6 @@ D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Internationalization/Pol
 e:\lautturi\autobattlerproto\source\lautturi\SoulDataStruct.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\SoulDataStruct.generated.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\CombatManager.generated.h
+e:\lautturi\autobattlerproto\source\lautturi\SkillBase.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\SkillBase.generated.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\CharacterBase.generated.h

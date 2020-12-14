@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\AutoBattlerProto.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{BA7BCD4A-17CF-42BF-885D-34314100E044}</UniqueIdentifier>
+      <UniqueIdentifier>{74ADB416-63C5-4125-8446-38D7C770F5FA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\AutoBattlerProto.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{52557A66-9909-4484-9001-D88235431AE9}</UniqueIdentifier>
+      <UniqueIdentifier>{FB8AE54B-0C71-4A31-B580-280B0B28D137}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{F8D1A114-FF1E-4D7B-AEA8-B0641B2EC17E}</UniqueIdentifier>
+      <UniqueIdentifier>{640010E7-F0A9-4A04-BCB6-7CE809829FA0}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp">
       <Filter>Source\Lautturi</Filter>
@@ -54,12 +54,6 @@
       <Filter>Source\Lautturi</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProtoGameModeBase.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\BaseSlot.cpp">
-      <Filter>Source\Lautturi</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\BaseSlot.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Lautturi\CharacterBase.cpp">
@@ -113,10 +107,10 @@
     <ClInclude Include="..\..\Source\Lautturi\SkillTypeEnums.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\SoulCard.cpp">
+    <ClCompile Include="..\..\Source\Lautturi\SlotBase.cpp">
       <Filter>Source\Lautturi</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\SoulCard.h">
+    <ClInclude Include="..\..\Source\Lautturi\SlotBase.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Lautturi\SoulDataStruct.h">

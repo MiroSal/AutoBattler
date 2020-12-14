@@ -1,3 +1,5 @@
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
 e:\lautturi\autobattlerproto\source\lautturi\ActivationInterface.h
+e:\lautturi\autobattlerproto\source\lautturi\SlotBase.h
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SlotBase.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\ActivationInterface.generated.h

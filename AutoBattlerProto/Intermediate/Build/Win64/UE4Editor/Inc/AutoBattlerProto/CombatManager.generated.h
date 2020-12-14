@@ -8,7 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-struct FSoulData;
+struct FCharacterData;
 #ifdef AUTOBATTLERPROTO_CombatManager_generated_h
 #error "CombatManager.generated.h already included, missing '#pragma once' in CombatManager.h"
 #endif
@@ -17,9 +17,9 @@ struct FSoulData;
 #define AutoBattlerProto_Source_Lautturi_CombatManager_h_10_DELEGATE \
 struct _Script_AutoBattlerProto_eventSkillUsedDelegate_Parms \
 { \
-	FSoulData SoulData; \
+	FCharacterData SoulData; \
 }; \
-static inline void FSkillUsedDelegate_DelegateWrapper(const FMulticastScriptDelegate& SkillUsedDelegate, FSoulData SoulData) \
+static inline void FSkillUsedDelegate_DelegateWrapper(const FMulticastScriptDelegate& SkillUsedDelegate, FCharacterData SoulData) \
 { \
 	_Script_AutoBattlerProto_eventSkillUsedDelegate_Parms Parms; \
 	Parms.SoulData=SoulData; \
@@ -48,7 +48,7 @@ static inline void FSkillUsedDelegate_DelegateWrapper(const FMulticastScriptDele
  \
 	DECLARE_FUNCTION(execAddSkillActionToQueue) \
 	{ \
-		P_GET_STRUCT(FSoulData,Z_Param_ActionData); \
+		P_GET_STRUCT(FCharacterData,Z_Param_ActionData); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->AddSkillActionToQueue(Z_Param_ActionData); \
@@ -76,7 +76,7 @@ static inline void FSkillUsedDelegate_DelegateWrapper(const FMulticastScriptDele
  \
 	DECLARE_FUNCTION(execAddSkillActionToQueue) \
 	{ \
-		P_GET_STRUCT(FSoulData,Z_Param_ActionData); \
+		P_GET_STRUCT(FCharacterData,Z_Param_ActionData); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->AddSkillActionToQueue(Z_Param_ActionData); \
@@ -171,9 +171,9 @@ template<> AUTOBATTLERPROTO_API UClass* StaticClass<class UCombatManager>();
 
 
 #define FOREACH_ENUM_ETURNENUM(op) \
-	op(ETurnEnum::Player) \
-	op(ETurnEnum::Enemy) \
-	op(ETurnEnum::None) 
+	op(ETurnEnum::TE_Player) \
+	op(ETurnEnum::TE_Enemy) \
+	op(ETurnEnum::TE_None) 
 
 enum class ETurnEnum : uint8;
 template<> AUTOBATTLERPROTO_API UEnum* StaticEnum<ETurnEnum>();

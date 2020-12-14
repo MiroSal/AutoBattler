@@ -4,6 +4,7 @@
 #include "AutoBattlerProtoGameModeBase.h"
 #include "CharacterBase.h"
 #include "AutoBattlerProtoGameInstance.h"
+#include "PlayerCharacter.h"
 
 USoulTrialManager::USoulTrialManager()
 {
@@ -15,7 +16,7 @@ void USoulTrialManager::Initialize()
 	UE_LOG(LogTemp, Warning, TEXT("Soultrial Initialized"));
 }
 
-void USoulTrialManager::AddSoulToJourney(ASoulCard* Soul)
+void USoulTrialManager::AddSoulToJourney(APlayerCharacter* Soul)
 {
 	if (ChosenSouls.Num() <= 5)
 	{
@@ -36,18 +37,18 @@ void USoulTrialManager::AddSoulToJourney(ASoulCard* Soul)
 
 void USoulTrialManager::AddTrialSoulList(ACharacterBase * Soul)
 {
-	TrialSouls.Add(Cast<ASoulCard>(Soul));
+	TrialSouls.Add(Cast<APlayerCharacter>(Soul));
 }
 
 void USoulTrialManager::RemoveTrialSoulList(ACharacterBase * Soul)
 {
 
-	TrialSouls.Remove(Cast<ASoulCard>(Soul));
+	TrialSouls.Remove(Cast<APlayerCharacter>(Soul));
 }
 
 void USoulTrialManager::DestoryAllOnTrialSoulsList()
 {
-	for (ASoulCard* Soul : TrialSouls)
+	for (APlayerCharacter* Soul : TrialSouls)
 	{
 		if (IsValid(Soul))
 		{
@@ -56,11 +57,11 @@ void USoulTrialManager::DestoryAllOnTrialSoulsList()
 	}
 }
 
-ASoulCard * USoulTrialManager::GetChosenSoul()
+APlayerCharacter * USoulTrialManager::GetChosenSoul()
 {
-	ASoulCard* SoulToSend = nullptr;
+	APlayerCharacter* SoulToSend = nullptr;
 
-	for (TPair<ASoulCard*, bool> Soul : SoulsToJourney)
+	for (TPair<APlayerCharacter*, bool> Soul : SoulsToJourney)
 	{
 		if (Soul.Value == false)
 		{

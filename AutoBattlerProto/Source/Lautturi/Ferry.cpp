@@ -6,7 +6,7 @@
 #include "Components/SceneComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "SoulTrialManager.h"
-#include "BaseSlot.h"
+#include "SlotBase.h"
 #include "AutoBattlerProtoGameModeBase.h"
 
 // Sets default values
@@ -66,7 +66,7 @@ bool AFerry::ActorCanBeDropped(AActor * ActorToDrop)
 void AFerry::ActorDrop(AActor * ActorToDrop)
 {
 	USoulTrialManager* SoulTrialManager = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode())->GetSoulTrialManager();
-	ASoulCard* Soul = Cast<ASoulCard>(ActorToDrop);
+	APlayerCharacter* Soul = Cast<APlayerCharacter>(ActorToDrop);
 
 	if (IsValid(Soul) && IsValid(SoulTrialManager))
 	{
@@ -78,7 +78,7 @@ void AFerry::ActorDrop(AActor * ActorToDrop)
 				Soul->SetActorLocation(SoulSpots[i].SoulSpot->GetComponentLocation());
 				SoulSpots[i].Soul = Soul;
 				SoulTrialManager->AddSoulToJourney(Soul);
-				ABaseSlot* Slot = Soul->GetCurrentSlot();
+				ASlotBase* Slot = Soul->GetCurrentSlot();
 				Slot->RemoveCharacterFromSlot(false);
 				return;
 			}

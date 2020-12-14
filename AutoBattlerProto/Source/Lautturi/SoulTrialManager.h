@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "SoulCard.h"
 #include "SoulTrialManager.generated.h"
 
 USTRUCT(BlueprintType)
@@ -20,7 +19,7 @@ public:
 		Soul = nullptr;
 	}
 
-	FChosenSoul(ASoulCard* SoulToAdd, bool bIsSpawned)
+	FChosenSoul(APlayerCharacter* SoulToAdd, bool bIsSpawned)
 	{
 		bHasBeenSpawned = bIsSpawned;
 		Soul = SoulToAdd;
@@ -30,11 +29,11 @@ public:
 		bool bHasBeenSpawned;
 
 	UPROPERTY()
-		ASoulCard* Soul;
+		class APlayerCharacter* Soul;
 };
 
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSoulAddedToJourneyDelegate, ASoulCard*, SoulCard);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSoulAddedToJourneyDelegate, APlayerCharacter*, SoulCard);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFerryIsFullDelegate, bool, bCanClick);
 /**
  * 
@@ -49,18 +48,18 @@ private:
 	TArray<FChosenSoul> ChosenSouls;
 
 	UPROPERTY()
-	TArray<ASoulCard*> TrialSouls;
+	TArray<class APlayerCharacter*> TrialSouls;
 
 	UPROPERTY()
-	TMap<ASoulCard*, bool> SoulsToJourney;
+	TMap<class APlayerCharacter*, bool> SoulsToJourney;
 
 	UPROPERTY()
-		ASoulCard* SoulTest;
+		class APlayerCharacter* SoulTest;
 public:
 
 	USoulTrialManager();
 
-	void AddSoulToJourney(ASoulCard* Soul);
+	void AddSoulToJourney(APlayerCharacter* Soul);
 
 	void Initialize();
 
@@ -80,6 +79,6 @@ public:
 	//Getters&&Setters
 public:
 	UFUNCTION(BlueprintCallable)
-		ASoulCard* GetChosenSoul();
+		class APlayerCharacter* GetChosenSoul();
 
 };

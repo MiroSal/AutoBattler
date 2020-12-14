@@ -16,7 +16,7 @@ void EmptyLinkFunctionForGeneratedCodeSoulTrialManager() {}
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UDelegateFunction_AutoBattlerProto_FerryIsFullDelegate__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_AutoBattlerProto();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UDelegateFunction_AutoBattlerProto_SoulAddedToJourneyDelegate__DelegateSignature();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_ASoulCard_NoRegister();
+	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_APlayerCharacter_NoRegister();
 	AUTOBATTLERPROTO_API UScriptStruct* Z_Construct_UScriptStruct_FChosenSoul();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_USoulTrialManager_NoRegister();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_USoulTrialManager();
@@ -68,7 +68,7 @@ void EmptyLinkFunctionForGeneratedCodeSoulTrialManager() {}
 	{
 		struct _Script_AutoBattlerProto_eventSoulAddedToJourneyDelegate_Parms
 		{
-			ASoulCard* SoulCard;
+			APlayerCharacter* SoulCard;
 		};
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SoulCard;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -77,7 +77,7 @@ void EmptyLinkFunctionForGeneratedCodeSoulTrialManager() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_AutoBattlerProto_SoulAddedToJourneyDelegate__DelegateSignature_Statics::NewProp_SoulCard = { "SoulCard", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_AutoBattlerProto_eventSoulAddedToJourneyDelegate_Parms, SoulCard), Z_Construct_UClass_ASoulCard_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_AutoBattlerProto_SoulAddedToJourneyDelegate__DelegateSignature_Statics::NewProp_SoulCard = { "SoulCard", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_AutoBattlerProto_eventSoulAddedToJourneyDelegate_Parms, SoulCard), Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_AutoBattlerProto_SoulAddedToJourneyDelegate__DelegateSignature_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_AutoBattlerProto_SoulAddedToJourneyDelegate__DelegateSignature_Statics::NewProp_SoulCard,
 	};
@@ -151,7 +151,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFChosenSoul
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FChosenSoul_Statics::NewProp_Soul = { "Soul", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FChosenSoul, Soul), Z_Construct_UClass_ASoulCard_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FChosenSoul_Statics::NewProp_Soul_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FChosenSoul_Statics::NewProp_Soul_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FChosenSoul_Statics::NewProp_Soul = { "Soul", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FChosenSoul, Soul), Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FChosenSoul_Statics::NewProp_Soul_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FChosenSoul_Statics::NewProp_Soul_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FChosenSoul_Statics::NewProp_bHasBeenSpawned_MetaData[] = {
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
@@ -194,7 +194,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFChosenSoul
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FChosenSoul_Hash() { return 1840153982U; }
+	uint32 Get_Z_Construct_UScriptStruct_FChosenSoul_Hash() { return 3082285530U; }
 	void USoulTrialManager::StaticRegisterNativesUSoulTrialManager()
 	{
 		UClass* Class = USoulTrialManager::StaticClass();
@@ -264,7 +264,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFChosenSoul
 	{
 		struct SoulTrialManager_eventGetChosenSoul_Parms
 		{
-			ASoulCard* ReturnValue;
+			APlayerCharacter* ReturnValue;
 		};
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -273,7 +273,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFChosenSoul
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_USoulTrialManager_GetChosenSoul_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SoulTrialManager_eventGetChosenSoul_Parms, ReturnValue), Z_Construct_UClass_ASoulCard_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_USoulTrialManager_GetChosenSoul_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SoulTrialManager_eventGetChosenSoul_Parms, ReturnValue), Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USoulTrialManager_GetChosenSoul_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USoulTrialManager_GetChosenSoul_Statics::NewProp_ReturnValue,
 	};
@@ -366,7 +366,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFChosenSoul
 	const FClassFunctionLinkInfo Z_Construct_UClass_USoulTrialManager_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_USoulTrialManager_AddTrialSoulList, "AddTrialSoulList" }, // 4132136017
 		{ &Z_Construct_UFunction_USoulTrialManager_DestoryAllOnTrialSoulsList, "DestoryAllOnTrialSoulsList" }, // 1991159793
-		{ &Z_Construct_UFunction_USoulTrialManager_GetChosenSoul, "GetChosenSoul" }, // 3623724681
+		{ &Z_Construct_UFunction_USoulTrialManager_GetChosenSoul, "GetChosenSoul" }, // 1835723283
 		{ &Z_Construct_UFunction_USoulTrialManager_RemoveTrialSoulList, "RemoveTrialSoulList" }, // 4283537340
 	};
 #if WITH_METADATA
@@ -381,14 +381,14 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFChosenSoul
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulTest = { "SoulTest", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, SoulTest), Z_Construct_UClass_ASoulCard_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulTest_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulTest_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulTest = { "SoulTest", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, SoulTest), Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulTest_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulTest_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulsToJourney_MetaData[] = {
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FMapPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulsToJourney = { "SoulsToJourney", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, SoulsToJourney), METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulsToJourney_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulsToJourney_MetaData)) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulsToJourney_Key_KeyProp = { "SoulsToJourney_Key", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_ASoulCard_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulsToJourney_Key_KeyProp = { "SoulsToJourney_Key", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SoulsToJourney_ValueProp = { "SoulsToJourney", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialSouls_MetaData[] = {
@@ -396,7 +396,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFChosenSoul
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialSouls = { "TrialSouls", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, TrialSouls), METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialSouls_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialSouls_MetaData)) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialSouls_Inner = { "TrialSouls", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_ASoulCard_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialSouls_Inner = { "TrialSouls", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_ChosenSouls_MetaData[] = {
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
@@ -441,7 +441,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFChosenSoul
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USoulTrialManager, 1066535009);
+	IMPLEMENT_CLASS(USoulTrialManager, 988509830);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<USoulTrialManager>()
 	{
 		return USoulTrialManager::StaticClass();

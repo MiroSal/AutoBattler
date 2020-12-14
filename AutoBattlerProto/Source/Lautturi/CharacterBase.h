@@ -1,19 +1,60 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright © 2020 by Miro Salminen
 
 #pragma once
-
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
 #include "ActivationInterface.h"
-#include "Components/TextRenderComponent.h"
 #include "SkillTypeEnums.h"
 #include "CombatManager.h"
+#include "SkillBase.h"
 #include "CharacterBase.generated.h"
 
 UCLASS()
 class AUTOBATTLERPROTO_API ACharacterBase : public AActor, public IActivationInterface
 {
 	GENERATED_BODY()
+
+		//Character Stats
+private:
+
+	UPROPERTY()
+		int32 Health;
+
+	UPROPERTY()
+		int32 Sin;
+
+	UPROPERTY()
+		int32 Str;
+
+	UPROPERTY(VisibleInstanceOnly)
+		class USkillBase* PrimarySkill;
+
+	UPROPERTY(VisibleInstanceOnly)
+		class USkillBase* PassiveSkill;
+
+	UPROPERTY(EditDefaultsOnly)
+		TArray<TSubclassOf<USkillBase>> AllPossiblePrimarySkills;
+
+	UPROPERTY(EditDefaultsOnly)
+		TArray<TSubclassOf<USkillBase>> AllPossiblePassiveSkills;
+
+	UPROPERTY(EditAnywhere, Category = "Character Stats")
+		ETurnEnum CharacterType = ETurnEnum::TE_None;
+
+	UPROPERTY(VisibleAnywhere, Category = "Character Stats")
+		ASlotBase* CurrentSlot;
+
+protected:
+	//Randomize base stats
+	virtual void RandomizeStats();
+
+	UFUNCTION()
+		virtual void SkillUsed(FCharacterData Data) {};
+
+public:
+	ACharacterBase();
+
+	virtual void Initialize(class ASlotBase* Slot, bool bCanClick);
+
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		class USceneComponent* Root;
@@ -33,104 +74,85 @@ protected:
 	UPROPERTY()
 		class AAutoBattlerProtoGameModeBase* GameMode;
 
-	UPROPERTY(EditAnywhere, Category = "Character Stats")
-		int32 Health;
 
-	UPROPERTY(EditAnywhere, Category = "Character Stats")
-		int32 Sin;
-
-	UPROPERTY(EditAnywhere, Category = "Character Stats")
-		int32 Str;
-
-	UPROPERTY(EditAnywhere, Category = "Character Stats")
-		ETurnEnum CharacterType = ETurnEnum::None;
-
-	UPROPERTY(VisibleAnywhere, Category = "Character Stats")
-		ABaseSlot* CurrentSlot;
-
-
-
+	//overriden in derived classes
 public:
-	ACharacterBase();
-	virtual void Initialize(ABaseSlot* Slot, bool bCanClick);
-	virtual bool Clicked(AActor* ActorToDeactivate) override;
-	virtual bool DoubleClicked(AActor* ActorToDeactivate) override;
-	virtual bool Deactivate() override;
+	virtual void ActivatePrimarySkill() {};
+	virtual void ActivatePassiveSkill() {};
+	virtual bool HealthReduce(int32 Amount) { return false; };
+	virtual bool HealthAdd(int32 Amount) { return false; };
+	virtual void Attack() {};
 
+	UFUNCTION(BlueprintCallable)
+		virtual void UpdateDataText() {};
+
+	//BlueprintImplementableEvents
 public:
-
-	virtual void ActivatePrimarySkill();
-	virtual void ActivatePassiveSkill();
-
-	virtual bool HealthReduce(int32 Amount);
-	virtual bool HealthAdd(int32 Amount);
-
-	virtual void Attack();
-
 	UFUNCTION(BlueprintImplementableEvent)
 		void BP_Attack();
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void BP_SkillUsed(class USkillBase * Skill);
 
-	UFUNCTION(BlueprintCallable)
-		void AttackEnd();
+	UFUNCTION(BlueprintImplementableEvent)
+		void BP_SetActiveDecal();
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void SetActiveDecal();
-
-	UFUNCTION(BlueprintImplementableEvent)
-		void DamageTaken(int32 Amount);
+		void BP_DamageTaken(int32 Amount);
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void BP_OnDeath();
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void HealthAdded(int32 Amount);
+		void BP_HealthAdded(int32 Amount);
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void BP_StartTurn();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void BP_EndTurn();
 
 	UFUNCTION(BlueprintCallable)
-		virtual void UpdateDataText();
+		void AttackEnd();
 
-	UFUNCTION(BlueprintImplementableEvent)
-		void StartTurn();
-
-	UFUNCTION(BlueprintImplementableEvent)
-		void EndTurn();
-
-//Getter&&Setters
+	//Getter&&Setters
 public:
 
 	FORCEINLINE ETurnEnum GetCharacterType() { return CharacterType; };
-	FORCEINLINE virtual ESkillType GetPrimarySkillType() { UE_LOG(LogTemp, Warning, TEXT("Override GetPrimarySkillType function!")); return ESkillType(); };
-	FORCEINLINE virtual ESkillType GetPassiveSkillType() { UE_LOG(LogTemp, Warning, TEXT("Override GetPassiveSkillType function!")); return ESkillType(); };
-	FORCEINLINE virtual class ABaseSlot* GetSlot() { UE_LOG(LogTemp, Warning, TEXT("Override ACharacterBase::GetSlot() function!")); return nullptr; };
-	FORCEINLINE virtual class USkillBase* GetPassiveSkill() { UE_LOG(LogTemp, Warning, TEXT("Override GetPassiveSkill() function!")); return nullptr; };
-	FORCEINLINE virtual class USkillBase* GetPrimarySkill() { UE_LOG(LogTemp, Warning, TEXT("Override GetPrimarySkill() function!")); return nullptr; };
+	FORCEINLINE virtual class ASlotBase* GetSlot() { return nullptr; };
+	FORCEINLINE virtual USkillBase* GetPassiveSkill() { return PassiveSkill; };
+	FORCEINLINE virtual USkillBase* GetPrimarySkill() { return PrimarySkill; };
+	FORCEINLINE virtual ESkillType GetPrimarySkillType() { return PrimarySkill->GetSkillType(); };
+	FORCEINLINE virtual ESkillType GetPassiveSkillType() { return PassiveSkill->GetSkillType(); };
 
 	UFUNCTION(BlueprintCallable)
-		void SetCurrentSlot(ABaseSlot* NewCurrentSlot);
+		void SetCurrentSlot(ASlotBase* NewCurrentSlot);
 
 	UFUNCTION(BlueprintCallable)
-		bool StrAdd(int32 Amount);
+		ASlotBase* GetCurrentSlot() { return CurrentSlot; };
 
-	UFUNCTION(BlueprintCallable)
-		bool StrReduce(int32 Amount);
+	//Character stats
+	UFUNCTION(BlueprintCallable, Category = "Character Stats")
+		void SetHealth(int32 InHealth);
 
-	UFUNCTION(BlueprintCallable)
-		void StrSet(int32 Amount);
+	UFUNCTION(BlueprintCallable, Category = "Character Stats")
+		void SetSin(int32 InSin);
 
-	UFUNCTION(BlueprintCallable)
-		bool SinReduce(int32 Amount);
+	UFUNCTION(BlueprintCallable, Category = "Character Stats")
+		void SetStr(int32 InStr);
 
-	UFUNCTION(BlueprintCallable)
-		bool SinAdd(int32 Amount);
-
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Character Stats")
 		int32 GetHealth();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Character Stats")
 		int32 GetSin();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Character Stats")
 		int32 GetStr();
+
+	//IActivationInterface
+public:
+	virtual bool Clicked(AActor* ActorToDeactivate) override { return false; };
+	virtual bool DoubleClicked(AActor* ActorToDeactivate) override { return false; };
+	virtual bool Deactivate() override { return false; };
 };

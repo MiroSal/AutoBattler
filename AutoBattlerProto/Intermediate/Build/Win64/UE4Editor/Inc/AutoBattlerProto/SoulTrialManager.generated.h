@@ -8,21 +8,21 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class ASoulCard;
+class APlayerCharacter;
 class ACharacterBase;
 #ifdef AUTOBATTLERPROTO_SoulTrialManager_generated_h
 #error "SoulTrialManager.generated.h already included, missing '#pragma once' in SoulTrialManager.h"
 #endif
 #define AUTOBATTLERPROTO_SoulTrialManager_generated_h
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_13_GENERATED_BODY \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_12_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FChosenSoul_Statics; \
 	AUTOBATTLERPROTO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AUTOBATTLERPROTO_API UScriptStruct* StaticStruct<struct FChosenSoul>();
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_38_DELEGATE \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_37_DELEGATE \
 struct _Script_AutoBattlerProto_eventFerryIsFullDelegate_Parms \
 { \
 	bool bCanClick; \
@@ -35,12 +35,12 @@ static inline void FFerryIsFullDelegate_DelegateWrapper(const FMulticastScriptDe
 }
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_37_DELEGATE \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_36_DELEGATE \
 struct _Script_AutoBattlerProto_eventSoulAddedToJourneyDelegate_Parms \
 { \
-	ASoulCard* SoulCard; \
+	APlayerCharacter* SoulCard; \
 }; \
-static inline void FSoulAddedToJourneyDelegate_DelegateWrapper(const FMulticastScriptDelegate& SoulAddedToJourneyDelegate, ASoulCard* SoulCard) \
+static inline void FSoulAddedToJourneyDelegate_DelegateWrapper(const FMulticastScriptDelegate& SoulAddedToJourneyDelegate, APlayerCharacter* SoulCard) \
 { \
 	_Script_AutoBattlerProto_eventSoulAddedToJourneyDelegate_Parms Parms; \
 	Parms.SoulCard=SoulCard; \
@@ -48,14 +48,14 @@ static inline void FSoulAddedToJourneyDelegate_DelegateWrapper(const FMulticastS
 }
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_SPARSE_DATA
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_RPC_WRAPPERS \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_SPARSE_DATA
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGetChosenSoul) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(ASoulCard**)Z_Param__Result=P_THIS->GetChosenSoul(); \
+		*(APlayerCharacter**)Z_Param__Result=P_THIS->GetChosenSoul(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -86,13 +86,13 @@ static inline void FSoulAddedToJourneyDelegate_DelegateWrapper(const FMulticastS
 	}
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_RPC_WRAPPERS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetChosenSoul) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(ASoulCard**)Z_Param__Result=P_THIS->GetChosenSoul(); \
+		*(APlayerCharacter**)Z_Param__Result=P_THIS->GetChosenSoul(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -123,7 +123,7 @@ static inline void FSoulAddedToJourneyDelegate_DelegateWrapper(const FMulticastS
 	}
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_INCLASS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUSoulTrialManager(); \
 	friend struct Z_Construct_UClass_USoulTrialManager_Statics; \
@@ -132,7 +132,7 @@ public: \
 	DECLARE_SERIALIZER(USoulTrialManager)
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_INCLASS \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_INCLASS \
 private: \
 	static void StaticRegisterNativesUSoulTrialManager(); \
 	friend struct Z_Construct_UClass_USoulTrialManager_Statics; \
@@ -141,7 +141,7 @@ public: \
 	DECLARE_SERIALIZER(USoulTrialManager)
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_STANDARD_CONSTRUCTORS \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USoulTrialManager(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USoulTrialManager) \
@@ -154,7 +154,7 @@ private: \
 public:
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_ENHANCED_CONSTRUCTORS \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API USoulTrialManager(USoulTrialManager&&); \
@@ -165,34 +165,34 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USoulTrialManager); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USoulTrialManager)
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_PRIVATE_PROPERTY_OFFSET \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ChosenSouls() { return STRUCT_OFFSET(USoulTrialManager, ChosenSouls); } \
 	FORCEINLINE static uint32 __PPO__TrialSouls() { return STRUCT_OFFSET(USoulTrialManager, TrialSouls); } \
 	FORCEINLINE static uint32 __PPO__SoulsToJourney() { return STRUCT_OFFSET(USoulTrialManager, SoulsToJourney); } \
 	FORCEINLINE static uint32 __PPO__SoulTest() { return STRUCT_OFFSET(USoulTrialManager, SoulTest); }
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_42_PROLOG
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_GENERATED_BODY_LEGACY \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_41_PROLOG
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_SPARSE_DATA \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_RPC_WRAPPERS \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_INCLASS \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_STANDARD_CONSTRUCTORS \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_SPARSE_DATA \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_RPC_WRAPPERS \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_INCLASS \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_GENERATED_BODY \
+#define AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_SPARSE_DATA \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_RPC_WRAPPERS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_INCLASS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_45_ENHANCED_CONSTRUCTORS \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_SPARSE_DATA \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_RPC_WRAPPERS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_INCLASS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_Lautturi_SoulTrialManager_h_44_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

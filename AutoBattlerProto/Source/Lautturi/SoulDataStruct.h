@@ -5,19 +5,19 @@
 
 
 USTRUCT()
-struct FSoulData
+struct FCharacterData
 {
 	GENERATED_BODY()
 
 public:
 
-	FSoulData() 
+	FCharacterData()
 	{
 		CharacterBase = nullptr;
 		SkillType = ESkillType::ST_None;
 	}
 
-	FSoulData(class ACharacterBase* Character, ESkillType Type)
+	FCharacterData(class ACharacterBase* Character, ESkillType Type)
 	{
 		CharacterBase = Character;
 		SkillType = Type;

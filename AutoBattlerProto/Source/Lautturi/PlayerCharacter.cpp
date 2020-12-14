@@ -1,110 +1,114 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "PlayerCharacter.h"
-#include "SoulTrialManager.h"
-#include "BaseSlot.h"
-#include "CharacterBase.h"
-#include "CombatManager.h"
-#include "AutoBattlerProtoGameModeBase.h"
-#include "Kismet/GameplayStatics.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
+#include "Components/TextRenderComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "SoulTrialManager.h"
+#include "CombatManager.h"
+#include "AutoBattlerProtoGameModeBase.h"
+#include "SlotBase.h"
 
 APlayerCharacter::APlayerCharacter()
 {
 	SoulStatusText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("SoulStatusText"));
-	SoulStatusText->SetupAttachment(RootComponent);
-
-	bHasCoin = false;
-	bIsAlive = true;
-	bTestAction = false;
-	bCanBeClicked = true;
-
-	PrimarySkill = nullptr;
-	PassiveSkill = nullptr;
-}
-
-void APlayerCharacter::ActionSkillUsed(FSoulData ActionInfo)
-{
-	if (Health > 0)
+	if (SoulStatusText)
 	{
-		if (ActionInfo.SkillType == PassiveSkill->GetActivateSkillType())
-		{
-			if (Cast<ASoulCard>(ActionInfo.CharacterBase))
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Message reseived!!"));
-				CombatManager->AddSkillActionToQueue(FSoulData(this, PassiveSkill->GetSkillType()));
-			}
-		}
+		SoulStatusText->SetupAttachment(RootComponent);
 	}
+
+	DraggableParams = FDraggableParams();
 }
 
-void APlayerCharacter::Initialize(ABaseSlot* Slot, bool bCanClick)
+void APlayerCharacter::Initialize(ASlotBase* Slot, bool bCanBeDragged)
 {
-	Super::Initialize(Slot, bCanClick);
+	Super::Initialize(Slot, bCanBeDragged);
 
-	CurrentSlot = Slot;
-	bCanBeClicked = bCanClick;
+	SetCurrentSlot(Slot);
+	DraggableParams.bDraggable = bCanBeDragged;
 
+	check(IsValid(SoulTrialManager));
 	SoulTrialManager->FerryIsFullDelegate.AddDynamic(this, &APlayerCharacter::CanClick);
 	RandomizeStats();
 }
 
-void APlayerCharacter::CanClick(bool bCanClick)
+//Binded to delegate, Sets bDraggable to false for every playercharacter when charcater are picked
+void APlayerCharacter::CanClick(bool bCanBeDragged)
 {
-	bCanBeClicked = bCanClick;
+	DraggableParams.bDraggable = bCanBeDragged;
+}
+
+void APlayerCharacter::CombatInitialize(ACharacterBase* Character)
+{
+	check(IsValid(CombatManager));
+	CombatManager->RegisterSoulListener(this);
+	CombatManager->SkillUsedDelegate.AddDynamic(this, &APlayerCharacter::SkillUsed);
+
+	UpdateDataText();
+}
+
+//check is passive skill should be triggered
+void APlayerCharacter::SkillUsed(FCharacterData Data)
+{
+	if (GetHealth() > 0 && IsValid(GetPassiveSkill()))
+	{
+		if (Data.SkillType == GetPassiveSkillType())
+		{
+			check(IsValid(CombatManager));
+			CombatManager->AddSkillActionToQueue(FCharacterData(this, GetPassiveSkillType()));
+		}
+	}
 }
 
 void APlayerCharacter::ActivatePrimarySkill()
 {
-	if (Health > 0)
+	if (GetHealth() > 0 && IsValid(GetPrimarySkill()))
 	{
-		if (IsValid(PrimarySkill))
+		if (IsValid(GetPrimarySkill()))
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Activating Primary %s"), *PrimarySkill->GetFName().ToString());
-			PrimarySkill->BP_ActivateSkill();
-			BP_SkillUsed(PrimarySkill);
-		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Invalid primary skill"));
+			GetPrimarySkill()->BP_ActivateSkill();
+			BP_SkillUsed(GetPrimarySkill());
 		}
 	}
-	else
+	else if (IsValid(GetPrimarySkill()))
 	{
-		PrimarySkill->DeactivateSkill();
+		GetPrimarySkill()->DeactivateSkill();
 	}
 }
 
 void APlayerCharacter::ActivatePassiveSkill()
 {
-	if (Health > 0)
+	if (GetHealth() > 0 && IsValid(GetPassiveSkill()))
 	{
-		if (IsValid(PassiveSkill))
+		if (IsValid(GetPassiveSkill()))
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Activating Passive%s"), *PassiveSkill->GetFName().ToString());
-			PassiveSkill->BP_ActivateSkill();
-			BP_SkillUsed(PassiveSkill);
-		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Invalid passive skill"));
+			GetPassiveSkill()->BP_ActivateSkill();
+			BP_SkillUsed(GetPassiveSkill());
 		}
 	}
-	else
+	else if (IsValid(GetPassiveSkill()))
 	{
-		PassiveSkill->DeactivateSkill();
+		GetPassiveSkill()->DeactivateSkill();
 	}
 }
 
 void APlayerCharacter::RandomizeStats()
 {
-	bHasCoin = FMath::RandRange(0, 1);
+	Super::RandomizeStats();
 
-	if (!bHasCoin)
+	GetPassiveSkill()->Initialize(this);
+	GetPrimarySkill()->Initialize(this);
+
+	if (!IsValid(SoulStatusText))
+		return;
+
+	DraggableParams.bHasCoin = FMath::RandRange(0, 1);
+
+	if (!DraggableParams.bHasCoin)
 	{
-		bIsAlive = FMath::RandRange(0, 1);
-		if (bIsAlive)
+		DraggableParams.bIsAlive = FMath::RandRange(0, 1);
+		if (DraggableParams.bIsAlive)
 		{
 			SoulStatusText->SetText(FText::FromString(TEXT("Alive")));
 		}
@@ -112,57 +116,45 @@ void APlayerCharacter::RandomizeStats()
 		{
 			SoulStatusText->SetText(FText::FromString(TEXT("NoCoin")));
 		}
-		//Mesh->SetMaterial(0, DeactivatedColor);
 	}
 	else
 	{
 		SoulStatusText->SetText(FText::FromString(TEXT("Coin")));
 	}
 
-	Health = FMath::RandRange(1, 10);
-	Sin = FMath::RandRange(0, 10);
-	Str = FMath::RandRange(0, 10);
-
-	PassiveSkill = NewObject<USkillBase>(this, AllPossiblePassiveSkills[FMath::RandRange(0, AllPossiblePassiveSkills.Num() - 1)]);
-	PrimarySkill = NewObject<USkillBase>(this, AllPossiblePrimarySkills[FMath::RandRange(0, AllPossiblePrimarySkills.Num() - 1)]);
-	PassiveSkill->Initialize(this, CombatManager);
-	PrimarySkill->Initialize(this, CombatManager);
-
 	UpdateDataText();
 }
 
 bool APlayerCharacter::Clicked(AActor* ActorToDeactivate)
 {
-	if (bCanBeClicked)
+	if (DraggableParams.bDraggable)
 	{
-		IActivationInterface* LastActorClicked = Cast<IActivationInterface>(ActorToDeactivate);
-		APlayerCharacter* Soul = Cast<APlayerCharacter>(ActorToDeactivate);
-		if (IsValid(Soul))
+		IActivationInterface* LastClicked = Cast<IActivationInterface>(ActorToDeactivate);
+		APlayerCharacter* Player = Cast<APlayerCharacter>(ActorToDeactivate);
+		if (IsValid(Player) && LastClicked != nullptr)
 		{
-			if (bIsAlive && LastActorClicked == this)//if Soul is still alive and has Activationinterface so that can be clicked with mouse
+			if (DraggableParams.bIsAlive && LastClicked == this)//if Player is still alive and has Activationinterface so that can be clicked with mouse
 			{
-				LastActorClicked->Deactivate();
-				//CurrentSlot->RemoveCharacterFromSlot(true);
+				LastClicked->Deactivate();
 			}
-			else if (Soul->bIsAlive && LastActorClicked != this)
+			else if (Player->DraggableParams.bIsAlive && LastClicked != this)
 			{
-				LastActorClicked->Deactivate();
+				LastClicked->Deactivate();
 			}
-			else if (!bHasCoin && LastActorClicked)//if soul has no coin and has Activationinterface so that can be clicked with mouse
+			else if (!DraggableParams.bHasCoin && LastClicked)//if soul has no coin and has Activationinterface so that can be clicked with mouse
 			{
-				if (!Soul->HasCoin() && Soul != this && !bHasCoin && !bIsAlive)//if last clicked soul dont have coin and it is not this
-				{				
-					Soul->GetCurrentSlot()->RemoveCharacterFromSlot(true);
-					CurrentSlot->RemoveCharacterFromSlot(true);
+				if (!Player->HasCoin() && Player != this && !DraggableParams.bHasCoin && !DraggableParams.bIsAlive)//if last clicked soul dont have coin and it is not this
+				{
+					Player->GetCurrentSlot()->RemoveCharacterFromSlot(true);
+					this->GetCurrentSlot()->RemoveCharacterFromSlot(true);
 				}
 			}
 		}
 
-		if (LastActorClicked)//deactivates last activated actor before activating next
+		if (LastClicked)//deactivates last activated actor before activating next
 		{
-			LastActorClicked->Deactivate();
+			LastClicked->Deactivate();
 		}
-		//Mesh->SetMaterial(0, ActivatedColor);
 		return true;
 	}
 	else
@@ -173,64 +165,23 @@ bool APlayerCharacter::Clicked(AActor* ActorToDeactivate)
 
 bool APlayerCharacter::DoubleClicked(AActor* ActorToDeactivate)
 {
-	if (bCanBeClicked)
+	if (DraggableParams.bDraggable)
 	{
 		IActivationInterface* LastActorClicked = Cast<IActivationInterface>(ActorToDeactivate);
 
-		if (bIsAlive && LastActorClicked == this)//if Soul is still alive and has Activationinterface so that can be clicked with mouse
+		if (DraggableParams.bIsAlive && LastActorClicked != nullptr && LastActorClicked == this)//if Player is alive and has Activationinterface so that can be clicked with mouse
 		{
 			LastActorClicked->Deactivate();
-			CurrentSlot->RemoveCharacterFromSlot(true);
+			GetCurrentSlot()->RemoveCharacterFromSlot(true);
 		}
-
-		//TODO add these to mouse drop
-		//SoulTrialManager->AddSoulToJourney(this);
-		//CombatManager->RegisterSoulListener(this);
-
 	}
 	return false;
 }
 
+//TODO what is this, Why is this
 bool APlayerCharacter::Deactivate()
 {
-	//Mesh->SetMaterial(0, DeactivatedColor);
-	return  true;
-}
-
-bool APlayerCharacter::HasCoin()
-{
-	return bHasCoin;
-}
-
-bool APlayerCharacter::HealthReduce(int32 Amount)
-{
-	if (Health > 0)
-	{
-		Health = FMath::Clamp(Health - Amount, 0, 10);
-		DamageTaken(Amount);
-		UpdateDataText();
-
-		if (Health <= 0)
-		{
-			//Mesh->SetMaterial(0, ActivatedColor);
-		}
-		return true;
-	}
-
-	return false;
-}
-
-bool APlayerCharacter::HealthAdd(int32 Amount)
-{
-	if (Health > 0 && Health < 10)
-	{
-		Health = FMath::Clamp(Health + Amount, 0, 10);
-		HealthAdded(Amount);
-		UpdateDataText();
-
-		return true;
-	}
-	return false;
+	return true;
 }
 
 void APlayerCharacter::Attack()
@@ -242,32 +193,17 @@ void APlayerCharacter::Attack()
 		ACharacterBase* Enemy = Enemies[FMath::RandRange(0, Enemies.Num() - 1)];
 		if (IsValid(Enemy))
 		{
-			Enemy->HealthReduce(Str);
+			Enemy->HealthReduce(GetStr());
 		}
 	}
 }
 
 void APlayerCharacter::UpdateDataText()
 {
-	FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), Health, Sin, Str, *PrimarySkill->GetSkillInfo(), *PassiveSkill->GetSkillInfo());
-	StatsText->SetText(FText::FromString(Stats));
-}
-
-void APlayerCharacter::CombatInitialize(ACharacterBase* Character)
-{
-	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
-	CombatManager = GameMode->GetCombatManager();
-
-	//TODO Remove when not needed, debug line for adding Souls to combatmanager listenerArray when making combat level
-	if (CombatManager)
+	Super::UpdateDataText();
+	if (IsValid(StatsText) && IsValid(GetPassiveSkill()) && IsValid(GetPrimarySkill()))
 	{
-		CombatManager->RegisterSoulListener(this);
-		CombatManager->SkillUsedDelegate.AddDynamic(this, &APlayerCharacter::ActionSkillUsed);
+		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), GetHealth(), GetSin(), GetStr(), *GetPrimarySkill()->GetSkillInfo(), *GetPassiveSkill()->GetSkillInfo());
+		StatsText->SetText(FText::FromString(Stats));
 	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("CombatManager is not valid SoulCard.cpp"));
-	}
-
-	UpdateDataText();
 }

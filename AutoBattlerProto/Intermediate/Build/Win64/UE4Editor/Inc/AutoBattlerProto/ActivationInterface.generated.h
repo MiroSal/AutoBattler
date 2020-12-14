@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AUTOBATTLERPROTO_ActivationInterface_generated_h
 
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_SPARSE_DATA
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_RPC_WRAPPERS
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_STANDARD_CONSTRUCTORS \
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_SPARSE_DATA
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_RPC_WRAPPERS
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	AUTOBATTLERPROTO_API UActivationInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UActivationInterface) \
@@ -29,7 +29,7 @@ private: \
 public:
 
 
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_ENHANCED_CONSTRUCTORS \
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	AUTOBATTLERPROTO_API UActivationInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -42,7 +42,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UActivationInterface); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UActivationInterface)
 
 
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_GENERATED_UINTERFACE_BODY() \
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_GENERATED_UINTERFACE_BODY() \
 private: \
 	static void StaticRegisterNativesUActivationInterface(); \
 	friend struct Z_Construct_UClass_UActivationInterface_Statics; \
@@ -51,22 +51,22 @@ public: \
 	DECLARE_SERIALIZER(UActivationInterface)
 
 
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_GENERATED_BODY_LEGACY \
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_GENERATED_BODY_LEGACY \
 		PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_GENERATED_UINTERFACE_BODY() \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_STANDARD_CONSTRUCTORS \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_GENERATED_UINTERFACE_BODY() \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_STANDARD_CONSTRUCTORS \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_GENERATED_BODY \
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_GENERATED_BODY \
 	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_GENERATED_UINTERFACE_BODY() \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_ENHANCED_CONSTRUCTORS \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_GENERATED_UINTERFACE_BODY() \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_INCLASS_IINTERFACE_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_INCLASS_IINTERFACE_NO_PURE_DECLS \
 protected: \
 	virtual ~IActivationInterface() {} \
 public: \
@@ -75,7 +75,7 @@ public: \
 	virtual UObject* _getUObject() const { check(0 && "Missing required implementation."); return nullptr; }
 
 
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_INCLASS_IINTERFACE \
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_INCLASS_IINTERFACE \
 protected: \
 	virtual ~IActivationInterface() {} \
 public: \
@@ -84,23 +84,23 @@ public: \
 	virtual UObject* _getUObject() const { check(0 && "Missing required implementation."); return nullptr; }
 
 
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_12_PROLOG
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_23_GENERATED_BODY_LEGACY \
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_11_PROLOG
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_22_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_SPARSE_DATA \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_RPC_WRAPPERS \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_INCLASS_IINTERFACE \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_SPARSE_DATA \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_RPC_WRAPPERS \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_INCLASS_IINTERFACE \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_23_GENERATED_BODY \
+#define AutoBattlerProto_Source_Lautturi_ActivationInterface_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_SPARSE_DATA \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_15_INCLASS_IINTERFACE_NO_PURE_DECLS \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_SPARSE_DATA \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_Lautturi_ActivationInterface_h_14_INCLASS_IINTERFACE_NO_PURE_DECLS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

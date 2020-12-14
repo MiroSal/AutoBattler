@@ -1,14 +1,13 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "CombatManager.h"
-#include "SoulCard.h"
 #include "CharacterBase.h"
 
 void UCombatManager::Initialize()
 {
 	CurrentSoulIndexInAction = 0;
 	CurrentEnemyIndexInAction = 0;
-	CurrentTurn = ETurnEnum::Enemy;
+	CurrentTurn = ETurnEnum::TE_Enemy;
 	FirstTurn = true;
 }
 
@@ -26,13 +25,13 @@ void UCombatManager::UnRegisterFromListener(ACharacterBase * Character)
 {
 	switch (Character->GetCharacterType())
 	{
-	case ETurnEnum::Player:
+	case ETurnEnum::TE_Player:
 		CombatCharacterListeners.Remove(Character);
 		break;
-	case ETurnEnum::Enemy:
+	case ETurnEnum::TE_Enemy:
 		CombatEnemyListeners.Remove(Character);
 		break;
-	case ETurnEnum::None:
+	case ETurnEnum::TE_None:
 		UE_LOG(LogTemp, Warning, TEXT("Character doesn't have Charactertype"));
 		break;
 	default:
@@ -40,7 +39,7 @@ void UCombatManager::UnRegisterFromListener(ACharacterBase * Character)
 	}
 }
 
-void UCombatManager::AddSkillActionToQueue(FSoulData ActionData)
+void UCombatManager::AddSkillActionToQueue(FCharacterData ActionData)
 {
 	if (IsValid(ActionData.CharacterBase))
 	{
@@ -53,7 +52,7 @@ void UCombatManager::PopNextSkillActionFromQueue()
 {
 	if (ActionQueue.Num() > 0)
 	{
-		FSoulData Data = ActionQueue.Pop();
+		FCharacterData Data = ActionQueue.Pop();
 		ACharacterBase* Character = Cast<ACharacterBase>(Data.CharacterBase);
 		if (IsValid(Character))
 		{
@@ -69,13 +68,13 @@ void UCombatManager::PopNextSkillActionFromQueue()
 		ACharacterBase* Character = nullptr;
 		switch (CurrentTurn)
 		{
-		case ETurnEnum::Player:
+		case ETurnEnum::TE_Player:
 			Character = CombatCharacterListeners[CurrentSoulIndexInAction];
 			break;
-		case ETurnEnum::Enemy:
+		case ETurnEnum::TE_Enemy:
 			Character = CombatEnemyListeners[CurrentEnemyIndexInAction];
 			break;
-		case ETurnEnum::None:
+		case ETurnEnum::TE_None:
 			break;
 		default:
 			break;
@@ -109,14 +108,14 @@ void UCombatManager::ChangeTurn()
 	{
 		CurrentSoulIndexInAction = 0;
 		Character = Cast<ACharacterBase>(CombatCharacterListeners[CurrentSoulIndexInAction]);
-		CurrentTurn = ETurnEnum::Player;
+		CurrentTurn = ETurnEnum::TE_Player;
 		FirstTurn = false;
 
 		if (IsValid(Character))
 		{
-			Character->StartTurn();
+			Character->BP_StartTurn();
 			CurrentSoulInAction = Character;
-			SkillUsedDelegate.Broadcast(FSoulData(Character, Character->GetPrimarySkillType()));
+			SkillUsedDelegate.Broadcast(FCharacterData(Character, Character->GetPrimarySkillType()));
 			Character->ActivatePrimarySkill();
 		}
 		else
@@ -129,9 +128,9 @@ void UCombatManager::ChangeTurn()
 	{
 		switch (CurrentTurn)
 		{
-		case ETurnEnum::Player:
+		case ETurnEnum::TE_Player:
 
-			CurrentTurn = ETurnEnum::Enemy;
+			CurrentTurn = ETurnEnum::TE_Enemy;
 			++CurrentEnemyIndexInAction;
 
 			if (CurrentEnemyIndexInAction >= CombatEnemyListeners.Num())
@@ -151,9 +150,9 @@ void UCombatManager::ChangeTurn()
 			}
 			break;
 
-		case ETurnEnum::Enemy:
+		case ETurnEnum::TE_Enemy:
 
-			CurrentTurn = ETurnEnum::Player;
+			CurrentTurn = ETurnEnum::TE_Player;
 			++CurrentSoulIndexInAction;
 
 			if (CurrentSoulIndexInAction >= CombatCharacterListeners.Num())
@@ -177,14 +176,14 @@ void UCombatManager::ChangeTurn()
 				UE_LOG(LogTemp, Warning, TEXT("Health = %d"), Character->GetHealth());
 				if (Character->GetHealth() <= 0)
 				{
-					CurrentTurn = ETurnEnum::Enemy;
+					CurrentTurn = ETurnEnum::TE_Enemy;
 					ChangeTurn();
 					return;
 				}
 			}
 			break;
 
-		case ETurnEnum::None:
+		case ETurnEnum::TE_None:
 			break;
 
 		default:
@@ -196,11 +195,11 @@ void UCombatManager::ChangeTurn()
 
 			if (IsValid(CurrentSoulInAction))
 			{
-				CurrentSoulInAction->EndTurn();
+				CurrentSoulInAction->BP_EndTurn();
 			}
-			Character->StartTurn();
+			Character->BP_StartTurn();
 			CurrentSoulInAction = Character;
-			SkillUsedDelegate.Broadcast(FSoulData(Character, Character->GetPrimarySkillType()));
+			SkillUsedDelegate.Broadcast(FCharacterData(Character, Character->GetPrimarySkillType()));
 			Character->ActivatePrimarySkill();
 		}
 		else

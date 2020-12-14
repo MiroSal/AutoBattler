@@ -15,7 +15,7 @@ void EmptyLinkFunctionForGeneratedCodeFerry() {}
 // Cross Module References
 	AUTOBATTLERPROTO_API UScriptStruct* Z_Construct_UScriptStruct_FFerrySoulSpot();
 	UPackage* Z_Construct_UPackage__Script_AutoBattlerProto();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_ASoulCard_NoRegister();
+	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_APlayerCharacter_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UArrowComponent_NoRegister();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_AFerry_NoRegister();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_AFerry();
@@ -78,7 +78,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFFerrySoulSpot
 		{ "ModuleRelativePath", "Ferry.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FFerrySoulSpot_Statics::NewProp_Soul = { "Soul", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FFerrySoulSpot, Soul), Z_Construct_UClass_ASoulCard_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FFerrySoulSpot_Statics::NewProp_Soul_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FFerrySoulSpot_Statics::NewProp_Soul_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FFerrySoulSpot_Statics::NewProp_Soul = { "Soul", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FFerrySoulSpot, Soul), Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FFerrySoulSpot_Statics::NewProp_Soul_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FFerrySoulSpot_Statics::NewProp_Soul_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FFerrySoulSpot_Statics::NewProp_SoulSpot_MetaData[] = {
 		{ "EditInline", "true" },
@@ -118,7 +118,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFFerrySoulSpot
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FFerrySoulSpot_Hash() { return 1329741355U; }
+	uint32 Get_Z_Construct_UScriptStruct_FFerrySoulSpot_Hash() { return 1105050858U; }
 	void AFerry::StaticRegisterNativesAFerry()
 	{
 	}

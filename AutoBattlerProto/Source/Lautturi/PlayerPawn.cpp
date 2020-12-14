@@ -5,7 +5,7 @@
 #include "ActivationInterface.h"
 #include "DropZoneInterface.h"
 #include "DrawDebugHelpers.h"
-#include "BaseSlot.h"
+#include "SlotBase.h"
 #include "CharacterBase.h"
 #include "Engine/World.h"
 #include "Components/InputComponent.h"
@@ -33,6 +33,7 @@ void APlayerPawn::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (bDragged)
 	{
+
 		DragTimer = DragTimer + DeltaTime;
 		//TODO remove magic number
 		if (DragTimer > 0.25f)
@@ -127,7 +128,7 @@ void APlayerPawn::LeftMouseButtonReleased()
 
 			if (ActivationInterface)
 			{
-				ABaseSlot* Slot = ActivationInterface->GetSlot();
+				ASlotBase* Slot = ActivationInterface->GetSlot();
 				DraggedActor->SetActorLocation(Slot->GetActorLocation());
 
 			}

@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3D5D0FC6-39BD-445F-9C63-5CAF885FABEE}</ProjectGuid>
+    <ProjectGuid>{C6028290-13FF-4E2F-8A7B-60E5A06CC777}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>AutoBattlerProto</RootNamespace>
     <PlatformToolset>v141</PlatformToolset>
@@ -281,8 +281,6 @@
     <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProtoGameInstance.h"/>
     <ClCompile Include="..\..\Source\Lautturi\AutoBattlerProtoGameModeBase.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProtoGameModeBase.h"/>
-    <ClCompile Include="..\..\Source\Lautturi\BaseSlot.cpp"/>
-    <ClInclude Include="..\..\Source\Lautturi\BaseSlot.h"/>
     <ClCompile Include="..\..\Source\Lautturi\CharacterBase.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\CharacterBase.h"/>
     <ClCompile Include="..\..\Source\Lautturi\CombatManager.cpp"/>
@@ -300,8 +298,8 @@
     <ClCompile Include="..\..\Source\Lautturi\SkillBase.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\SkillBase.h"/>
     <ClInclude Include="..\..\Source\Lautturi\SkillTypeEnums.h"/>
-    <ClCompile Include="..\..\Source\Lautturi\SoulCard.cpp"/>
-    <ClInclude Include="..\..\Source\Lautturi\SoulCard.h"/>
+    <ClCompile Include="..\..\Source\Lautturi\SlotBase.cpp"/>
+    <ClInclude Include="..\..\Source\Lautturi\SlotBase.h"/>
     <ClInclude Include="..\..\Source\Lautturi\SoulDataStruct.h"/>
     <ClCompile Include="..\..\Source\Lautturi\SoulTrialManager.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\SoulTrialManager.h"/>

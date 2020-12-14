@@ -14,11 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define AUTOBATTLERPROTO_SoulDataStruct_generated_h
 
 #define AutoBattlerProto_Source_Lautturi_SoulDataStruct_h_10_GENERATED_BODY \
-	friend struct Z_Construct_UScriptStruct_FSoulData_Statics; \
+	friend struct Z_Construct_UScriptStruct_FCharacterData_Statics; \
 	AUTOBATTLERPROTO_API static class UScriptStruct* StaticStruct();
 
 
-template<> AUTOBATTLERPROTO_API UScriptStruct* StaticStruct<struct FSoulData>();
+template<> AUTOBATTLERPROTO_API UScriptStruct* StaticStruct<struct FCharacterData>();
 
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID AutoBattlerProto_Source_Lautturi_SoulDataStruct_h

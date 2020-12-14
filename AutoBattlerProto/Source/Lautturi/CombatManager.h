@@ -7,14 +7,14 @@
 #include "SoulDataStruct.h"
 #include "CombatManager.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSkillUsedDelegate, FSoulData, SoulData);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSkillUsedDelegate, FCharacterData, SoulData);
 
 UENUM()
 enum class ETurnEnum :uint8
 {
-	Player,
-	Enemy,
-	None
+	TE_Player UMETA(DisplayName = "Player"),
+	TE_Enemy UMETA(DisplayName = "Enemy"),
+	TE_None UMETA(DisplayName = "None")
 };
 
 UCLASS()
@@ -39,7 +39,7 @@ private:
 		TArray<ACharacterBase*> CurrentListenerList;
 
 	UPROPERTY()
-		TArray<FSoulData> ActionQueue;
+		TArray<FCharacterData> ActionQueue;
 
 	UPROPERTY()
 		class ACharacterBase* CurrentSoulInAction;
@@ -60,7 +60,7 @@ public:
 	void UnRegisterFromListener(ACharacterBase* Character);
 
 	UFUNCTION()
-		void AddSkillActionToQueue(FSoulData ActionData);
+		void AddSkillActionToQueue(FCharacterData ActionData);
 
 	UFUNCTION(BlueprintCallable)
 		void ChangeTurn();

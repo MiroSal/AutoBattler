@@ -4,9 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
+#include "SlotBase.h"
 #include "ActivationInterface.generated.h"
-
-class ABaseSlot;
 
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
@@ -25,8 +24,8 @@ class AUTOBATTLERPROTO_API IActivationInterface
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 
-	virtual bool Clicked(AActor* ActorToDeactivate);
-	virtual bool DoubleClicked(AActor* ActorToDeactivate);
-	virtual bool Deactivate();
-	virtual ABaseSlot* GetSlot();
+	virtual bool Clicked(AActor* ActorToDeactivate) = 0;
+	virtual bool DoubleClicked(AActor* ActorToDeactivate)=0;
+	virtual bool Deactivate()=0;
+	virtual ASlotBase* GetSlot()=0;
 };

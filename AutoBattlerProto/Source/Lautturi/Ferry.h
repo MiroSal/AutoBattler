@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "SoulCard.h"
 #include "DropZoneInterface.h"
+#include "PlayerCharacter.h"
 #include "Ferry.generated.h"
 
 USTRUCT(BlueprintType)
@@ -16,13 +16,13 @@ struct FFerrySoulSpot
 public:
 
 	FFerrySoulSpot(){SoulSpot = nullptr; Soul = nullptr;}
-	FFerrySoulSpot(UArrowComponent* Spot, ASoulCard* SoulToAdd){SoulSpot = Spot; Soul = SoulToAdd;}
+	FFerrySoulSpot(UArrowComponent* Spot, APlayerCharacter* SoulToAdd){SoulSpot = Spot; Soul = SoulToAdd;}
 
 	UPROPERTY()
 		class UArrowComponent* SoulSpot;
 
 	UPROPERTY()
-		class ASoulCard* Soul;
+		APlayerCharacter* Soul;
 };
 
 UCLASS()
