@@ -6,6 +6,7 @@
 #include "SoulTrialManager.h"
 #include "AutoBattlerProtoGameModeBase.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "Components/SceneComponent.h"
 #include "SkillBase.h"
 #include "CombatManager.h"
@@ -20,7 +21,7 @@ ACharacterBase::ACharacterBase()
 		SetRootComponent(Root);
 	}
 
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
 	if (Mesh)
 	{
 		Mesh->SetupAttachment(GetRootComponent());

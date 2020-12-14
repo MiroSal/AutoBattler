@@ -9,6 +9,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ABaseSlot;
+class USkillBase;
 #ifdef AUTOBATTLERPROTO_CharacterBase_generated_h
 #error "CharacterBase.generated.h already included, missing '#pragma once' in CharacterBase.h"
 #endif
@@ -210,6 +211,10 @@ class ABaseSlot;
 
 
 #define AutoBattlerProto_Source_Lautturi_CharacterBase_h_16_EVENT_PARMS \
+	struct CharacterBase_eventBP_SkillUsed_Parms \
+	{ \
+		USkillBase* Skill; \
+	}; \
 	struct CharacterBase_eventDamageTaken_Parms \
 	{ \
 		int32 Amount; \

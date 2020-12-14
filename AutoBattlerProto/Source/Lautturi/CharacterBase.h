@@ -19,7 +19,7 @@ protected:
 		class USceneComponent* Root;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		class UStaticMeshComponent* Mesh;
+		class USkeletalMeshComponent* Mesh;
 
 	UPROPERTY(VisibleAnywhere)
 		class UTextRenderComponent* StatsText;
@@ -48,6 +48,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category = "Character Stats")
 		ABaseSlot* CurrentSlot;
 
+
+
 public:
 	ACharacterBase();
 	virtual void Initialize(ABaseSlot* Slot, bool bCanClick);
@@ -68,6 +70,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void BP_Attack();
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void BP_SkillUsed(class USkillBase * Skill);
+
 	UFUNCTION(BlueprintCallable)
 		void AttackEnd();
 
@@ -78,7 +83,7 @@ public:
 		void DamageTaken(int32 Amount);
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void OnDeath();
+		void BP_OnDeath();
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void HealthAdded(int32 Amount);

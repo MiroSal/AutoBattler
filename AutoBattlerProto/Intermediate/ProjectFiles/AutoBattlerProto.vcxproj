@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B573B5F1-34FA-4F92-B781-86C04EBD7D8D}</ProjectGuid>
+    <ProjectGuid>{3D5D0FC6-39BD-445F-9C63-5CAF885FABEE}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>AutoBattlerProto</RootNamespace>
     <PlatformToolset>v141</PlatformToolset>
@@ -293,6 +293,8 @@
     <ClInclude Include="..\..\Source\Lautturi\EnemyBase.h"/>
     <ClCompile Include="..\..\Source\Lautturi\Ferry.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\Ferry.h"/>
+    <ClCompile Include="..\..\Source\Lautturi\PlayerCharacter.cpp"/>
+    <ClInclude Include="..\..\Source\Lautturi\PlayerCharacter.h"/>
     <ClCompile Include="..\..\Source\Lautturi\PlayerPawn.cpp"/>
     <ClInclude Include="..\..\Source\Lautturi\PlayerPawn.h"/>
     <ClCompile Include="..\..\Source\Lautturi\SkillBase.cpp"/>

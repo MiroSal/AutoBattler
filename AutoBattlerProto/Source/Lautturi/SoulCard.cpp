@@ -63,6 +63,7 @@ void ASoulCard::ActivatePrimarySkill()
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Activating Primary %s"), *PrimarySkill->GetFName().ToString());
 			PrimarySkill->BP_ActivateSkill();
+			BP_SkillUsed(PrimarySkill);
 		}
 		else
 		{
@@ -83,6 +84,7 @@ void ASoulCard::ActivatePassiveSkill()
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Activating Passive%s"), *PassiveSkill->GetFName().ToString());
 			PassiveSkill->BP_ActivateSkill();
+			BP_SkillUsed(PassiveSkill);
 		}
 		else
 		{
@@ -110,7 +112,7 @@ void ASoulCard::RandomizeStats()
 		{
 			SoulStatusText->SetText(FText::FromString(TEXT("NoCoin")));
 		}
-		Mesh->SetMaterial(0, DeactivatedColor);
+		//Mesh->SetMaterial(0, DeactivatedColor);
 	}
 	else
 	{
@@ -160,7 +162,7 @@ bool ASoulCard::Clicked(AActor* ActorToDeactivate)
 		{
 			LastActorClicked->Deactivate();
 		}
-		Mesh->SetMaterial(0, ActivatedColor);
+		//Mesh->SetMaterial(0, ActivatedColor);
 		return true;
 	}
 	else
@@ -191,7 +193,7 @@ bool ASoulCard::DoubleClicked(AActor* ActorToDeactivate)
 
 bool ASoulCard::Deactivate()
 {
-	Mesh->SetMaterial(0, DeactivatedColor);
+	//Mesh->SetMaterial(0, DeactivatedColor);
 	return  true;
 }
 
@@ -210,7 +212,7 @@ bool ASoulCard::HealthReduce(int32 Amount)
 
 		if (Health <= 0)
 		{
-			Mesh->SetMaterial(0, ActivatedColor);
+			//Mesh->SetMaterial(0, ActivatedColor);
 		}
 		return true;
 	}

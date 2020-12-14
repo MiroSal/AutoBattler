@@ -20,6 +20,8 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_USkillBase_Activate();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_USkillBase_BP_ActivateSkill();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_USkillBase_DeactivateSkill();
+	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_USkillBase_GetAffectRange();
+	AUTOBATTLERPROTO_API UEnum* Z_Construct_UEnum_AutoBattlerProto_EAffectRange();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_USkillBase_GetAllEnemies();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_ACharacterBase_NoRegister();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_USkillBase_GetAllSouls();
@@ -39,6 +41,7 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "Activate", &USkillBase::execActivate },
 			{ "DeactivateSkill", &USkillBase::execDeactivateSkill },
+			{ "GetAffectRange", &USkillBase::execGetAffectRange },
 			{ "GetAllEnemies", &USkillBase::execGetAllEnemies },
 			{ "GetAllSouls", &USkillBase::execGetAllSouls },
 			{ "GetOwningCharacter", &USkillBase::execGetOwningCharacter },
@@ -109,6 +112,41 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USkillBase_DeactivateSkill_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_USkillBase_GetAffectRange_Statics
+	{
+		struct SkillBase_eventGetAffectRange_Parms
+		{
+			EAffectRange ReturnValue;
+		};
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_ReturnValue_Underlying;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SkillBase_eventGetAffectRange_Parms, ReturnValue), Z_Construct_UEnum_AutoBattlerProto_EAffectRange, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::NewProp_ReturnValue_Underlying,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "SkillBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USkillBase, nullptr, "GetAffectRange", nullptr, nullptr, sizeof(SkillBase_eventGetAffectRange_Parms), Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_USkillBase_GetAffectRange()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USkillBase_GetAffectRange_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -290,6 +328,11 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 #endif
 		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_SkillType;
 		static const UE4CodeGen_Private::FBytePropertyParams NewProp_SkillType_Underlying;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AffectRange_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_AffectRange;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_AffectRange_Underlying;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -302,6 +345,7 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 		{ &Z_Construct_UFunction_USkillBase_Activate, "Activate" }, // 591585386
 		{ &Z_Construct_UFunction_USkillBase_BP_ActivateSkill, "BP_ActivateSkill" }, // 202025099
 		{ &Z_Construct_UFunction_USkillBase_DeactivateSkill, "DeactivateSkill" }, // 3231681120
+		{ &Z_Construct_UFunction_USkillBase_GetAffectRange, "GetAffectRange" }, // 2547593942
 		{ &Z_Construct_UFunction_USkillBase_GetAllEnemies, "GetAllEnemies" }, // 1260243714
 		{ &Z_Construct_UFunction_USkillBase_GetAllSouls, "GetAllSouls" }, // 2720791332
 		{ &Z_Construct_UFunction_USkillBase_GetOwningCharacter, "GetOwningCharacter" }, // 557772218
@@ -350,6 +394,14 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 #endif
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_USkillBase_Statics::NewProp_SkillType = { "SkillType", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USkillBase, SkillType), Z_Construct_UEnum_AutoBattlerProto_ESkillType, METADATA_PARAMS(Z_Construct_UClass_USkillBase_Statics::NewProp_SkillType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USkillBase_Statics::NewProp_SkillType_MetaData)) };
 	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UClass_USkillBase_Statics::NewProp_SkillType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USkillBase_Statics::NewProp_AffectRange_MetaData[] = {
+		{ "Category", "SkillBase" },
+		{ "ModuleRelativePath", "SkillBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_USkillBase_Statics::NewProp_AffectRange = { "AffectRange", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USkillBase, AffectRange), Z_Construct_UEnum_AutoBattlerProto_EAffectRange, METADATA_PARAMS(Z_Construct_UClass_USkillBase_Statics::NewProp_AffectRange_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USkillBase_Statics::NewProp_AffectRange_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UClass_USkillBase_Statics::NewProp_AffectRange_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USkillBase_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USkillBase_Statics::NewProp_OwningCharacter,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USkillBase_Statics::NewProp_CombatManager,
@@ -358,6 +410,8 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USkillBase_Statics::NewProp_SkillTypeToActivate_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USkillBase_Statics::NewProp_SkillType,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USkillBase_Statics::NewProp_SkillType_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USkillBase_Statics::NewProp_AffectRange,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USkillBase_Statics::NewProp_AffectRange_Underlying,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_USkillBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<USkillBase>::IsAbstract,
@@ -386,7 +440,7 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USkillBase, 3908853573);
+	IMPLEMENT_CLASS(USkillBase, 2535367850);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<USkillBase>()
 	{
 		return USkillBase::StaticClass();

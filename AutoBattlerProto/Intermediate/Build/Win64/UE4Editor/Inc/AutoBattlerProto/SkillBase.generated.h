@@ -9,6 +9,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ACharacterBase;
+enum class EAffectRange : uint8;
 enum class ESkillType : uint8;
 #ifdef AUTOBATTLERPROTO_SkillBase_generated_h
 #error "SkillBase.generated.h already included, missing '#pragma once' in SkillBase.h"
@@ -39,6 +40,14 @@ enum class ESkillType : uint8;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		*(ACharacterBase**)Z_Param__Result=P_THIS->GetOwningCharacter(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetAffectRange) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(EAffectRange*)Z_Param__Result=P_THIS->GetAffectRange(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -93,6 +102,14 @@ enum class ESkillType : uint8;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		*(ACharacterBase**)Z_Param__Result=P_THIS->GetOwningCharacter(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetAffectRange) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(EAffectRange*)Z_Param__Result=P_THIS->GetAffectRange(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -169,6 +186,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USkillBase); \
 
 
 #define AutoBattlerProto_Source_Lautturi_SkillBase_h_14_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__AffectRange() { return STRUCT_OFFSET(USkillBase, AffectRange); } \
 	FORCEINLINE static uint32 __PPO__SkillType() { return STRUCT_OFFSET(USkillBase, SkillType); } \
 	FORCEINLINE static uint32 __PPO__SkillTypeToActivate() { return STRUCT_OFFSET(USkillBase, SkillTypeToActivate); } \
 	FORCEINLINE static uint32 __PPO__SkillInfo() { return STRUCT_OFFSET(USkillBase, SkillInfo); } \

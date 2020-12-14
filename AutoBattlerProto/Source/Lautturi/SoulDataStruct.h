@@ -14,7 +14,7 @@ public:
 	FSoulData() 
 	{
 		CharacterBase = nullptr;
-		SkillType = ESkillType::None;
+		SkillType = ESkillType::ST_None;
 	}
 
 	FSoulData(class ACharacterBase* Character, ESkillType Type)

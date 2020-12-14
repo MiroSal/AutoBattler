@@ -17,11 +17,19 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define CURRENT_FILE_ID AutoBattlerProto_Source_Lautturi_SkillTypeEnums_h
 
 
+#define FOREACH_ENUM_EAFFECTRANGE(op) \
+	op(EAffectRange::AR_All) \
+	op(EAffectRange::AR_Single) \
+	op(EAffectRange::AR_None) 
+
+enum class EAffectRange : uint8;
+template<> AUTOBATTLERPROTO_API UEnum* StaticEnum<EAffectRange>();
+
 #define FOREACH_ENUM_ESKILLTYPE(op) \
-	op(ESkillType::Heal) \
-	op(ESkillType::Sin) \
-	op(ESkillType::Buff) \
-	op(ESkillType::None) 
+	op(ESkillType::ST_Heal) \
+	op(ESkillType::ST_Sin) \
+	op(ESkillType::ST_Buff) \
+	op(ESkillType::ST_None) 
 
 enum class ESkillType : uint8;
 template<> AUTOBATTLERPROTO_API UEnum* StaticEnum<ESkillType>();

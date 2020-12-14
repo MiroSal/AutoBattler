@@ -1,7 +1,4 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (E:\Lautturi).
-  Parsing headers for AutoBattlerProtoEditor
-    Running UnrealHeaderTool "E:\Lautturi\AutoBattlerProto\AutoBattlerProto.uproject" "E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\AutoBattlerProtoEditor\Development\AutoBattlerProtoEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for AutoBattlerProtoEditor in 4,623815 seconds
   Building AutoBattlerProtoEditor...
   Using Visual Studio 2017 14.16.27035 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.16299.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -11,30 +8,12 @@
   [Upgrade]     PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs   => Set in build.cs files to enables IWYU-style PCH model. See https://docs.unrealengine.com/en-US/Programming/BuildTools/UnrealBuildTool/IWYU/index.html. (Previously: PCHUsageMode.UseSharedPCHs).
   [Upgrade] Suppress this message by setting 'DefaultBuildSettings = BuildSettingsVersion.V2;' in AutoBattlerProtoEditor.Target.cs, and explicitly overriding settings that differ from the new defaults.
   [Upgrade]
-  Building 20 actions with 24 processes...
-    [1/20] AutoBattlerProto.init.gen.cpp
-    [2/20] SkillBase.gen.cpp
-    [3/20] SkillBase.cpp
-E:\Lautturi\AutoBattlerProto\Source\Lautturi\SkillBase.cpp(17): warning C4458: declaration of 'CombatManager' hides class member
-    e:\lautturi\autobattlerproto\source\lautturi\SkillBase.h(28): note: see declaration of 'USkillBase::CombatManager'
-    [4/20] SoulCard.gen.cpp
-    [5/20] CombatManager.cpp
-    [6/20] EnemyBase.cpp
-    [7/20] Ferry.gen.cpp
-    [8/20] AutoBattlerProtoGameInstance.cpp
-    [9/20] AutoBattlerProtoGameInstance.gen.cpp
-    [10/20] AutoBattlerProtoGameModeBase.cpp
-    [11/20] SoulTrialManager.gen.cpp
-    [12/20] CharacterBase.cpp
-    [13/20] AutoBattlerProtoGameModeBase.gen.cpp
-    [14/20] BaseSlot.cpp
-    [15/20] Ferry.cpp
-    [16/20] SoulTrialManager.cpp
-    [17/20] SoulCard.cpp
-    [18/20] UE4Editor-AutoBattlerProto-0003.lib
-       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0003.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0003.exp
-    [19/20] UE4Editor-AutoBattlerProto-0003.dll
-       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0003.suppressed.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0003.suppressed.exp
-    [20/20] AutoBattlerProtoEditor.target
-  Total time in Parallel executor: 2,53 seconds
-  Total execution time: 7,82 seconds
+  Building 4 actions with 24 processes...
+    [1/4] PlayerCharacter.cpp
+    [2/4] UE4Editor-AutoBattlerProto.lib
+       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.exp
+    [3/4] UE4Editor-AutoBattlerProto.dll
+       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.exp
+    [4/4] AutoBattlerProtoEditor.target
+  Total time in Parallel executor: 2,08 seconds
+  Total execution time: 2,53 seconds

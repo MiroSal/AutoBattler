@@ -457,7 +457,7 @@ void EmptyLinkFunctionForGeneratedCodeSoulCard() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASoulCard, 1198017613);
+	IMPLEMENT_CLASS(ASoulCard, 17460396);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<ASoulCard>()
 	{
 		return ASoulCard::StaticClass();
