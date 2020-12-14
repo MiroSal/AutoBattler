@@ -1,0 +1,3 @@
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
+e:\lautturi\autobattlerproto\source\lautturi\DropZoneInterface.h
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\DropZoneInterface.generated.h
