@@ -1,88 +1,80 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright © 2020 by Miro Salminen
 
 #include "SoulTrialManager.h"
 #include "AutoBattlerProtoGameModeBase.h"
-#include "CharacterBase.h"
 #include "AutoBattlerProtoGameInstance.h"
 #include "PlayerCharacter.h"
 
+#define COMBATPOSITIONS  5
+
 USoulTrialManager::USoulTrialManager()
 {
-	SoulTest = nullptr;
+	AllCharactersInTrial = TArray<APlayerCharacter*>();
+	CharactersToCombat = TArray<APlayerCharacter*>();
 }
 
-void USoulTrialManager::Initialize()
+void USoulTrialManager::AddCharacterToCombat(APlayerCharacter* Character)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Soultrial Initialized"));
-}
-
-void USoulTrialManager::AddSoulToJourney(APlayerCharacter* Soul)
-{
-	if (ChosenSouls.Num() <= 5)
+	if (CharactersToCombat.Num() <= COMBATPOSITIONS)
 	{
-		SoulsToJourney.Add(Soul, false);
-		ChosenSouls.Add(FChosenSoul(Soul, false));
+		CharactersToCombat.Add(Character);
 
-		if (ChosenSouls.Num() >= 5)
+		if (CharactersToCombat.Num() >= COMBATPOSITIONS)
 		{
 			FerryIsFullDelegate.Broadcast(false);
 		}
 
 		if (SoulAddedToJourneyDelegate.IsBound())
 		{
-			SoulAddedToJourneyDelegate.Broadcast(Soul);
+			SoulAddedToJourneyDelegate.Broadcast(Character);
 		}
 	}
 }
 
-void USoulTrialManager::AddTrialSoulList(ACharacterBase * Soul)
+void USoulTrialManager::AddCharacterToTrial(ACharacterBase * Character)
 {
-	TrialSouls.Add(Cast<APlayerCharacter>(Soul));
-}
-
-void USoulTrialManager::RemoveTrialSoulList(ACharacterBase * Soul)
-{
-
-	TrialSouls.Remove(Cast<APlayerCharacter>(Soul));
-}
-
-void USoulTrialManager::DestoryAllOnTrialSoulsList()
-{
-	for (APlayerCharacter* Soul : TrialSouls)
+	if (IsValid(Character))
 	{
-		if (IsValid(Soul))
+		AllCharactersInTrial.Add(Cast<APlayerCharacter>(Character));
+	}
+}
+
+void USoulTrialManager::RemoveCharacterFromTrial(ACharacterBase * Character)
+{
+	if (IsValid(Character))
+	{
+		AllCharactersInTrial.Remove(Cast<APlayerCharacter>(Character));
+	}
+}
+
+void USoulTrialManager::DestroyCharactersFromTrial()
+{
+	for (APlayerCharacter* Character : AllCharactersInTrial)
+	{
+		if (IsValid(Character))
 		{
-			Soul->Destroy();
+			Character->Destroy();
 		}
 	}
 }
 
-APlayerCharacter * USoulTrialManager::GetChosenSoul()
+APlayerCharacter * USoulTrialManager::GetChosenCharacter()
 {
-	APlayerCharacter* SoulToSend = nullptr;
+	APlayerCharacter* CharacterToSend = nullptr;
 
-	for (TPair<APlayerCharacter*, bool> Soul : SoulsToJourney)
+	for (APlayerCharacter* Character : CharactersToCombat)
 	{
-		if (Soul.Value == false)
+		if (IsValid(Character))
 		{
-			if (IsValid(Soul.Key))
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Gameinstance thing: %s "), *Soul.Key->GetFName().ToString());
-				SoulToSend = Soul.Key;
-				break;
-			}
-			else
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Gameinstance thing: Not valis "));
-
-			}
+			CharacterToSend = Character;
+			break;
 		}
 	}
 
-	if (IsValid(SoulToSend))
+	if (IsValid(CharacterToSend))
 	{
-		SoulsToJourney.Remove(SoulToSend);
-		return SoulToSend;
+		CharactersToCombat.Remove(CharacterToSend);
+		return CharacterToSend;
 	}
 
 	return nullptr;

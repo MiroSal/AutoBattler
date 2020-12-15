@@ -3,7 +3,6 @@
 #include "SkillTypeEnums.h"
 #include "SoulDataStruct.generated.h"
 
-
 USTRUCT()
 struct FCharacterData
 {

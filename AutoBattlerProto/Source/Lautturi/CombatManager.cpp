@@ -3,52 +3,35 @@
 #include "CombatManager.h"
 #include "CharacterBase.h"
 
+UCombatManager::UCombatManager()
+{
+	CombatPlayerListeners = TArray<ACharacterBase*>();
+	CombatEnemyListeners = TArray<ACharacterBase*>();
+	ActionQueue = TArray<FCharacterData>();
+
+	ActiveCharacter = nullptr;
+	CurrentCombatTurn = ETurnEnum::TE_None;
+
+	CharacterIndex = 0;
+	EnemyIndex = 0;
+
+	TotalEnemyCount = 5;
+	CurrentEnemyCount = 1;
+
+	bIsFirstTurn = true;
+}
+
 void UCombatManager::Initialize()
 {
-	CurrentSoulIndexInAction = 0;
-	CurrentEnemyIndexInAction = 0;
-	CurrentTurn = ETurnEnum::TE_Enemy;
-	FirstTurn = true;
+	CurrentCombatTurn = ETurnEnum::TE_Enemy;
 }
 
-void UCombatManager::RegisterSoulListener(ACharacterBase* Character)
+void UCombatManager::StartCombat()
 {
-	CombatCharacterListeners.Add(Character);
+	ChangeTurn();
 }
 
-void UCombatManager::RegisterEnemyListener(ACharacterBase * Character)
-{
-	CombatEnemyListeners.Add(Character);
-}
-
-void UCombatManager::UnRegisterFromListener(ACharacterBase * Character)
-{
-	switch (Character->GetCharacterType())
-	{
-	case ETurnEnum::TE_Player:
-		CombatCharacterListeners.Remove(Character);
-		break;
-	case ETurnEnum::TE_Enemy:
-		CombatEnemyListeners.Remove(Character);
-		break;
-	case ETurnEnum::TE_None:
-		UE_LOG(LogTemp, Warning, TEXT("Character doesn't have Charactertype"));
-		break;
-	default:
-		break;
-	}
-}
-
-void UCombatManager::AddSkillActionToQueue(FCharacterData ActionData)
-{
-	if (IsValid(ActionData.CharacterBase))
-	{
-		ActionQueue.Add(ActionData);
-		UE_LOG(LogTemp, Warning, TEXT("Skill Action In Queue: %i"), ActionQueue.Num());
-	}
-}
-
-void UCombatManager::PopNextSkillActionFromQueue()
+void UCombatManager::PopNextSkillFromQueue()
 {
 	if (ActionQueue.Num() > 0)
 	{
@@ -60,162 +43,161 @@ void UCombatManager::PopNextSkillActionFromQueue()
 		}
 		else
 		{
-			UE_LOG(LogTemp, Warning, TEXT("ActionQueue data is not valid"));
+			UE_LOG(LogTemp, Warning, TEXT("SkillQueue data is not valid"));
 		}
 	}
 	else if (ActionQueue.Num() <= 0)
 	{
-		ACharacterBase* Character = nullptr;
-		switch (CurrentTurn)
+		if (IsValid(ActiveCharacter))
 		{
-		case ETurnEnum::TE_Player:
-			Character = CombatCharacterListeners[CurrentSoulIndexInAction];
-			break;
-		case ETurnEnum::TE_Enemy:
-			Character = CombatEnemyListeners[CurrentEnemyIndexInAction];
-			break;
-		case ETurnEnum::TE_None:
-			break;
-		default:
-			break;
-		}
-
-		if (IsValid(Character))
-		{
-			if (Character->GetHealth() > 0)
+			if (ActiveCharacter->IsAlive())
 			{
-				Character->Attack();
+				ActiveCharacter->Attack(); //Character will attack and run blueprint functionality, calls ChangeTurn() from Blueprint when ready.
+				UE_LOG(LogTemp, Warning, TEXT("Character: %s attacks"), *ActiveCharacter->GetFName().ToString());
 			}
 			else
 			{
 				ChangeTurn();
 			}
-			UE_LOG(LogTemp, Warning, TEXT("Character: %s attacks"), *Character->GetFName().ToString());
 		}
 		else
 		{
 			UE_LOG(LogTemp, Warning, TEXT("No valid character"));
 		}
-
-		UE_LOG(LogTemp, Warning, TEXT("RoundEnded"));
 	}
 }
 
 void UCombatManager::ChangeTurn()
 {
-	ACharacterBase* Character = nullptr;
-	if (FirstTurn)
+	if (CombatPlayerListeners.Num() > 0)
 	{
-		CurrentSoulIndexInAction = 0;
-		Character = Cast<ACharacterBase>(CombatCharacterListeners[CurrentSoulIndexInAction]);
-		CurrentTurn = ETurnEnum::TE_Player;
-		FirstTurn = false;
-
-		if (IsValid(Character))
+		if (bIsFirstTurn)
 		{
-			Character->BP_StartTurn();
-			CurrentSoulInAction = Character;
-			SkillUsedDelegate.Broadcast(FCharacterData(Character, Character->GetPrimarySkillType()));
-			Character->ActivatePrimarySkill();
+			HandleFirstTurn();
 		}
 		else
 		{
-			UE_LOG(LogTemp, Warning, TEXT("CombatSoulListeners data is not so valid"));
-			ChangeTurn();
+			if (IsValid(ActiveCharacter))
+				ActiveCharacter->BP_EndTurn();
+
+			ChangeActiveCharacter();
+
+			if (IsValid(ActiveCharacter))
+			{
+				ActiveCharacter->BP_StartTurn();
+				SkillUsedDelegate.Broadcast(FCharacterData(ActiveCharacter, ActiveCharacter->GetPrimarySkillType()));
+				ActiveCharacter->ActivatePrimarySkill();
+			}
+			else
+			{
+				ChangeTurn();
+			}
 		}
+	}
+}
+
+void UCombatManager::ChangeActiveCharacter()
+{
+	switch (CurrentCombatTurn)
+	{
+	case ETurnEnum::TE_Player:
+		CurrentCombatTurn = ETurnEnum::TE_Enemy;
+		++EnemyIndex;
+
+		if (EnemyIndex >= CombatEnemyListeners.Num())
+			EnemyIndex = 0;
+
+		ActiveCharacter = Cast<ACharacterBase>(CombatEnemyListeners[FMath::Clamp(EnemyIndex, 0, CombatEnemyListeners.Num())]);
+		break;
+
+	case ETurnEnum::TE_Enemy:
+
+		CurrentCombatTurn = ETurnEnum::TE_Player;
+		++CharacterIndex;
+		if (CharacterIndex >= CombatPlayerListeners.Num())
+			CharacterIndex = 0;
+
+		ActiveCharacter = Cast<ACharacterBase>(CombatPlayerListeners[FMath::Clamp(CharacterIndex, 0, CombatPlayerListeners.Num())]);
+		break;
+
+	case ETurnEnum::TE_None:
+		UE_LOG(LogTemp, Warning, TEXT("CurrentCombatTurn was None"));
+		break;
+	default:
+		UE_LOG(LogTemp, Warning, TEXT("Something went wrong, this should never happen"));
+		break;
+	}
+}
+
+void UCombatManager::HandleFirstTurn()
+{
+	CharacterIndex = 0;
+	ActiveCharacter = Cast<ACharacterBase>(CombatPlayerListeners[CharacterIndex]);
+	CurrentCombatTurn = ETurnEnum::TE_Player;
+	bIsFirstTurn = false;
+
+	if (IsValid(ActiveCharacter))
+	{
+		ActiveCharacter->BP_StartTurn();
+		SkillUsedDelegate.Broadcast(FCharacterData(ActiveCharacter, ActiveCharacter->GetPrimarySkillType()));
+		ActiveCharacter->ActivatePrimarySkill();
 	}
 	else
 	{
-		switch (CurrentTurn)
-		{
-		case ETurnEnum::TE_Player:
-
-			CurrentTurn = ETurnEnum::TE_Enemy;
-			++CurrentEnemyIndexInAction;
-
-			if (CurrentEnemyIndexInAction >= CombatEnemyListeners.Num())
-			{
-				CurrentEnemyIndexInAction = 0;
-				Character = Cast<ACharacterBase>(CombatEnemyListeners[CurrentEnemyIndexInAction]);
-
-			}
-			else if (CombatEnemyListeners.Num() <= 0)
-			{
-				UE_LOG(LogTemp, Warning, TEXT("No Enemy Listeners"));
-				Character = nullptr;
-			}
-			else
-			{
-				Character = Cast<ACharacterBase>(CombatEnemyListeners[CurrentEnemyIndexInAction]);
-			}
-			break;
-
-		case ETurnEnum::TE_Enemy:
-
-			CurrentTurn = ETurnEnum::TE_Player;
-			++CurrentSoulIndexInAction;
-
-			if (CurrentSoulIndexInAction >= CombatCharacterListeners.Num())
-			{
-				CurrentSoulIndexInAction = 0;
-				Character = Cast<ACharacterBase>(CombatCharacterListeners[CurrentSoulIndexInAction]);
-
-			}
-			else if (CombatCharacterListeners.Num() <= 0)
-			{
-				UE_LOG(LogTemp, Warning, TEXT("No Soul Listeners"));
-				Character = nullptr;
-			}
-			else
-			{
-				Character = Cast<ACharacterBase>(CombatCharacterListeners[CurrentSoulIndexInAction]);
-			}
-
-			if (IsValid(Character))
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Health = %d"), Character->GetHealth());
-				if (Character->GetHealth() <= 0)
-				{
-					CurrentTurn = ETurnEnum::TE_Enemy;
-					ChangeTurn();
-					return;
-				}
-			}
-			break;
-
-		case ETurnEnum::TE_None:
-			break;
-
-		default:
-			break;
-		}
-
-		if (IsValid(Character))
-		{
-
-			if (IsValid(CurrentSoulInAction))
-			{
-				CurrentSoulInAction->BP_EndTurn();
-			}
-			Character->BP_StartTurn();
-			CurrentSoulInAction = Character;
-			SkillUsedDelegate.Broadcast(FCharacterData(Character, Character->GetPrimarySkillType()));
-			Character->ActivatePrimarySkill();
-		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("CombatSoulListeners data is not so valid"));
-			ChangeTurn();
-		}
+		UE_LOG(LogTemp, Warning, TEXT("CombatSoulListeners data is not so valid"));
+		ChangeTurn();
 	}
 }
 
-TArray<ACharacterBase*> UCombatManager::GetAllEnemies()
+void UCombatManager::RegisterCombatListener(ACharacterBase* Character)
 {
-	return CombatEnemyListeners;
+	if (!IsValid(Character))
+		return;
+
+	switch (Character->GetCharacterType())
+	{
+	case ETurnEnum::TE_Player:
+		CombatPlayerListeners.Add(Character);
+		break;
+	case ETurnEnum::TE_Enemy:
+		CombatEnemyListeners.Add(Character);
+		break;
+	case ETurnEnum::TE_None:
+		UE_LOG(LogTemp, Warning, TEXT("Charactertype is None"));
+		break;
+	default:
+		UE_LOG(LogTemp, Warning, TEXT("Character doesn't have Charactertype"));
+		break;
+	}
 }
 
-TArray<ACharacterBase*> UCombatManager::GetAllSouls()
+void UCombatManager::UnRegisterCombatListener(ACharacterBase * Character)
 {
-	return CombatCharacterListeners;
+	if (!IsValid(Character))
+		return;
+
+	switch (Character->GetCharacterType())
+	{
+	case ETurnEnum::TE_Player:
+		CombatPlayerListeners.Remove(Character);
+		break;
+	case ETurnEnum::TE_Enemy:
+		CombatEnemyListeners.Remove(Character);
+		break;
+	case ETurnEnum::TE_None:
+		UE_LOG(LogTemp, Warning, TEXT("Charactertype is None"));
+		break;
+	default:
+		UE_LOG(LogTemp, Warning, TEXT("Character doesn't have Charactertype"));
+		break;
+	}
+}
+
+void UCombatManager::AddSkillActionToQueue(FCharacterData ActionData)
+{
+	if (IsValid(ActionData.CharacterBase))
+	{
+		ActionQueue.Add(ActionData);
+		UE_LOG(LogTemp, Display, TEXT("Skill Action In Queue: %i"), ActionQueue.Num());
+	}
 }

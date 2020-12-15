@@ -14,7 +14,7 @@ struct FCharacterData;
 #endif
 #define AUTOBATTLERPROTO_CombatManager_generated_h
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_10_DELEGATE \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_8_DELEGATE \
 struct _Script_AutoBattlerProto_eventSkillUsedDelegate_Parms \
 { \
 	FCharacterData SoulData; \
@@ -27,64 +27,30 @@ static inline void FSkillUsedDelegate_DelegateWrapper(const FMulticastScriptDele
 }
 
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_SPARSE_DATA
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_RPC_WRAPPERS \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_SPARSE_DATA
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execPopNextSkillActionFromQueue) \
+	DECLARE_FUNCTION(execStartCombat) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->PopNextSkillActionFromQueue(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execChangeTurn) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->ChangeTurn(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execAddSkillActionToQueue) \
-	{ \
-		P_GET_STRUCT(FCharacterData,Z_Param_ActionData); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->AddSkillActionToQueue(Z_Param_ActionData); \
+		P_THIS->StartCombat(); \
 		P_NATIVE_END; \
 	}
 
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_RPC_WRAPPERS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execPopNextSkillActionFromQueue) \
+	DECLARE_FUNCTION(execStartCombat) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->PopNextSkillActionFromQueue(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execChangeTurn) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->ChangeTurn(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execAddSkillActionToQueue) \
-	{ \
-		P_GET_STRUCT(FCharacterData,Z_Param_ActionData); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->AddSkillActionToQueue(Z_Param_ActionData); \
+		P_THIS->StartCombat(); \
 		P_NATIVE_END; \
 	}
 
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_INCLASS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUCombatManager(); \
 	friend struct Z_Construct_UClass_UCombatManager_Statics; \
@@ -93,7 +59,7 @@ public: \
 	DECLARE_SERIALIZER(UCombatManager)
 
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_INCLASS \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_INCLASS \
 private: \
 	static void StaticRegisterNativesUCombatManager(); \
 	friend struct Z_Construct_UClass_UCombatManager_Statics; \
@@ -102,9 +68,9 @@ public: \
 	DECLARE_SERIALIZER(UCombatManager)
 
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_STANDARD_CONSTRUCTORS \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UCombatManager(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API UCombatManager(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCombatManager) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UCombatManager); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCombatManager); \
@@ -115,9 +81,7 @@ private: \
 public:
 
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UCombatManager(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UCombatManager(UCombatManager&&); \
@@ -125,41 +89,43 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UCombatManager); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCombatManager); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCombatManager)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UCombatManager)
 
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__CombatCharacterListeners() { return STRUCT_OFFSET(UCombatManager, CombatCharacterListeners); } \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__CombatPlayerListeners() { return STRUCT_OFFSET(UCombatManager, CombatPlayerListeners); } \
 	FORCEINLINE static uint32 __PPO__CombatEnemyListeners() { return STRUCT_OFFSET(UCombatManager, CombatEnemyListeners); } \
-	FORCEINLINE static uint32 __PPO__CurrentSoulIndexInAction() { return STRUCT_OFFSET(UCombatManager, CurrentSoulIndexInAction); } \
-	FORCEINLINE static uint32 __PPO__CurrentEnemyIndexInAction() { return STRUCT_OFFSET(UCombatManager, CurrentEnemyIndexInAction); } \
-	FORCEINLINE static uint32 __PPO__CurrentListenerList() { return STRUCT_OFFSET(UCombatManager, CurrentListenerList); } \
 	FORCEINLINE static uint32 __PPO__ActionQueue() { return STRUCT_OFFSET(UCombatManager, ActionQueue); } \
-	FORCEINLINE static uint32 __PPO__CurrentSoulInAction() { return STRUCT_OFFSET(UCombatManager, CurrentSoulInAction); } \
-	FORCEINLINE static uint32 __PPO__CurrentTurn() { return STRUCT_OFFSET(UCombatManager, CurrentTurn); }
+	FORCEINLINE static uint32 __PPO__CharacterIndex() { return STRUCT_OFFSET(UCombatManager, CharacterIndex); } \
+	FORCEINLINE static uint32 __PPO__EnemyIndex() { return STRUCT_OFFSET(UCombatManager, EnemyIndex); } \
+	FORCEINLINE static uint32 __PPO__ActiveCharacter() { return STRUCT_OFFSET(UCombatManager, ActiveCharacter); } \
+	FORCEINLINE static uint32 __PPO__CurrentCombatTurn() { return STRUCT_OFFSET(UCombatManager, CurrentCombatTurn); } \
+	FORCEINLINE static uint32 __PPO__bIsFirstTurn() { return STRUCT_OFFSET(UCombatManager, bIsFirstTurn); } \
+	FORCEINLINE static uint32 __PPO__TotalEnemyCount() { return STRUCT_OFFSET(UCombatManager, TotalEnemyCount); } \
+	FORCEINLINE static uint32 __PPO__CurrentEnemyCount() { return STRUCT_OFFSET(UCombatManager, CurrentEnemyCount); }
 
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_20_PROLOG
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_GENERATED_BODY_LEGACY \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_18_PROLOG
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_SPARSE_DATA \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_RPC_WRAPPERS \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_INCLASS \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_STANDARD_CONSTRUCTORS \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_SPARSE_DATA \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_RPC_WRAPPERS \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_INCLASS \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_Lautturi_CombatManager_h_23_GENERATED_BODY \
+#define AutoBattlerProto_Source_Lautturi_CombatManager_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_SPARSE_DATA \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_RPC_WRAPPERS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_INCLASS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_Lautturi_CombatManager_h_23_ENHANCED_CONSTRUCTORS \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_SPARSE_DATA \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_INCLASS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_Lautturi_CombatManager_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -126,6 +126,15 @@ int32 ACharacterBase::GetStr()
 	return Str;
 }
 
+bool ACharacterBase::IsAlive()
+{
+	if (GetHealth() > 0)
+	{
+		return true;
+	}
+	return false;
+}
+
 void ACharacterBase::SetCurrentSlot(ASlotBase * NewCurrentSlot)
 {
 	CurrentSlot = NewCurrentSlot;

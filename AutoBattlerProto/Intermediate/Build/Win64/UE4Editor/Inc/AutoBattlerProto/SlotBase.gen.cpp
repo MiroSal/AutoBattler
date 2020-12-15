@@ -246,7 +246,7 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 		{ "ModuleRelativePath", "SlotBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASlotBase_Statics::NewProp_CharacterInSlot = { "CharacterInSlot", nullptr, (EPropertyFlags)0x0020080000020015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASlotBase, CharacterInSlot), Z_Construct_UClass_ACharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASlotBase_Statics::NewProp_CharacterInSlot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASlotBase_Statics::NewProp_CharacterInSlot_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASlotBase_Statics::NewProp_CharacterInSlot = { "CharacterInSlot", nullptr, (EPropertyFlags)0x0020080000020815, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASlotBase, CharacterInSlot), Z_Construct_UClass_ACharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASlotBase_Statics::NewProp_CharacterInSlot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASlotBase_Statics::NewProp_CharacterInSlot_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASlotBase_Statics::NewProp_SoulCardToSpawn_MetaData[] = {
 		{ "Category", "Slot Data" },
@@ -256,11 +256,12 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASlotBase_Statics::NewProp_SoulCardToSpawn = { "SoulCardToSpawn", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASlotBase, SoulCardToSpawn), Z_Construct_UClass_ACharacterBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ASlotBase_Statics::NewProp_SoulCardToSpawn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASlotBase_Statics::NewProp_SoulCardToSpawn_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASlotBase_Statics::NewProp_ArrowComponent_MetaData[] = {
+		{ "Category", "Slot Data" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "SlotBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASlotBase_Statics::NewProp_ArrowComponent = { "ArrowComponent", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASlotBase, ArrowComponent), Z_Construct_UClass_UArrowComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASlotBase_Statics::NewProp_ArrowComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASlotBase_Statics::NewProp_ArrowComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASlotBase_Statics::NewProp_ArrowComponent = { "ArrowComponent", nullptr, (EPropertyFlags)0x002008000009001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASlotBase, ArrowComponent), Z_Construct_UClass_UArrowComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASlotBase_Statics::NewProp_ArrowComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASlotBase_Statics::NewProp_ArrowComponent_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASlotBase_Statics::NewProp_Root_MetaData[] = {
 		{ "Category", "Slot Data" },
@@ -279,7 +280,7 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 	{
 		((ASlotBase*)Obj)->bCharacterCanBeDragged = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASlotBase_Statics::NewProp_bCharacterCanBeDragged = { "bCharacterCanBeDragged", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ASlotBase), &Z_Construct_UClass_ASlotBase_Statics::NewProp_bCharacterCanBeDragged_SetBit, METADATA_PARAMS(Z_Construct_UClass_ASlotBase_Statics::NewProp_bCharacterCanBeDragged_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASlotBase_Statics::NewProp_bCharacterCanBeDragged_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASlotBase_Statics::NewProp_bCharacterCanBeDragged = { "bCharacterCanBeDragged", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ASlotBase), &Z_Construct_UClass_ASlotBase_Statics::NewProp_bCharacterCanBeDragged_SetBit, METADATA_PARAMS(Z_Construct_UClass_ASlotBase_Statics::NewProp_bCharacterCanBeDragged_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASlotBase_Statics::NewProp_bCharacterCanBeDragged_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASlotBase_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASlotBase_Statics::NewProp_CharacterInSlot,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASlotBase_Statics::NewProp_SoulCardToSpawn,
@@ -314,7 +315,7 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASlotBase, 1146125852);
+	IMPLEMENT_CLASS(ASlotBase, 3468676812);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<ASlotBase>()
 	{
 		return ASlotBase::StaticClass();

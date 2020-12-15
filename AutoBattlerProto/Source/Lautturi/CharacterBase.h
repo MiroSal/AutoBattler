@@ -8,6 +8,7 @@
 #include "SkillBase.h"
 #include "CharacterBase.generated.h"
 
+
 UCLASS()
 class AUTOBATTLERPROTO_API ACharacterBase : public AActor, public IActivationInterface
 {
@@ -15,33 +16,32 @@ class AUTOBATTLERPROTO_API ACharacterBase : public AActor, public IActivationInt
 
 		//Character Stats
 private:
+	UPROPERTY()
+	int32 Health;
 
 	UPROPERTY()
-		int32 Health;
+	int32 Sin;
 
 	UPROPERTY()
-		int32 Sin;
-
-	UPROPERTY()
-		int32 Str;
+	int32 Str;
 
 	UPROPERTY(VisibleInstanceOnly)
-		class USkillBase* PrimarySkill;
+	class USkillBase* PrimarySkill;
 
 	UPROPERTY(VisibleInstanceOnly)
-		class USkillBase* PassiveSkill;
+	class USkillBase* PassiveSkill;
 
 	UPROPERTY(EditDefaultsOnly)
-		TArray<TSubclassOf<USkillBase>> AllPossiblePrimarySkills;
+	TArray<TSubclassOf<USkillBase>> AllPossiblePrimarySkills;
 
 	UPROPERTY(EditDefaultsOnly)
-		TArray<TSubclassOf<USkillBase>> AllPossiblePassiveSkills;
+	TArray<TSubclassOf<USkillBase>> AllPossiblePassiveSkills;
 
 	UPROPERTY(EditAnywhere, Category = "Character Stats")
-		ETurnEnum CharacterType = ETurnEnum::TE_None;
+	ETurnEnum CharacterType = ETurnEnum::TE_None;
 
 	UPROPERTY(VisibleAnywhere, Category = "Character Stats")
-		ASlotBase* CurrentSlot;
+	ASlotBase* CurrentSlot;
 
 protected:
 	//Randomize base stats
@@ -57,23 +57,22 @@ public:
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		class USceneComponent* Root;
+	class USceneComponent* Root;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		class USkeletalMeshComponent* Mesh;
+	class USkeletalMeshComponent* Mesh;
 
 	UPROPERTY(VisibleAnywhere)
-		class UTextRenderComponent* StatsText;
+	class UTextRenderComponent* StatsText;
 
 	UPROPERTY()
-		class USoulTrialManager* SoulTrialManager;
+	class USoulTrialManager* SoulTrialManager;
 
 	UPROPERTY()
-		class UCombatManager* CombatManager;
+	class UCombatManager* CombatManager;
 
 	UPROPERTY()
-		class AAutoBattlerProtoGameModeBase* GameMode;
-
+	class AAutoBattlerProtoGameModeBase* GameMode;
 
 	//overriden in derived classes
 public:
@@ -89,66 +88,68 @@ public:
 	//BlueprintImplementableEvents
 public:
 	UFUNCTION(BlueprintImplementableEvent)
-		void BP_Attack();
+	void BP_Attack();
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void BP_SkillUsed(class USkillBase * Skill);
+	void BP_SkillUsed(class USkillBase * Skill);
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void BP_SetActiveDecal();
+	void BP_SetActiveDecal();
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void BP_DamageTaken(int32 Amount);
+	void BP_DamageTaken(int32 Amount);
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void BP_OnDeath();
+	void BP_OnDeath();
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void BP_HealthAdded(int32 Amount);
+	void BP_HealthAdded(int32 Amount);
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void BP_StartTurn();
+	void BP_StartTurn();
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void BP_EndTurn();
+	void BP_EndTurn();
 
 	UFUNCTION(BlueprintCallable)
-		void AttackEnd();
+	void AttackEnd();
 
 	//Getter&&Setters
 public:
-
 	FORCEINLINE ETurnEnum GetCharacterType() { return CharacterType; };
-	FORCEINLINE virtual class ASlotBase* GetSlot() { return nullptr; };
+	FORCEINLINE virtual class ASlotBase* GetSlot() { return CurrentSlot; };
 	FORCEINLINE virtual USkillBase* GetPassiveSkill() { return PassiveSkill; };
 	FORCEINLINE virtual USkillBase* GetPrimarySkill() { return PrimarySkill; };
 	FORCEINLINE virtual ESkillType GetPrimarySkillType() { return PrimarySkill->GetSkillType(); };
 	FORCEINLINE virtual ESkillType GetPassiveSkillType() { return PassiveSkill->GetSkillType(); };
 
 	UFUNCTION(BlueprintCallable)
-		void SetCurrentSlot(ASlotBase* NewCurrentSlot);
+	void SetCurrentSlot(ASlotBase* NewCurrentSlot);
 
 	UFUNCTION(BlueprintCallable)
-		ASlotBase* GetCurrentSlot() { return CurrentSlot; };
+	ASlotBase* GetCurrentSlot() { return CurrentSlot; };
 
 	//Character stats
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-		void SetHealth(int32 InHealth);
+	void SetHealth(int32 InHealth);
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-		void SetSin(int32 InSin);
+	void SetSin(int32 InSin);
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-		void SetStr(int32 InStr);
+	void SetStr(int32 InStr);
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-		int32 GetHealth();
+	int32 GetHealth();
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-		int32 GetSin();
+	int32 GetSin();
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-		int32 GetStr();
+	int32 GetStr();
+
+	UFUNCTION(BlueprintCallable, Category = "Character Stats")
+	bool IsAlive();
 
 	//IActivationInterface
 public:

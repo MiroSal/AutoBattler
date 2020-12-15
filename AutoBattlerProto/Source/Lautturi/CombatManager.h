@@ -1,7 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
-
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "SoulDataStruct.h"
@@ -24,66 +22,64 @@ class AUTOBATTLERPROTO_API UCombatManager : public UObject
 
 private:
 	UPROPERTY()
-		TArray<ACharacterBase*> CombatCharacterListeners;
+	TArray<ACharacterBase*> CombatPlayerListeners;
 
 	UPROPERTY()
-		TArray<ACharacterBase*> CombatEnemyListeners;
+	TArray<ACharacterBase*> CombatEnemyListeners;
 
 	UPROPERTY()
-		int32 CurrentSoulIndexInAction = 0;
+	TArray<FCharacterData> ActionQueue;
 
 	UPROPERTY()
-		int32 CurrentEnemyIndexInAction = 0;
+	int32 CharacterIndex;
 
 	UPROPERTY()
-		TArray<ACharacterBase*> CurrentListenerList;
+	int32 EnemyIndex;
 
 	UPROPERTY()
-		TArray<FCharacterData> ActionQueue;
-
-	UPROPERTY()
-		class ACharacterBase* CurrentSoulInAction;
+	class ACharacterBase* ActiveCharacter;
 
 	UPROPERTY(VisibleAnywhere)
-		ETurnEnum CurrentTurn;
+	ETurnEnum CurrentCombatTurn;
+
+	UPROPERTY()
+	bool bIsFirstTurn = true;
+
+	UPROPERTY()
+	int32 TotalEnemyCount;
+
+	UPROPERTY()
+	int32 CurrentEnemyCount;
+
+private:
+	void HandleFirstTurn();
+
+	void ChangeActiveCharacter();
+
 
 public:
-
-	bool FirstTurn = true;
+	UCombatManager();
 
 	void Initialize();
 
-	void RegisterSoulListener(ACharacterBase* Character);
+	void ChangeTurn();
 
-	void RegisterEnemyListener(ACharacterBase* Character);
-
-	void UnRegisterFromListener(ACharacterBase* Character);
-
-	UFUNCTION()
-		void AddSkillActionToQueue(FCharacterData ActionData);
+	void PopNextSkillFromQueue();
 
 	UFUNCTION(BlueprintCallable)
-		void ChangeTurn();
-
-	UFUNCTION(BlueprintCallable)
-		void PopNextSkillActionFromQueue();
+		void StartCombat();
 
 	UPROPERTY()
-		FSkillUsedDelegate SkillUsedDelegate;
+	FSkillUsedDelegate SkillUsedDelegate;
 
-	//TODO remove and make properly, this is hack for enemy count that is shown from enemy_BP
-	UPROPERTY()
-		int32 TotalEnemyCount = 5;
-
-	//TODO remove and make properly, this is hack for enemy count that is shown from enemy_BP
-	UPROPERTY()
-		int32 CurrentEnemyCount = 1;
-
-//Getter&&Setters
+	//Getter&&Setters
 public:
 
-	TArray<ACharacterBase*> GetAllEnemies();
-
-	TArray<ACharacterBase*> GetAllSouls();
-
+	FORCEINLINE TArray<ACharacterBase*> GetCombatEnemyListeners() { return CombatEnemyListeners; };
+	FORCEINLINE TArray<ACharacterBase*> GetCombatPlayerListeners() { return CombatPlayerListeners; };
+	FORCEINLINE void RegisterCombatListener(ACharacterBase* Character);
+	FORCEINLINE void UnRegisterCombatListener(ACharacterBase* Character);
+	FORCEINLINE void AddSkillActionToQueue(FCharacterData ActionData);
+	FORCEINLINE int32 GetCurrentEnemyCount() { return CurrentEnemyCount; };
+	FORCEINLINE int32 GetTotalEnemyCount() { return TotalEnemyCount; };
 };

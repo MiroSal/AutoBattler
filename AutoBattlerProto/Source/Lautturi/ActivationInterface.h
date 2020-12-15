@@ -1,7 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
-
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
 #include "SlotBase.h"
@@ -23,9 +21,7 @@ class AUTOBATTLERPROTO_API IActivationInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-
 	virtual bool Clicked(AActor* ActorToDeactivate) = 0;
 	virtual bool DoubleClicked(AActor* ActorToDeactivate)=0;
 	virtual bool Deactivate()=0;
-	virtual ASlotBase* GetSlot()=0;
 };

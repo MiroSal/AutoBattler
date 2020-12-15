@@ -1,5 +1,4 @@
-// Copyright © 2020 by Miro Salminen
-
+ // Copyright © 2020 by Miro Salminen
 #pragma once
 #include "CoreMinimal.h"
 #include "CharacterBase.h"
@@ -39,7 +38,7 @@ class AUTOBATTLERPROTO_API APlayerCharacter : public ACharacterBase
 private:
 
 	UPROPERTY(VisibleAnywhere)
-		class UTextRenderComponent* SoulStatusText;
+	class UTextRenderComponent* SoulStatusText;
 
 	FDraggableParams DraggableParams;
 
@@ -58,7 +57,7 @@ public:
 	void CombatInitialize(ACharacterBase* Character);
 
 	UFUNCTION()
-		void CanClick(bool bCanClick);
+	void CanClick(bool bCanClick);
 
 public:
 	virtual void ActivatePrimarySkill() override;
@@ -66,11 +65,11 @@ public:
 	virtual void Attack() override;
 	virtual void UpdateDataText() override;
 
-	//Getter&&Setters
+//Getter&&Setters
 public:
 	FORCEINLINE bool HasCoin() { return DraggableParams.bHasCoin; };
 
-	//IActivationInterface
+//IActivationInterface
 public:
 	virtual bool Clicked(AActor* ActorToDeactivate) override;
 	virtual bool DoubleClicked(AActor* ActorToDeactivate) override;

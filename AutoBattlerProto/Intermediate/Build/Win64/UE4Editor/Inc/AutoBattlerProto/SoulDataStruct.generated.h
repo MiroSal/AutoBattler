@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AUTOBATTLERPROTO_SoulDataStruct_generated_h
 
-#define AutoBattlerProto_Source_Lautturi_SoulDataStruct_h_10_GENERATED_BODY \
+#define AutoBattlerProto_Source_Lautturi_SoulDataStruct_h_9_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FCharacterData_Statics; \
 	AUTOBATTLERPROTO_API static class UScriptStruct* StaticStruct();
 

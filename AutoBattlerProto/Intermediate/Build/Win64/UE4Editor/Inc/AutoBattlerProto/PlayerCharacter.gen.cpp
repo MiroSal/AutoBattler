@@ -255,7 +255,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFDraggablePara
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 4100657705);
+	IMPLEMENT_CLASS(APlayerCharacter, 3502968940);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<APlayerCharacter>()
 	{
 		return APlayerCharacter::StaticClass();

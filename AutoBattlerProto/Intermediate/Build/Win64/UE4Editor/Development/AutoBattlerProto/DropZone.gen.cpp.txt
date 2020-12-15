@@ -1,0 +1,26 @@
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+E:\Lautturi\AutoBattlerProto\Source\Lautturi/DropZone.h
+e:\lautturi\autobattlerproto\source\lautturi\DropZoneInterface.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\DropZoneInterface.generated.h
+e:\lautturi\autobattlerproto\source\lautturi\PlayerCharacter.h
+e:\lautturi\autobattlerproto\source\lautturi\CharacterBase.h
+e:\lautturi\autobattlerproto\source\lautturi\ActivationInterface.h
+e:\lautturi\autobattlerproto\source\lautturi\SlotBase.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\SlotBase.generated.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\ActivationInterface.generated.h
+e:\lautturi\autobattlerproto\source\lautturi\SkillTypeEnums.h
+e:\lautturi\autobattlerproto\source\lautturi\CombatManager.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Internationalization/PolyglotTextData.h
+e:\lautturi\autobattlerproto\source\lautturi\SoulDataStruct.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\SoulDataStruct.generated.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\CombatManager.generated.h
+e:\lautturi\autobattlerproto\source\lautturi\SkillBase.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\SkillBase.generated.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\CharacterBase.generated.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\PlayerCharacter.generated.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\DropZone.generated.h

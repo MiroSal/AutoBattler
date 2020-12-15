@@ -42,7 +42,7 @@ void APlayerCharacter::CanClick(bool bCanBeDragged)
 void APlayerCharacter::CombatInitialize(ACharacterBase* Character)
 {
 	check(IsValid(CombatManager));
-	CombatManager->RegisterSoulListener(this);
+	CombatManager->RegisterCombatListener(this);
 	CombatManager->SkillUsedDelegate.AddDynamic(this, &APlayerCharacter::SkillUsed);
 
 	UpdateDataText();
@@ -63,33 +63,33 @@ void APlayerCharacter::SkillUsed(FCharacterData Data)
 
 void APlayerCharacter::ActivatePrimarySkill()
 {
-	if (GetHealth() > 0 && IsValid(GetPrimarySkill()))
+	if (IsValid(GetPrimarySkill()))
 	{
-		if (IsValid(GetPrimarySkill()))
+		if (GetHealth() > 0)
 		{
 			GetPrimarySkill()->BP_ActivateSkill();
 			BP_SkillUsed(GetPrimarySkill());
 		}
-	}
-	else if (IsValid(GetPrimarySkill()))
-	{
-		GetPrimarySkill()->DeactivateSkill();
+		else
+		{
+			GetPrimarySkill()->DeactivateSkill();
+		}
 	}
 }
 
 void APlayerCharacter::ActivatePassiveSkill()
 {
-	if (GetHealth() > 0 && IsValid(GetPassiveSkill()))
+	if (IsValid(GetPassiveSkill()))
 	{
-		if (IsValid(GetPassiveSkill()))
+		if (GetHealth() > 0)
 		{
 			GetPassiveSkill()->BP_ActivateSkill();
 			BP_SkillUsed(GetPassiveSkill());
 		}
-	}
-	else if (IsValid(GetPassiveSkill()))
-	{
-		GetPassiveSkill()->DeactivateSkill();
+		else
+		{
+			GetPassiveSkill()->DeactivateSkill();
+		}
 	}
 }
 
@@ -97,8 +97,11 @@ void APlayerCharacter::RandomizeStats()
 {
 	Super::RandomizeStats();
 
-	GetPassiveSkill()->Initialize(this);
-	GetPrimarySkill()->Initialize(this);
+	if (IsValid(GetPassiveSkill()))
+		GetPassiveSkill()->Initialize(this);
+
+	if (IsValid(GetPrimarySkill()))
+		GetPrimarySkill()->Initialize(this);
 
 	if (!IsValid(SoulStatusText))
 		return;
@@ -143,7 +146,7 @@ bool APlayerCharacter::Clicked(AActor* ActorToDeactivate)
 			}
 			else if (!DraggableParams.bHasCoin && LastClicked)//if soul has no coin and has Activationinterface so that can be clicked with mouse
 			{
-				if (!Player->HasCoin() && Player != this && !DraggableParams.bHasCoin && !DraggableParams.bIsAlive)//if last clicked soul dont have coin and it is not this
+				if (!Player->HasCoin() && Player != this && !DraggableParams.bHasCoin && !DraggableParams.bIsAlive && IsValid(GetCurrentSlot()))//if last clicked soul dont have coin and it is not this
 				{
 					Player->GetCurrentSlot()->RemoveCharacterFromSlot(true);
 					this->GetCurrentSlot()->RemoveCharacterFromSlot(true);
@@ -169,7 +172,7 @@ bool APlayerCharacter::DoubleClicked(AActor* ActorToDeactivate)
 	{
 		IActivationInterface* LastActorClicked = Cast<IActivationInterface>(ActorToDeactivate);
 
-		if (DraggableParams.bIsAlive && LastActorClicked != nullptr && LastActorClicked == this)//if Player is alive and has Activationinterface so that can be clicked with mouse
+		if (DraggableParams.bIsAlive && LastActorClicked != nullptr && LastActorClicked == this && IsValid(GetCurrentSlot()))//if Player is alive and has Activationinterface so that can be clicked with mouse
 		{
 			LastActorClicked->Deactivate();
 			GetCurrentSlot()->RemoveCharacterFromSlot(true);
@@ -187,7 +190,8 @@ bool APlayerCharacter::Deactivate()
 void APlayerCharacter::Attack()
 {
 	BP_Attack();
-	TArray<ACharacterBase*> Enemies = CombatManager->GetAllEnemies();
+	check(IsValid(CombatManager));
+	TArray<ACharacterBase*> Enemies = CombatManager->GetCombatEnemyListeners();
 	if (Enemies.Num() > 0)
 	{
 		ACharacterBase* Enemy = Enemies[FMath::RandRange(0, Enemies.Num() - 1)];

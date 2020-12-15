@@ -1,0 +1,7 @@
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+E:\Lautturi\AutoBattlerProto\Source\Lautturi/TrialController.h
+e:\lautturi\autobattlerproto\source\lautturi\DropZoneInterface.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\DropZoneInterface.generated.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\TrialController.generated.h

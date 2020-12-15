@@ -32,6 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_GetHealth();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_GetSin();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_GetStr();
+	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_IsAlive();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_SetCurrentSlot();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_SetHealth();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_SetSin();
@@ -104,6 +105,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 			{ "GetHealth", &ACharacterBase::execGetHealth },
 			{ "GetSin", &ACharacterBase::execGetSin },
 			{ "GetStr", &ACharacterBase::execGetStr },
+			{ "IsAlive", &ACharacterBase::execIsAlive },
 			{ "SetCurrentSlot", &ACharacterBase::execSetCurrentSlot },
 			{ "SetHealth", &ACharacterBase::execSetHealth },
 			{ "SetSin", &ACharacterBase::execSetSin },
@@ -460,6 +462,44 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ACharacterBase_IsAlive_Statics
+	{
+		struct CharacterBase_eventIsAlive_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((CharacterBase_eventIsAlive_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(CharacterBase_eventIsAlive_Parms), &Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Character Stats" },
+		{ "ModuleRelativePath", "CharacterBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "IsAlive", nullptr, nullptr, sizeof(CharacterBase_eventIsAlive_Parms), Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACharacterBase_IsAlive()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_ACharacterBase_SetCurrentSlot_Statics
 	{
 		struct CharacterBase_eventSetCurrentSlot_Parms
@@ -744,6 +784,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{ &Z_Construct_UFunction_ACharacterBase_GetHealth, "GetHealth" }, // 2043117003
 		{ &Z_Construct_UFunction_ACharacterBase_GetSin, "GetSin" }, // 370967656
 		{ &Z_Construct_UFunction_ACharacterBase_GetStr, "GetStr" }, // 2784741531
+		{ &Z_Construct_UFunction_ACharacterBase_IsAlive, "IsAlive" }, // 3184000292
 		{ &Z_Construct_UFunction_ACharacterBase_SetCurrentSlot, "SetCurrentSlot" }, // 2385160876
 		{ &Z_Construct_UFunction_ACharacterBase_SetHealth, "SetHealth" }, // 1077400990
 		{ &Z_Construct_UFunction_ACharacterBase_SetSin, "SetSin" }, // 2997029297
@@ -912,7 +953,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterBase, 1369751693);
+	IMPLEMENT_CLASS(ACharacterBase, 1230575522);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<ACharacterBase>()
 	{
 		return ACharacterBase::StaticClass();
