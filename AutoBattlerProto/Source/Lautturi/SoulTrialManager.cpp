@@ -31,6 +31,11 @@ void USoulTrialManager::AddCharacterToCombat(APlayerCharacter* Character)
 	}
 }
 
+void USoulTrialManager::AddCharacterToCombat(FCharacterAttributes CharacterAttributes)
+{
+	CharactersAttributes.Add(CharacterAttributes);
+}
+
 void USoulTrialManager::AddCharacterToTrial(ACharacterBase * Character)
 {
 	if (IsValid(Character))
@@ -45,6 +50,14 @@ void USoulTrialManager::RemoveCharacterFromTrial(ACharacterBase * Character)
 	{
 		AllCharactersInTrial.Remove(Cast<APlayerCharacter>(Character));
 	}
+}
+
+FCharacterAttributes USoulTrialManager::GetRandomCharacterAttributes()
+{
+	FCharacterAttributes RandomAttributes = FCharacterAttributes();
+	RandomAttributes.RandomAttributes(AllPossiblePrimarySkills, AllPossiblePassiveSkills);
+
+	return RandomAttributes;
 }
 
 void USoulTrialManager::DestroyCharactersFromTrial()
@@ -78,4 +91,14 @@ APlayerCharacter * USoulTrialManager::GetChosenCharacter()
 	}
 
 	return nullptr;
+}
+
+FCharacterAttributes USoulTrialManager::GetChosenCharacterAttributes()
+{
+	if (CharactersAttributes.Num() > 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("%d"), CharactersAttributes.Num());
+		return CharactersAttributes.Pop();
+	}
+	return FCharacterAttributes();
 }

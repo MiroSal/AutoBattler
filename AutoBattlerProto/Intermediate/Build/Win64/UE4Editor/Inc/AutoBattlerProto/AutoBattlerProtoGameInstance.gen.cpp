@@ -17,8 +17,9 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UAutoBattlerProtoGameInstance();
 	ENGINE_API UClass* Z_Construct_UClass_UGameInstance();
 	UPackage* Z_Construct_UPackage__Script_AutoBattlerProto();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UCombatManager_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_USoulTrialManager_NoRegister();
+	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UCombatManager_NoRegister();
 // End Cross Module References
 	void UAutoBattlerProtoGameInstance::StaticRegisterNativesUAutoBattlerProtoGameInstance()
 	{
@@ -33,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SoulTrialManagerClass_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_SoulTrialManagerClass;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CombatManager_MetaData[];
 #endif
@@ -56,6 +61,13 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass_MetaData[] = {
+		{ "Category", "AutoBattlerProtoGameInstance" },
+		{ "ModuleRelativePath", "AutoBattlerProtoGameInstance.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass = { "SoulTrialManagerClass", nullptr, (EPropertyFlags)0x0014000000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UAutoBattlerProtoGameInstance, SoulTrialManagerClass), Z_Construct_UClass_USoulTrialManager_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_CombatManager_MetaData[] = {
 		{ "ModuleRelativePath", "AutoBattlerProtoGameInstance.h" },
 	};
@@ -68,6 +80,7 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManager = { "SoulTrialManager", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UAutoBattlerProtoGameInstance, SoulTrialManager), Z_Construct_UClass_USoulTrialManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManager_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManager_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_CombatManager,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManager,
 	};
@@ -98,7 +111,7 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UAutoBattlerProtoGameInstance, 2440057100);
+	IMPLEMENT_CLASS(UAutoBattlerProtoGameInstance, 3219135378);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<UAutoBattlerProtoGameInstance>()
 	{
 		return UAutoBattlerProtoGameInstance::StaticClass();

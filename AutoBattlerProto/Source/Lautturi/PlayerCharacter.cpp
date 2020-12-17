@@ -21,16 +21,15 @@ APlayerCharacter::APlayerCharacter()
 	DraggableParams = FDraggableParams();
 }
 
-void APlayerCharacter::Initialize(ASlotBase* Slot, bool bCanBeDragged)
+void APlayerCharacter::Initialize(ASlotBase* Slot, bool bCanBeDragged, FCharacterAttributes InAttributes)
 {
-	Super::Initialize(Slot, bCanBeDragged);
+	Super::Initialize(Slot, bCanBeDragged, InAttributes);
 
 	SetCurrentSlot(Slot);
 	DraggableParams.bDraggable = bCanBeDragged;
 
 	check(IsValid(SoulTrialManager));
 	SoulTrialManager->FerryIsFullDelegate.AddDynamic(this, &APlayerCharacter::CanClick);
-	RandomizeStats();
 }
 
 //Binded to delegate, Sets bDraggable to false for every playercharacter when charcater are picked
@@ -41,6 +40,10 @@ void APlayerCharacter::CanClick(bool bCanBeDragged)
 
 void APlayerCharacter::CombatInitialize(ACharacterBase* Character)
 {
+	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
+	check(IsValid(GameMode));
+
+	CombatManager = GameMode->GetCombatManager();
 	check(IsValid(CombatManager));
 	CombatManager->RegisterCombatListener(this);
 	CombatManager->SkillUsedDelegate.AddDynamic(this, &APlayerCharacter::SkillUsed);
@@ -91,41 +94,6 @@ void APlayerCharacter::ActivatePassiveSkill()
 			GetPassiveSkill()->DeactivateSkill();
 		}
 	}
-}
-
-void APlayerCharacter::RandomizeStats()
-{
-	Super::RandomizeStats();
-
-	if (IsValid(GetPassiveSkill()))
-		GetPassiveSkill()->Initialize(this);
-
-	if (IsValid(GetPrimarySkill()))
-		GetPrimarySkill()->Initialize(this);
-
-	if (!IsValid(SoulStatusText))
-		return;
-
-	DraggableParams.bHasCoin = FMath::RandRange(0, 1);
-
-	if (!DraggableParams.bHasCoin)
-	{
-		DraggableParams.bIsAlive = FMath::RandRange(0, 1);
-		if (DraggableParams.bIsAlive)
-		{
-			SoulStatusText->SetText(FText::FromString(TEXT("Alive")));
-		}
-		else
-		{
-			SoulStatusText->SetText(FText::FromString(TEXT("NoCoin")));
-		}
-	}
-	else
-	{
-		SoulStatusText->SetText(FText::FromString(TEXT("Coin")));
-	}
-
-	UpdateDataText();
 }
 
 bool APlayerCharacter::Clicked(AActor* ActorToDeactivate)

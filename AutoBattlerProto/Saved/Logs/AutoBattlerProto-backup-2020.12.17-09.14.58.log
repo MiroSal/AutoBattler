@@ -1,0 +1,1240 @@
+﻿Log file open, 12/17/20 11:06:20
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogInit: Display: Running engine for game: AutoBattlerProto
+LogPlatformFile: Not using cached read wrapper
+LogTaskGraph: Started task graph with 5 named threads and 71 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 0.063487
+LogD3D11RHI: Loaded GFSDK_Aftermath_Lib.x64.dll
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +2:00, Platform Override: ''
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin AISupport
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin ActorLayerUtilities
+LogPluginManager: Mounting plugin AnimationSharing
+LogPluginManager: Mounting plugin CLionSourceCodeAccess
+LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting plugin NullSourceCodeAccess
+LogPluginManager: Mounting plugin PerforceSourceControl
+LogPluginManager: Mounting plugin PlasticSourceControl
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin CurveEditorTools
+LogPluginManager: Mounting plugin DataValidation
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GameplayTagsEditor
+LogPluginManager: Mounting plugin MacGraphicsSwitching
+LogPluginManager: Mounting plugin MaterialAnalyzer
+LogPluginManager: Mounting plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting plugin PluginBrowser
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin VariantManagerContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin AutomationUtils
+LogPluginManager: Mounting plugin BackChannel
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin GeometryCache
+LogPluginManager: Mounting plugin PlatformCrypto
+LogPluginManager: Mounting plugin ProxyLODPlugin
+LogPluginManager: Mounting plugin SkeletalReduction
+LogPluginManager: Mounting plugin MagicLeap
+LogPluginManager: Mounting plugin MagicLeapMedia
+LogPluginManager: Mounting plugin MLSDK
+LogPluginManager: Mounting plugin AndroidMedia
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin MediaPlayerEditor
+LogPluginManager: Mounting plugin WebMMedia
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin NetcodeUnitTest
+LogPluginManager: Mounting plugin NUTUnrealEngine4
+LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting plugin OnlineSubsystemIOS
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin LauncherChunkInstaller
+LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting plugin AndroidMoviePlayer
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleImageUtils
+LogPluginManager: Mounting plugin AppleMoviePlayer
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AssetTags
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin EditableMesh
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin GoogleCloudMessaging
+LogPluginManager: Mounting plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OculusVR
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin PostSplashScreen
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SignificanceManager
+LogPluginManager: Mounting plugin SteamVR
+LogPluginManager: Mounting plugin WebMMoviePlayer
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogPluginManager: Mounting plugin ScreenshotTools
+LogInit: Using libcurl 7.55.1-DEV
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.1.1
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogOnline: OSS: Creating online subsystem instance for: NULL
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+LogInit: Build: ++UE4+Release-4.24-CL-11590370
+LogInit: Engine Version: 4.24.3-11590370+++UE4+Release-4.24
+LogInit: Compatible Engine Version: 4.24.0-10570792+++UE4+Release-4.24
+LogInit: Net CL: 10570792
+LogInit: OS: Windows 10 (Release 2004) (), CPU: AMD Ryzen 9 3900X 12-Core Processor            , GPU: NVIDIA GeForce GTX 1080
+LogInit: Compiled (64-bit): Feb 24 2020 15:39:18
+LogInit: Compiled with Visual C++: 19.16.27032.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.24
+LogInit: Command Line: 
+LogInit: Base Directory: D:/Epic Games/UE_4.24/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogDevObjectVersion: Number of dev versions registered: 25
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 3
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 37
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 36
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 2
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 2
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 36
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 11
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 2
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 2
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 31
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 8
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 9
+LogDevObjectVersion:   Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 8
+LogDevObjectVersion:   Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+LogInit: Presizing for max 25165824 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+LogConfig: Setting CVar [[con.DebugEarlyDefault:1]]
+LogConfig: Setting CVar [[r.setres:1280x720]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[r.VSync:0]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[r.RHICmdBypass:0]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Engine.ini]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[r.GPUCrashDebugging:0]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Engine.ini]
+[2020.12.17-09.06.20:157][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Engine.ini]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+[2020.12.17-09.06.20:157][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Engine.ini]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.MaxObjectsNotConsideredByGC:1]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.SizeOfPermanentObjectPool:0]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.FlushStreamingOnGC:0]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.NumRetriesBeforeForcingGC:10]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.AllowParallelGC:1]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.TimeBetweenPurgingPendingKillObjects:61.1]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.MaxObjectsInEditor:25165824]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.IncrementalBeginDestroyEnabled:1]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.CreateGCClusters:1]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.MinGCClusterSize:5]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.ActorClusteringEnabled:0]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.BlueprintClusteringEnabled:0]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Setting CVar [[gc.UseDisregardForGCOnDedicatedServers:0]]
+[2020.12.17-09.06.20:158][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Engine.ini]
+[2020.12.17-09.06.20:158][  0]LogConfig: Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Engine.ini]
+[2020.12.17-09.06.20:162][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2020.12.17-09.06.20:162][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2020.12.17-09.06.20:163][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:1]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountPerSlice:1]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:32.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:32.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.SampleCount:16]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.JitterIntegration:0]]
+[2020.12.17-09.06.20:164][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:16]]
+[2020.12.17-09.06.20:164][  0]LogInit: Selected Device Profile: [Windows]
+[2020.12.17-09.06.20:164][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2020.12.17-09.06.20:166][  0]LogHAL: Display: Platform has ~ 32 GB [34304262144 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2020.12.17-09.06.20:166][  0]LogInit: Going up to parent DeviceProfile []
+[2020.12.17-09.06.20:166][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2020.12.17-09.06.20:166][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountPerSlice:1]]
+[2020.12.17-09.06.20:167][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:32.0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:32.0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Scalability.ini]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.SampleCount:16]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.JitterIntegration:0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:16]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[net.UseAdaptiveNetUpdateFrequency:0]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Setting CVar [[p.chaos.AllowCreatePhysxBodies:1]]
+[2020.12.17-09.06.20:168][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [E:/Lautturi/AutoBattlerProto/Saved/Config/Windows/Engine.ini]
+[2020.12.17-09.06.20:168][  0]LogInit: Computer: DESKTOP-2POJTPC
+[2020.12.17-09.06.20:168][  0]LogInit: User: Miros
+[2020.12.17-09.06.20:168][  0]LogInit: CPU Page size=4096, Cores=12
+[2020.12.17-09.06.20:168][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2020.12.17-09.06.20:168][  0]LogMemory: Memory total: Physical=31.9GB (32GB approx)
+[2020.12.17-09.06.20:168][  0]LogMemory: Platform Memory Stats for Windows
+[2020.12.17-09.06.20:168][  0]LogMemory: Process Physical Memory: 108.70 MB used, 108.70 MB peak
+[2020.12.17-09.06.20:168][  0]LogMemory: Process Virtual Memory: 104.52 MB used, 104.52 MB peak
+[2020.12.17-09.06.20:168][  0]LogMemory: Physical Memory: 9529.41 MB used,  23185.68 MB free, 32715.09 MB total
+[2020.12.17-09.06.20:168][  0]LogMemory: Virtual Memory: 5189.32 MB used,  134212536.00 MB free, 134217728.00 MB total
+[2020.12.17-09.06.20:170][  0]LogWindows: WindowsPlatformFeatures enabled
+[2020.12.17-09.06.20:185][  0]LogInit: Using OS detected language (fi-FI).
+[2020.12.17-09.06.20:185][  0]LogInit: Using OS detected locale (fi-FI).
+[2020.12.17-09.06.20:186][  0]LogTextLocalizationManager: No localization for 'fi-FI' exists, so 'en' will be used for the language.
+[2020.12.17-09.06.20:304][  0]LogInit: Setting process to per monitor DPI aware
+[2020.12.17-09.06.20:335][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2020.12.17-09.06.20:335][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2020.12.17-09.06.20:459][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2020.12.17-09.06.20:459][  0]LogD3D11RHI: D3D11 min allowed feature level: 11_0
+[2020.12.17-09.06.20:459][  0]LogD3D11RHI: D3D11 max allowed feature level: 11_0
+[2020.12.17-09.06.20:459][  0]LogD3D11RHI: D3D11 adapters:
+[2020.12.17-09.06.20:528][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1080' (Feature Level 11_0)
+[2020.12.17-09.06.20:528][  0]LogD3D11RHI:       8079/0/16357 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:2, VendorId:0x10de
+[2020.12.17-09.06.20:530][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2020.12.17-09.06.20:530][  0]LogD3D11RHI:       0/0/16357 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2020.12.17-09.06.20:530][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2020.12.17-09.06.20:538][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2020.12.17-09.06.20:539][  0]LogD3D11RHI:     GPU DeviceId: 0x1b80 (for the marketing name, search the web for "GPU Device Id")
+[2020.12.17-09.06.20:539][  0]LogWindows: EnumDisplayDevices:
+[2020.12.17-09.06.20:539][  0]LogWindows:    0. 'NVIDIA GeForce GTX 1080' (P:1 D:1)
+[2020.12.17-09.06.20:539][  0]LogWindows:    1. 'NVIDIA GeForce GTX 1080' (P:0 D:1)
+[2020.12.17-09.06.20:539][  0]LogWindows:    2. 'NVIDIA GeForce GTX 1080' (P:0 D:0)
+[2020.12.17-09.06.20:539][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1080' (P:0 D:0)
+[2020.12.17-09.06.20:540][  0]LogWindows: DebugString: FoundDriverCount:4 
+[2020.12.17-09.06.20:540][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1080
+[2020.12.17-09.06.20:540][  0]LogD3D11RHI:   Driver Version: 445.87 (internal:26.21.14.4587, unified:445.87)
+[2020.12.17-09.06.20:540][  0]LogD3D11RHI:      Driver Date: 4-3-2020
+[2020.12.17-09.06.20:540][  0]LogRHI: Texture pool is 5655 MB (70% of 8079 MB)
+[2020.12.17-09.06.20:582][  0]LogD3D11RHI: RHI has support for 64 bit atomics
+[2020.12.17-09.06.20:582][  0]LogD3D11RHI: Async texture creation enabled
+[2020.12.17-09.06.20:598][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 1)
+[2020.12.17-09.06.20:814][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AllDesktop'
+[2020.12.17-09.06.20:840][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ATC'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC1'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC1a'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_PVRTC'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ATCClient'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC1Client'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC1aClient'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_PVRTCClient'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+[2020.12.17-09.06.20:841][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+[2020.12.17-09.06.20:857][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+[2020.12.17-09.06.20:857][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+[2020.12.17-09.06.20:863][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxNoEditor'
+[2020.12.17-09.06.20:869][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+[2020.12.17-09.06.20:874][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+[2020.12.17-09.06.20:880][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64NoEditor'
+[2020.12.17-09.06.20:886][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Client'
+[2020.12.17-09.06.20:891][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Server'
+[2020.12.17-09.06.20:910][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Lumin'
+[2020.12.17-09.06.20:911][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LuminClient'
+[2020.12.17-09.06.20:921][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+[2020.12.17-09.06.20:922][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+[2020.12.17-09.06.20:927][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsNoEditor'
+[2020.12.17-09.06.20:934][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+[2020.12.17-09.06.20:939][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+[2020.12.17-09.06.20:945][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+[2020.12.17-09.06.20:945][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2020.12.17-09.06.20:947][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2020.12.17-09.06.20:963][  0]LogShaderCompilers: Guid format shader working directory is 18 characters bigger than the processId version (E:/Lautturi/AutoBattlerProto/Intermediate/Shaders/WorkingDirectory/2272/).
+[2020.12.17-09.06.20:963][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/Miros/AppData/Local/Temp/UnrealShaderWorkingDir/70A3AF0C44BE7F405533A5AAAFE29CB3/'.
+[2020.12.17-09.06.20:963][  0]LogXGEController: Cleaning working directory: C:/Users/Miros/AppData/Local/Temp/UnrealXGEWorkingDir/
+[2020.12.17-09.06.20:964][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2020.12.17-09.06.20:964][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+[2020.12.17-09.06.20:964][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2020.12.17-09.06.21:550][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2020.12.17-09.06.21:593][  0]LogDerivedDataCache: Loaded boot cache 0.04s 78MB C:/Users/Miros/AppData/Local/UnrealEngine/4.24/DerivedDataCache/Boot.ddc.
+[2020.12.17-09.06.21:593][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/Miros/AppData/Local/UnrealEngine/4.24/DerivedDataCache/Boot.ddc
+[2020.12.17-09.06.21:593][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file E:/Lautturi/AutoBattlerProto/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2020.12.17-09.06.21:593][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2020.12.17-09.06.21:593][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file E:/Lautturi/AutoBattlerProto/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2020.12.17-09.06.21:593][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2020.12.17-09.06.21:602][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2020.12.17-09.06.21:603][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2020.12.17-09.06.21:603][  0]LogDerivedDataCache: Unable to find inner node EnterprisePak for hierarchical cache Hierarchy.
+[2020.12.17-09.06.21:604][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Miros/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2020.12.17-09.06.21:604][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2020.12.17-09.06.21:604][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
+[2020.12.17-09.06.21:625][  0]LogMaterial: Verifying Global Shaders for PCD3D_SM5
+[2020.12.17-09.06.21:627][  0]LogSlate: Using FreeType 2.10.0
+[2020.12.17-09.06.21:628][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2020.12.17-09.06.21:671][  0]LogAssetRegistry: FAssetRegistry took 0.0021 seconds to start up
+[2020.12.17-09.06.21:907][  0]LogInit: Selected Device Profile: [Windows]
+[2020.12.17-09.06.22:027][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2020.12.17-09.06.22:027][  0]LogMeshReduction: Using SimplygonMeshReduction for automatic skeletal mesh reduction
+[2020.12.17-09.06.22:027][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
+[2020.12.17-09.06.22:027][  0]LogMeshReduction: No distributed automatic mesh merging module available
+[2020.12.17-09.06.22:027][  0]LogMeshMerging: No distributed automatic mesh merging module available
+[2020.12.17-09.06.22:038][  0]LogNetVersion: AutoBattlerProto 1.0.0, NetCL: 10570792, EngineNetVer: 13, GameNetVer: 0 (Checksum: 2377359032)
+[2020.12.17-09.06.22:848][  0]LogPackageLocalizationCache: Processed 10 localized package path(s) for 1 prioritized culture(s) in 0.024086 seconds
+[2020.12.17-09.06.22:854][  0]LogUObjectArray: 46750 objects as part of root set at end of initial load.
+[2020.12.17-09.06.22:854][  0]LogUObjectAllocator: 8137160 out of 0 bytes used by permanent object pool.
+[2020.12.17-09.06.22:854][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2020.12.17-09.06.23:166][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2020.12.17-09.06.23:168][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2020.12.17-09.06.23:223][  0]SourceControl: Source control is disabled
+[2020.12.17-09.06.23:223][  0]SourceControl: Source control is disabled
+[2020.12.17-09.06.23:224][  0]SourceControl: Source control is disabled
+[2020.12.17-09.06.23:225][  0]SourceControl: Source control is disabled
+[2020.12.17-09.06.23:225][  0]SourceControl: Source control is disabled
+[2020.12.17-09.06.23:286][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2020.12.17-09.06.23:293][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2020.12.17-09.06.23:293][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2020.12.17-09.06.23:362][  0]LogOcInput: OculusInput pre-init called
+[2020.12.17-09.06.23:368][  0]LogWindows: Failed to load 'OVRPlugin.dll' (GetLastError=126)
+[2020.12.17-09.06.23:369][  0]LogWindows: File 'OVRPlugin.dll' does not exist
+[2020.12.17-09.06.23:426][  0]LogEngine: Initializing Engine...
+[2020.12.17-09.06.23:427][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2020.12.17-09.06.23:428][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2020.12.17-09.06.23:694][  0]LogInit: Initializing FReadOnlyCVARCache
+[2020.12.17-09.06.23:699][  0]LogAIModule: Creating AISystem for world Untitled
+[2020.12.17-09.06.23:707][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2020.12.17-09.06.23:707][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2020.12.17-09.06.23:708][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2020.12.17-09.06.23:708][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2020.12.17-09.06.23:708][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2020.12.17-09.06.23:708][  0]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2020.12.17-09.06.23:708][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2020.12.17-09.06.23:708][  0]LogAudio: Display: AudioDevice MaxSources: 32
+[2020.12.17-09.06.23:708][  0]LogAudio: Display: Using built-in audio occlusion.
+[2020.12.17-09.06.23:708][  0]LogAudioMixer: Display: Initializing audio mixer.
+[2020.12.17-09.06.23:843][  0]LogAudioMixer: Display: Audio Device Output Speaker Info:
+[2020.12.17-09.06.23:843][  0]LogAudioMixer: Display: Name: Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.06.23:843][  0]LogAudioMixer: Display: Is Default: Yes
+[2020.12.17-09.06.23:843][  0]LogAudioMixer: Display: Sample Rate: 48000
+[2020.12.17-09.06.23:843][  0]LogAudioMixer: Display: Channel Count Used: 2
+[2020.12.17-09.06.23:843][  0]LogAudioMixer: Display: Device Channel Count: 2
+[2020.12.17-09.06.23:843][  0]LogAudioMixer: Display: Channel Order:
+[2020.12.17-09.06.23:843][  0]LogAudioMixer: Display: 0: FrontLeft
+[2020.12.17-09.06.23:843][  0]LogAudioMixer: Display: 1: FrontRight
+[2020.12.17-09.06.23:873][  0]LogAudioMixer: Display: Using Audio Device Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.06.23:876][  0]LogInit: FAudioDevice initialized.
+[2020.12.17-09.06.23:877][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2020.12.17-09.06.23:954][  0]LogDerivedDataCache: Saved boot cache 0.08s 78MB C:/Users/Miros/AppData/Local/UnrealEngine/4.24/DerivedDataCache/Boot.ddc.
+[2020.12.17-09.06.23:956][  0]LogInit: Texture streaming: Enabled
+[2020.12.17-09.06.23:965][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2020.12.17-09.06.23:965][  0]LogEngineSessionManager: EngineSessionManager sent abnormal shutdown report. Type=Crashed, SessionId={B9EC27FD-4E25-3C50-D62D-F799A3927D4F}
+[2020.12.17-09.06.23:966][  0]LogEditorSessionSummary: Verbose: Initializing EditorSessionSummaryWriter for editor session tracking
+[2020.12.17-09.06.23:969][  0]LogEditorSessionSummary: EditorSessionSummaryWriter initialized
+[2020.12.17-09.06.23:999][  0]LogInit: Transaction tracking system initialized
+[2020.12.17-09.06.24:007][  0]BlueprintLog: New page: Editor Load
+[2020.12.17-09.06.24:032][  0]LocalizationService: Localization service is disabled
+[2020.12.17-09.06.24:240][  0]LogCook: Display: Max memory allowance for cook 16384mb min free memory 0mb
+[2020.12.17-09.06.24:240][  0]LogCook: Display: Mobile HDR setting 1
+[2020.12.17-09.06.24:300][  0]LogFileCache: Scanning file cache for directory 'E:/Lautturi/AutoBattlerProto/Content/' took 0.03s
+[2020.12.17-09.06.24:769][  0]SourceControl: Source control is disabled
+[2020.12.17-09.06.24:769][  0]Cmd: MAP LOAD FILE="E:/Lautturi/AutoBattlerProto/Content/TestingContent/Persistent.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2020.12.17-09.06.24:769][  0]LightingResults: New page: Lighting Build
+[2020.12.17-09.06.24:770][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2020.12.17-09.06.24:770][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.06.24:770][  0]MapCheck: New page: Map Check
+[2020.12.17-09.06.24:770][  0]LightingResults: New page: Lighting Build
+[2020.12.17-09.06.24:805][  0]LogUObjectHash: Compacting FUObjectHashTables data took   1.59ms
+[2020.12.17-09.06.24:829][  0]LogAIModule: Creating AISystem for world Persistent
+[2020.12.17-09.06.24:831][  0]LogStreaming: Display: ULevelStreaming::RequestLevel(/Game/TestingContent/CombatLevel) is flushing async loading
+[2020.12.17-09.06.24:831][  0]LogStreaming: Display: Flushing async loaders.
+[2020.12.17-09.06.25:405][  0]LogStreaming: Display: ULevelStreaming::RequestLevel(/Game/TestingContent/PickingLevel) is flushing async loading
+[2020.12.17-09.06.25:511][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2020.12.17-09.06.25:553][  0]LogUObjectHash: Compacting FUObjectHashTables data took   2.26ms
+[2020.12.17-09.06.25:553][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2020.12.17-09.06.25:553][  0]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 0,157ms to complete.
+[2020.12.17-09.06.25:553][  0]LogFileHelpers: Loading map 'Persistent' took 0.785
+[2020.12.17-09.06.26:490][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.06.26:495][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.06.26:503][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.06.26:508][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.06.26:517][  0]LogCollectionManager: Loaded 0 collections in 0.002627 seconds
+[2020.12.17-09.06.26:529][  0]LogFileCache: Scanning file cache for directory 'E:/Lautturi/AutoBattlerProto/Saved/Collections/' took 0.00s
+[2020.12.17-09.06.26:529][  0]LogFileCache: Scanning file cache for directory 'E:/Lautturi/AutoBattlerProto/Content/Developers/Miros/Collections/' took 0.00s
+[2020.12.17-09.06.26:529][  0]LogFileCache: Scanning file cache for directory 'E:/Lautturi/AutoBattlerProto/Content/Collections/' took 0.00s
+[2020.12.17-09.06.26:529][  0]LogContentBrowser: Native class hierarchy populated in 0.0083 seconds. Added 3034 classes and 722 folders.
+[2020.12.17-09.06.26:531][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0003 seconds. Added 0 classes and 0 folders.
+[2020.12.17-09.06.26:576][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0004 seconds. Added 0 classes and 0 folders.
+[2020.12.17-09.06.26:580][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0004 seconds. Added 2 classes and 3 folders.
+[2020.12.17-09.06.26:649][  0]LogSlate: Took 0.000267 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2020.12.17-09.06.26:651][  0]LogSlate: Took 0.000149 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2020.12.17-09.06.26:655][  0]LogSlate: Took 0.000212 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2020.12.17-09.06.26:713][  0]LogRenderer: Reallocating scene render targets to support 1800x820 Format 10 NumSamples 1 (Frame:1).
+[2020.12.17-09.06.26:789][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0005 seconds. Added 0 classes and 0 folders.
+[2020.12.17-09.06.26:789][  0]LogLoad: (Engine Initialization) Total time: 7.65 seconds
+[2020.12.17-09.06.26:789][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2020.12.17-09.06.26:861][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2020.12.17-09.06.26:915][  1]LogAssetRegistry: Asset discovery search completed in 5.2439 seconds
+[2020.12.17-09.06.26:917][  1]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000006 seconds (updated 0 objects)
+[2020.12.17-09.06.27:720][ 92]LogTemp: Repeating last play command: Selected Viewport
+[2020.12.17-09.06.27:728][ 92]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.06.27:728][ 92]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.06.27:728][ 92]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.12.17-09.06.27:728][ 92]PIE: New page: PIE session: Persistent (17.12.2020 klo 13.06.27)
+[2020.12.17-09.06.27:729][ 92]LogOnline: OSS: Creating online subsystem instance for: NULL
+[2020.12.17-09.06.27:730][ 92]LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+[2020.12.17-09.06.27:735][ 92]LogPlayLevel: Creating play world package: /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.06.27:736][ 92]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001099s)
+[2020.12.17-09.06.27:737][ 92]LogAIModule: Creating AISystem for world Persistent
+[2020.12.17-09.06.27:737][ 92]LogPlayLevel: PIE: World Init took: (0.000852s)
+[2020.12.17-09.06.27:737][ 92]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TestingContent/Persistent.Persistent to /Game/TestingContent/UEDPIE_0_Persistent.Persistent (0.002113s)
+[2020.12.17-09.06.27:774][ 92]LogUObjectHash: Compacting FUObjectHashTables data took   1.46ms
+[2020.12.17-09.06.27:782][ 92]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2020.12.17-09.06.27:782][ 92]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2020.12.17-09.06.27:782][ 92]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2020.12.17-09.06.27:782][ 92]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2020.12.17-09.06.27:782][ 92]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2020.12.17-09.06.27:782][ 92]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2020.12.17-09.06.27:782][ 92]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2020.12.17-09.06.27:782][ 92]LogAudio: Display: AudioDevice MaxSources: 32
+[2020.12.17-09.06.27:783][ 92]LogAudio: Display: Using built-in audio occlusion.
+[2020.12.17-09.06.27:783][ 92]LogAudioMixer: Display: Initializing audio mixer.
+[2020.12.17-09.06.27:905][ 92]LogAudioMixer: Display: Audio Device Output Speaker Info:
+[2020.12.17-09.06.27:905][ 92]LogAudioMixer: Display: Name: Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.06.27:905][ 92]LogAudioMixer: Display: Is Default: Yes
+[2020.12.17-09.06.27:905][ 92]LogAudioMixer: Display: Sample Rate: 48000
+[2020.12.17-09.06.27:905][ 92]LogAudioMixer: Display: Channel Count Used: 2
+[2020.12.17-09.06.27:905][ 92]LogAudioMixer: Display: Device Channel Count: 2
+[2020.12.17-09.06.27:905][ 92]LogAudioMixer: Display: Channel Order:
+[2020.12.17-09.06.27:905][ 92]LogAudioMixer: Display: 0: FrontLeft
+[2020.12.17-09.06.27:905][ 92]LogAudioMixer: Display: 1: FrontRight
+[2020.12.17-09.06.27:925][ 92]LogAudioMixer: Display: Using Audio Device Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.06.27:926][ 92]LogInit: FAudioDevice initialized.
+[2020.12.17-09.06.27:934][ 92]LogLoad: Game class is 'BP_AutoBattlerProtoGameModeBase_C'
+[2020.12.17-09.06.27:935][ 92]LogWorld: Bringing World /Game/TestingContent/UEDPIE_0_Persistent.Persistent up for play (max tick rate 0) at 2020.12.17-11.06.27
+[2020.12.17-09.06.27:935][ 92]LogWorld: Bringing up level for play took: 0.000287
+[2020.12.17-09.06.27:935][ 92]LogOnline: OSS: Creating online subsystem instance for: :Context_2
+[2020.12.17-09.06.27:936][ 92]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2020.12.17-09.06.27:938][ 92]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0005 seconds. Added 20 classes and 0 folders.
+[2020.12.17-09.06.27:938][ 92]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_PickingLevel 1 1 1
+[2020.12.17-09.06.27:945][ 92]PIE: Play in editor start time for /Game/TestingContent/UEDPIE_0_Persistent −0,276
+[2020.12.17-09.06.27:945][ 92]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.06.27:945][ 92]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.06.27:945][ 92]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.06.27:985][ 93]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.06.28:542][160]LogTemp: Warning: MouseDown
+[2020.12.17-09.06.28:544][160]LogTemp: Warning: Drag
+[2020.12.17-09.06.29:259][246]LogTemp: Warning: MouseDown
+[2020.12.17-09.06.29:284][249]LogTemp: Warning: Drag
+[2020.12.17-09.06.29:601][287]LogTemp: Warning: MouseDown
+[2020.12.17-09.06.29:625][290]LogTemp: Warning: Drag
+[2020.12.17-09.06.29:959][330]LogTemp: Warning: MouseDown
+[2020.12.17-09.06.29:967][331]LogTemp: Warning: Drag
+[2020.12.17-09.06.30:351][377]LogTemp: Warning: MouseDown
+[2020.12.17-09.06.30:351][377]LogTemp: Warning: Drag
+[2020.12.17-09.06.31:209][480]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_CombatLevel 1 1 1
+[2020.12.17-09.06.33:886][800]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_CombatLevel 1 1 1
+[2020.12.17-09.06.53:123][106]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.06.53:123][106]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.06.53:123][106]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.06.53:123][106]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.06.53:124][106]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.06.53:124][106]LogWorld: BeginTearingDown for /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.06.53:124][106]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.06.53:124][106]LogWorld: UWorld::CleanupWorld for Persistent, bSessionEnded=true, bCleanupResources=true
+[2020.12.17-09.06.53:124][106]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.06.53:129][106]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2020.12.17-09.06.53:129][106]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.06.53:129][106]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.06.53:133][106]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.06.53:170][106]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.06.53:173][106]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.06.53:177][106]LogUObjectHash: Compacting FUObjectHashTables data took   1.70ms
+[2020.12.17-09.06.53:226][107]LogUObjectHash: Compacting FUObjectHashTables data took   0.74ms
+[2020.12.17-09.06.53:242][108]LogPlayLevel: Display: Destroying online subsystem :Context_2
+[2020.12.17-09.07.20:788][334]LogHotReload: New module detected: UE4Editor-AutoBattlerProto-0001.dll
+[2020.12.17-09.07.21:803][338]LogHotReload: Starting Hot-Reload from IDE
+[2020.12.17-09.07.21:806][338]LogSlate: Took 0.000209 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2020.12.17-09.07.21:857][338]LogUObjectHash: Compacting FUObjectHashTables data took   1.46ms
+[2020.12.17-09.07.21:888][338]LogClass: CharacterData HotReload.
+[2020.12.17-09.07.21:888][338]LogClass: ETurnEnum HotReload.
+[2020.12.17-09.07.21:888][338]LogClass: EAffectRange HotReload.
+[2020.12.17-09.07.21:888][338]LogClass: ESkillType HotReload.
+[2020.12.17-09.07.21:888][338]LogClass: FerrySoulSpot HotReload.
+[2020.12.17-09.07.21:888][338]LogClass: DraggableParams HotReload.
+[2020.12.17-09.07.21:888][338]LogClass: CharacterAttributes HotReload.
+[2020.12.17-09.07.21:897][338]LogContentBrowser: Native class hierarchy updated for 'AutoBattlerProto' in 0.0006 seconds. Added 17 classes and 2 folders.
+[2020.12.17-09.07.21:901][338]Display: HotReload successful (29 functions remapped  4 scriptstructs remapped)
+[2020.12.17-09.07.21:976][338]LogUObjectHash: Compacting FUObjectHashTables data took   1.44ms
+[2020.12.17-09.07.21:988][338]LogContentBrowser: Native class hierarchy populated in 0.0079 seconds. Added 3036 classes and 725 folders.
+[2020.12.17-09.07.21:992][338]Display: HotReload took  0.2s.
+[2020.12.17-09.07.23:800][343]LogTemp: Repeating last play command: Selected Viewport
+[2020.12.17-09.07.23:808][343]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.07.23:808][343]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.07.23:808][343]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.12.17-09.07.23:809][343]PIE: New page: PIE session: Persistent (17.12.2020 klo 13.07.23)
+[2020.12.17-09.07.23:809][343]LogPlayLevel: Creating play world package: /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.07.23:810][343]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001126s)
+[2020.12.17-09.07.23:811][343]LogAIModule: Creating AISystem for world Persistent
+[2020.12.17-09.07.23:811][343]LogPlayLevel: PIE: World Init took: (0.000746s)
+[2020.12.17-09.07.23:811][343]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TestingContent/Persistent.Persistent to /Game/TestingContent/UEDPIE_0_Persistent.Persistent (0.001996s)
+[2020.12.17-09.07.23:849][343]LogUObjectHash: Compacting FUObjectHashTables data took   1.47ms
+[2020.12.17-09.07.23:849][343]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2020.12.17-09.07.23:849][343]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2020.12.17-09.07.23:849][343]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2020.12.17-09.07.23:849][343]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2020.12.17-09.07.23:849][343]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2020.12.17-09.07.23:849][343]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2020.12.17-09.07.23:849][343]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2020.12.17-09.07.23:849][343]LogAudio: Display: AudioDevice MaxSources: 32
+[2020.12.17-09.07.23:850][343]LogAudio: Display: Using built-in audio occlusion.
+[2020.12.17-09.07.23:850][343]LogAudioMixer: Display: Initializing audio mixer.
+[2020.12.17-09.07.23:981][343]LogAudioMixer: Display: Audio Device Output Speaker Info:
+[2020.12.17-09.07.23:981][343]LogAudioMixer: Display: Name: Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.07.23:981][343]LogAudioMixer: Display: Is Default: Yes
+[2020.12.17-09.07.23:981][343]LogAudioMixer: Display: Sample Rate: 48000
+[2020.12.17-09.07.23:981][343]LogAudioMixer: Display: Channel Count Used: 2
+[2020.12.17-09.07.23:981][343]LogAudioMixer: Display: Device Channel Count: 2
+[2020.12.17-09.07.23:981][343]LogAudioMixer: Display: Channel Order:
+[2020.12.17-09.07.23:981][343]LogAudioMixer: Display: 0: FrontLeft
+[2020.12.17-09.07.23:981][343]LogAudioMixer: Display: 1: FrontRight
+[2020.12.17-09.07.24:001][343]LogAudioMixer: Display: Using Audio Device Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.07.24:003][343]LogInit: FAudioDevice initialized.
+[2020.12.17-09.07.24:008][343]LogLoad: Game class is 'BP_AutoBattlerProtoGameModeBase_C'
+[2020.12.17-09.07.24:009][343]LogWorld: Bringing World /Game/TestingContent/UEDPIE_0_Persistent.Persistent up for play (max tick rate 0) at 2020.12.17-11.07.24
+[2020.12.17-09.07.24:009][343]LogWorld: Bringing up level for play took: 0.000267
+[2020.12.17-09.07.24:009][343]LogOnline: OSS: Creating online subsystem instance for: :Context_3
+[2020.12.17-09.07.24:010][343]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2020.12.17-09.07.24:011][343]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_PickingLevel 1 1 1
+[2020.12.17-09.07.24:017][343]PIE: Play in editor start time for /Game/TestingContent/UEDPIE_0_Persistent −0,204
+[2020.12.17-09.07.24:017][343]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.07.24:017][343]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.07.24:017][343]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.07.24:059][344]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.07.24:527][382]LogTemp: Warning: MouseDown
+[2020.12.17-09.07.24:529][382]LogTemp: Warning: Drag
+[2020.12.17-09.07.24:893][426]LogTemp: Warning: MouseDown
+[2020.12.17-09.07.24:910][428]LogTemp: Warning: Drag
+[2020.12.17-09.07.25:227][466]LogTemp: Warning: MouseDown
+[2020.12.17-09.07.25:251][469]LogTemp: Warning: Drag
+[2020.12.17-09.07.25:544][504]LogTemp: Warning: MouseDown
+[2020.12.17-09.07.25:544][504]LogTemp: Warning: Drag
+[2020.12.17-09.07.25:835][539]LogTemp: Warning: MouseDown
+[2020.12.17-09.07.25:852][541]LogTemp: Warning: Drag
+[2020.12.17-09.07.26:519][621]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_CombatLevel 1 1 1
+[2020.12.17-09.07.28:062][805]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.07.28:062][805]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.07.28:062][805]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.07.28:062][805]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.07.28:062][805]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.07.28:062][805]LogWorld: BeginTearingDown for /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.07.28:062][805]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.07.28:063][805]LogWorld: UWorld::CleanupWorld for Persistent, bSessionEnded=true, bCleanupResources=true
+[2020.12.17-09.07.28:063][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.07.28:073][805]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2020.12.17-09.07.28:073][805]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.07.28:073][805]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.07.28:077][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.07.28:112][805]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.07.28:115][805]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.07.28:119][805]LogUObjectHash: Compacting FUObjectHashTables data took   1.58ms
+[2020.12.17-09.07.28:174][806]LogUObjectHash: Compacting FUObjectHashTables data took   0.73ms
+[2020.12.17-09.07.28:199][807]LogPlayLevel: Display: Destroying online subsystem :Context_3
+[2020.12.17-09.11.12:022][830]LogHotReload: New module detected: UE4Editor-AutoBattlerProto-0003.dll
+[2020.12.17-09.11.13:036][834]LogHotReload: Starting Hot-Reload from IDE
+[2020.12.17-09.11.13:086][834]LogUObjectHash: Compacting FUObjectHashTables data took   1.70ms
+[2020.12.17-09.11.13:114][834]LogClass: CharacterData HotReload.
+[2020.12.17-09.11.13:114][834]LogClass: ETurnEnum HotReload.
+[2020.12.17-09.11.13:114][834]LogClass: EAffectRange HotReload.
+[2020.12.17-09.11.13:114][834]LogClass: ESkillType HotReload.
+[2020.12.17-09.11.13:114][834]LogClass: FerrySoulSpot HotReload.
+[2020.12.17-09.11.13:114][834]LogClass: DraggableParams HotReload.
+[2020.12.17-09.11.13:114][834]LogClass: CharacterAttributes HotReload.
+[2020.12.17-09.11.13:122][834]LogContentBrowser: Native class hierarchy updated for 'AutoBattlerProto' in 0.0006 seconds. Added 17 classes and 2 folders.
+[2020.12.17-09.11.13:126][834]Display: HotReload successful (29 functions remapped  4 scriptstructs remapped)
+[2020.12.17-09.11.13:185][834]LogUObjectHash: Compacting FUObjectHashTables data took   1.70ms
+[2020.12.17-09.11.13:197][834]LogContentBrowser: Native class hierarchy populated in 0.0079 seconds. Added 3036 classes and 725 folders.
+[2020.12.17-09.11.13:200][834]Display: HotReload took  0.2s.
+[2020.12.17-09.11.19:713][853]LogTemp: Repeating last play command: Selected Viewport
+[2020.12.17-09.11.19:722][853]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.11.19:722][853]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.11.19:722][853]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.12.17-09.11.19:722][853]PIE: New page: PIE session: Persistent (17.12.2020 klo 13.11.19)
+[2020.12.17-09.11.19:722][853]LogPlayLevel: Creating play world package: /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.11.19:724][853]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001208s)
+[2020.12.17-09.11.19:724][853]LogAIModule: Creating AISystem for world Persistent
+[2020.12.17-09.11.19:724][853]LogPlayLevel: PIE: World Init took: (0.000777s)
+[2020.12.17-09.11.19:724][853]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TestingContent/Persistent.Persistent to /Game/TestingContent/UEDPIE_0_Persistent.Persistent (0.002106s)
+[2020.12.17-09.11.19:762][853]LogUObjectHash: Compacting FUObjectHashTables data took   1.48ms
+[2020.12.17-09.11.19:762][853]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2020.12.17-09.11.19:762][853]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2020.12.17-09.11.19:762][853]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2020.12.17-09.11.19:762][853]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2020.12.17-09.11.19:762][853]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2020.12.17-09.11.19:762][853]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2020.12.17-09.11.19:762][853]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2020.12.17-09.11.19:762][853]LogAudio: Display: AudioDevice MaxSources: 32
+[2020.12.17-09.11.19:762][853]LogAudio: Display: Using built-in audio occlusion.
+[2020.12.17-09.11.19:763][853]LogAudioMixer: Display: Initializing audio mixer.
+[2020.12.17-09.11.19:887][853]LogAudioMixer: Display: Audio Device Output Speaker Info:
+[2020.12.17-09.11.19:887][853]LogAudioMixer: Display: Name: Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.11.19:887][853]LogAudioMixer: Display: Is Default: Yes
+[2020.12.17-09.11.19:887][853]LogAudioMixer: Display: Sample Rate: 48000
+[2020.12.17-09.11.19:887][853]LogAudioMixer: Display: Channel Count Used: 2
+[2020.12.17-09.11.19:887][853]LogAudioMixer: Display: Device Channel Count: 2
+[2020.12.17-09.11.19:887][853]LogAudioMixer: Display: Channel Order:
+[2020.12.17-09.11.19:887][853]LogAudioMixer: Display: 0: FrontLeft
+[2020.12.17-09.11.19:887][853]LogAudioMixer: Display: 1: FrontRight
+[2020.12.17-09.11.19:908][853]LogAudioMixer: Display: Using Audio Device Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.11.19:909][853]LogInit: FAudioDevice initialized.
+[2020.12.17-09.11.19:917][853]LogLoad: Game class is 'BP_AutoBattlerProtoGameModeBase_C'
+[2020.12.17-09.11.19:918][853]LogWorld: Bringing World /Game/TestingContent/UEDPIE_0_Persistent.Persistent up for play (max tick rate 0) at 2020.12.17-11.11.19
+[2020.12.17-09.11.19:918][853]LogWorld: Bringing up level for play took: 0.000269
+[2020.12.17-09.11.19:918][853]LogOnline: OSS: Creating online subsystem instance for: :Context_4
+[2020.12.17-09.11.19:919][853]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2020.12.17-09.11.19:919][853]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_PickingLevel 1 1 1
+[2020.12.17-09.11.19:926][853]PIE: Play in editor start time for /Game/TestingContent/UEDPIE_0_Persistent −0,295
+[2020.12.17-09.11.19:926][853]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.11.19:926][853]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.11.19:926][853]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.11.19:968][854]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.11.20:723][931]LogTemp: Warning: MouseDown
+[2020.12.17-09.11.20:731][932]LogTemp: Warning: Drag
+[2020.12.17-09.11.21:107][977]LogTemp: Warning: MouseDown
+[2020.12.17-09.11.21:132][980]LogTemp: Warning: Drag
+[2020.12.17-09.11.21:448][ 18]LogTemp: Warning: MouseDown
+[2020.12.17-09.11.21:456][ 19]LogTemp: Warning: Drag
+[2020.12.17-09.11.21:748][ 54]LogTemp: Warning: MouseDown
+[2020.12.17-09.11.21:756][ 55]LogTemp: Warning: Drag
+[2020.12.17-09.11.22:074][ 93]LogTemp: Warning: MouseDown
+[2020.12.17-09.11.22:074][ 93]LogTemp: Warning: Drag
+[2020.12.17-09.11.22:790][179]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_CombatLevel 1 1 1
+[2020.12.17-09.11.26:208][588]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.11.26:208][588]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.11.26:208][588]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.11.26:208][588]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.11.26:208][588]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.11.26:208][588]LogWorld: BeginTearingDown for /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.11.26:208][588]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.11.26:209][588]LogWorld: UWorld::CleanupWorld for Persistent, bSessionEnded=true, bCleanupResources=true
+[2020.12.17-09.11.26:209][588]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.11.26:215][588]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2020.12.17-09.11.26:215][588]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.11.26:215][588]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.11.26:219][588]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.11.26:256][588]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.11.26:259][588]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.11.26:263][588]LogUObjectHash: Compacting FUObjectHashTables data took   1.50ms
+[2020.12.17-09.11.26:311][589]LogUObjectHash: Compacting FUObjectHashTables data took   0.78ms
+[2020.12.17-09.11.26:335][590]LogPlayLevel: Display: Destroying online subsystem :Context_4
+[2020.12.17-09.12.07:073][552]LogHotReload: New module detected: UE4Editor-AutoBattlerProto-0004.dll
+[2020.12.17-09.12.08:087][556]LogHotReload: Starting Hot-Reload from IDE
+[2020.12.17-09.12.08:140][556]LogUObjectHash: Compacting FUObjectHashTables data took   0.76ms
+[2020.12.17-09.12.08:171][556]LogClass: CharacterData HotReload.
+[2020.12.17-09.12.08:171][556]LogClass: ETurnEnum HotReload.
+[2020.12.17-09.12.08:171][556]LogClass: EAffectRange HotReload.
+[2020.12.17-09.12.08:171][556]LogClass: ESkillType HotReload.
+[2020.12.17-09.12.08:171][556]LogClass: FerrySoulSpot HotReload.
+[2020.12.17-09.12.08:171][556]LogClass: DraggableParams HotReload.
+[2020.12.17-09.12.08:171][556]LogClass: CharacterAttributes HotReload.
+[2020.12.17-09.12.08:179][556]LogContentBrowser: Native class hierarchy updated for 'AutoBattlerProto' in 0.0006 seconds. Added 17 classes and 2 folders.
+[2020.12.17-09.12.08:183][556]Display: HotReload successful (29 functions remapped  4 scriptstructs remapped)
+[2020.12.17-09.12.08:248][556]LogUObjectHash: Compacting FUObjectHashTables data took   1.43ms
+[2020.12.17-09.12.08:260][556]LogContentBrowser: Native class hierarchy populated in 0.0078 seconds. Added 3036 classes and 725 folders.
+[2020.12.17-09.12.08:263][556]Display: HotReload took  0.2s.
+[2020.12.17-09.12.10:077][561]LogTemp: Repeating last play command: Selected Viewport
+[2020.12.17-09.12.10:086][561]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.12.10:086][561]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.12.10:087][561]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.12.17-09.12.10:087][561]PIE: New page: PIE session: Persistent (17.12.2020 klo 13.12.10)
+[2020.12.17-09.12.10:087][561]LogPlayLevel: Creating play world package: /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.12.10:088][561]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001139s)
+[2020.12.17-09.12.10:089][561]LogAIModule: Creating AISystem for world Persistent
+[2020.12.17-09.12.10:089][561]LogPlayLevel: PIE: World Init took: (0.000784s)
+[2020.12.17-09.12.10:089][561]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TestingContent/Persistent.Persistent to /Game/TestingContent/UEDPIE_0_Persistent.Persistent (0.002043s)
+[2020.12.17-09.12.10:129][561]LogUObjectHash: Compacting FUObjectHashTables data took   1.49ms
+[2020.12.17-09.12.10:130][561]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2020.12.17-09.12.10:130][561]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2020.12.17-09.12.10:130][561]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2020.12.17-09.12.10:130][561]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2020.12.17-09.12.10:130][561]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2020.12.17-09.12.10:130][561]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2020.12.17-09.12.10:130][561]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2020.12.17-09.12.10:130][561]LogAudio: Display: AudioDevice MaxSources: 32
+[2020.12.17-09.12.10:130][561]LogAudio: Display: Using built-in audio occlusion.
+[2020.12.17-09.12.10:130][561]LogAudioMixer: Display: Initializing audio mixer.
+[2020.12.17-09.12.10:253][561]LogAudioMixer: Display: Audio Device Output Speaker Info:
+[2020.12.17-09.12.10:253][561]LogAudioMixer: Display: Name: Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.12.10:253][561]LogAudioMixer: Display: Is Default: Yes
+[2020.12.17-09.12.10:253][561]LogAudioMixer: Display: Sample Rate: 48000
+[2020.12.17-09.12.10:253][561]LogAudioMixer: Display: Channel Count Used: 2
+[2020.12.17-09.12.10:253][561]LogAudioMixer: Display: Device Channel Count: 2
+[2020.12.17-09.12.10:253][561]LogAudioMixer: Display: Channel Order:
+[2020.12.17-09.12.10:253][561]LogAudioMixer: Display: 0: FrontLeft
+[2020.12.17-09.12.10:253][561]LogAudioMixer: Display: 1: FrontRight
+[2020.12.17-09.12.10:274][561]LogAudioMixer: Display: Using Audio Device Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.12.10:275][561]LogInit: FAudioDevice initialized.
+[2020.12.17-09.12.10:284][561]LogLoad: Game class is 'BP_AutoBattlerProtoGameModeBase_C'
+[2020.12.17-09.12.10:285][561]LogWorld: Bringing World /Game/TestingContent/UEDPIE_0_Persistent.Persistent up for play (max tick rate 0) at 2020.12.17-11.12.10
+[2020.12.17-09.12.10:285][561]LogWorld: Bringing up level for play took: 0.000272
+[2020.12.17-09.12.10:285][561]LogOnline: OSS: Creating online subsystem instance for: :Context_5
+[2020.12.17-09.12.10:286][561]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2020.12.17-09.12.10:286][561]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_PickingLevel 1 1 1
+[2020.12.17-09.12.10:292][561]PIE: Play in editor start time for /Game/TestingContent/UEDPIE_0_Persistent 0,071
+[2020.12.17-09.12.10:293][561]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.12.10:293][561]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.12.10:293][561]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.12.10:334][562]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.12.10:981][627]LogTemp: Warning: MouseDown
+[2020.12.17-09.12.10:983][627]LogTemp: Warning: Drag
+[2020.12.17-09.12.11:272][662]LogTemp: Warning: MouseDown
+[2020.12.17-09.12.11:297][665]LogTemp: Warning: Drag
+[2020.12.17-09.12.11:655][708]LogTemp: Warning: MouseDown
+[2020.12.17-09.12.11:663][709]LogTemp: Warning: Drag
+[2020.12.17-09.12.12:005][750]LogTemp: Warning: MouseDown
+[2020.12.17-09.12.12:013][751]LogTemp: Warning: Drag
+[2020.12.17-09.12.12:339][790]LogTemp: Warning: MouseDown
+[2020.12.17-09.12.12:347][791]LogTemp: Warning: Drag
+[2020.12.17-09.12.12:647][827]LogTemp: Warning: MouseDown
+[2020.12.17-09.12.12:655][828]LogTemp: Warning: Drag
+[2020.12.17-09.12.13:588][940]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_CombatLevel 1 1 1
+[2020.12.17-09.12.14:932][100]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.12.14:932][100]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.12.14:932][100]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.12.14:932][100]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.12.14:932][100]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.12.14:932][100]LogWorld: BeginTearingDown for /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.12.14:933][100]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.12.14:933][100]LogWorld: UWorld::CleanupWorld for Persistent, bSessionEnded=true, bCleanupResources=true
+[2020.12.17-09.12.14:933][100]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.12.14:941][100]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2020.12.17-09.12.14:941][100]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.12.14:941][100]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.12.14:945][100]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.12.14:983][100]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.12.14:987][100]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.12.14:990][100]LogUObjectHash: Compacting FUObjectHashTables data took   1.53ms
+[2020.12.17-09.12.15:044][101]LogUObjectHash: Compacting FUObjectHashTables data took   0.76ms
+[2020.12.17-09.12.15:069][102]LogPlayLevel: Display: Destroying online subsystem :Context_5
+[2020.12.17-09.12.16:197][236]LogSlate: Took 0.000195 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2020.12.17-09.13.32:755][789]LogHotReload: New module detected: UE4Editor-AutoBattlerProto-0005.dll
+[2020.12.17-09.13.33:769][793]LogHotReload: Starting Hot-Reload from IDE
+[2020.12.17-09.13.33:819][793]LogUObjectHash: Compacting FUObjectHashTables data took   0.74ms
+[2020.12.17-09.13.33:849][793]LogClass: CharacterData HotReload.
+[2020.12.17-09.13.33:849][793]LogClass: ETurnEnum HotReload.
+[2020.12.17-09.13.33:849][793]LogClass: EAffectRange HotReload.
+[2020.12.17-09.13.33:849][793]LogClass: ESkillType HotReload.
+[2020.12.17-09.13.33:849][793]LogClass: FerrySoulSpot HotReload.
+[2020.12.17-09.13.33:849][793]LogClass: DraggableParams HotReload.
+[2020.12.17-09.13.33:849][793]LogClass: CharacterAttributes HotReload.
+[2020.12.17-09.13.33:858][793]LogContentBrowser: Native class hierarchy updated for 'AutoBattlerProto' in 0.0006 seconds. Added 17 classes and 2 folders.
+[2020.12.17-09.13.33:861][793]Display: HotReload successful (29 functions remapped  4 scriptstructs remapped)
+[2020.12.17-09.13.33:924][793]LogUObjectHash: Compacting FUObjectHashTables data took   1.37ms
+[2020.12.17-09.13.33:937][793]LogContentBrowser: Native class hierarchy populated in 0.0080 seconds. Added 3036 classes and 725 folders.
+[2020.12.17-09.13.33:940][793]Display: HotReload took  0.2s.
+[2020.12.17-09.13.35:764][798]LogTemp: Repeating last play command: Selected Viewport
+[2020.12.17-09.13.35:773][798]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.13.35:773][798]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.13.35:773][798]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.12.17-09.13.35:773][798]PIE: New page: PIE session: Persistent (17.12.2020 klo 13.13.35)
+[2020.12.17-09.13.35:773][798]LogPlayLevel: Creating play world package: /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.13.35:775][798]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001144s)
+[2020.12.17-09.13.35:775][798]LogAIModule: Creating AISystem for world Persistent
+[2020.12.17-09.13.35:775][798]LogPlayLevel: PIE: World Init took: (0.000809s)
+[2020.12.17-09.13.35:775][798]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TestingContent/Persistent.Persistent to /Game/TestingContent/UEDPIE_0_Persistent.Persistent (0.002070s)
+[2020.12.17-09.13.35:811][798]LogUObjectHash: Compacting FUObjectHashTables data took   1.47ms
+[2020.12.17-09.13.35:811][798]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2020.12.17-09.13.35:811][798]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2020.12.17-09.13.35:811][798]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2020.12.17-09.13.35:811][798]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2020.12.17-09.13.35:811][798]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2020.12.17-09.13.35:811][798]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2020.12.17-09.13.35:811][798]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2020.12.17-09.13.35:811][798]LogAudio: Display: AudioDevice MaxSources: 32
+[2020.12.17-09.13.35:811][798]LogAudio: Display: Using built-in audio occlusion.
+[2020.12.17-09.13.35:811][798]LogAudioMixer: Display: Initializing audio mixer.
+[2020.12.17-09.13.35:934][798]LogAudioMixer: Display: Audio Device Output Speaker Info:
+[2020.12.17-09.13.35:934][798]LogAudioMixer: Display: Name: Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.13.35:934][798]LogAudioMixer: Display: Is Default: Yes
+[2020.12.17-09.13.35:934][798]LogAudioMixer: Display: Sample Rate: 48000
+[2020.12.17-09.13.35:934][798]LogAudioMixer: Display: Channel Count Used: 2
+[2020.12.17-09.13.35:934][798]LogAudioMixer: Display: Device Channel Count: 2
+[2020.12.17-09.13.35:934][798]LogAudioMixer: Display: Channel Order:
+[2020.12.17-09.13.35:934][798]LogAudioMixer: Display: 0: FrontLeft
+[2020.12.17-09.13.35:934][798]LogAudioMixer: Display: 1: FrontRight
+[2020.12.17-09.13.35:954][798]LogAudioMixer: Display: Using Audio Device Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.13.35:956][798]LogInit: FAudioDevice initialized.
+[2020.12.17-09.13.35:964][798]LogLoad: Game class is 'BP_AutoBattlerProtoGameModeBase_C'
+[2020.12.17-09.13.35:965][798]LogWorld: Bringing World /Game/TestingContent/UEDPIE_0_Persistent.Persistent up for play (max tick rate 0) at 2020.12.17-11.13.35
+[2020.12.17-09.13.35:965][798]LogWorld: Bringing up level for play took: 0.000267
+[2020.12.17-09.13.35:965][798]LogOnline: OSS: Creating online subsystem instance for: :Context_6
+[2020.12.17-09.13.35:966][798]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2020.12.17-09.13.35:967][798]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_PickingLevel 1 1 1
+[2020.12.17-09.13.35:973][798]PIE: Play in editor start time for /Game/TestingContent/UEDPIE_0_Persistent −0,249
+[2020.12.17-09.13.35:973][798]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.13.35:973][798]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.13.35:973][798]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.13.36:019][799]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.13.36:538][850]LogTemp: Warning: MouseDown
+[2020.12.17-09.13.36:541][850]LogTemp: Warning: Drag
+[2020.12.17-09.13.36:964][901]LogTemp: Warning: MouseDown
+[2020.12.17-09.13.36:980][903]LogTemp: Warning: Drag
+[2020.12.17-09.13.37:356][948]LogTemp: Warning: MouseDown
+[2020.12.17-09.13.37:364][949]LogTemp: Warning: Drag
+[2020.12.17-09.13.37:714][991]LogTemp: Warning: MouseDown
+[2020.12.17-09.13.37:722][992]LogTemp: Warning: Drag
+[2020.12.17-09.13.38:114][ 39]LogTemp: Warning: MouseDown
+[2020.12.17-09.13.38:114][ 39]LogTemp: Warning: Drag
+[2020.12.17-09.13.38:522][ 88]LogTemp: Warning: MouseDown
+[2020.12.17-09.13.38:522][ 88]LogTemp: Warning: Drag
+[2020.12.17-09.13.39:438][198]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_CombatLevel 1 1 1
+[2020.12.17-09.13.41:599][456]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.13.41:599][456]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.13.41:600][456]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.13.41:600][456]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.13.41:600][456]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.13.41:600][456]LogWorld: BeginTearingDown for /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.13.41:600][456]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.13.41:600][456]LogWorld: UWorld::CleanupWorld for Persistent, bSessionEnded=true, bCleanupResources=true
+[2020.12.17-09.13.41:601][456]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.13.41:611][456]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2020.12.17-09.13.41:611][456]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.13.41:611][456]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.13.41:615][456]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.13.41:656][456]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.13.41:659][456]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.13.41:662][456]LogUObjectHash: Compacting FUObjectHashTables data took   1.69ms
+[2020.12.17-09.13.41:719][457]LogUObjectHash: Compacting FUObjectHashTables data took   0.74ms
+[2020.12.17-09.13.41:744][458]LogPlayLevel: Display: Destroying online subsystem :Context_6
+[2020.12.17-09.13.58:835][817]LogHotReload: New module detected: UE4Editor-AutoBattlerProto-0006.dll
+[2020.12.17-09.13.59:849][821]LogHotReload: Starting Hot-Reload from IDE
+[2020.12.17-09.13.59:901][821]LogUObjectHash: Compacting FUObjectHashTables data took   0.77ms
+[2020.12.17-09.13.59:932][821]LogClass: CharacterData HotReload.
+[2020.12.17-09.13.59:932][821]LogClass: ETurnEnum HotReload.
+[2020.12.17-09.13.59:932][821]LogClass: EAffectRange HotReload.
+[2020.12.17-09.13.59:932][821]LogClass: ESkillType HotReload.
+[2020.12.17-09.13.59:933][821]LogClass: FerrySoulSpot HotReload.
+[2020.12.17-09.13.59:933][821]LogClass: DraggableParams HotReload.
+[2020.12.17-09.13.59:933][821]LogClass: CharacterAttributes HotReload.
+[2020.12.17-09.13.59:941][821]LogContentBrowser: Native class hierarchy updated for 'AutoBattlerProto' in 0.0006 seconds. Added 17 classes and 2 folders.
+[2020.12.17-09.13.59:945][821]Display: HotReload successful (29 functions remapped  4 scriptstructs remapped)
+[2020.12.17-09.14.00:009][821]LogUObjectHash: Compacting FUObjectHashTables data took   1.70ms
+[2020.12.17-09.14.00:022][821]LogContentBrowser: Native class hierarchy populated in 0.0081 seconds. Added 3036 classes and 725 folders.
+[2020.12.17-09.14.00:025][821]Display: HotReload took  0.2s.
+[2020.12.17-09.14.01:164][824]LogTemp: Repeating last play command: Selected Viewport
+[2020.12.17-09.14.01:173][824]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.14.01:173][824]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.14.01:173][824]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.12.17-09.14.01:173][824]PIE: New page: PIE session: Persistent (17.12.2020 klo 13.14.01)
+[2020.12.17-09.14.01:173][824]LogPlayLevel: Creating play world package: /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.14.01:174][824]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001146s)
+[2020.12.17-09.14.01:175][824]LogAIModule: Creating AISystem for world Persistent
+[2020.12.17-09.14.01:175][824]LogPlayLevel: PIE: World Init took: (0.000738s)
+[2020.12.17-09.14.01:175][824]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TestingContent/Persistent.Persistent to /Game/TestingContent/UEDPIE_0_Persistent.Persistent (0.002001s)
+[2020.12.17-09.14.01:213][824]LogUObjectHash: Compacting FUObjectHashTables data took   1.56ms
+[2020.12.17-09.14.01:213][824]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2020.12.17-09.14.01:213][824]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2020.12.17-09.14.01:213][824]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2020.12.17-09.14.01:213][824]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2020.12.17-09.14.01:213][824]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2020.12.17-09.14.01:213][824]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2020.12.17-09.14.01:213][824]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2020.12.17-09.14.01:213][824]LogAudio: Display: AudioDevice MaxSources: 32
+[2020.12.17-09.14.01:213][824]LogAudio: Display: Using built-in audio occlusion.
+[2020.12.17-09.14.01:213][824]LogAudioMixer: Display: Initializing audio mixer.
+[2020.12.17-09.14.01:338][824]LogAudioMixer: Display: Audio Device Output Speaker Info:
+[2020.12.17-09.14.01:338][824]LogAudioMixer: Display: Name: Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.14.01:338][824]LogAudioMixer: Display: Is Default: Yes
+[2020.12.17-09.14.01:338][824]LogAudioMixer: Display: Sample Rate: 48000
+[2020.12.17-09.14.01:338][824]LogAudioMixer: Display: Channel Count Used: 2
+[2020.12.17-09.14.01:338][824]LogAudioMixer: Display: Device Channel Count: 2
+[2020.12.17-09.14.01:338][824]LogAudioMixer: Display: Channel Order:
+[2020.12.17-09.14.01:338][824]LogAudioMixer: Display: 0: FrontLeft
+[2020.12.17-09.14.01:338][824]LogAudioMixer: Display: 1: FrontRight
+[2020.12.17-09.14.01:358][824]LogAudioMixer: Display: Using Audio Device Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.14.01:360][824]LogInit: FAudioDevice initialized.
+[2020.12.17-09.14.01:368][824]LogLoad: Game class is 'BP_AutoBattlerProtoGameModeBase_C'
+[2020.12.17-09.14.01:369][824]LogWorld: Bringing World /Game/TestingContent/UEDPIE_0_Persistent.Persistent up for play (max tick rate 0) at 2020.12.17-11.14.01
+[2020.12.17-09.14.01:369][824]LogWorld: Bringing up level for play took: 0.000275
+[2020.12.17-09.14.01:369][824]LogOnline: OSS: Creating online subsystem instance for: :Context_7
+[2020.12.17-09.14.01:370][824]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2020.12.17-09.14.01:370][824]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_PickingLevel 1 1 1
+[2020.12.17-09.14.01:377][824]PIE: Play in editor start time for /Game/TestingContent/UEDPIE_0_Persistent 1,155
+[2020.12.17-09.14.01:377][824]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.14.01:377][824]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.14.01:377][824]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.14.01:422][825]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.14.01:905][864]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.01:908][864]LogTemp: Warning: Drag
+[2020.12.17-09.14.02:231][903]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.02:247][905]LogTemp: Warning: Drag
+[2020.12.17-09.14.02:572][944]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.02:589][946]LogTemp: Warning: Drag
+[2020.12.17-09.14.02:864][979]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.02:872][980]LogTemp: Warning: Drag
+[2020.12.17-09.14.03:680][ 77]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.03:722][ 82]LogTemp: Warning: Drag
+[2020.12.17-09.14.04:381][161]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_CombatLevel 1 1 1
+[2020.12.17-09.14.05:539][298]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.14.05:539][298]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.14.05:539][298]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.14.05:539][298]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.14.05:539][298]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.14.05:539][298]LogWorld: BeginTearingDown for /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.14.05:539][298]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.14.05:540][298]LogWorld: UWorld::CleanupWorld for Persistent, bSessionEnded=true, bCleanupResources=true
+[2020.12.17-09.14.05:540][298]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.14.05:547][298]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2020.12.17-09.14.05:547][298]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.14.05:547][298]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.14.05:551][298]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.12.17-09.14.05:587][298]LogAudioMixer: Display: No commands were queued while flushing the source manager.
+[2020.12.17-09.14.05:590][298]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.12.17-09.14.05:593][298]LogUObjectHash: Compacting FUObjectHashTables data took   1.51ms
+[2020.12.17-09.14.05:647][299]LogUObjectHash: Compacting FUObjectHashTables data took   0.73ms
+[2020.12.17-09.14.05:662][300]LogPlayLevel: Display: Destroying online subsystem :Context_7
+[2020.12.17-09.14.48:883][744]LogHotReload: New module detected: UE4Editor-AutoBattlerProto-0007.dll
+[2020.12.17-09.14.49:897][748]LogHotReload: Starting Hot-Reload from IDE
+[2020.12.17-09.14.49:945][748]LogUObjectHash: Compacting FUObjectHashTables data took   0.75ms
+[2020.12.17-09.14.49:978][748]LogClass: CharacterData HotReload.
+[2020.12.17-09.14.49:978][748]LogClass: ETurnEnum HotReload.
+[2020.12.17-09.14.49:978][748]LogClass: EAffectRange HotReload.
+[2020.12.17-09.14.49:978][748]LogClass: ESkillType HotReload.
+[2020.12.17-09.14.49:978][748]LogClass: FerrySoulSpot HotReload.
+[2020.12.17-09.14.49:978][748]LogClass: DraggableParams HotReload.
+[2020.12.17-09.14.49:978][748]LogClass: CharacterAttributes HotReload.
+[2020.12.17-09.14.49:986][748]LogContentBrowser: Native class hierarchy updated for 'AutoBattlerProto' in 0.0006 seconds. Added 17 classes and 2 folders.
+[2020.12.17-09.14.49:990][748]Display: HotReload successful (29 functions remapped  4 scriptstructs remapped)
+[2020.12.17-09.14.50:050][748]LogUObjectHash: Compacting FUObjectHashTables data took   1.41ms
+[2020.12.17-09.14.50:062][748]LogContentBrowser: Native class hierarchy populated in 0.0081 seconds. Added 3036 classes and 725 folders.
+[2020.12.17-09.14.50:065][748]Display: HotReload took  0.2s.
+[2020.12.17-09.14.51:525][865]LogTemp: Repeating last play command: Selected Viewport
+[2020.12.17-09.14.51:534][865]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.14.51:534][865]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.14.51:534][865]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.12.17-09.14.51:534][865]PIE: New page: PIE session: Persistent (17.12.2020 klo 13.14.51)
+[2020.12.17-09.14.51:534][865]LogPlayLevel: Creating play world package: /Game/TestingContent/UEDPIE_0_Persistent
+[2020.12.17-09.14.51:536][865]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001180s)
+[2020.12.17-09.14.51:536][865]LogAIModule: Creating AISystem for world Persistent
+[2020.12.17-09.14.51:537][865]LogPlayLevel: PIE: World Init took: (0.000770s)
+[2020.12.17-09.14.51:537][865]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TestingContent/Persistent.Persistent to /Game/TestingContent/UEDPIE_0_Persistent.Persistent (0.002081s)
+[2020.12.17-09.14.51:573][865]LogUObjectHash: Compacting FUObjectHashTables data took   1.48ms
+[2020.12.17-09.14.51:573][865]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2020.12.17-09.14.51:573][865]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2020.12.17-09.14.51:573][865]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2020.12.17-09.14.51:573][865]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2020.12.17-09.14.51:573][865]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2020.12.17-09.14.51:573][865]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2020.12.17-09.14.51:573][865]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2020.12.17-09.14.51:573][865]LogAudio: Display: AudioDevice MaxSources: 32
+[2020.12.17-09.14.51:573][865]LogAudio: Display: Using built-in audio occlusion.
+[2020.12.17-09.14.51:573][865]LogAudioMixer: Display: Initializing audio mixer.
+[2020.12.17-09.14.51:697][865]LogAudioMixer: Display: Audio Device Output Speaker Info:
+[2020.12.17-09.14.51:697][865]LogAudioMixer: Display: Name: Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.14.51:697][865]LogAudioMixer: Display: Is Default: Yes
+[2020.12.17-09.14.51:697][865]LogAudioMixer: Display: Sample Rate: 48000
+[2020.12.17-09.14.51:697][865]LogAudioMixer: Display: Channel Count Used: 2
+[2020.12.17-09.14.51:697][865]LogAudioMixer: Display: Device Channel Count: 2
+[2020.12.17-09.14.51:697][865]LogAudioMixer: Display: Channel Order:
+[2020.12.17-09.14.51:697][865]LogAudioMixer: Display: 0: FrontLeft
+[2020.12.17-09.14.51:697][865]LogAudioMixer: Display: 1: FrontRight
+[2020.12.17-09.14.51:718][865]LogAudioMixer: Display: Using Audio Device Kaiuttimet (Realtek(R) Audio)
+[2020.12.17-09.14.51:719][865]LogInit: FAudioDevice initialized.
+[2020.12.17-09.14.51:725][865]LogLoad: Game class is 'BP_AutoBattlerProtoGameModeBase_C'
+[2020.12.17-09.14.51:725][865]LogWorld: Bringing World /Game/TestingContent/UEDPIE_0_Persistent.Persistent up for play (max tick rate 0) at 2020.12.17-11.14.51
+[2020.12.17-09.14.51:725][865]LogWorld: Bringing up level for play took: 0.000273
+[2020.12.17-09.14.51:726][865]LogOnline: OSS: Creating online subsystem instance for: :Context_8
+[2020.12.17-09.14.51:726][865]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2020.12.17-09.14.51:727][865]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_PickingLevel 1 1 1
+[2020.12.17-09.14.51:733][865]PIE: Play in editor start time for /Game/TestingContent/UEDPIE_0_Persistent −0,488
+[2020.12.17-09.14.51:733][865]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/Persistent.Persistent:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent' with GeneratedClass '/Game/TestingContent/Persistent.Persistent_C' with ClassGeneratedBy '/Game/TestingContent/Persistent.Persistent:PersistentLevel.Persistent'
+[2020.12.17-09.14.51:733][865]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel' has LevelScriptBlueprint '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel' with GeneratedClass '/Game/TestingContent/PickingLevel.PickingLevel_C' with ClassGeneratedBy '/Game/TestingContent/PickingLevel.PickingLevel:PersistentLevel.PickingLevel'
+[2020.12.17-09.14.51:733][865]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.14.51:765][866]LogLevelStreaming: Display: FStreamLevelAction::UpdateOperation() LevelName PickingLevel, bIsLevelValid 1
+[2020.12.17-09.14.52:165][914]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.52:168][914]LogTemp: Warning: Drag
+[2020.12.17-09.14.52:515][956]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.52:540][959]LogTemp: Warning: Drag
+[2020.12.17-09.14.52:848][996]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.52:856][997]LogTemp: Warning: Drag
+[2020.12.17-09.14.53:174][ 35]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.53:182][ 36]LogTemp: Warning: Drag
+[2020.12.17-09.14.53:499][ 74]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.53:507][ 75]LogTemp: Warning: Drag
+[2020.12.17-09.14.53:832][114]LogTemp: Warning: MouseDown
+[2020.12.17-09.14.53:840][115]LogTemp: Warning: Drag
+[2020.12.17-09.14.54:856][237]LogLevel: ActivateLevel /Game/TestingContent/UEDPIE_0_CombatLevel 1 1 1
+[2020.12.17-09.14.54:864][237]LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+[2020.12.17-09.14.54:865][237]LogWindows: Windows GetLastError: Toiminto suoritettiin. (0)
+[2020.12.17-09.14.58:415][237]LogWindows: Error: === Critical error: ===
+[2020.12.17-09.14.58:415][237]LogWindows: Error: 
+[2020.12.17-09.14.58:415][237]LogWindows: Error: Assertion failed: Child [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/CoreUObject/Private/UObject/UObjectGlobals.cpp] [Line: 3120] 
+[2020.12.17-09.14.58:415][237]LogWindows: Error: NewObject called with a nullptr class object
+[2020.12.17-09.14.58:415][237]LogWindows: Error: 
+[2020.12.17-09.14.58:415][237]LogWindows: Error: 
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff8619bd759 KERNELBASE.dll!UnknownFunction []
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff80881a7b6 UE4Editor-Core.dll!ReportAssert() [d:\build\++ue4\sync\engine\source\runtime\core\private\windows\windowsplatformcrashcontext.cpp:1341]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff80881dc58 UE4Editor-Core.dll!FWindowsErrorOutputDevice::Serialize() [d:\build\++ue4\sync\engine\source\runtime\core\private\windows\windowserroroutputdevice.cpp:79]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff8085d2c7d UE4Editor-Core.dll!FOutputDevice::LogfImpl() [d:\build\++ue4\sync\engine\source\runtime\core\private\misc\outputdevice.cpp:71]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff80855fd43 UE4Editor-Core.dll!AssertFailedImplV() [d:\build\++ue4\sync\engine\source\runtime\core\private\misc\assertionmacros.cpp:105]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff8085620c0 UE4Editor-Core.dll!FDebug::CheckVerifyFailedImpl() [d:\build\++ue4\sync\engine\source\runtime\core\private\misc\assertionmacros.cpp:455]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff807ffc1e4 UE4Editor-CoreUObject.dll!CheckIsClassChildOf_Internal() [d:\build\++ue4\sync\engine\source\runtime\coreuobject\private\uobject\uobjectglobals.cpp:3120]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007fffb9bb5eb1 UE4Editor-AutoBattlerProto-0007.dll!ACharacterBase::Initialize() [e:\lautturi\autobattlerproto\source\lautturi\characterbase.cpp:63]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007fffb9bbe654 UE4Editor-AutoBattlerProto-0007.dll!APlayerCharacter::Initialize() [e:\lautturi\autobattlerproto\source\lautturi\playercharacter.cpp:28]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007fffb9bc078e UE4Editor-AutoBattlerProto-0007.dll!ASlotBase::BeginPlay() [e:\lautturi\autobattlerproto\source\lautturi\slotbase.cpp:53]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff804f5c7dd UE4Editor-Engine.dll!AActor::DispatchBeginPlay() [d:\build\++ue4\sync\engine\source\runtime\engine\private\actor.cpp:3384]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff80585a0da UE4Editor-Engine.dll!ULevel::RouteActorInitialize() [d:\build\++ue4\sync\engine\source\runtime\engine\private\level.cpp:1784]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff806205148 UE4Editor-Engine.dll!UWorld::AddToWorld() [d:\build\++ue4\sync\engine\source\runtime\engine\private\world.cpp:2447]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff80586a6f6 UE4Editor-Engine.dll!ULevelStreaming::UpdateStreamingState() [d:\build\++ue4\sync\engine\source\runtime\engine\private\levelstreaming.cpp:578]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff80625424f UE4Editor-Engine.dll!UWorld::UpdateLevelStreaming() [d:\build\++ue4\sync\engine\source\runtime\engine\private\world.cpp:3254]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff80565ea42 UE4Editor-Engine.dll!UGameViewportClient::Draw() [d:\build\++ue4\sync\engine\source\runtime\engine\private\gameviewportclient.cpp:1370]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff8060a82d6 UE4Editor-Engine.dll!FViewport::Draw() [d:\build\++ue4\sync\engine\source\runtime\engine\private\unrealclient.cpp:1570]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff80303b611 UE4Editor-UnrealEd.dll!UEditorEngine::Tick() [d:\build\++ue4\sync\engine\source\editor\unrealed\private\editorengine.cpp:1886]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff80389e476 UE4Editor-UnrealEd.dll!UUnrealEdEngine::Tick() [d:\build\++ue4\sync\engine\source\editor\unrealed\private\unrealedengine.cpp:410]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff694267f62 UE4Editor.exe!FEngineLoop::Tick() [d:\build\++ue4\sync\engine\source\runtime\launch\private\launchengineloop.cpp:4485]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff69427c3ec UE4Editor.exe!GuardedMain() [d:\build\++ue4\sync\engine\source\runtime\launch\private\launch.cpp:173]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff69427c4ca UE4Editor.exe!GuardedMainWrapper() [d:\build\++ue4\sync\engine\source\runtime\launch\private\windows\launchwindows.cpp:134]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff69428ceae UE4Editor.exe!WinMain() [d:\build\++ue4\sync\engine\source\runtime\launch\private\windows\launchwindows.cpp:263]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff69428fcbe UE4Editor.exe!__scrt_common_main_seh() [d:\agent\_work\2\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:288]
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff862c97034 KERNEL32.DLL!UnknownFunction []
+[2020.12.17-09.14.58:415][237]LogWindows: Error: [Callstack] 0x00007ff863edd0d1 ntdll.dll!UnknownFunction []
+[2020.12.17-09.14.58:415][237]LogWindows: Error: 
+[2020.12.17-09.14.58:428][237]LogExit: Executing StaticShutdownAfterError
+[2020.12.17-09.14.58:431][237]LogWindows: FPlatformMisc::RequestExit(1)
+[2020.12.17-09.14.58:431][237]LogCore: Engine exit requested (reason: Win RequestExit)
+[2020.12.17-09.14.58:434][237]Log file closed, 12/17/20 11:14:58

@@ -46,13 +46,10 @@ protected:
 
 	virtual void SkillUsed(FCharacterData Data) override;
 
-	//Randomizes PlayerStats
-	void RandomizeStats() override;
-
 public:
 	APlayerCharacter();
 
-	virtual void Initialize(ASlotBase* Slot, bool bCanClick) override;
+	virtual void Initialize(ASlotBase* Slot, bool bCanClick, FCharacterAttributes InAttributes) override;
 	
 	void CombatInitialize(ACharacterBase* Character);
 

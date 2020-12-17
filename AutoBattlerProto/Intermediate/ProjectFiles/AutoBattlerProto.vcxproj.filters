@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\AutoBattlerProto.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{FE695E5C-8642-44FC-A41C-CF6263908D5D}</UniqueIdentifier>
+      <UniqueIdentifier>{B2484020-A064-45FF-92BB-C36117CD3E14}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\AutoBattlerProto.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{750412D1-7EA8-468B-AD00-4DA62255B1CA}</UniqueIdentifier>
+      <UniqueIdentifier>{3A1B7023-AC6D-4837-9E6A-D126E64F744D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{32BFF5A8-06C5-4AE2-B68C-A92998AE3379}</UniqueIdentifier>
+      <UniqueIdentifier>{4100DA0D-D414-4C8F-A360-1EAF8B32928A}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp">
       <Filter>Source\Lautturi</Filter>
@@ -62,10 +62,28 @@
     <ClInclude Include="..\..\Source\Lautturi\CharacterBase.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\CharacterDataWidget.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\CharacterDataWidget.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Lautturi\CombatManager.cpp">
       <Filter>Source\Lautturi</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Lautturi\CombatManager.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\DragDrop.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\DragDrop.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\DragWidget.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\DragWidget.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Lautturi\DropZone.cpp">
@@ -120,6 +138,12 @@
       <Filter>Source\Lautturi</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Lautturi\TrialController.h">
+      <Filter>Source\Lautturi</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Lautturi\TrialHUDWidget.cpp">
+      <Filter>Source\Lautturi</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Lautturi\TrialHUDWidget.h">
       <Filter>Source\Lautturi</Filter>
     </ClInclude>
   </ItemGroup>

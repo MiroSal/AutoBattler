@@ -6,6 +6,7 @@
 #include "SkillTypeEnums.h"
 #include "CombatManager.h"
 #include "SkillBase.h"
+#include "SoulTrialManager.h"
 #include "CharacterBase.generated.h"
 
 
@@ -44,16 +45,13 @@ private:
 	ASlotBase* CurrentSlot;
 
 protected:
-	//Randomize base stats
-	virtual void RandomizeStats();
-
 	UFUNCTION()
 		virtual void SkillUsed(FCharacterData Data) {};
 
 public:
 	ACharacterBase();
 
-	virtual void Initialize(class ASlotBase* Slot, bool bCanClick);
+	virtual void Initialize(class ASlotBase* Slot, bool bCanClick, FCharacterAttributes InAttributes);
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

@@ -21,6 +21,8 @@ e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerp
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\CombatManager.generated.h
 e:\lautturi\autobattlerproto\source\lautturi\SkillBase.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\SkillBase.generated.h
+e:\lautturi\autobattlerproto\source\lautturi\SoulTrialManager.h
+e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\SoulTrialManager.generated.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\CharacterBase.generated.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\PlayerCharacter.generated.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\DropZone.generated.h

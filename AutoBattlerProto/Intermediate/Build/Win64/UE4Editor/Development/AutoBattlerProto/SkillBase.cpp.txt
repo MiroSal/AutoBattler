@@ -15,9 +15,9 @@ e:\lautturi\autobattlerproto\source\lautturi\CombatManager.h
 e:\lautturi\autobattlerproto\source\lautturi\SoulDataStruct.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulDataStruct.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CombatManager.generated.h
-E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CharacterBase.generated.h
 e:\lautturi\autobattlerproto\source\lautturi\SoulTrialManager.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulTrialManager.generated.h
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CharacterBase.generated.h
 e:\lautturi\autobattlerproto\source\lautturi\AutoBattlerProtoGameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h

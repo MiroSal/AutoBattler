@@ -30,3 +30,5 @@ e:\lautturi\autobattlerproto\source\lautturi\SkillBase.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SkillBase.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CharacterBase.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\PlayerCharacter.generated.h
+e:\lautturi\autobattlerproto\source\lautturi\EnemyBase.h
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\EnemyBase.generated.h

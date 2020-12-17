@@ -16,6 +16,8 @@ E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerP
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CombatManager.generated.h
 e:\lautturi\autobattlerproto\source\lautturi\SkillBase.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SkillBase.generated.h
+e:\lautturi\autobattlerproto\source\lautturi\SoulTrialManager.h
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulTrialManager.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CharacterBase.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\PlayerCharacter.generated.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h
@@ -30,8 +32,6 @@ D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Dialo
 d:\epic games\ue_4.24\engine\source\runtime\engine\classes\kismet\GameplayStaticsTypes.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\SoulTrialManager.h
-E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulTrialManager.generated.h
 e:\lautturi\autobattlerproto\source\lautturi\AutoBattlerProtoGameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h

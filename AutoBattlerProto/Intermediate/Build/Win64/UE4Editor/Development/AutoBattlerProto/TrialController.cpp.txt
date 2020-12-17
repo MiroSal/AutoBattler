@@ -20,4 +20,6 @@ E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerP
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CombatManager.generated.h
 e:\lautturi\autobattlerproto\source\lautturi\SkillBase.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SkillBase.generated.h
+e:\lautturi\autobattlerproto\source\lautturi\SoulTrialManager.h
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulTrialManager.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CharacterBase.generated.h

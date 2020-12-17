@@ -6,7 +6,6 @@
 #include "Components/SceneComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "AutoBattlerProtoGameModeBase.h"
-#include "SoulTrialManager.h"
 #include "SlotBase.h"
 #include "SkillBase.h"
 
@@ -47,7 +46,7 @@ ACharacterBase::ACharacterBase()
 	Str = 0;
 }
 
-void ACharacterBase::Initialize(ASlotBase * Slot, bool bCanDrag)
+void ACharacterBase::Initialize(ASlotBase * Slot, bool bCanDrag, FCharacterAttributes InAttributes)
 {
 	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
 	check(IsValid(GameMode));
@@ -57,27 +56,17 @@ void ACharacterBase::Initialize(ASlotBase * Slot, bool bCanDrag)
 
 	CombatManager = GameMode->GetCombatManager();
 	check(IsValid(CombatManager));
-}
 
-void ACharacterBase::AttackEnd()
-{
-	check(IsValid(CombatManager));
-	CombatManager->ChangeTurn();
-}
-
-void ACharacterBase::RandomizeStats()
-{
-	Health = FMath::RandRange(1, 10);
-	Sin = FMath::RandRange(0, 10);
-	Str = FMath::RandRange(0, 10);
-	if (AllPossiblePassiveSkills.Num() > 0)
+	Health = InAttributes.Health;
+	Sin = InAttributes.Sin;
+	Str = InAttributes.Str;
+	if (InAttributes.PassiveSkill != nullptr)
 	{
-		PassiveSkill = NewObject<USkillBase>(this, AllPossiblePassiveSkills[FMath::RandRange(0, AllPossiblePassiveSkills.Num() - 1)]);
+		PassiveSkill = NewObject<USkillBase>(this, InAttributes.PassiveSkill);
 	}
-
-	if (AllPossiblePrimarySkills.Num() > 0)
+	if (InAttributes.PrimarySkill != nullptr)
 	{
-		PrimarySkill = NewObject<USkillBase>(this, AllPossiblePrimarySkills[FMath::RandRange(0, AllPossiblePrimarySkills.Num() - 1)]);
+		PrimarySkill = NewObject<USkillBase>(this, InAttributes.PrimarySkill);
 	}
 
 	if (IsValid(GetPassiveSkill()) && IsValid(GetPrimarySkill()) && IsValid(StatsText))
@@ -85,6 +74,12 @@ void ACharacterBase::RandomizeStats()
 		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), GetHealth(), GetSin(), GetStr(), *GetPrimarySkill()->GetSkillInfo(), *GetPassiveSkill()->GetSkillInfo());
 		StatsText->SetText(FText::FromString(Stats));
 	}
+}
+
+void ACharacterBase::AttackEnd()
+{
+	check(IsValid(CombatManager));
+	CombatManager->ChangeTurn();
 }
 
 void ACharacterBase::SetStr(int32 InStr)
