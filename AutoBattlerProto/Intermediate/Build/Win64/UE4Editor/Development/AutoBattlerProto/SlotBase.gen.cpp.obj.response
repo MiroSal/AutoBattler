@@ -525,8 +525,8 @@
 /I Runtime\AudioMixerCore\Public
 /I Runtime\AudioMixerCore
 /I E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto
+/I E:\Lautturi\AutoBattlerProto
 /I E:\Lautturi\AutoBattlerProto\Source
-/I E:\Lautturi\AutoBattlerProto\Source\Lautturi
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf

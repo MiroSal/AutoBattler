@@ -1,7 +1,7 @@
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-E:\Lautturi\AutoBattlerProto\Source\Lautturi/CharacterDataWidget.h
+E:\Lautturi\AutoBattlerProto\Source/Widgets/CharacterDataWidget.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Blueprint/UserWidget.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/SlateWrapperTypes.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\SlateWrapperTypes.generated.h
@@ -117,7 +117,7 @@ D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PropertyPath
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\DynamicPropertyPath.generated.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\WidgetBlueprintGeneratedClass.generated.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\UserWidget.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\SoulTrialManager.h
+E:\Lautturi\AutoBattlerProto\Source\SoulTrialManager.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl

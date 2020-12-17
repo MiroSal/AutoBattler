@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AUTOBATTLERPROTO_DragDrop_generated_h
 
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_SPARSE_DATA
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_RPC_WRAPPERS
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_INCLASS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_DragDrop_h_15_SPARSE_DATA
+#define AutoBattlerProto_Source_DragDrop_h_15_RPC_WRAPPERS
+#define AutoBattlerProto_Source_DragDrop_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define AutoBattlerProto_Source_DragDrop_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUDragDrop(); \
 	friend struct Z_Construct_UClass_UDragDrop_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(UDragDrop)
 
 
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_INCLASS \
+#define AutoBattlerProto_Source_DragDrop_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesUDragDrop(); \
 	friend struct Z_Construct_UClass_UDragDrop_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(UDragDrop)
 
 
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_STANDARD_CONSTRUCTORS \
+#define AutoBattlerProto_Source_DragDrop_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UDragDrop(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UDragDrop) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_ENHANCED_CONSTRUCTORS \
+#define AutoBattlerProto_Source_DragDrop_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UDragDrop(UDragDrop&&); \
@@ -58,28 +58,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDragDrop); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UDragDrop)
 
 
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_PRIVATE_PROPERTY_OFFSET
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_12_PROLOG
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_GENERATED_BODY_LEGACY \
+#define AutoBattlerProto_Source_DragDrop_h_15_PRIVATE_PROPERTY_OFFSET
+#define AutoBattlerProto_Source_DragDrop_h_12_PROLOG
+#define AutoBattlerProto_Source_DragDrop_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_SPARSE_DATA \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_RPC_WRAPPERS \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_INCLASS \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_STANDARD_CONSTRUCTORS \
+	AutoBattlerProto_Source_DragDrop_h_15_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_DragDrop_h_15_SPARSE_DATA \
+	AutoBattlerProto_Source_DragDrop_h_15_RPC_WRAPPERS \
+	AutoBattlerProto_Source_DragDrop_h_15_INCLASS \
+	AutoBattlerProto_Source_DragDrop_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_Lautturi_DragDrop_h_15_GENERATED_BODY \
+#define AutoBattlerProto_Source_DragDrop_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_SPARSE_DATA \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_INCLASS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_Lautturi_DragDrop_h_15_ENHANCED_CONSTRUCTORS \
+	AutoBattlerProto_Source_DragDrop_h_15_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_DragDrop_h_15_SPARSE_DATA \
+	AutoBattlerProto_Source_DragDrop_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_DragDrop_h_15_INCLASS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_DragDrop_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -87,7 +87,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> AUTOBATTLERPROTO_API UClass* StaticClass<class UDragDrop>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID AutoBattlerProto_Source_Lautturi_DragDrop_h
+#define CURRENT_FILE_ID AutoBattlerProto_Source_DragDrop_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

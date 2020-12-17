@@ -1,4 +1,8 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (E:\Lautturi).
+  Creating makefile for AutoBattlerProtoEditor (no existing makefile)
+  Parsing headers for AutoBattlerProtoEditor
+    Running UnrealHeaderTool "E:\Lautturi\AutoBattlerProto\AutoBattlerProto.uproject" "E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\AutoBattlerProtoEditor\Development\AutoBattlerProtoEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+  Reflection code generated for AutoBattlerProtoEditor in 4,7797707 seconds
   Building AutoBattlerProtoEditor...
   Using Visual Studio 2017 14.16.27035 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.16299.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -8,12 +12,43 @@
   [Upgrade]     PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs   => Set in build.cs files to enables IWYU-style PCH model. See https://docs.unrealengine.com/en-US/Programming/BuildTools/UnrealBuildTool/IWYU/index.html. (Previously: PCHUsageMode.UseSharedPCHs).
   [Upgrade] Suppress this message by setting 'DefaultBuildSettings = BuildSettingsVersion.V2;' in AutoBattlerProtoEditor.Target.cs, and explicitly overriding settings that differ from the new defaults.
   [Upgrade]
-  Building 4 actions with 24 processes...
-    [1/4] CharacterBase.cpp
-    [2/4] UE4Editor-AutoBattlerProto.lib
+  Building 35 actions with 24 processes...
+    [1/35] ActivationInterface.cpp
+    [2/35] AutoBattlerProto.cpp
+    [3/35] AutoBattlerProto.init.gen.cpp
+    [4/35] ActivationInterface.gen.cpp
+    [5/35] AutoBattlerProtoGameInstance.cpp
+    [6/35] DragDrop.gen.cpp
+    [7/35] CombatManager.gen.cpp
+    [8/35] AutoBattlerProtoGameModeBase.cpp
+    [9/35] SkillBase.cpp
+    [10/35] CharacterBase.gen.cpp
+    [11/35] EnemyBase.gen.cpp
+    [12/35] CombatManager.cpp
+    [13/35] AutoBattlerProtoGameModeBase.gen.cpp
+    [14/35] SoulTrialManager.cpp
+    [15/35] EnemyBase.cpp
+    [16/35] CharacterBase.cpp
+    [17/35] SlotBase.cpp
+    [18/35] SkillTypeEnums.gen.cpp
+    [19/35] SlotBase.gen.cpp
+    [20/35] PlayerCharacter.cpp
+    [21/35] SkillBase.gen.cpp
+    [22/35] SoulDataStruct.gen.cpp
+    [23/35] AutoBattlerProtoGameInstance.gen.cpp
+    [24/35] PlayerCharacter.gen.cpp
+    [25/35] SoulTrialManager.gen.cpp
+    [26/35] DragDrop.cpp
+    [27/35] CharacterDataWidget.gen.cpp
+    [28/35] DragWidget.cpp
+    [29/35] TrialHUDWidget.gen.cpp
+    [30/35] CharacterDataWidget.cpp
+    [31/35] DragWidget.gen.cpp
+    [32/35] TrialHUDWidget.cpp
+    [33/35] UE4Editor-AutoBattlerProto.lib
        Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.exp
-    [3/4] UE4Editor-AutoBattlerProto.dll
+    [34/35] UE4Editor-AutoBattlerProto.dll
        Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.exp
-    [4/4] AutoBattlerProtoEditor.target
-  Total time in Parallel executor: 1,88 seconds
-  Total execution time: 2,36 seconds
+    [35/35] AutoBattlerProtoEditor.target
+  Total time in Parallel executor: 6,04 seconds
+  Total execution time: 12,22 seconds

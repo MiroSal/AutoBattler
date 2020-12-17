@@ -1,5 +1,5 @@
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
-e:\lautturi\autobattlerproto\source\lautturi\TrialHUDWidget.h
+e:\lautturi\autobattlerproto\source\widgets\TrialHUDWidget.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Blueprint/UserWidget.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/SlateWrapperTypes.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\SlateWrapperTypes.generated.h
@@ -138,35 +138,33 @@ D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/TextWidgetType
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\TextWidgetTypes.generated.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\TextBlock.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\TrialHUDWidget.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\DragWidget.h
+e:\lautturi\autobattlerproto\source\widgets\DragWidget.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/SizeBox.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\SizeBox.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\DragWidget.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\CharacterDataWidget.h
-e:\lautturi\autobattlerproto\source\lautturi\SoulTrialManager.h
+e:\lautturi\autobattlerproto\source\widgets\CharacterDataWidget.h
+E:\Lautturi\AutoBattlerProto\Source\SoulTrialManager.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Internationalization/PolyglotTextData.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulTrialManager.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CharacterDataWidget.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\CombatManager.h
-e:\lautturi\autobattlerproto\source\lautturi\SoulDataStruct.h
-e:\lautturi\autobattlerproto\source\lautturi\SkillTypeEnums.h
+E:\Lautturi\AutoBattlerProto\Source\CombatManager.h
+e:\lautturi\autobattlerproto\source\SoulDataStruct.h
+e:\lautturi\autobattlerproto\source\SkillTypeEnums.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulDataStruct.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CombatManager.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\AutoBattlerProtoGameModeBase.h
+E:\Lautturi\AutoBattlerProto\Source\AutoBattlerProtoGameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\AutoBattlerProtoGameInstance.h
+e:\lautturi\autobattlerproto\source\AutoBattlerProtoGameInstance.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\AutoBattlerProtoGameInstance.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\AutoBattlerProtoGameModeBase.generated.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/WrapBox.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Slate\Public\Widgets/Layout/SWrapBox.h
-e:\lautturi\autobattlerproto\source\lautturi\SlotBase.h
-E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SlotBase.generated.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\WrapBox.generated.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h

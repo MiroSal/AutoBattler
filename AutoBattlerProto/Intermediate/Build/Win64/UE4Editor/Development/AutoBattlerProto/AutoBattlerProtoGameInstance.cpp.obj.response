@@ -525,8 +525,8 @@
 /I Runtime\AudioMixerCore\Public
 /I Runtime\AudioMixerCore
 /I E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto
+/I E:\Lautturi\AutoBattlerProto
 /I E:\Lautturi\AutoBattlerProto\Source
-/I E:\Lautturi\AutoBattlerProto\Source\Lautturi
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -559,7 +559,7 @@
 /FI"E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\AutoBattlerProtoEditor\Development\Engine\SharedPCH.Engine.h"
 /Yu"E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\AutoBattlerProtoEditor\Development\Engine\SharedPCH.Engine.h"
 /Fp"E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\AutoBattlerProtoEditor\Development\Engine\SharedPCH.Engine.h.pch"
-"E:\Lautturi\AutoBattlerProto\Source\Lautturi\AutoBattlerProtoGameInstance.cpp"
+"E:\Lautturi\AutoBattlerProto\Source\AutoBattlerProtoGameInstance.cpp"
 /FI"E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h"
 /Fo"E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\AutoBattlerProtoGameInstance.cpp.obj"
 /TP

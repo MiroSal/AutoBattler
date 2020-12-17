@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Lautturi/CharacterDataWidget.h"
+#include "Source/Widgets/CharacterDataWidget.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -73,15 +73,15 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n *\n */" },
-		{ "IncludePath", "CharacterDataWidget.h" },
-		{ "ModuleRelativePath", "CharacterDataWidget.h" },
+		{ "IncludePath", "Widgets/CharacterDataWidget.h" },
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
 		{ "ObjectInitializerConstructorDeclared", "" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragWidget_MetaData[] = {
 		{ "Category", "CharacterDataWidget" },
-		{ "ModuleRelativePath", "CharacterDataWidget.h" },
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragWidget = { "DragWidget", nullptr, (EPropertyFlags)0x0014000000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, DragWidget), Z_Construct_UClass_UDragWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragWidget_MetaData)) };
@@ -89,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StrText_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CharacterDataWidget.h" },
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StrText = { "StrText", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, StrText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StrText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StrText_MetaData)) };
@@ -97,7 +97,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_SinText_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CharacterDataWidget.h" },
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_SinText = { "SinText", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, SinText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_SinText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_SinText_MetaData)) };
@@ -105,7 +105,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_HealthText_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CharacterDataWidget.h" },
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_HealthText = { "HealthText", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, HealthText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_HealthText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_HealthText_MetaData)) };
@@ -113,7 +113,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PrimaryText_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CharacterDataWidget.h" },
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PrimaryText = { "PrimaryText", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, PrimaryText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PrimaryText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PrimaryText_MetaData)) };
@@ -121,7 +121,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PassiveText_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CharacterDataWidget.h" },
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PassiveText = { "PassiveText", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, PassiveText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PassiveText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PassiveText_MetaData)) };
@@ -129,7 +129,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StatusText_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CharacterDataWidget.h" },
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StatusText = { "StatusText", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, StatusText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StatusText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StatusText_MetaData)) };
@@ -169,7 +169,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UCharacterDataWidget, 2756625957);
+	IMPLEMENT_CLASS(UCharacterDataWidget, 1171478652);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<UCharacterDataWidget>()
 	{
 		return UCharacterDataWidget::StaticClass();

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\AutoBattlerProto.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{B2484020-A064-45FF-92BB-C36117CD3E14}</UniqueIdentifier>
+      <UniqueIdentifier>{77D7EAD2-08D1-48D2-90D5-9C63BFAB59A2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\AutoBattlerProto.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{3A1B7023-AC6D-4837-9E6A-D126E64F744D}</UniqueIdentifier>
+      <UniqueIdentifier>{D827FB7B-3020-4727-9D73-4BFD6832F47F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -26,125 +26,107 @@
     <None Include="..\..\Config\DefaultInput.ini">
       <Filter>Config</Filter>
     </None>
-    <Filter Include="Source\Lautturi">
-      <UniqueIdentifier>{4100DA0D-D414-4C8F-A360-1EAF8B32928A}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\Lautturi\ActivationInterface.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\ActivationInterface.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\ActivationInterface.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\ActivationInterface.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <None Include="..\..\Source\Lautturi\AutoBattlerProto.Build.cs">
-      <Filter>Source\Lautturi</Filter>
+    <None Include="..\..\Source\AutoBattlerProto.Build.cs">
+      <Filter>Source</Filter>
     </None>
-    <ClCompile Include="..\..\Source\Lautturi\AutoBattlerProto.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\AutoBattlerProto.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProto.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\AutoBattlerProto.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\AutoBattlerProtoGameInstance.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\AutoBattlerProtoGameInstance.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProtoGameInstance.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\AutoBattlerProtoGameInstance.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\AutoBattlerProtoGameModeBase.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\AutoBattlerProtoGameModeBase.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\AutoBattlerProtoGameModeBase.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\AutoBattlerProtoGameModeBase.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\CharacterBase.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\CharacterBase.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\CharacterBase.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\CharacterBase.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\CharacterDataWidget.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\CombatManager.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\CharacterDataWidget.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\CombatManager.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\CombatManager.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\DragDrop.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\CombatManager.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\DragDrop.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\DragDrop.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\EnemyBase.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\DragDrop.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\EnemyBase.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\DragWidget.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\PlayerCharacter.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\DragWidget.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\PlayerCharacter.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\DropZone.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\SkillBase.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\DropZone.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\SkillBase.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\DropZoneInterface.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\SkillTypeEnums.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SlotBase.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\DropZoneInterface.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\SlotBase.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\EnemyBase.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\SoulDataStruct.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SoulTrialManager.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\EnemyBase.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\SoulTrialManager.h">
+      <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\PlayerCharacter.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <Filter Include="Source\Widgets">
+      <UniqueIdentifier>{DB6713D5-296C-40C2-8637-2231E3DAC7FF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Widgets\CharacterDataWidget.cpp">
+      <Filter>Source\Widgets</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\PlayerCharacter.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\Widgets\CharacterDataWidget.h">
+      <Filter>Source\Widgets</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\SkillBase.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\Widgets\DragWidget.cpp">
+      <Filter>Source\Widgets</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\SkillBase.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\Widgets\DragWidget.h">
+      <Filter>Source\Widgets</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Lautturi\SkillTypeEnums.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\SlotBase.cpp">
-      <Filter>Source\Lautturi</Filter>
+    <ClCompile Include="..\..\Source\Widgets\TrialHUDWidget.cpp">
+      <Filter>Source\Widgets</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\SlotBase.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Lautturi\SoulDataStruct.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\SoulTrialManager.cpp">
-      <Filter>Source\Lautturi</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\SoulTrialManager.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\TrialController.cpp">
-      <Filter>Source\Lautturi</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\TrialController.h">
-      <Filter>Source\Lautturi</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Lautturi\TrialHUDWidget.cpp">
-      <Filter>Source\Lautturi</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Lautturi\TrialHUDWidget.h">
-      <Filter>Source\Lautturi</Filter>
+    <ClInclude Include="..\..\Source\Widgets\TrialHUDWidget.h">
+      <Filter>Source\Widgets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

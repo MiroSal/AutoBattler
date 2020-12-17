@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Lautturi/TrialHUDWidget.h"
+#include "Source/Widgets/TrialHUDWidget.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -42,7 +42,7 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UTrialHUDWidget_Startgame_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TrialHUDWidget.h" },
+		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UTrialHUDWidget_Startgame_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UTrialHUDWidget, nullptr, "Startgame", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UTrialHUDWidget_Startgame_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UTrialHUDWidget_Startgame_Statics::Function_MetaDataParams)) };
@@ -103,33 +103,33 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_AutoBattlerProto,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UTrialHUDWidget_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UTrialHUDWidget_Startgame, "Startgame" }, // 2323151010
+		{ &Z_Construct_UFunction_UTrialHUDWidget_Startgame, "Startgame" }, // 3306710347
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
-		{ "IncludePath", "TrialHUDWidget.h" },
-		{ "ModuleRelativePath", "TrialHUDWidget.h" },
+		{ "IncludePath", "Widgets/TrialHUDWidget.h" },
+		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 		{ "ObjectInitializerConstructorDeclared", "" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_Count_MetaData[] = {
-		{ "ModuleRelativePath", "TrialHUDWidget.h" },
+		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_Count = { "Count", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, Count), METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_Count_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_Count_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_NumberOfCharacter_MetaData[] = {
 		{ "Category", "TrialHUDWidget" },
-		{ "ModuleRelativePath", "TrialHUDWidget.h" },
+		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_NumberOfCharacter = { "NumberOfCharacter", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, NumberOfCharacter), METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_NumberOfCharacter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_NumberOfCharacter_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterDataWidgetClass_MetaData[] = {
 		{ "Category", "TrialHUDWidget" },
-		{ "ModuleRelativePath", "TrialHUDWidget.h" },
+		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterDataWidgetClass = { "CharacterDataWidgetClass", nullptr, (EPropertyFlags)0x0014000000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, CharacterDataWidgetClass), Z_Construct_UClass_UCharacterDataWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterDataWidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterDataWidgetClass_MetaData)) };
@@ -137,7 +137,7 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterWrapBox_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TrialHUDWidget.h" },
+		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterWrapBox = { "CharacterWrapBox", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, CharacterWrapBox), Z_Construct_UClass_UWrapBox_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterWrapBox_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterWrapBox_MetaData)) };
@@ -145,7 +145,7 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CountText_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TrialHUDWidget.h" },
+		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CountText = { "CountText", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, CountText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CountText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CountText_MetaData)) };
@@ -153,7 +153,7 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_StartButton_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TrialHUDWidget.h" },
+		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_StartButton = { "StartButton", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, StartButton), Z_Construct_UClass_UButton_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_StartButton_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_StartButton_MetaData)) };
@@ -161,7 +161,7 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_DropVerticalBox_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TrialHUDWidget.h" },
+		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_DropVerticalBox = { "DropVerticalBox", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, DropVerticalBox), Z_Construct_UClass_UVerticalBox_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_DropVerticalBox_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_DropVerticalBox_MetaData)) };
@@ -201,7 +201,7 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTrialHUDWidget, 2139566709);
+	IMPLEMENT_CLASS(UTrialHUDWidget, 4258454769);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<UTrialHUDWidget>()
 	{
 		return UTrialHUDWidget::StaticClass();

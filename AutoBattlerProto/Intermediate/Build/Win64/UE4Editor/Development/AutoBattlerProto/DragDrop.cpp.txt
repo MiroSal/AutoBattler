@@ -1,5 +1,5 @@
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
-e:\lautturi\autobattlerproto\source\lautturi\DragDrop.h
+e:\lautturi\autobattlerproto\source\DragDrop.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Blueprint/DragDropOperation.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\DragDropOperation.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\DragDrop.generated.h

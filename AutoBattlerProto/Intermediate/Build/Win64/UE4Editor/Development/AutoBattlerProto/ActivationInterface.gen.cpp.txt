@@ -1,7 +1,7 @@
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-E:\Lautturi\AutoBattlerProto\Source\Lautturi/ActivationInterface.h
-e:\lautturi\autobattlerproto\source\lautturi\SlotBase.h
+E:\Lautturi\AutoBattlerProto\Source/ActivationInterface.h
+e:\lautturi\autobattlerproto\source\SlotBase.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\SlotBase.generated.h
 e:\lautturi\autobattlerproto\intermediate\build\win64\ue4editor\inc\autobattlerproto\ActivationInterface.generated.h

@@ -1,34 +1,34 @@
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
-e:\lautturi\autobattlerproto\source\lautturi\SlotBase.h
+e:\lautturi\autobattlerproto\source\SlotBase.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SlotBase.generated.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Components/ArrowComponent.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ArrowComponent.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\AutoBattlerProtoGameModeBase.h
+e:\lautturi\autobattlerproto\source\AutoBattlerProtoGameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\AutoBattlerProtoGameInstance.h
-e:\lautturi\autobattlerproto\source\lautturi\SoulTrialManager.h
+e:\lautturi\autobattlerproto\source\AutoBattlerProtoGameInstance.h
+e:\lautturi\autobattlerproto\source\SoulTrialManager.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Internationalization/PolyglotTextData.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulTrialManager.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\CombatManager.h
-e:\lautturi\autobattlerproto\source\lautturi\SoulDataStruct.h
-e:\lautturi\autobattlerproto\source\lautturi\SkillTypeEnums.h
+e:\lautturi\autobattlerproto\source\CombatManager.h
+e:\lautturi\autobattlerproto\source\SoulDataStruct.h
+e:\lautturi\autobattlerproto\source\SkillTypeEnums.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulDataStruct.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CombatManager.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\AutoBattlerProtoGameInstance.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\AutoBattlerProtoGameModeBase.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\PlayerCharacter.h
-e:\lautturi\autobattlerproto\source\lautturi\CharacterBase.h
-e:\lautturi\autobattlerproto\source\lautturi\ActivationInterface.h
+e:\lautturi\autobattlerproto\source\PlayerCharacter.h
+e:\lautturi\autobattlerproto\source\CharacterBase.h
+e:\lautturi\autobattlerproto\source\ActivationInterface.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\ActivationInterface.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\SkillBase.h
+e:\lautturi\autobattlerproto\source\SkillBase.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SkillBase.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CharacterBase.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\PlayerCharacter.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\EnemyBase.h
+e:\lautturi\autobattlerproto\source\EnemyBase.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\EnemyBase.generated.h

@@ -1,5 +1,5 @@
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\Definitions.AutoBattlerProto.h
-e:\lautturi\autobattlerproto\source\lautturi\DragWidget.h
+e:\lautturi\autobattlerproto\source\widgets\DragWidget.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Blueprint/UserWidget.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/SlateWrapperTypes.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\SlateWrapperTypes.generated.h
@@ -124,7 +124,7 @@ D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\PanelWid
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\ContentWidget.generated.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\SizeBox.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\DragWidget.generated.h
-e:\lautturi\autobattlerproto\source\lautturi\TrialHUDWidget.h
+e:\lautturi\autobattlerproto\source\widgets\TrialHUDWidget.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/ProgressBar.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Slate\Public\Widgets/Notifications/SProgressBar.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Slate\SProgressBar.generated.h

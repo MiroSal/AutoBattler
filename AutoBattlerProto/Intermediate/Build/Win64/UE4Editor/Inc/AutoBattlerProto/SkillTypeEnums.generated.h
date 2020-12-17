@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define AUTOBATTLERPROTO_SkillTypeEnums_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID AutoBattlerProto_Source_Lautturi_SkillTypeEnums_h
+#define CURRENT_FILE_ID AutoBattlerProto_Source_SkillTypeEnums_h
 
 
 #define FOREACH_ENUM_EAFFECTRANGE(op) \
