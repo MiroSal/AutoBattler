@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\AutoBattlerProto.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{7DCAB40C-C33E-451B-BA3C-966B93DADF5C}</UniqueIdentifier>
+      <UniqueIdentifier>{E7FE5508-F54E-4BB4-91DC-4B529FFCE5B2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\AutoBattlerProto.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{EC4D0EB0-627D-453E-8A19-B06A699340F7}</UniqueIdentifier>
+      <UniqueIdentifier>{79B570D1-0940-4BBA-9DC1-CF49A816695A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -26,12 +26,6 @@
     <None Include="..\..\Config\DefaultInput.ini">
       <Filter>Config</Filter>
     </None>
-    <ClCompile Include="..\..\Source\ActivationInterface.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\ActivationInterface.h">
-      <Filter>Source</Filter>
-    </ClInclude>
     <None Include="..\..\Source\AutoBattlerProto.Build.cs">
       <Filter>Source</Filter>
     </None>
@@ -99,7 +93,7 @@
       <Filter>Source</Filter>
     </ClInclude>
     <Filter Include="Source\Widgets">
-      <UniqueIdentifier>{65E4D630-29F5-40E6-8AC4-6E9D3C48486D}</UniqueIdentifier>
+      <UniqueIdentifier>{EFC9288F-007F-4ED2-A0FB-FEB395B1FD38}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Widgets\CharacterDataWidget.cpp">
       <Filter>Source\Widgets</Filter>

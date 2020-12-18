@@ -272,8 +272,6 @@
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
-    <ClCompile Include="..\..\Source\ActivationInterface.cpp"/>
-    <ClInclude Include="..\..\Source\ActivationInterface.h"/>
     <None Include="..\..\Source\AutoBattlerProto.Build.cs"/>
     <ClCompile Include="..\..\Source\AutoBattlerProto.cpp"/>
     <ClInclude Include="..\..\Source\AutoBattlerProto.h"/>

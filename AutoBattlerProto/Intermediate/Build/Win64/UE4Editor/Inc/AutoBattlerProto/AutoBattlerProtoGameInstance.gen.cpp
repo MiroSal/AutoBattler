@@ -17,12 +17,84 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UAutoBattlerProtoGameInstance();
 	ENGINE_API UClass* Z_Construct_UClass_UGameInstance();
 	UPackage* Z_Construct_UPackage__Script_AutoBattlerProto();
-	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_USoulTrialManager_NoRegister();
+	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UCombatManager_NoRegister();
+	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager();
+	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_USoulTrialManager_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 // End Cross Module References
 	void UAutoBattlerProtoGameInstance::StaticRegisterNativesUAutoBattlerProtoGameInstance()
 	{
+		UClass* Class = UAutoBattlerProtoGameInstance::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "GetCombatManager", &UAutoBattlerProtoGameInstance::execGetCombatManager },
+			{ "GetSoulTrialManager", &UAutoBattlerProtoGameInstance::execGetSoulTrialManager },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics
+	{
+		struct AutoBattlerProtoGameInstance_eventGetCombatManager_Parms
+		{
+			UCombatManager* ReturnValue;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AutoBattlerProtoGameInstance_eventGetCombatManager_Parms, ReturnValue), Z_Construct_UClass_UCombatManager_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "AutoBattlerProtoGameInstance.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAutoBattlerProtoGameInstance, nullptr, "GetCombatManager", nullptr, nullptr, sizeof(AutoBattlerProtoGameInstance_eventGetCombatManager_Parms), Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics
+	{
+		struct AutoBattlerProtoGameInstance_eventGetSoulTrialManager_Parms
+		{
+			USoulTrialManager* ReturnValue;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AutoBattlerProtoGameInstance_eventGetSoulTrialManager_Parms, ReturnValue), Z_Construct_UClass_USoulTrialManager_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "AutoBattlerProtoGameInstance.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAutoBattlerProtoGameInstance, nullptr, "GetSoulTrialManager", nullptr, nullptr, sizeof(AutoBattlerProtoGameInstance_eventGetSoulTrialManager_Parms), Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_UAutoBattlerProtoGameInstance_NoRegister()
 	{
@@ -31,6 +103,7 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 	struct Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -54,6 +127,10 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 		(UObject* (*)())Z_Construct_UClass_UGameInstance,
 		(UObject* (*)())Z_Construct_UPackage__Script_AutoBattlerProto,
 	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetCombatManager, "GetCombatManager" }, // 253980096
+		{ &Z_Construct_UFunction_UAutoBattlerProtoGameInstance_GetSoulTrialManager, "GetSoulTrialManager" }, // 1592134808
+	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "AutoBattlerProtoGameInstance.h" },
@@ -66,7 +143,7 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 		{ "ModuleRelativePath", "AutoBattlerProtoGameInstance.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass = { "SoulTrialManagerClass", nullptr, (EPropertyFlags)0x0014000000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UAutoBattlerProtoGameInstance, SoulTrialManagerClass), Z_Construct_UClass_USoulTrialManager_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass_MetaData)) };
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass = { "SoulTrialManagerClass", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UAutoBattlerProtoGameInstance, SoulTrialManagerClass), Z_Construct_UClass_USoulTrialManager_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_SoulTrialManagerClass_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::NewProp_CombatManager_MetaData[] = {
 		{ "ModuleRelativePath", "AutoBattlerProtoGameInstance.h" },
@@ -92,11 +169,11 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 		nullptr,
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_UAutoBattlerProtoGameInstance_Statics::PropPointers),
 		0,
 		0x001000A8u,
@@ -111,7 +188,7 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProtoGameInstance() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UAutoBattlerProtoGameInstance, 3219135378);
+	IMPLEMENT_CLASS(UAutoBattlerProtoGameInstance, 3062527938);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<UAutoBattlerProtoGameInstance>()
 	{
 		return UAutoBattlerProtoGameInstance::StaticClass();

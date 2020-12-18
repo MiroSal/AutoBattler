@@ -8,14 +8,52 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UCombatManager;
+class USoulTrialManager;
 #ifdef AUTOBATTLERPROTO_AutoBattlerProtoGameInstance_generated_h
 #error "AutoBattlerProtoGameInstance.generated.h already included, missing '#pragma once' in AutoBattlerProtoGameInstance.h"
 #endif
 #define AUTOBATTLERPROTO_AutoBattlerProtoGameInstance_generated_h
 
 #define AutoBattlerProto_Source_AutoBattlerProtoGameInstance_h_12_SPARSE_DATA
-#define AutoBattlerProto_Source_AutoBattlerProtoGameInstance_h_12_RPC_WRAPPERS
-#define AutoBattlerProto_Source_AutoBattlerProtoGameInstance_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define AutoBattlerProto_Source_AutoBattlerProtoGameInstance_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetCombatManager) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(UCombatManager**)Z_Param__Result=P_THIS->GetCombatManager(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetSoulTrialManager) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(USoulTrialManager**)Z_Param__Result=P_THIS->GetSoulTrialManager(); \
+		P_NATIVE_END; \
+	}
+
+
+#define AutoBattlerProto_Source_AutoBattlerProtoGameInstance_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetCombatManager) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(UCombatManager**)Z_Param__Result=P_THIS->GetCombatManager(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetSoulTrialManager) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(USoulTrialManager**)Z_Param__Result=P_THIS->GetSoulTrialManager(); \
+		P_NATIVE_END; \
+	}
+
+
 #define AutoBattlerProto_Source_AutoBattlerProtoGameInstance_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAutoBattlerProtoGameInstance(); \
@@ -60,7 +98,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UAutoBattlerProtoGameInstance); \
 
 #define AutoBattlerProto_Source_AutoBattlerProtoGameInstance_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__SoulTrialManager() { return STRUCT_OFFSET(UAutoBattlerProtoGameInstance, SoulTrialManager); } \
-	FORCEINLINE static uint32 __PPO__CombatManager() { return STRUCT_OFFSET(UAutoBattlerProtoGameInstance, CombatManager); }
+	FORCEINLINE static uint32 __PPO__CombatManager() { return STRUCT_OFFSET(UAutoBattlerProtoGameInstance, CombatManager); } \
+	FORCEINLINE static uint32 __PPO__SoulTrialManagerClass() { return STRUCT_OFFSET(UAutoBattlerProtoGameInstance, SoulTrialManagerClass); }
 
 
 #define AutoBattlerProto_Source_AutoBattlerProtoGameInstance_h_9_PROLOG

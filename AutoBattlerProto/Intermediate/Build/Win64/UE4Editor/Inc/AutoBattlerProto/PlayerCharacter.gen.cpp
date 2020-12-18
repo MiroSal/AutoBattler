@@ -88,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 3910040254);
+	IMPLEMENT_CLASS(APlayerCharacter, 3973071732);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<APlayerCharacter>()
 	{
 		return APlayerCharacter::StaticClass();

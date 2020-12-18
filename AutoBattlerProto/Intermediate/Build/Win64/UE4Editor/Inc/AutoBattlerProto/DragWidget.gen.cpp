@@ -51,7 +51,7 @@ void EmptyLinkFunctionForGeneratedCodeDragWidget() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDragWidget_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
+		{ "Comment", "/**\n *\n */" },
 		{ "IncludePath", "Widgets/DragWidget.h" },
 		{ "ModuleRelativePath", "Widgets/DragWidget.h" },
 	};
@@ -64,7 +64,7 @@ void EmptyLinkFunctionForGeneratedCodeDragWidget() {}
 		{ "ModuleRelativePath", "Widgets/DragWidget.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetReference = { "WidgetReference", nullptr, (EPropertyFlags)0x001100000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UDragWidget, WidgetReference), Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetReference_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetReference_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetReference = { "WidgetReference", nullptr, (EPropertyFlags)0x002108000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UDragWidget, WidgetReference), Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetReference_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetReference_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetSize_MetaData[] = {
 		{ "BindWidget", "" },
@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeDragWidget() {}
 		{ "ModuleRelativePath", "Widgets/DragWidget.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetSize = { "WidgetSize", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UDragWidget, WidgetSize), Z_Construct_UClass_USizeBox_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetSize_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetSize_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetSize = { "WidgetSize", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UDragWidget, WidgetSize), Z_Construct_UClass_USizeBox_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetSize_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetSize_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UDragWidget_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetReference,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UDragWidget_Statics::NewProp_WidgetSize,
@@ -104,7 +104,7 @@ void EmptyLinkFunctionForGeneratedCodeDragWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UDragWidget, 1591294777);
+	IMPLEMENT_CLASS(UDragWidget, 405994463);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<UDragWidget>()
 	{
 		return UDragWidget::StaticClass();

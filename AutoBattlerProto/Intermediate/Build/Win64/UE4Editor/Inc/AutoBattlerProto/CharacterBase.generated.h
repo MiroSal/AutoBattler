@@ -298,10 +298,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACharacterBase); \
 	FORCEINLINE static uint32 __PPO__CurrentSlot() { return STRUCT_OFFSET(ACharacterBase, CurrentSlot); } \
 	FORCEINLINE static uint32 __PPO__Root() { return STRUCT_OFFSET(ACharacterBase, Root); } \
 	FORCEINLINE static uint32 __PPO__Mesh() { return STRUCT_OFFSET(ACharacterBase, Mesh); } \
-	FORCEINLINE static uint32 __PPO__StatsText() { return STRUCT_OFFSET(ACharacterBase, StatsText); } \
-	FORCEINLINE static uint32 __PPO__SoulTrialManager() { return STRUCT_OFFSET(ACharacterBase, SoulTrialManager); } \
-	FORCEINLINE static uint32 __PPO__CombatManager() { return STRUCT_OFFSET(ACharacterBase, CombatManager); } \
-	FORCEINLINE static uint32 __PPO__GameMode() { return STRUCT_OFFSET(ACharacterBase, GameMode); }
+	FORCEINLINE static uint32 __PPO__StatsText() { return STRUCT_OFFSET(ACharacterBase, StatsText); }
 
 
 #define AutoBattlerProto_Source_CharacterBase_h_12_PROLOG \

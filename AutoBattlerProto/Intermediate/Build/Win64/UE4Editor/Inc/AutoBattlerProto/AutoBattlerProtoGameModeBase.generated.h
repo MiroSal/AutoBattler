@@ -8,52 +8,14 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UCombatManager;
-class USoulTrialManager;
 #ifdef AUTOBATTLERPROTO_AutoBattlerProtoGameModeBase_generated_h
 #error "AutoBattlerProtoGameModeBase.generated.h already included, missing '#pragma once' in AutoBattlerProtoGameModeBase.h"
 #endif
 #define AUTOBATTLERPROTO_AutoBattlerProtoGameModeBase_generated_h
 
 #define AutoBattlerProto_Source_AutoBattlerProtoGameModeBase_h_14_SPARSE_DATA
-#define AutoBattlerProto_Source_AutoBattlerProtoGameModeBase_h_14_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execGetCombatManager) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(UCombatManager**)Z_Param__Result=P_THIS->GetCombatManager(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetSoulTrialManager) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(USoulTrialManager**)Z_Param__Result=P_THIS->GetSoulTrialManager(); \
-		P_NATIVE_END; \
-	}
-
-
-#define AutoBattlerProto_Source_AutoBattlerProtoGameModeBase_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execGetCombatManager) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(UCombatManager**)Z_Param__Result=P_THIS->GetCombatManager(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetSoulTrialManager) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(USoulTrialManager**)Z_Param__Result=P_THIS->GetSoulTrialManager(); \
-		P_NATIVE_END; \
-	}
-
-
+#define AutoBattlerProto_Source_AutoBattlerProtoGameModeBase_h_14_RPC_WRAPPERS
+#define AutoBattlerProto_Source_AutoBattlerProtoGameModeBase_h_14_RPC_WRAPPERS_NO_PURE_DECLS
 #define AutoBattlerProto_Source_AutoBattlerProtoGameModeBase_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAAutoBattlerProtoGameModeBase(); \

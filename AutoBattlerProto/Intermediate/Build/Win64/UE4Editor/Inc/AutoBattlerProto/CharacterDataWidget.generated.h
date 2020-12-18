@@ -48,6 +48,8 @@ public:
 
 
 #define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UCharacterDataWidget(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UCharacterDataWidget(UCharacterDataWidget&&); \
@@ -59,14 +61,13 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCharacterDataWidget); \
 
 
 #define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__DragTimer() { return STRUCT_OFFSET(UCharacterDataWidget, DragTimer); } \
-	FORCEINLINE static uint32 __PPO__bIsActive() { return STRUCT_OFFSET(UCharacterDataWidget, bIsActive); } \
 	FORCEINLINE static uint32 __PPO__StatusText() { return STRUCT_OFFSET(UCharacterDataWidget, StatusText); } \
 	FORCEINLINE static uint32 __PPO__PassiveText() { return STRUCT_OFFSET(UCharacterDataWidget, PassiveText); } \
 	FORCEINLINE static uint32 __PPO__PrimaryText() { return STRUCT_OFFSET(UCharacterDataWidget, PrimaryText); } \
 	FORCEINLINE static uint32 __PPO__HealthText() { return STRUCT_OFFSET(UCharacterDataWidget, HealthText); } \
 	FORCEINLINE static uint32 __PPO__SinText() { return STRUCT_OFFSET(UCharacterDataWidget, SinText); } \
-	FORCEINLINE static uint32 __PPO__StrText() { return STRUCT_OFFSET(UCharacterDataWidget, StrText); }
+	FORCEINLINE static uint32 __PPO__StrText() { return STRUCT_OFFSET(UCharacterDataWidget, StrText); } \
+	FORCEINLINE static uint32 __PPO__DragWidget() { return STRUCT_OFFSET(UCharacterDataWidget, DragWidget); }
 
 
 #define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_13_PROLOG

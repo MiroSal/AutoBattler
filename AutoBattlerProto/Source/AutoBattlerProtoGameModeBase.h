@@ -13,12 +13,4 @@ class AUTOBATTLERPROTO_API AAutoBattlerProtoGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 
-public:
-	virtual void BeginPlay() override;
-
-	UFUNCTION(BlueprintCallable)
-	USoulTrialManager* GetSoulTrialManager();
-
-	UFUNCTION(BlueprintCallable)
-	UCombatManager* GetCombatManager();
 };

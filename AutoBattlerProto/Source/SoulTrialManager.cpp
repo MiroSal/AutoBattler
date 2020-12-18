@@ -11,7 +11,7 @@
 
 USoulTrialManager::USoulTrialManager()
 {
-	SelectedAttributes = TArray<FCharacterAttributes>();
+	SelectedCharacterAttributes = TArray<FCharacterAttributes>();
 	ConstructorHelpers::FClassFinder<UUserWidget> TrialHUDBPClass(TEXT("/Game/TestingContent/Widgets/WBP_TrialHUD"));
 	if (!ensure(TrialHUDBPClass.Class != nullptr)) return;
 	TrialHUDWidgetClass = TrialHUDBPClass.Class;
@@ -23,47 +23,47 @@ void USoulTrialManager::Initialize()
 
 	TrialHUDWidget = CreateWidget<UTrialHUDWidget>(GetWorld()->GetGameInstance(), TrialHUDWidgetClass);
 	check(IsValid(TrialHUDWidget));
-
 	TrialHUDWidget->AddToViewport();
-}
-
-void USoulTrialManager::AddSelectedAttributes(FCharacterAttributes CharacterAttributes)
-{
-	SelectedAttributes.Add(CharacterAttributes);
 }
 
 FCharacterAttributes USoulTrialManager::GetRandomizedCharacterAttributes()
 {
-	FCharacterAttributes RandomAttributes = FCharacterAttributes();
-	RandomAttributes.RandomAttributes(AllPossiblePrimarySkills, AllPossiblePassiveSkills);
-	return RandomAttributes;
+	FCharacterAttributes RandomizeAttributes = FCharacterAttributes();
+	RandomizeAttributes.RandomizeAttributes(AllPossiblePrimarySkills, AllPossiblePassiveSkills);
+	return RandomizeAttributes;
 }
 
-void USoulTrialManager::SetCurrentCharacterWidget(UCharacterDataWidget * Widget)
+void USoulTrialManager::SetActiveCharacterWidget(UCharacterDataWidget * Widget)
 {
-
-	if (Widget->GetAttributes().TrialStatus == ETrialStatus::TS_NoCoin)
+	if (IsValid(Widget))
 	{
-		if (IsValid(CurrentCharacterWidget) && CurrentCharacterWidget != Widget)
+		if (Widget->GetAttributes().TrialStatus == ETrialStatus::TS_NoCoin)
 		{
-			CurrentCharacterWidget->RemoveFromParent();
-			GetTrialHUDWidget()->CreateCharacterDataWidget();
-			Widget->RemoveFromParent();
-			GetTrialHUDWidget()->CreateCharacterDataWidget();
-			CurrentCharacterWidget = nullptr;
+			if (IsValid(ActiveCharacterWidget) && ActiveCharacterWidget != Widget)
+			{
+				ActiveCharacterWidget->RemoveFromParent();
+				GetTrialHUDWidget()->CreateCharacterDataWidgetToTrial();
+				Widget->RemoveFromParent();
+				GetTrialHUDWidget()->CreateCharacterDataWidgetToTrial();
+				ActiveCharacterWidget = nullptr;
+			}
+			else
+			{
+				ActiveCharacterWidget = Widget;
+			}
 		}
-		else
-		{
-			CurrentCharacterWidget = Widget;
-		}
+	}
+	else
+	{
+		ActiveCharacterWidget = nullptr;
 	}
 }
 
-FCharacterAttributes USoulTrialManager::GetChosenCharacterAttributes()
+FCharacterAttributes USoulTrialManager::GetSelectedCharacterAttributes()
 {
-	if (SelectedAttributes.Num() > 0)
+	if (SelectedCharacterAttributes.Num() > 0)
 	{
-		return SelectedAttributes.Pop();
+		return SelectedCharacterAttributes.Pop();
 	}
 	return FCharacterAttributes();
 }

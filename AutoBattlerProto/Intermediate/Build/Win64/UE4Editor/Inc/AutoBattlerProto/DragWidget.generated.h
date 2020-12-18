@@ -60,7 +60,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDragWidget); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UDragWidget)
 
 
-#define AutoBattlerProto_Source_Widgets_DragWidget_h_16_PRIVATE_PROPERTY_OFFSET
+#define AutoBattlerProto_Source_Widgets_DragWidget_h_16_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__WidgetSize() { return STRUCT_OFFSET(UDragWidget, WidgetSize); } \
+	FORCEINLINE static uint32 __PPO__WidgetReference() { return STRUCT_OFFSET(UDragWidget, WidgetReference); }
+
+
 #define AutoBattlerProto_Source_Widgets_DragWidget_h_13_PROLOG
 #define AutoBattlerProto_Source_Widgets_DragWidget_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

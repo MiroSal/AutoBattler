@@ -9,11 +9,11 @@
   [Upgrade] Suppress this message by setting 'DefaultBuildSettings = BuildSettingsVersion.V2;' in AutoBattlerProtoEditor.Target.cs, and explicitly overriding settings that differ from the new defaults.
   [Upgrade]
   Building 4 actions with 24 processes...
-    [1/4] CharacterDataWidget.cpp
-    [2/4] UE4Editor-AutoBattlerProto-0002.lib
-       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0002.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0002.exp
-    [3/4] UE4Editor-AutoBattlerProto-0002.dll
-       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0002.suppressed.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0002.suppressed.exp
+    [1/4] SoulTrialManager.cpp
+    [2/4] UE4Editor-AutoBattlerProto.lib
+       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.exp
+    [3/4] UE4Editor-AutoBattlerProto.dll
+       Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.exp
     [4/4] AutoBattlerProtoEditor.target
-  Total time in Parallel executor: 4,18 seconds
-  Total execution time: 4,73 seconds
+  Total time in Parallel executor: 4,11 seconds
+  Total execution time: 4,58 seconds

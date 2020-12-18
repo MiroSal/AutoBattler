@@ -4,9 +4,6 @@
 #include "UObject/NoExportTypes.h"
 #include "SoulTrialManager.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterWidgetClickDelegate, UCharacterDataWidget*, CharacterWidget);
-
-
 UENUM()
 enum class ETrialStatus :uint8
 {
@@ -14,7 +11,6 @@ enum class ETrialStatus :uint8
 	TS_NoCoin UMETA(DisplayName = "No Coin"),
 	TS_Alive UMETA(DisplayName = "Alive"),
 	TS_None UMETA(DisplayName = "None")
-
 };
 
 USTRUCT()
@@ -33,7 +29,7 @@ public:
 		PassiveSkill = nullptr;
 	};
 
-	void RandomAttributes(TArray<TSubclassOf<class USkillBase>> AllPossiblePrimarySkills,
+	void RandomizeAttributes(TArray<TSubclassOf<class USkillBase>> AllPossiblePrimarySkills,
 		TArray<TSubclassOf<class USkillBase>> AllPossiblePassiveSkills)
 	{
 		TrialStatus = ETrialStatus(FMath::RandRange(0, ((int)ETrialStatus::TS_None) - 1));
@@ -75,42 +71,43 @@ class AUTOBATTLERPROTO_API USoulTrialManager : public UObject
 
 private:
 	UPROPERTY()
-	TArray<FCharacterAttributes> SelectedAttributes;
+	TArray<FCharacterAttributes> SelectedCharacterAttributes;
 
-	//InventoryWidget class from which the object is created
-	UPROPERTY()
-		TSubclassOf<class UTrialHUDWidget> TrialHUDWidgetClass;
-
-	UPROPERTY()
-		class UTrialHUDWidget* TrialHUDWidget;
+//Widgets
+private:
 
 	UPROPERTY()
-		class UCharacterDataWidget* CurrentCharacterWidget;
+	TSubclassOf<class UTrialHUDWidget> TrialHUDWidgetClass;
 
-public:
-	USoulTrialManager();
+	UPROPERTY()
+	class UTrialHUDWidget* TrialHUDWidget;
 
+	UPROPERTY()
+	class UCharacterDataWidget* ActiveCharacterWidget;
+
+protected:
 	UPROPERTY(EditDefaultsOnly)
 	TArray<TSubclassOf<class USkillBase>> AllPossiblePrimarySkills;
 
 	UPROPERTY(EditDefaultsOnly)
 	TArray<TSubclassOf<class USkillBase>> AllPossiblePassiveSkills;
 
-	void Initialize();
+public:
+	USoulTrialManager();
 
-	FCharacterWidgetClickDelegate CharacterWidgetClickDelegate;
+	void Initialize();
 
 //Getters&&Setters
 public:
 	/**Returns Character Attributes that was selected in SoulTrial UI*/
-	FORCEINLINE FCharacterAttributes GetChosenCharacterAttributes();
+	FORCEINLINE FCharacterAttributes GetSelectedCharacterAttributes();
 
 	/** Add Selected Character attributes that is used in combat */
-	FORCEINLINE void AddSelectedAttributes(FCharacterAttributes CharacterAttributes);
+	FORCEINLINE void AddSelectedCharacterAttributes(FCharacterAttributes CharacterAttributes) { SelectedCharacterAttributes.Add(CharacterAttributes); };
 
-	FORCEINLINE FCharacterAttributes GetRandomizedCharacterAttributes();
+	FCharacterAttributes GetRandomizedCharacterAttributes();
 
 	FORCEINLINE class UTrialHUDWidget* GetTrialHUDWidget() { return TrialHUDWidget; };
 
-	void SetCurrentCharacterWidget(UCharacterDataWidget* Widget);
+	void SetActiveCharacterWidget(UCharacterDataWidget* Widget);
 };

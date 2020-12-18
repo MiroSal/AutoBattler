@@ -62,15 +62,6 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	class UTextRenderComponent* StatsText;
 
-	UPROPERTY()
-	class USoulTrialManager* SoulTrialManager;
-
-	UPROPERTY()
-	class UCombatManager* CombatManager;
-
-	UPROPERTY()
-	class AAutoBattlerProtoGameModeBase* GameMode;
-
 	//overriden in derived classes
 public:
 	virtual void ActivatePrimarySkill() {};
@@ -121,7 +112,7 @@ public:
 	FORCEINLINE virtual ESkillType GetPassiveSkillType() { return PassiveSkill->GetSkillType(); };
 
 	UFUNCTION(BlueprintCallable)
-	void SetCurrentSlot(ASlotBase* NewCurrentSlot);
+	void SetCurrentSlot(ASlotBase* NewCurrentSlot) {CurrentSlot = NewCurrentSlot;};
 
 	UFUNCTION(BlueprintCallable)
 	ASlotBase* GetCurrentSlot() { return CurrentSlot; };
@@ -137,13 +128,13 @@ public:
 	void SetStr(int32 InStr);
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-	int32 GetHealth();
+	int32 GetHealth() {return Health;};
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-	int32 GetSin();
+	int32 GetSin() {return Sin;};
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-	int32 GetStr();
+	int32 GetStr() {return Str;};
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
 	bool IsAlive();

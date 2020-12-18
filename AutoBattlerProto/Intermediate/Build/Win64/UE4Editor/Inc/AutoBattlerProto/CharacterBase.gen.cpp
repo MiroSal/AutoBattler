@@ -40,9 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_SkillUsed();
 	AUTOBATTLERPROTO_API UEnum* Z_Construct_UEnum_AutoBattlerProto_ESkillType();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_UpdateDataText();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_AAutoBattlerProtoGameModeBase_NoRegister();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UCombatManager_NoRegister();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_USoulTrialManager_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UTextRenderComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
@@ -705,18 +702,6 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GameMode_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_GameMode;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CombatManager_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CombatManager;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SoulTrialManager_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SoulTrialManager;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StatsText_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_StatsText;
@@ -803,24 +788,6 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{ "ModuleRelativePath", "CharacterBase.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_GameMode_MetaData[] = {
-		{ "ModuleRelativePath", "CharacterBase.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_GameMode = { "GameMode", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, GameMode), Z_Construct_UClass_AAutoBattlerProtoGameModeBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_GameMode_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_GameMode_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_CombatManager_MetaData[] = {
-		{ "ModuleRelativePath", "CharacterBase.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_CombatManager = { "CombatManager", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, CombatManager), Z_Construct_UClass_UCombatManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_CombatManager_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_CombatManager_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_SoulTrialManager_MetaData[] = {
-		{ "ModuleRelativePath", "CharacterBase.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_SoulTrialManager = { "SoulTrialManager", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, SoulTrialManager), Z_Construct_UClass_USoulTrialManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_SoulTrialManager_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_SoulTrialManager_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_StatsText_MetaData[] = {
 		{ "Category", "CharacterBase" },
@@ -909,9 +876,6 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_Health = { "Health", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, Health), METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_Health_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_Health_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacterBase_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_GameMode,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_CombatManager,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_SoulTrialManager,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_StatsText,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_Mesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_Root,
@@ -955,7 +919,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterBase, 3342317135);
+	IMPLEMENT_CLASS(ACharacterBase, 3162760123);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<ACharacterBase>()
 	{
 		return ACharacterBase::StaticClass();

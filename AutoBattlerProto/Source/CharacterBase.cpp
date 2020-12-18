@@ -1,6 +1,7 @@
 // Copyright © 2020 by Miro Salminen
 
 #include "CharacterBase.h"
+#include "Engine/World.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/SceneComponent.h"
@@ -31,11 +32,7 @@ ACharacterBase::ACharacterBase()
 		StatsText->SetupAttachment(RootComponent);
 	}
 
-	SoulTrialManager = nullptr;
-	CombatManager = nullptr;
-	GameMode = nullptr;
-
-	PrimarySkill = nullptr;
+	 PrimarySkill = nullptr;
 	PassiveSkill = nullptr;
 
 	AllPossiblePrimarySkills = TArray<TSubclassOf<USkillBase>>();
@@ -48,15 +45,6 @@ ACharacterBase::ACharacterBase()
 
 void ACharacterBase::Initialize(ASlotBase * Slot, FCharacterAttributes InAttributes)
 {
-	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
-	check(IsValid(GameMode));
-
-	SoulTrialManager = GameMode->GetSoulTrialManager();
-	check(IsValid(SoulTrialManager));
-
-	CombatManager = GameMode->GetCombatManager();
-	check(IsValid(CombatManager));
-
 	Health = InAttributes.Health;
 	Sin = InAttributes.Sin;
 	Str = InAttributes.Str;
@@ -78,7 +66,13 @@ void ACharacterBase::Initialize(ASlotBase * Slot, FCharacterAttributes InAttribu
 
 void ACharacterBase::AttackEnd()
 {
+	check(IsValid(GetWorld()));
+	UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
+	check(IsValid(GameInstance));
+
+	UCombatManager* CombatManager = GameInstance->GetCombatManager();
 	check(IsValid(CombatManager));
+
 	CombatManager->ChangeTurn();
 }
 
@@ -106,21 +100,6 @@ void ACharacterBase::SetHealth(int32 InHealth)
 	}
 }
 
-int32 ACharacterBase::GetHealth()
-{
-	return Health;
-}
-
-int32 ACharacterBase::GetSin()
-{
-	return Sin;
-}
-
-int32 ACharacterBase::GetStr()
-{
-	return Str;
-}
-
 bool ACharacterBase::IsAlive()
 {
 	if (GetHealth() > 0)
@@ -128,9 +107,4 @@ bool ACharacterBase::IsAlive()
 		return true;
 	}
 	return false;
-}
-
-void ACharacterBase::SetCurrentSlot(ASlotBase * NewCurrentSlot)
-{
-	CurrentSlot = NewCurrentSlot;
 }

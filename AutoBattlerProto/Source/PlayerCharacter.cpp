@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "PlayerCharacter.h"
+#include "Engine/World.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
 #include "Components/TextRenderComponent.h"
@@ -8,6 +9,7 @@
 #include "SoulTrialManager.h"
 #include "CombatManager.h"
 #include "AutoBattlerProtoGameModeBase.h"
+#include "AutoBattlerProtoGameInstance.h"
 #include "SlotBase.h"
 
 APlayerCharacter::APlayerCharacter()
@@ -23,15 +25,17 @@ void APlayerCharacter::Initialize(ASlotBase* Slot, FCharacterAttributes InAttrib
 {
 	Super::Initialize(Slot, InAttributes);
 
+	check(IsValid(GetWorld()));
+
+	UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
+	check(IsValid(GameInstance));
+
+	UCombatManager* combatManager = GameInstance->GetCombatManager();
+	check(IsValid(combatManager));
+
 	SetCurrentSlot(Slot);
-
-	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
-	check(IsValid(GameMode));
-
-	CombatManager = GameMode->GetCombatManager();
-	check(IsValid(CombatManager));
-	CombatManager->RegisterCombatListener(this);
-	CombatManager->SkillUsedDelegate.AddDynamic(this, &APlayerCharacter::SkillUsed);
+	combatManager->RegisterCombatListener(this);
+	combatManager->SkillUsedDelegate.AddDynamic(this, &APlayerCharacter::SkillUsed);
 
 	UpdateDataText();
 }
@@ -43,7 +47,13 @@ void APlayerCharacter::SkillUsed(ACharacterBase* InCharacter, ESkillType InSkill
 	{
 		if (InSkillType == GetPassiveSkillType())
 		{
+			check(IsValid(GetWorld()));
+			UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
+			check(IsValid(GameInstance));
+
+			UCombatManager* CombatManager = GameInstance->GetCombatManager();
 			check(IsValid(CombatManager));
+
 			CombatManager->AddSkillActionToQueue(InCharacter);
 		}
 	}
@@ -83,8 +93,15 @@ void APlayerCharacter::ActivatePassiveSkill()
 
 void APlayerCharacter::Attack()
 {
-	BP_Attack();
+	check(IsValid(GetWorld()));
+
+	UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
+	check(IsValid(GameInstance));
+
+	UCombatManager* CombatManager = GameInstance->GetCombatManager();
 	check(IsValid(CombatManager));
+
+	BP_Attack();
 	TArray<ACharacterBase*> Enemies = CombatManager->GetCombatEnemyListeners();
 	if (Enemies.Num() > 0)
 	{

@@ -18,3 +18,5 @@ e:\lautturi\autobattlerproto\source\SlotBase.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SlotBase.generated.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TextRenderComponent.generated.h
+e:\lautturi\autobattlerproto\source\AutoBattlerProtoGameInstance.h
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\AutoBattlerProtoGameInstance.generated.h

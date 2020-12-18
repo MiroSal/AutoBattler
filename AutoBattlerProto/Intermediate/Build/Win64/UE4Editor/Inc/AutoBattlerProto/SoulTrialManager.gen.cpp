@@ -13,58 +13,17 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSoulTrialManager() {}
 // Cross Module References
-	AUTOBATTLERPROTO_API UFunction* Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature();
-	UPackage* Z_Construct_UPackage__Script_AutoBattlerProto();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UCharacterDataWidget_NoRegister();
 	AUTOBATTLERPROTO_API UEnum* Z_Construct_UEnum_AutoBattlerProto_ETrialStatus();
+	UPackage* Z_Construct_UPackage__Script_AutoBattlerProto();
 	AUTOBATTLERPROTO_API UScriptStruct* Z_Construct_UScriptStruct_FCharacterAttributes();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_USkillBase_NoRegister();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_USoulTrialManager_NoRegister();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_USoulTrialManager();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
+	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UCharacterDataWidget_NoRegister();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UTrialHUDWidget_NoRegister();
 // End Cross Module References
-	struct Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics
-	{
-		struct _Script_AutoBattlerProto_eventCharacterWidgetClickDelegate_Parms
-		{
-			UCharacterDataWidget* CharacterWidget;
-		};
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CharacterWidget_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CharacterWidget;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UE4CodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::NewProp_CharacterWidget_MetaData[] = {
-		{ "EditInline", "true" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::NewProp_CharacterWidget = { "CharacterWidget", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_AutoBattlerProto_eventCharacterWidgetClickDelegate_Parms, CharacterWidget), Z_Construct_UClass_UCharacterDataWidget_NoRegister, METADATA_PARAMS(Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::NewProp_CharacterWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::NewProp_CharacterWidget_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::NewProp_CharacterWidget,
-	};
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "SoulTrialManager.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_AutoBattlerProto, nullptr, "CharacterWidgetClickDelegate__DelegateSignature", nullptr, nullptr, sizeof(_Script_AutoBattlerProto_eventCharacterWidgetClickDelegate_Parms), Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
 	static UEnum* ETrialStatus_StaticEnum()
 	{
 		static UEnum* Singleton = nullptr;
@@ -289,9 +248,9 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFCharacterAttr
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_AllPossiblePrimarySkills;
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_AllPossiblePrimarySkills_Inner;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentCharacterWidget_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ActiveCharacterWidget_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CurrentCharacterWidget;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ActiveCharacterWidget;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TrialHUDWidget_MetaData[];
 #endif
@@ -301,10 +260,10 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFCharacterAttr
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_TrialHUDWidgetClass;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SelectedAttributes_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SelectedCharacterAttributes_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_SelectedAttributes;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SelectedAttributes_Inner;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_SelectedCharacterAttributes;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SelectedCharacterAttributes_Inner;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -328,7 +287,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFCharacterAttr
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePassiveSkills = { "AllPossiblePassiveSkills", nullptr, (EPropertyFlags)0x0014000000010001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, AllPossiblePassiveSkills), METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePassiveSkills_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePassiveSkills_MetaData)) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePassiveSkills = { "AllPossiblePassiveSkills", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, AllPossiblePassiveSkills), METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePassiveSkills_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePassiveSkills_MetaData)) };
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePassiveSkills_Inner = { "AllPossiblePassiveSkills", nullptr, (EPropertyFlags)0x0004000000000000, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USkillBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills_MetaData[] = {
@@ -336,15 +295,15 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFCharacterAttr
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills = { "AllPossiblePrimarySkills", nullptr, (EPropertyFlags)0x0014000000010001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, AllPossiblePrimarySkills), METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills_MetaData)) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills = { "AllPossiblePrimarySkills", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, AllPossiblePrimarySkills), METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills_MetaData)) };
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills_Inner = { "AllPossiblePrimarySkills", nullptr, (EPropertyFlags)0x0004000000000000, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USkillBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_CurrentCharacterWidget_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_ActiveCharacterWidget_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_CurrentCharacterWidget = { "CurrentCharacterWidget", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, CurrentCharacterWidget), Z_Construct_UClass_UCharacterDataWidget_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_CurrentCharacterWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_CurrentCharacterWidget_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_ActiveCharacterWidget = { "ActiveCharacterWidget", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, ActiveCharacterWidget), Z_Construct_UClass_UCharacterDataWidget_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_ActiveCharacterWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_ActiveCharacterWidget_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidget_MetaData[] = {
 		{ "EditInline", "true" },
@@ -354,29 +313,27 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFCharacterAttr
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidget = { "TrialHUDWidget", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, TrialHUDWidget), Z_Construct_UClass_UTrialHUDWidget_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidget_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidgetClass_MetaData[] = {
-		{ "Comment", "//InventoryWidget class from which the object is created\n" },
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
-		{ "ToolTip", "InventoryWidget class from which the object is created" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidgetClass = { "TrialHUDWidgetClass", nullptr, (EPropertyFlags)0x0044000000000000, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, TrialHUDWidgetClass), Z_Construct_UClass_UTrialHUDWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidgetClass_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedAttributes_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedCharacterAttributes_MetaData[] = {
 		{ "ModuleRelativePath", "SoulTrialManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedAttributes = { "SelectedAttributes", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, SelectedAttributes), METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedAttributes_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedAttributes_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedAttributes_Inner = { "SelectedAttributes", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FCharacterAttributes, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedCharacterAttributes = { "SelectedCharacterAttributes", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USoulTrialManager, SelectedCharacterAttributes), METADATA_PARAMS(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedCharacterAttributes_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedCharacterAttributes_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedCharacterAttributes_Inner = { "SelectedCharacterAttributes", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FCharacterAttributes, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USoulTrialManager_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePassiveSkills,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePassiveSkills_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_AllPossiblePrimarySkills_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_CurrentCharacterWidget,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_ActiveCharacterWidget,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidget,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_TrialHUDWidgetClass,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedAttributes,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedAttributes_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedCharacterAttributes,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USoulTrialManager_Statics::NewProp_SelectedCharacterAttributes_Inner,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_USoulTrialManager_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<USoulTrialManager>::IsAbstract,
@@ -405,7 +362,7 @@ static struct FScriptStruct_AutoBattlerProto_StaticRegisterNativesFCharacterAttr
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USoulTrialManager, 1833960025);
+	IMPLEMENT_CLASS(USoulTrialManager, 3924576343);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<USoulTrialManager>()
 	{
 		return USoulTrialManager::StaticClass();
