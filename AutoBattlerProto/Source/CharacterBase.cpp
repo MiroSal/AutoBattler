@@ -46,7 +46,7 @@ ACharacterBase::ACharacterBase()
 	Str = 0;
 }
 
-void ACharacterBase::Initialize(ASlotBase * Slot, bool bCanDrag, FCharacterAttributes InAttributes)
+void ACharacterBase::Initialize(ASlotBase * Slot, FCharacterAttributes InAttributes)
 {
 	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
 	check(IsValid(GameMode));

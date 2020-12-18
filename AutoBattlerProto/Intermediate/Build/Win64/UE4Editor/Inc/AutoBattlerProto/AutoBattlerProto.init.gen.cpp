@@ -11,8 +11,7 @@
 #endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeAutoBattlerProto_init() {}
-	AUTOBATTLERPROTO_API UFunction* Z_Construct_UDelegateFunction_AutoBattlerProto_SoulAddedToJourneyDelegate__DelegateSignature();
-	AUTOBATTLERPROTO_API UFunction* Z_Construct_UDelegateFunction_AutoBattlerProto_FerryIsFullDelegate__DelegateSignature();
+	AUTOBATTLERPROTO_API UFunction* Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_AutoBattlerProto()
 	{
@@ -20,8 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProto_init() {}
 		if (!ReturnPackage)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
-				(UObject* (*)())Z_Construct_UDelegateFunction_AutoBattlerProto_SoulAddedToJourneyDelegate__DelegateSignature,
-				(UObject* (*)())Z_Construct_UDelegateFunction_AutoBattlerProto_FerryIsFullDelegate__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_AutoBattlerProto_CharacterWidgetClickDelegate__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature,
 			};
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
@@ -29,8 +27,8 @@ void EmptyLinkFunctionForGeneratedCodeAutoBattlerProto_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x455F24B0,
-				0x7E1A4C36,
+				0x676E38F6,
+				0xB3FE0FB8,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

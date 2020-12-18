@@ -2,10 +2,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "SoulDataStruct.h"
+#include "SkillTypeEnums.h"
 #include "CombatManager.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSkillUsedDelegate, FCharacterData, SoulData);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSkillUsedDelegate, ACharacterBase*, Character, ESkillType , SkillType);
 
 UENUM()
 enum class ETurnEnum :uint8
@@ -28,7 +28,7 @@ private:
 	TArray<ACharacterBase*> CombatEnemyListeners;
 
 	UPROPERTY()
-	TArray<FCharacterData> ActionQueue;
+	TArray<ACharacterBase*> ActionQueue;
 
 	UPROPERTY()
 	int32 CharacterIndex;
@@ -79,7 +79,7 @@ public:
 	FORCEINLINE TArray<ACharacterBase*> GetCombatPlayerListeners() { return CombatPlayerListeners; };
 	FORCEINLINE void RegisterCombatListener(ACharacterBase* Character);
 	FORCEINLINE void UnRegisterCombatListener(ACharacterBase* Character);
-	FORCEINLINE void AddSkillActionToQueue(FCharacterData ActionData);
+	FORCEINLINE void AddSkillActionToQueue(ACharacterBase* Character);
 	FORCEINLINE int32 GetCurrentEnemyCount() { return CurrentEnemyCount; };
 	FORCEINLINE int32 GetTotalEnemyCount() { return TotalEnemyCount; };
 };

@@ -7,13 +7,7 @@ D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Internationalization/Pol
 e:\lautturi\autobattlerproto\source\SkillTypeEnums.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SkillBase.generated.h
 e:\lautturi\autobattlerproto\source\CharacterBase.h
-e:\lautturi\autobattlerproto\source\ActivationInterface.h
-e:\lautturi\autobattlerproto\source\SlotBase.h
-E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SlotBase.generated.h
-E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\ActivationInterface.generated.h
 e:\lautturi\autobattlerproto\source\CombatManager.h
-e:\lautturi\autobattlerproto\source\SoulDataStruct.h
-E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulDataStruct.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CombatManager.generated.h
 e:\lautturi\autobattlerproto\source\SoulTrialManager.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulTrialManager.generated.h

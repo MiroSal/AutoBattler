@@ -17,58 +17,38 @@ class ACharacterBase;
 #define AutoBattlerProto_Source_SlotBase_h_10_SPARSE_DATA
 #define AutoBattlerProto_Source_SlotBase_h_10_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetCharacterInSlot) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(ACharacterBase**)Z_Param__Result=P_THIS->GetCharacterInSlot(); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execRemoveCharacterFromSlot) \
 	{ \
-		P_GET_UBOOL(Z_Param_bDestroyCharacter); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->RemoveCharacterFromSlot(Z_Param_bDestroyCharacter); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execAddExistingCharacterToSlot) \
-	{ \
-		P_GET_OBJECT(ACharacterBase,Z_Param_CharacterToCreate); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->AddExistingCharacterToSlot(Z_Param_CharacterToCreate); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execSpawnNewCharacterToSlot) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->SpawnNewCharacterToSlot(); \
+		P_THIS->RemoveCharacterFromSlot(); \
 		P_NATIVE_END; \
 	}
 
 
 #define AutoBattlerProto_Source_SlotBase_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetCharacterInSlot) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(ACharacterBase**)Z_Param__Result=P_THIS->GetCharacterInSlot(); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execRemoveCharacterFromSlot) \
 	{ \
-		P_GET_UBOOL(Z_Param_bDestroyCharacter); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->RemoveCharacterFromSlot(Z_Param_bDestroyCharacter); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execAddExistingCharacterToSlot) \
-	{ \
-		P_GET_OBJECT(ACharacterBase,Z_Param_CharacterToCreate); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->AddExistingCharacterToSlot(Z_Param_CharacterToCreate); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execSpawnNewCharacterToSlot) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->SpawnNewCharacterToSlot(); \
+		P_THIS->RemoveCharacterFromSlot(); \
 		P_NATIVE_END; \
 	}
 
@@ -118,10 +98,9 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASlotBase); \
 
 
 #define AutoBattlerProto_Source_SlotBase_h_10_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__bCharacterCanBeDragged() { return STRUCT_OFFSET(ASlotBase, bCharacterCanBeDragged); } \
 	FORCEINLINE static uint32 __PPO__Root() { return STRUCT_OFFSET(ASlotBase, Root); } \
 	FORCEINLINE static uint32 __PPO__ArrowComponent() { return STRUCT_OFFSET(ASlotBase, ArrowComponent); } \
-	FORCEINLINE static uint32 __PPO__SoulCardToSpawn() { return STRUCT_OFFSET(ASlotBase, SoulCardToSpawn); } \
+	FORCEINLINE static uint32 __PPO__CharacterClass() { return STRUCT_OFFSET(ASlotBase, CharacterClass); } \
 	FORCEINLINE static uint32 __PPO__CharacterInSlot() { return STRUCT_OFFSET(ASlotBase, CharacterInSlot); }
 
 

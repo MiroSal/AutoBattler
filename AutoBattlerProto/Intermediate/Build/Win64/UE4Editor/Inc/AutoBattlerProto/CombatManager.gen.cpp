@@ -15,30 +15,37 @@ void EmptyLinkFunctionForGeneratedCodeCombatManager() {}
 // Cross Module References
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_AutoBattlerProto();
-	AUTOBATTLERPROTO_API UScriptStruct* Z_Construct_UScriptStruct_FCharacterData();
+	AUTOBATTLERPROTO_API UEnum* Z_Construct_UEnum_AutoBattlerProto_ESkillType();
+	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_ACharacterBase_NoRegister();
 	AUTOBATTLERPROTO_API UEnum* Z_Construct_UEnum_AutoBattlerProto_ETurnEnum();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UCombatManager_NoRegister();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UCombatManager();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_UCombatManager_StartCombat();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_ACharacterBase_NoRegister();
 // End Cross Module References
 	struct Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics
 	{
 		struct _Script_AutoBattlerProto_eventSkillUsedDelegate_Parms
 		{
-			FCharacterData SoulData;
+			ACharacterBase* Character;
+			ESkillType SkillType;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SoulData;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_SkillType;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_SkillType_Underlying;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Character;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::NewProp_SoulData = { "SoulData", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_AutoBattlerProto_eventSkillUsedDelegate_Parms, SoulData), Z_Construct_UScriptStruct_FCharacterData, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::NewProp_SkillType = { "SkillType", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_AutoBattlerProto_eventSkillUsedDelegate_Parms, SkillType), Z_Construct_UEnum_AutoBattlerProto_ESkillType, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::NewProp_SkillType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::NewProp_Character = { "Character", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_AutoBattlerProto_eventSkillUsedDelegate_Parms, Character), Z_Construct_UClass_ACharacterBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::NewProp_SoulData,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::NewProp_SkillType,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::NewProp_SkillType_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::NewProp_Character,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_AutoBattlerProto_SkillUsedDelegate__DelegateSignature_Statics::Function_MetaDataParams[] = {
@@ -191,7 +198,7 @@ void EmptyLinkFunctionForGeneratedCodeCombatManager() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ActionQueue_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ActionQueue;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ActionQueue_Inner;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ActionQueue_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CombatEnemyListeners_MetaData[];
 #endif
@@ -279,7 +286,7 @@ void EmptyLinkFunctionForGeneratedCodeCombatManager() {}
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UCombatManager_Statics::NewProp_ActionQueue = { "ActionQueue", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCombatManager, ActionQueue), METADATA_PARAMS(Z_Construct_UClass_UCombatManager_Statics::NewProp_ActionQueue_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCombatManager_Statics::NewProp_ActionQueue_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCombatManager_Statics::NewProp_ActionQueue_Inner = { "ActionQueue", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FCharacterData, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCombatManager_Statics::NewProp_ActionQueue_Inner = { "ActionQueue", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_ACharacterBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCombatManager_Statics::NewProp_CombatEnemyListeners_MetaData[] = {
 		{ "ModuleRelativePath", "CombatManager.h" },
@@ -338,7 +345,7 @@ void EmptyLinkFunctionForGeneratedCodeCombatManager() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UCombatManager, 2754081371);
+	IMPLEMENT_CLASS(UCombatManager, 2606253016);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<UCombatManager>()
 	{
 		return UCombatManager::StaticClass();

@@ -2,7 +2,6 @@
 
 #pragma once
 #include "CoreMinimal.h"
-#include "ActivationInterface.h"
 #include "SkillTypeEnums.h"
 #include "CombatManager.h"
 #include "SkillBase.h"
@@ -11,7 +10,7 @@
 
 
 UCLASS()
-class AUTOBATTLERPROTO_API ACharacterBase : public AActor, public IActivationInterface
+class AUTOBATTLERPROTO_API ACharacterBase : public AActor
 {
 	GENERATED_BODY()
 
@@ -46,12 +45,12 @@ private:
 
 protected:
 	UFUNCTION()
-		virtual void SkillUsed(FCharacterData Data) {};
+		virtual void SkillUsed(ACharacterBase* InCharacter, ESkillType InSkillType) {};
 
 public:
 	ACharacterBase();
 
-	virtual void Initialize(class ASlotBase* Slot, bool bCanClick, FCharacterAttributes InAttributes);
+	virtual void Initialize(class ASlotBase* Slot, FCharacterAttributes InAttributes);
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -148,10 +147,4 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
 	bool IsAlive();
-
-	//IActivationInterface
-public:
-	virtual bool Clicked(AActor* ActorToDeactivate) override { return false; };
-	virtual bool DoubleClicked(AActor* ActorToDeactivate) override { return false; };
-	virtual bool Deactivate() override { return false; };
 };

@@ -7,7 +7,7 @@ UCombatManager::UCombatManager()
 {
 	CombatPlayerListeners = TArray<ACharacterBase*>();
 	CombatEnemyListeners = TArray<ACharacterBase*>();
-	ActionQueue = TArray<FCharacterData>();
+	ActionQueue = TArray<ACharacterBase*>();
 
 	ActiveCharacter = nullptr;
 	CurrentCombatTurn = ETurnEnum::TE_None;
@@ -35,8 +35,7 @@ void UCombatManager::PopNextSkillFromQueue()
 {
 	if (ActionQueue.Num() > 0)
 	{
-		FCharacterData Data = ActionQueue.Pop();
-		ACharacterBase* Character = Cast<ACharacterBase>(Data.CharacterBase);
+		ACharacterBase* Character = ActionQueue.Pop();
 		if (IsValid(Character))
 		{
 			Character->ActivatePassiveSkill();
@@ -85,7 +84,7 @@ void UCombatManager::ChangeTurn()
 			if (IsValid(ActiveCharacter))
 			{
 				ActiveCharacter->BP_StartTurn();
-				SkillUsedDelegate.Broadcast(FCharacterData(ActiveCharacter, ActiveCharacter->GetPrimarySkillType()));
+				SkillUsedDelegate.Broadcast(ActiveCharacter, ActiveCharacter->GetPrimarySkillType());
 				ActiveCharacter->ActivatePrimarySkill();
 			}
 			else
@@ -139,7 +138,7 @@ void UCombatManager::HandleFirstTurn()
 	if (IsValid(ActiveCharacter))
 	{
 		ActiveCharacter->BP_StartTurn();
-		SkillUsedDelegate.Broadcast(FCharacterData(ActiveCharacter, ActiveCharacter->GetPrimarySkillType()));
+		SkillUsedDelegate.Broadcast(ActiveCharacter, ActiveCharacter->GetPrimarySkillType());
 		ActiveCharacter->ActivatePrimarySkill();
 	}
 	else
@@ -193,11 +192,11 @@ void UCombatManager::UnRegisterCombatListener(ACharacterBase * Character)
 	}
 }
 
-void UCombatManager::AddSkillActionToQueue(FCharacterData ActionData)
+void UCombatManager::AddSkillActionToQueue(ACharacterBase* InCharacter)
 {
-	if (IsValid(ActionData.CharacterBase))
+	if (IsValid(InCharacter))
 	{
-		ActionQueue.Add(ActionData);
+		ActionQueue.Add(InCharacter);
 		UE_LOG(LogTemp, Display, TEXT("Skill Action In Queue: %i"), ActionQueue.Num());
 	}
 }

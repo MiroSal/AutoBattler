@@ -38,7 +38,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_SetSin();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_SetStr();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_SkillUsed();
-	AUTOBATTLERPROTO_API UScriptStruct* Z_Construct_UScriptStruct_FCharacterData();
+	AUTOBATTLERPROTO_API UEnum* Z_Construct_UEnum_AutoBattlerProto_ESkillType();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ACharacterBase_UpdateDataText();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_AAutoBattlerProtoGameModeBase_NoRegister();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UCombatManager_NoRegister();
@@ -48,7 +48,6 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	AUTOBATTLERPROTO_API UEnum* Z_Construct_UEnum_AutoBattlerProto_ETurnEnum();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
-	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_UActivationInterface_NoRegister();
 // End Cross Module References
 	static FName NAME_ACharacterBase_BP_Attack = FName(TEXT("BP_Attack"));
 	void ACharacterBase::BP_Attack()
@@ -637,18 +636,25 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	{
 		struct CharacterBase_eventSkillUsed_Parms
 		{
-			FCharacterData Data;
+			ACharacterBase* InCharacter;
+			ESkillType InSkillType;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Data;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_InSkillType;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_InSkillType_Underlying;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_InCharacter;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_Data = { "Data", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSkillUsed_Parms, Data), Z_Construct_UScriptStruct_FCharacterData, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType = { "InSkillType", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSkillUsed_Parms, InSkillType), Z_Construct_UEnum_AutoBattlerProto_ESkillType, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InCharacter = { "InCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSkillUsed_Parms, InCharacter), Z_Construct_UClass_ACharacterBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_Data,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InCharacter,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::Function_MetaDataParams[] = {
@@ -762,7 +768,6 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Health;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
-		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -789,7 +794,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{ &Z_Construct_UFunction_ACharacterBase_SetHealth, "SetHealth" }, // 1077400990
 		{ &Z_Construct_UFunction_ACharacterBase_SetSin, "SetSin" }, // 2997029297
 		{ &Z_Construct_UFunction_ACharacterBase_SetStr, "SetStr" }, // 2149573101
-		{ &Z_Construct_UFunction_ACharacterBase_SkillUsed, "SkillUsed" }, // 3922277954
+		{ &Z_Construct_UFunction_ACharacterBase_SkillUsed, "SkillUsed" }, // 754660180
 		{ &Z_Construct_UFunction_ACharacterBase_UpdateDataText, "UpdateDataText" }, // 2492805129
 	};
 #if WITH_METADATA
@@ -923,9 +928,6 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_Sin,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_Health,
 	};
-		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ACharacterBase_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UActivationInterface_NoRegister, (int32)VTABLE_OFFSET(ACharacterBase, IActivationInterface), false },
-		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACharacterBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACharacterBase>::IsAbstract,
 	};
@@ -936,11 +938,11 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		DependentSingletons,
 		FuncInfo,
 		Z_Construct_UClass_ACharacterBase_Statics::PropPointers,
-		InterfaceParams,
+		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::PropPointers),
-		UE_ARRAY_COUNT(InterfaceParams),
+		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::Class_MetaDataParams))
 	};
@@ -953,7 +955,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterBase, 1230575522);
+	IMPLEMENT_CLASS(ACharacterBase, 3342317135);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<ACharacterBase>()
 	{
 		return ACharacterBase::StaticClass();

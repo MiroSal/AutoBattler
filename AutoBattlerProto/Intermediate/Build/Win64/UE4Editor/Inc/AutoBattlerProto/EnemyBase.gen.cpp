@@ -88,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemyBase, 477712576);
+	IMPLEMENT_CLASS(AEnemyBase, 3353727385);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<AEnemyBase>()
 	{
 		return AEnemyBase::StaticClass();

@@ -62,6 +62,14 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StatusText_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_StatusText;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bIsActive_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_bIsActive;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DragTimer_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DragTimer;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -133,6 +141,18 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StatusText = { "StatusText", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, StatusText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StatusText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StatusText_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_bIsActive_MetaData[] = {
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_bIsActive = { "bIsActive", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, bIsActive), METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_bIsActive_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_bIsActive_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragTimer_MetaData[] = {
+		{ "ModuleRelativePath", "Widgets/CharacterDataWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragTimer = { "DragTimer", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UCharacterDataWidget, DragTimer), METADATA_PARAMS(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragTimer_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragTimer_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCharacterDataWidget_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragWidget,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StrText,
@@ -141,6 +161,8 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PrimaryText,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_PassiveText,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_StatusText,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_bIsActive,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterDataWidget_Statics::NewProp_DragTimer,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UCharacterDataWidget_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UCharacterDataWidget>::IsAbstract,
@@ -169,7 +191,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterDataWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UCharacterDataWidget, 1171478652);
+	IMPLEMENT_CLASS(UCharacterDataWidget, 581463632);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<UCharacterDataWidget>()
 	{
 		return UCharacterDataWidget::StaticClass();

@@ -17,29 +17,14 @@ APlayerCharacter::APlayerCharacter()
 	{
 		SoulStatusText->SetupAttachment(RootComponent);
 	}
-
-	DraggableParams = FDraggableParams();
 }
 
-void APlayerCharacter::Initialize(ASlotBase* Slot, bool bCanBeDragged, FCharacterAttributes InAttributes)
+void APlayerCharacter::Initialize(ASlotBase* Slot, FCharacterAttributes InAttributes)
 {
-	Super::Initialize(Slot, bCanBeDragged, InAttributes);
+	Super::Initialize(Slot, InAttributes);
 
 	SetCurrentSlot(Slot);
-	DraggableParams.bDraggable = bCanBeDragged;
 
-	check(IsValid(SoulTrialManager));
-	SoulTrialManager->FerryIsFullDelegate.AddDynamic(this, &APlayerCharacter::CanClick);
-}
-
-//Binded to delegate, Sets bDraggable to false for every playercharacter when charcater are picked
-void APlayerCharacter::CanClick(bool bCanBeDragged)
-{
-	DraggableParams.bDraggable = bCanBeDragged;
-}
-
-void APlayerCharacter::CombatInitialize(ACharacterBase* Character)
-{
 	GameMode = Cast<AAutoBattlerProtoGameModeBase>(GetWorld()->GetAuthGameMode());
 	check(IsValid(GameMode));
 
@@ -52,14 +37,14 @@ void APlayerCharacter::CombatInitialize(ACharacterBase* Character)
 }
 
 //check is passive skill should be triggered
-void APlayerCharacter::SkillUsed(FCharacterData Data)
+void APlayerCharacter::SkillUsed(ACharacterBase* InCharacter, ESkillType InSkillType)
 {
 	if (GetHealth() > 0 && IsValid(GetPassiveSkill()))
 	{
-		if (Data.SkillType == GetPassiveSkillType())
+		if (InSkillType == GetPassiveSkillType())
 		{
 			check(IsValid(CombatManager));
-			CombatManager->AddSkillActionToQueue(FCharacterData(this, GetPassiveSkillType()));
+			CombatManager->AddSkillActionToQueue(InCharacter);
 		}
 	}
 }
@@ -94,65 +79,6 @@ void APlayerCharacter::ActivatePassiveSkill()
 			GetPassiveSkill()->DeactivateSkill();
 		}
 	}
-}
-
-bool APlayerCharacter::Clicked(AActor* ActorToDeactivate)
-{
-	if (DraggableParams.bDraggable)
-	{
-		IActivationInterface* LastClicked = Cast<IActivationInterface>(ActorToDeactivate);
-		APlayerCharacter* Player = Cast<APlayerCharacter>(ActorToDeactivate);
-		if (IsValid(Player) && LastClicked != nullptr)
-		{
-			if (DraggableParams.bIsAlive && LastClicked == this)//if Player is still alive and has Activationinterface so that can be clicked with mouse
-			{
-				LastClicked->Deactivate();
-			}
-			else if (Player->DraggableParams.bIsAlive && LastClicked != this)
-			{
-				LastClicked->Deactivate();
-			}
-			else if (!DraggableParams.bHasCoin && LastClicked)//if soul has no coin and has Activationinterface so that can be clicked with mouse
-			{
-				if (!Player->HasCoin() && Player != this && !DraggableParams.bHasCoin && !DraggableParams.bIsAlive && IsValid(GetCurrentSlot()))//if last clicked soul dont have coin and it is not this
-				{
-					Player->GetCurrentSlot()->RemoveCharacterFromSlot(true);
-					this->GetCurrentSlot()->RemoveCharacterFromSlot(true);
-				}
-			}
-		}
-
-		if (LastClicked)//deactivates last activated actor before activating next
-		{
-			LastClicked->Deactivate();
-		}
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-bool APlayerCharacter::DoubleClicked(AActor* ActorToDeactivate)
-{
-	if (DraggableParams.bDraggable)
-	{
-		IActivationInterface* LastActorClicked = Cast<IActivationInterface>(ActorToDeactivate);
-
-		if (DraggableParams.bIsAlive && LastActorClicked != nullptr && LastActorClicked == this && IsValid(GetCurrentSlot()))//if Player is alive and has Activationinterface so that can be clicked with mouse
-		{
-			LastActorClicked->Deactivate();
-			GetCurrentSlot()->RemoveCharacterFromSlot(true);
-		}
-	}
-	return false;
-}
-
-//TODO what is this, Why is this
-bool APlayerCharacter::Deactivate()
-{
-	return true;
 }
 
 void APlayerCharacter::Attack()

@@ -138,16 +138,12 @@ D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\SizeBox.
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\DragWidget.generated.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Blueprint/DragDropOperation.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\DragDropOperation.generated.h
-E:\Lautturi\AutoBattlerProto\Source\DragDrop.h
-E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\DragDrop.generated.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Blueprint/WidgetBlueprintLibrary.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Public\Slate/SGameLayerManager.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Slate\Public\Widgets/SCanvas.h
 D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\WidgetBlueprintLibrary.generated.h
 E:\Lautturi\AutoBattlerProto\Source\CombatManager.h
-e:\lautturi\autobattlerproto\source\SoulDataStruct.h
 e:\lautturi\autobattlerproto\source\SkillTypeEnums.h
-E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulDataStruct.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CombatManager.generated.h
 E:\Lautturi\AutoBattlerProto\Source\AutoBattlerProtoGameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
@@ -159,3 +155,17 @@ E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerP
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\AutoBattlerProtoGameModeBase.generated.h
 E:\Lautturi\AutoBattlerProto\Source\SkillBase.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SkillBase.generated.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/UserDefinedEnum.h
+D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\UserDefinedEnum.generated.h
+E:\Lautturi\AutoBattlerProto\Source\Widgets\TrialHUDWidget.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/ProgressBar.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\Slate\Public\Widgets/Notifications/SProgressBar.h
+D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Slate\SProgressBar.generated.h
+D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\ProgressBar.generated.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/VerticalBox.h
+D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\VerticalBox.generated.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/UniformGridPanel.h
+D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\UniformGridPanel.generated.h
+D:\Epic Games\UE_4.24\Engine\Source\Runtime\UMG\Public\Components/Button.h
+D:\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\Button.generated.h
+E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\TrialHUDWidget.generated.h

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\AutoBattlerProto.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{77D7EAD2-08D1-48D2-90D5-9C63BFAB59A2}</UniqueIdentifier>
+      <UniqueIdentifier>{7DCAB40C-C33E-451B-BA3C-966B93DADF5C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\AutoBattlerProto.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{D827FB7B-3020-4727-9D73-4BFD6832F47F}</UniqueIdentifier>
+      <UniqueIdentifier>{EC4D0EB0-627D-453E-8A19-B06A699340F7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -65,12 +65,6 @@
     <ClInclude Include="..\..\Source\CombatManager.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DragDrop.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\DragDrop.h">
-      <Filter>Source</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\EnemyBase.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -98,9 +92,6 @@
     <ClInclude Include="..\..\Source\SlotBase.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\SoulDataStruct.h">
-      <Filter>Source</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\SoulTrialManager.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -108,7 +99,7 @@
       <Filter>Source</Filter>
     </ClInclude>
     <Filter Include="Source\Widgets">
-      <UniqueIdentifier>{DB6713D5-296C-40C2-8637-2231E3DAC7FF}</UniqueIdentifier>
+      <UniqueIdentifier>{65E4D630-29F5-40E6-8AC4-6E9D3C48486D}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Widgets\CharacterDataWidget.cpp">
       <Filter>Source\Widgets</Filter>

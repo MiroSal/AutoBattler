@@ -4,6 +4,19 @@
 #include "UObject/NoExportTypes.h"
 #include "SoulTrialManager.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterWidgetClickDelegate, UCharacterDataWidget*, CharacterWidget);
+
+
+UENUM()
+enum class ETrialStatus :uint8
+{
+	TS_HasCoin UMETA(DisplayName = "Coin"),
+	TS_NoCoin UMETA(DisplayName = "No Coin"),
+	TS_Alive UMETA(DisplayName = "Alive"),
+	TS_None UMETA(DisplayName = "None")
+
+};
+
 USTRUCT()
 struct FCharacterAttributes
 {
@@ -12,6 +25,7 @@ public:
 
 	FCharacterAttributes()
 	{
+		TrialStatus = ETrialStatus::TS_None;
 		Health = 0;
 		Sin = 0;
 		Str = 0;
@@ -22,6 +36,7 @@ public:
 	void RandomAttributes(TArray<TSubclassOf<class USkillBase>> AllPossiblePrimarySkills,
 		TArray<TSubclassOf<class USkillBase>> AllPossiblePassiveSkills)
 	{
+		TrialStatus = ETrialStatus(FMath::RandRange(0, ((int)ETrialStatus::TS_None) - 1));
 		Health = FMath::RandRange(1, 10);
 		Sin = FMath::RandRange(1, 10);
 		Str = FMath::RandRange(1, 10);
@@ -33,11 +48,14 @@ public:
 			PassiveSkill = AllPossiblePassiveSkills[FMath::RandRange(0, AllPossiblePassiveSkills.Num() - 1)];
 	};
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY()
+		ETrialStatus TrialStatus;
+
+	UPROPERTY()
 		int32 Health;
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY()
 		int32 Sin;
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY()
 		int32 Str;
 
 	UPROPERTY()
@@ -45,12 +63,8 @@ public:
 
 	UPROPERTY()
 		TSubclassOf<class USkillBase> PassiveSkill;
-
-
 };
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSoulAddedToJourneyDelegate, APlayerCharacter*, SoulCard);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFerryIsFullDelegate, bool, bCanClick);
 /**
  *
  */
@@ -61,22 +75,20 @@ class AUTOBATTLERPROTO_API USoulTrialManager : public UObject
 
 private:
 	UPROPERTY()
-	TArray<class APlayerCharacter*> AllCharactersInTrial;
+	TArray<FCharacterAttributes> SelectedAttributes;
+
+	//InventoryWidget class from which the object is created
+	UPROPERTY()
+		TSubclassOf<class UTrialHUDWidget> TrialHUDWidgetClass;
 
 	UPROPERTY()
-	TArray<class APlayerCharacter*> CharactersToCombat;
+		class UTrialHUDWidget* TrialHUDWidget;
 
 	UPROPERTY()
-	TArray<FCharacterAttributes> CharactersAttributes;
+		class UCharacterDataWidget* CurrentCharacterWidget;
 
 public:
 	USoulTrialManager();
-
-	UPROPERTY()
-	FSoulAddedToJourneyDelegate SoulAddedToJourneyDelegate;
-
-	UPROPERTY()
-	FFerryIsFullDelegate FerryIsFullDelegate;
 
 	UPROPERTY(EditDefaultsOnly)
 	TArray<TSubclassOf<class USkillBase>> AllPossiblePrimarySkills;
@@ -84,20 +96,21 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	TArray<TSubclassOf<class USkillBase>> AllPossiblePassiveSkills;
 
+	void Initialize();
 
-	//Getters&&Setters
+	FCharacterWidgetClickDelegate CharacterWidgetClickDelegate;
+
+//Getters&&Setters
 public:
-	UFUNCTION(BlueprintCallable)
-	class APlayerCharacter* GetChosenCharacter();	
-	
-	UFUNCTION(BlueprintCallable)
-	void DestroyCharactersFromTrial();
-
+	/**Returns Character Attributes that was selected in SoulTrial UI*/
 	FORCEINLINE FCharacterAttributes GetChosenCharacterAttributes();
-	FORCEINLINE void AddCharacterToCombat(APlayerCharacter* Soul);
-	FORCEINLINE void AddCharacterToCombat(FCharacterAttributes CharacterAttributes);
-	FORCEINLINE void AddCharacterToTrial(class ACharacterBase* Soul);
-	FORCEINLINE void RemoveCharacterFromTrial(class ACharacterBase* Soul);
 
-	FCharacterAttributes GetRandomCharacterAttributes();
+	/** Add Selected Character attributes that is used in combat */
+	FORCEINLINE void AddSelectedAttributes(FCharacterAttributes CharacterAttributes);
+
+	FORCEINLINE FCharacterAttributes GetRandomizedCharacterAttributes();
+
+	FORCEINLINE class UTrialHUDWidget* GetTrialHUDWidget() { return TrialHUDWidget; };
+
+	void SetCurrentCharacterWidget(UCharacterDataWidget* Widget);
 };

@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AUTOBATTLERPROTO_CharacterDataWidget_generated_h
 
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_SPARSE_DATA
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_RPC_WRAPPERS
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_RPC_WRAPPERS_NO_PURE_DECLS
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_INCLASS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_SPARSE_DATA
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_RPC_WRAPPERS
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_RPC_WRAPPERS_NO_PURE_DECLS
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUCharacterDataWidget(); \
 	friend struct Z_Construct_UClass_UCharacterDataWidget_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(UCharacterDataWidget)
 
 
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_INCLASS \
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesUCharacterDataWidget(); \
 	friend struct Z_Construct_UClass_UCharacterDataWidget_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(UCharacterDataWidget)
 
 
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_STANDARD_CONSTRUCTORS \
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UCharacterDataWidget(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCharacterDataWidget) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_ENHANCED_CONSTRUCTORS \
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UCharacterDataWidget(UCharacterDataWidget&&); \
@@ -58,7 +58,9 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCharacterDataWidget); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCharacterDataWidget)
 
 
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_PRIVATE_PROPERTY_OFFSET \
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__DragTimer() { return STRUCT_OFFSET(UCharacterDataWidget, DragTimer); } \
+	FORCEINLINE static uint32 __PPO__bIsActive() { return STRUCT_OFFSET(UCharacterDataWidget, bIsActive); } \
 	FORCEINLINE static uint32 __PPO__StatusText() { return STRUCT_OFFSET(UCharacterDataWidget, StatusText); } \
 	FORCEINLINE static uint32 __PPO__PassiveText() { return STRUCT_OFFSET(UCharacterDataWidget, PassiveText); } \
 	FORCEINLINE static uint32 __PPO__PrimaryText() { return STRUCT_OFFSET(UCharacterDataWidget, PrimaryText); } \
@@ -67,27 +69,27 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCharacterDataWidget); \
 	FORCEINLINE static uint32 __PPO__StrText() { return STRUCT_OFFSET(UCharacterDataWidget, StrText); }
 
 
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_14_PROLOG
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_GENERATED_BODY_LEGACY \
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_13_PROLOG
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_SPARSE_DATA \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_RPC_WRAPPERS \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_INCLASS \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_STANDARD_CONSTRUCTORS \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_SPARSE_DATA \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_RPC_WRAPPERS \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_INCLASS \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_GENERATED_BODY \
+#define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_SPARSE_DATA \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_INCLASS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_17_ENHANCED_CONSTRUCTORS \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_SPARSE_DATA \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_INCLASS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

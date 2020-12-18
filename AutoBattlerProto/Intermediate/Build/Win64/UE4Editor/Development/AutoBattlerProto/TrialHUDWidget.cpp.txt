@@ -151,9 +151,7 @@ D:\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Internationalization/Pol
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulTrialManager.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CharacterDataWidget.generated.h
 E:\Lautturi\AutoBattlerProto\Source\CombatManager.h
-e:\lautturi\autobattlerproto\source\SoulDataStruct.h
 e:\lautturi\autobattlerproto\source\SkillTypeEnums.h
-E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\SoulDataStruct.generated.h
 E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Inc\AutoBattlerProto\CombatManager.generated.h
 E:\Lautturi\AutoBattlerProto\Source\AutoBattlerProtoGameModeBase.h
 D:\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h

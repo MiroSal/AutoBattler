@@ -13,39 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AUTOBATTLERPROTO_PlayerCharacter_generated_h
 
-#define AutoBattlerProto_Source_PlayerCharacter_h_13_GENERATED_BODY \
-	friend struct Z_Construct_UScriptStruct_FDraggableParams_Statics; \
-	AUTOBATTLERPROTO_API static class UScriptStruct* StaticStruct();
-
-
-template<> AUTOBATTLERPROTO_API UScriptStruct* StaticStruct<struct FDraggableParams>();
-
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_SPARSE_DATA
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execCanClick) \
-	{ \
-		P_GET_UBOOL(Z_Param_bCanClick); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->CanClick(Z_Param_bCanClick); \
-		P_NATIVE_END; \
-	}
-
-
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execCanClick) \
-	{ \
-		P_GET_UBOOL(Z_Param_bCanClick); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->CanClick(Z_Param_bCanClick); \
-		P_NATIVE_END; \
-	}
-
-
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_INCLASS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_SPARSE_DATA
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_RPC_WRAPPERS
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
@@ -54,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(APlayerCharacter)
 
 
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_INCLASS \
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_INCLASS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
@@ -63,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(APlayerCharacter)
 
 
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_STANDARD_CONSTRUCTORS \
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APlayerCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APlayerCharacter) \
@@ -76,7 +47,7 @@ private: \
 public:
 
 
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_ENHANCED_CONSTRUCTORS \
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APlayerCharacter(APlayerCharacter&&); \
@@ -87,31 +58,31 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APlayerCharacter)
 
 
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_PRIVATE_PROPERTY_OFFSET \
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__SoulStatusText() { return STRUCT_OFFSET(APlayerCharacter, SoulStatusText); }
 
 
-#define AutoBattlerProto_Source_PlayerCharacter_h_33_PROLOG
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_GENERATED_BODY_LEGACY \
+#define AutoBattlerProto_Source_PlayerCharacter_h_9_PROLOG
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_SPARSE_DATA \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_RPC_WRAPPERS \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_INCLASS \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_STANDARD_CONSTRUCTORS \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_SPARSE_DATA \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_RPC_WRAPPERS \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_INCLASS \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_PlayerCharacter_h_36_GENERATED_BODY \
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_SPARSE_DATA \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_RPC_WRAPPERS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_INCLASS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_PlayerCharacter_h_36_ENHANCED_CONSTRUCTORS \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_SPARSE_DATA \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_INCLASS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_PlayerCharacter_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

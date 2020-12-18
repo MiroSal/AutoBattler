@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
 #include "SlotBase.h"
+#include "Widgets\CharacterDataWidget.h"
 #include "ActivationInterface.generated.h"
 
 // This class does not need to be modified.
@@ -21,7 +22,7 @@ class AUTOBATTLERPROTO_API IActivationInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	virtual bool Clicked(AActor* ActorToDeactivate) = 0;
-	virtual bool DoubleClicked(AActor* ActorToDeactivate)=0;
+	virtual bool Clicked(UCharacterDataWidget* CharacterWidgetToDeactivate) = 0;
+	virtual bool DoubleClicked(UCharacterDataWidget* CharacterWidgetToDeactivate)=0;
 	virtual bool Deactivate()=0;
 };

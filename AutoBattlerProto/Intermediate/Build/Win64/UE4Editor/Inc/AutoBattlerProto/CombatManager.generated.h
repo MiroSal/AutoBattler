@@ -8,7 +8,8 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-struct FCharacterData;
+class ACharacterBase;
+enum class ESkillType : uint8;
 #ifdef AUTOBATTLERPROTO_CombatManager_generated_h
 #error "CombatManager.generated.h already included, missing '#pragma once' in CombatManager.h"
 #endif
@@ -17,12 +18,14 @@ struct FCharacterData;
 #define AutoBattlerProto_Source_CombatManager_h_8_DELEGATE \
 struct _Script_AutoBattlerProto_eventSkillUsedDelegate_Parms \
 { \
-	FCharacterData SoulData; \
+	ACharacterBase* Character; \
+	ESkillType SkillType; \
 }; \
-static inline void FSkillUsedDelegate_DelegateWrapper(const FMulticastScriptDelegate& SkillUsedDelegate, FCharacterData SoulData) \
+static inline void FSkillUsedDelegate_DelegateWrapper(const FMulticastScriptDelegate& SkillUsedDelegate, ACharacterBase* Character, ESkillType SkillType) \
 { \
 	_Script_AutoBattlerProto_eventSkillUsedDelegate_Parms Parms; \
-	Parms.SoulData=SoulData; \
+	Parms.Character=Character; \
+	Parms.SkillType=SkillType; \
 	SkillUsedDelegate.ProcessMulticastDelegate<UObject>(&Parms); \
 }
 

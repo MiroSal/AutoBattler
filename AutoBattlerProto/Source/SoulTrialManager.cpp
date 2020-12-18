@@ -4,101 +4,66 @@
 #include "AutoBattlerProtoGameModeBase.h"
 #include "AutoBattlerProtoGameInstance.h"
 #include "PlayerCharacter.h"
-
-#define COMBATPOSITIONS  5
+#include "Widgets\CharacterDataWidget.h"
+#include "UObject/ConstructorHelpers.h"
+#include "Widgets\TrialHUDWidget.h"
+#include "Engine/World.h"
 
 USoulTrialManager::USoulTrialManager()
 {
-	AllCharactersInTrial = TArray<APlayerCharacter*>();
-	CharactersToCombat = TArray<APlayerCharacter*>();
+	SelectedAttributes = TArray<FCharacterAttributes>();
+	ConstructorHelpers::FClassFinder<UUserWidget> TrialHUDBPClass(TEXT("/Game/TestingContent/Widgets/WBP_TrialHUD"));
+	if (!ensure(TrialHUDBPClass.Class != nullptr)) return;
+	TrialHUDWidgetClass = TrialHUDBPClass.Class;
 }
 
-void USoulTrialManager::AddCharacterToCombat(APlayerCharacter* Character)
+void USoulTrialManager::Initialize()
 {
-	if (CharactersToCombat.Num() <= COMBATPOSITIONS)
-	{
-		CharactersToCombat.Add(Character);
+	check(IsValid(GetWorld()));
 
-		if (CharactersToCombat.Num() >= COMBATPOSITIONS)
-		{
-			FerryIsFullDelegate.Broadcast(false);
-		}
+	TrialHUDWidget = CreateWidget<UTrialHUDWidget>(GetWorld()->GetGameInstance(), TrialHUDWidgetClass);
+	check(IsValid(TrialHUDWidget));
 
-		if (SoulAddedToJourneyDelegate.IsBound())
-		{
-			SoulAddedToJourneyDelegate.Broadcast(Character);
-		}
-	}
+	TrialHUDWidget->AddToViewport();
 }
 
-void USoulTrialManager::AddCharacterToCombat(FCharacterAttributes CharacterAttributes)
+void USoulTrialManager::AddSelectedAttributes(FCharacterAttributes CharacterAttributes)
 {
-	CharactersAttributes.Add(CharacterAttributes);
+	SelectedAttributes.Add(CharacterAttributes);
 }
 
-void USoulTrialManager::AddCharacterToTrial(ACharacterBase * Character)
-{
-	if (IsValid(Character))
-	{
-		AllCharactersInTrial.Add(Cast<APlayerCharacter>(Character));
-	}
-}
-
-void USoulTrialManager::RemoveCharacterFromTrial(ACharacterBase * Character)
-{
-	if (IsValid(Character))
-	{
-		AllCharactersInTrial.Remove(Cast<APlayerCharacter>(Character));
-	}
-}
-
-FCharacterAttributes USoulTrialManager::GetRandomCharacterAttributes()
+FCharacterAttributes USoulTrialManager::GetRandomizedCharacterAttributes()
 {
 	FCharacterAttributes RandomAttributes = FCharacterAttributes();
 	RandomAttributes.RandomAttributes(AllPossiblePrimarySkills, AllPossiblePassiveSkills);
-
 	return RandomAttributes;
 }
 
-void USoulTrialManager::DestroyCharactersFromTrial()
+void USoulTrialManager::SetCurrentCharacterWidget(UCharacterDataWidget * Widget)
 {
-	for (APlayerCharacter* Character : AllCharactersInTrial)
+
+	if (Widget->GetAttributes().TrialStatus == ETrialStatus::TS_NoCoin)
 	{
-		if (IsValid(Character))
+		if (IsValid(CurrentCharacterWidget) && CurrentCharacterWidget != Widget)
 		{
-			Character->Destroy();
+			CurrentCharacterWidget->RemoveFromParent();
+			GetTrialHUDWidget()->CreateCharacterDataWidget();
+			Widget->RemoveFromParent();
+			GetTrialHUDWidget()->CreateCharacterDataWidget();
+			CurrentCharacterWidget = nullptr;
+		}
+		else
+		{
+			CurrentCharacterWidget = Widget;
 		}
 	}
-}
-
-APlayerCharacter * USoulTrialManager::GetChosenCharacter()
-{
-	APlayerCharacter* CharacterToSend = nullptr;
-
-	for (APlayerCharacter* Character : CharactersToCombat)
-	{
-		if (IsValid(Character))
-		{
-			CharacterToSend = Character;
-			break;
-		}
-	}
-
-	if (IsValid(CharacterToSend))
-	{
-		CharactersToCombat.Remove(CharacterToSend);
-		return CharacterToSend;
-	}
-
-	return nullptr;
 }
 
 FCharacterAttributes USoulTrialManager::GetChosenCharacterAttributes()
 {
-	if (CharactersAttributes.Num() > 0)
+	if (SelectedAttributes.Num() > 0)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("%d"), CharactersAttributes.Num());
-		return CharactersAttributes.Pop();
+		return SelectedAttributes.Pop();
 	}
 	return FCharacterAttributes();
 }

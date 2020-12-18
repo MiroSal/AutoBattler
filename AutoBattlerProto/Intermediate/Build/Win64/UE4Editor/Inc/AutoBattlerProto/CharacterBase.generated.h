@@ -9,15 +9,16 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ASlotBase;
-struct FCharacterData;
+class ACharacterBase;
+enum class ESkillType : uint8;
 class USkillBase;
 #ifdef AUTOBATTLERPROTO_CharacterBase_generated_h
 #error "CharacterBase.generated.h already included, missing '#pragma once' in CharacterBase.h"
 #endif
 #define AUTOBATTLERPROTO_CharacterBase_generated_h
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_SPARSE_DATA
-#define AutoBattlerProto_Source_CharacterBase_h_16_RPC_WRAPPERS \
+#define AutoBattlerProto_Source_CharacterBase_h_15_SPARSE_DATA
+#define AutoBattlerProto_Source_CharacterBase_h_15_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execIsAlive) \
 	{ \
@@ -113,15 +114,16 @@ class USkillBase;
  \
 	DECLARE_FUNCTION(execSkillUsed) \
 	{ \
-		P_GET_STRUCT(FCharacterData,Z_Param_Data); \
+		P_GET_OBJECT(ACharacterBase,Z_Param_InCharacter); \
+		P_GET_ENUM(ESkillType,Z_Param_InSkillType); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->SkillUsed(Z_Param_Data); \
+		P_THIS->SkillUsed(Z_Param_InCharacter,ESkillType(Z_Param_InSkillType)); \
 		P_NATIVE_END; \
 	}
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_CharacterBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execIsAlive) \
 	{ \
@@ -217,15 +219,16 @@ class USkillBase;
  \
 	DECLARE_FUNCTION(execSkillUsed) \
 	{ \
-		P_GET_STRUCT(FCharacterData,Z_Param_Data); \
+		P_GET_OBJECT(ACharacterBase,Z_Param_InCharacter); \
+		P_GET_ENUM(ESkillType,Z_Param_InSkillType); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->SkillUsed(Z_Param_Data); \
+		P_THIS->SkillUsed(Z_Param_InCharacter,ESkillType(Z_Param_InSkillType)); \
 		P_NATIVE_END; \
 	}
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_EVENT_PARMS \
+#define AutoBattlerProto_Source_CharacterBase_h_15_EVENT_PARMS \
 	struct CharacterBase_eventBP_DamageTaken_Parms \
 	{ \
 		int32 Amount; \
@@ -240,28 +243,26 @@ class USkillBase;
 	};
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_CALLBACK_WRAPPERS
-#define AutoBattlerProto_Source_CharacterBase_h_16_INCLASS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_CharacterBase_h_15_CALLBACK_WRAPPERS
+#define AutoBattlerProto_Source_CharacterBase_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACharacterBase(); \
 	friend struct Z_Construct_UClass_ACharacterBase_Statics; \
 public: \
 	DECLARE_CLASS(ACharacterBase, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/AutoBattlerProto"), NO_API) \
-	DECLARE_SERIALIZER(ACharacterBase) \
-	virtual UObject* _getUObject() const override { return const_cast<ACharacterBase*>(this); }
+	DECLARE_SERIALIZER(ACharacterBase)
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_INCLASS \
+#define AutoBattlerProto_Source_CharacterBase_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesACharacterBase(); \
 	friend struct Z_Construct_UClass_ACharacterBase_Statics; \
 public: \
 	DECLARE_CLASS(ACharacterBase, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/AutoBattlerProto"), NO_API) \
-	DECLARE_SERIALIZER(ACharacterBase) \
-	virtual UObject* _getUObject() const override { return const_cast<ACharacterBase*>(this); }
+	DECLARE_SERIALIZER(ACharacterBase)
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_STANDARD_CONSTRUCTORS \
+#define AutoBattlerProto_Source_CharacterBase_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ACharacterBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACharacterBase) \
@@ -274,7 +275,7 @@ private: \
 public:
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_ENHANCED_CONSTRUCTORS \
+#define AutoBattlerProto_Source_CharacterBase_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ACharacterBase(ACharacterBase&&); \
@@ -285,7 +286,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACharacterBase); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACharacterBase)
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_PRIVATE_PROPERTY_OFFSET \
+#define AutoBattlerProto_Source_CharacterBase_h_15_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Health() { return STRUCT_OFFSET(ACharacterBase, Health); } \
 	FORCEINLINE static uint32 __PPO__Sin() { return STRUCT_OFFSET(ACharacterBase, Sin); } \
 	FORCEINLINE static uint32 __PPO__Str() { return STRUCT_OFFSET(ACharacterBase, Str); } \
@@ -303,32 +304,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACharacterBase); \
 	FORCEINLINE static uint32 __PPO__GameMode() { return STRUCT_OFFSET(ACharacterBase, GameMode); }
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_13_PROLOG \
-	AutoBattlerProto_Source_CharacterBase_h_16_EVENT_PARMS
+#define AutoBattlerProto_Source_CharacterBase_h_12_PROLOG \
+	AutoBattlerProto_Source_CharacterBase_h_15_EVENT_PARMS
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_GENERATED_BODY_LEGACY \
+#define AutoBattlerProto_Source_CharacterBase_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_CharacterBase_h_16_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_CharacterBase_h_16_SPARSE_DATA \
-	AutoBattlerProto_Source_CharacterBase_h_16_RPC_WRAPPERS \
-	AutoBattlerProto_Source_CharacterBase_h_16_CALLBACK_WRAPPERS \
-	AutoBattlerProto_Source_CharacterBase_h_16_INCLASS \
-	AutoBattlerProto_Source_CharacterBase_h_16_STANDARD_CONSTRUCTORS \
+	AutoBattlerProto_Source_CharacterBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_CharacterBase_h_15_SPARSE_DATA \
+	AutoBattlerProto_Source_CharacterBase_h_15_RPC_WRAPPERS \
+	AutoBattlerProto_Source_CharacterBase_h_15_CALLBACK_WRAPPERS \
+	AutoBattlerProto_Source_CharacterBase_h_15_INCLASS \
+	AutoBattlerProto_Source_CharacterBase_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_16_GENERATED_BODY \
+#define AutoBattlerProto_Source_CharacterBase_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_CharacterBase_h_16_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_CharacterBase_h_16_SPARSE_DATA \
-	AutoBattlerProto_Source_CharacterBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_CharacterBase_h_16_CALLBACK_WRAPPERS \
-	AutoBattlerProto_Source_CharacterBase_h_16_INCLASS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_CharacterBase_h_16_ENHANCED_CONSTRUCTORS \
+	AutoBattlerProto_Source_CharacterBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_CharacterBase_h_15_SPARSE_DATA \
+	AutoBattlerProto_Source_CharacterBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_CharacterBase_h_15_CALLBACK_WRAPPERS \
+	AutoBattlerProto_Source_CharacterBase_h_15_INCLASS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_CharacterBase_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

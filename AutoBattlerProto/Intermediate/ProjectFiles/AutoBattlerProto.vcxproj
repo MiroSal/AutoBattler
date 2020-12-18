@@ -285,8 +285,6 @@
     <ClInclude Include="..\..\Source\CharacterBase.h"/>
     <ClCompile Include="..\..\Source\CombatManager.cpp"/>
     <ClInclude Include="..\..\Source\CombatManager.h"/>
-    <ClCompile Include="..\..\Source\DragDrop.cpp"/>
-    <ClInclude Include="..\..\Source\DragDrop.h"/>
     <ClCompile Include="..\..\Source\EnemyBase.cpp"/>
     <ClInclude Include="..\..\Source\EnemyBase.h"/>
     <ClCompile Include="..\..\Source\PlayerCharacter.cpp"/>
@@ -296,7 +294,6 @@
     <ClInclude Include="..\..\Source\SkillTypeEnums.h"/>
     <ClCompile Include="..\..\Source\SlotBase.cpp"/>
     <ClInclude Include="..\..\Source\SlotBase.h"/>
-    <ClInclude Include="..\..\Source\SoulDataStruct.h"/>
     <ClCompile Include="..\..\Source\SoulTrialManager.cpp"/>
     <ClInclude Include="..\..\Source\SoulTrialManager.h"/>
     <ClCompile Include="..\..\Source\Widgets\CharacterDataWidget.cpp"/>
