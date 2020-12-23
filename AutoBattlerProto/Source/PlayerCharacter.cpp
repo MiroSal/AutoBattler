@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright © 2020 by Miro Salminen
 
 #include "PlayerCharacter.h"
 #include "Engine/World.h"
@@ -14,11 +14,6 @@
 
 APlayerCharacter::APlayerCharacter()
 {
-	SoulStatusText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("SoulStatusText"));
-	if (SoulStatusText)
-	{
-		SoulStatusText->SetupAttachment(RootComponent);
-	}
 }
 
 void APlayerCharacter::Initialize(ASlotBase* Slot, FCharacterAttributes InAttributes)
@@ -34,14 +29,14 @@ void APlayerCharacter::Initialize(ASlotBase* Slot, FCharacterAttributes InAttrib
 	check(IsValid(combatManager));
 
 	SetCurrentSlot(Slot);
-	combatManager->RegisterCombatListener(this);
+	combatManager->RegisterToCombatListener(this);
 	combatManager->SkillUsedDelegate.AddDynamic(this, &APlayerCharacter::SkillUsed);
 
 	UpdateDataText();
 }
 
-//check is passive skill should be triggered
-void APlayerCharacter::SkillUsed(ACharacterBase* InCharacter, ESkillType InSkillType)
+//check if passive skill should be triggered
+void APlayerCharacter::SkillUsed(ACharacterBase* InCharacter, const ESkillType InSkillType)
 {
 	if (GetHealth() > 0 && IsValid(GetPassiveSkill()))
 	{
@@ -108,11 +103,16 @@ void APlayerCharacter::Attack()
 		ACharacterBase* Enemy = Enemies[FMath::RandRange(0, Enemies.Num() - 1)];
 		if (IsValid(Enemy))
 		{
-			Enemy->HealthReduce(GetStr());
+			Enemy->SetHealth(-GetStr());
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Attacked Non Valid enemy"));
 		}
 	}
 }
 
+//temp stat visualization
 void APlayerCharacter::UpdateDataText()
 {
 	Super::UpdateDataText();
@@ -121,4 +121,19 @@ void APlayerCharacter::UpdateDataText()
 		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), GetHealth(), GetSin(), GetStr(), *GetPrimarySkill()->GetSkillInfo(), *GetPassiveSkill()->GetSkillInfo());
 		StatsText->SetText(FText::FromString(Stats));
 	}
+}
+
+void APlayerCharacter::OnDeath()
+{
+	check(IsValid(GetWorld()));
+
+	UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
+	check(IsValid(GameInstance));
+
+	UCombatManager* combatManager = GameInstance->GetCombatManager();
+	check(IsValid(combatManager));
+
+	combatManager->UnRegisterCombatListener(this);
+	combatManager->SkillUsedDelegate.RemoveDynamic(this, &APlayerCharacter::SkillUsed);
+	Super::OnDeath();
 }

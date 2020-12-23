@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ASlotBase_BP_NewCharacterCreated();
 	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ASlotBase_GetCharacterInSlot();
 	AUTOBATTLERPROTO_API UClass* Z_Construct_UClass_ACharacterBase_NoRegister();
-	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ASlotBase_RemoveCharacterFromSlot();
+	AUTOBATTLERPROTO_API UFunction* Z_Construct_UFunction_ASlotBase_RemoveCurrentCharacterFromSlot();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_UArrowComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
@@ -41,7 +41,7 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 		UClass* Class = ASlotBase::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GetCharacterInSlot", &ASlotBase::execGetCharacterInSlot },
-			{ "RemoveCharacterFromSlot", &ASlotBase::execRemoveCharacterFromSlot },
+			{ "RemoveCurrentCharacterFromSlot", &ASlotBase::execRemoveCurrentCharacterFromSlot },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -124,7 +124,7 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_ASlotBase_RemoveCharacterFromSlot_Statics
+	struct Z_Construct_UFunction_ASlotBase_RemoveCurrentCharacterFromSlot_Statics
 	{
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -132,18 +132,18 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASlotBase_RemoveCharacterFromSlot_Statics::Function_MetaDataParams[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASlotBase_RemoveCurrentCharacterFromSlot_Statics::Function_MetaDataParams[] = {
 		{ "Category", "SlotBase" },
 		{ "ModuleRelativePath", "SlotBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASlotBase_RemoveCharacterFromSlot_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASlotBase, nullptr, "RemoveCharacterFromSlot", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASlotBase_RemoveCharacterFromSlot_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASlotBase_RemoveCharacterFromSlot_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ASlotBase_RemoveCharacterFromSlot()
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASlotBase_RemoveCurrentCharacterFromSlot_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASlotBase, nullptr, "RemoveCurrentCharacterFromSlot", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASlotBase_RemoveCurrentCharacterFromSlot_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASlotBase_RemoveCurrentCharacterFromSlot_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASlotBase_RemoveCurrentCharacterFromSlot()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASlotBase_RemoveCharacterFromSlot_Statics::FuncParams);
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASlotBase_RemoveCurrentCharacterFromSlot_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -186,7 +186,7 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 		{ &Z_Construct_UFunction_ASlotBase_BP_CharacterIsDead, "BP_CharacterIsDead" }, // 3542299338
 		{ &Z_Construct_UFunction_ASlotBase_BP_NewCharacterCreated, "BP_NewCharacterCreated" }, // 2123798113
 		{ &Z_Construct_UFunction_ASlotBase_GetCharacterInSlot, "GetCharacterInSlot" }, // 2147892637
-		{ &Z_Construct_UFunction_ASlotBase_RemoveCharacterFromSlot, "RemoveCharacterFromSlot" }, // 2132215768
+		{ &Z_Construct_UFunction_ASlotBase_RemoveCurrentCharacterFromSlot, "RemoveCurrentCharacterFromSlot" }, // 446125700
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASlotBase_Statics::Class_MetaDataParams[] = {
@@ -257,7 +257,7 @@ void EmptyLinkFunctionForGeneratedCodeSlotBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASlotBase, 2159672426);
+	IMPLEMENT_CLASS(ASlotBase, 875171050);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<ASlotBase>()
 	{
 		return ASlotBase::StaticClass();

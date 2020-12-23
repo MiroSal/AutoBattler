@@ -17,8 +17,8 @@ class USkillBase;
 #endif
 #define AUTOBATTLERPROTO_CharacterBase_generated_h
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_SPARSE_DATA
-#define AutoBattlerProto_Source_CharacterBase_h_15_RPC_WRAPPERS \
+#define AutoBattlerProto_Source_CharacterBase_h_14_SPARSE_DATA
+#define AutoBattlerProto_Source_CharacterBase_h_14_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execIsAlive) \
 	{ \
@@ -123,7 +123,7 @@ class USkillBase;
 	}
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_CharacterBase_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execIsAlive) \
 	{ \
@@ -228,7 +228,7 @@ class USkillBase;
 	}
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_EVENT_PARMS \
+#define AutoBattlerProto_Source_CharacterBase_h_14_EVENT_PARMS \
 	struct CharacterBase_eventBP_DamageTaken_Parms \
 	{ \
 		int32 Amount; \
@@ -239,12 +239,12 @@ class USkillBase;
 	}; \
 	struct CharacterBase_eventBP_SkillUsed_Parms \
 	{ \
-		USkillBase* Skill; \
+		const USkillBase* Skill; \
 	};
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_CALLBACK_WRAPPERS
-#define AutoBattlerProto_Source_CharacterBase_h_15_INCLASS_NO_PURE_DECLS \
+#define AutoBattlerProto_Source_CharacterBase_h_14_CALLBACK_WRAPPERS
+#define AutoBattlerProto_Source_CharacterBase_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACharacterBase(); \
 	friend struct Z_Construct_UClass_ACharacterBase_Statics; \
@@ -253,7 +253,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterBase)
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_INCLASS \
+#define AutoBattlerProto_Source_CharacterBase_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesACharacterBase(); \
 	friend struct Z_Construct_UClass_ACharacterBase_Statics; \
@@ -262,7 +262,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterBase)
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_STANDARD_CONSTRUCTORS \
+#define AutoBattlerProto_Source_CharacterBase_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ACharacterBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACharacterBase) \
@@ -275,7 +275,7 @@ private: \
 public:
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_ENHANCED_CONSTRUCTORS \
+#define AutoBattlerProto_Source_CharacterBase_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ACharacterBase(ACharacterBase&&); \
@@ -286,14 +286,14 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACharacterBase); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACharacterBase)
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_PRIVATE_PROPERTY_OFFSET \
+#define AutoBattlerProto_Source_CharacterBase_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Health() { return STRUCT_OFFSET(ACharacterBase, Health); } \
 	FORCEINLINE static uint32 __PPO__Sin() { return STRUCT_OFFSET(ACharacterBase, Sin); } \
 	FORCEINLINE static uint32 __PPO__Str() { return STRUCT_OFFSET(ACharacterBase, Str); } \
 	FORCEINLINE static uint32 __PPO__PrimarySkill() { return STRUCT_OFFSET(ACharacterBase, PrimarySkill); } \
 	FORCEINLINE static uint32 __PPO__PassiveSkill() { return STRUCT_OFFSET(ACharacterBase, PassiveSkill); } \
-	FORCEINLINE static uint32 __PPO__AllPossiblePrimarySkills() { return STRUCT_OFFSET(ACharacterBase, AllPossiblePrimarySkills); } \
-	FORCEINLINE static uint32 __PPO__AllPossiblePassiveSkills() { return STRUCT_OFFSET(ACharacterBase, AllPossiblePassiveSkills); } \
+	FORCEINLINE static uint32 __PPO__AllPossiblePrimarySkillClasses() { return STRUCT_OFFSET(ACharacterBase, AllPossiblePrimarySkillClasses); } \
+	FORCEINLINE static uint32 __PPO__AllPossiblePassiveSkillClasses() { return STRUCT_OFFSET(ACharacterBase, AllPossiblePassiveSkillClasses); } \
 	FORCEINLINE static uint32 __PPO__CharacterType() { return STRUCT_OFFSET(ACharacterBase, CharacterType); } \
 	FORCEINLINE static uint32 __PPO__CurrentSlot() { return STRUCT_OFFSET(ACharacterBase, CurrentSlot); } \
 	FORCEINLINE static uint32 __PPO__Root() { return STRUCT_OFFSET(ACharacterBase, Root); } \
@@ -301,32 +301,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACharacterBase); \
 	FORCEINLINE static uint32 __PPO__StatsText() { return STRUCT_OFFSET(ACharacterBase, StatsText); }
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_12_PROLOG \
-	AutoBattlerProto_Source_CharacterBase_h_15_EVENT_PARMS
+#define AutoBattlerProto_Source_CharacterBase_h_11_PROLOG \
+	AutoBattlerProto_Source_CharacterBase_h_14_EVENT_PARMS
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_GENERATED_BODY_LEGACY \
+#define AutoBattlerProto_Source_CharacterBase_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_CharacterBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_CharacterBase_h_15_SPARSE_DATA \
-	AutoBattlerProto_Source_CharacterBase_h_15_RPC_WRAPPERS \
-	AutoBattlerProto_Source_CharacterBase_h_15_CALLBACK_WRAPPERS \
-	AutoBattlerProto_Source_CharacterBase_h_15_INCLASS \
-	AutoBattlerProto_Source_CharacterBase_h_15_STANDARD_CONSTRUCTORS \
+	AutoBattlerProto_Source_CharacterBase_h_14_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_CharacterBase_h_14_SPARSE_DATA \
+	AutoBattlerProto_Source_CharacterBase_h_14_RPC_WRAPPERS \
+	AutoBattlerProto_Source_CharacterBase_h_14_CALLBACK_WRAPPERS \
+	AutoBattlerProto_Source_CharacterBase_h_14_INCLASS \
+	AutoBattlerProto_Source_CharacterBase_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AutoBattlerProto_Source_CharacterBase_h_15_GENERATED_BODY \
+#define AutoBattlerProto_Source_CharacterBase_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AutoBattlerProto_Source_CharacterBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	AutoBattlerProto_Source_CharacterBase_h_15_SPARSE_DATA \
-	AutoBattlerProto_Source_CharacterBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_CharacterBase_h_15_CALLBACK_WRAPPERS \
-	AutoBattlerProto_Source_CharacterBase_h_15_INCLASS_NO_PURE_DECLS \
-	AutoBattlerProto_Source_CharacterBase_h_15_ENHANCED_CONSTRUCTORS \
+	AutoBattlerProto_Source_CharacterBase_h_14_PRIVATE_PROPERTY_OFFSET \
+	AutoBattlerProto_Source_CharacterBase_h_14_SPARSE_DATA \
+	AutoBattlerProto_Source_CharacterBase_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_CharacterBase_h_14_CALLBACK_WRAPPERS \
+	AutoBattlerProto_Source_CharacterBase_h_14_INCLASS_NO_PURE_DECLS \
+	AutoBattlerProto_Source_CharacterBase_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

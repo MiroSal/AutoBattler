@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright © 2020 by Miro Salminen
 
 #include "CombatManager.h"
 #include "CharacterBase.h"
@@ -12,7 +12,7 @@ UCombatManager::UCombatManager()
 	ActiveCharacter = nullptr;
 	CurrentCombatTurn = ETurnEnum::TE_None;
 
-	CharacterIndex = 0;
+	PlayerIndex = 0;
 	EnemyIndex = 0;
 
 	TotalEnemyCount = 5;
@@ -112,11 +112,11 @@ void UCombatManager::ChangeActiveCharacter()
 	case ETurnEnum::TE_Enemy:
 
 		CurrentCombatTurn = ETurnEnum::TE_Player;
-		++CharacterIndex;
-		if (CharacterIndex >= CombatPlayerListeners.Num())
-			CharacterIndex = 0;
+		++PlayerIndex;
+		if (PlayerIndex >= CombatPlayerListeners.Num())
+			PlayerIndex = 0;
 
-		ActiveCharacter = Cast<ACharacterBase>(CombatPlayerListeners[FMath::Clamp(CharacterIndex, 0, CombatPlayerListeners.Num())]);
+		ActiveCharacter = Cast<ACharacterBase>(CombatPlayerListeners[FMath::Clamp(PlayerIndex, 0, CombatPlayerListeners.Num())]);
 		break;
 
 	case ETurnEnum::TE_None:
@@ -130,15 +130,19 @@ void UCombatManager::ChangeActiveCharacter()
 
 void UCombatManager::HandleFirstTurn()
 {
-	CharacterIndex = 0;
-	ActiveCharacter = Cast<ACharacterBase>(CombatPlayerListeners[CharacterIndex]);
+	PlayerIndex = 0;
+	ActiveCharacter = Cast<ACharacterBase>(CombatPlayerListeners[PlayerIndex]);
 	CurrentCombatTurn = ETurnEnum::TE_Player;
 	bIsFirstTurn = false;
 
 	if (IsValid(ActiveCharacter))
 	{
 		ActiveCharacter->BP_StartTurn();
-		SkillUsedDelegate.Broadcast(ActiveCharacter, ActiveCharacter->GetPrimarySkillType());
+		if (SkillUsedDelegate.IsBound())
+		{
+			SkillUsedDelegate.Broadcast(ActiveCharacter, ActiveCharacter->GetPrimarySkillType());
+		}
+
 		ActiveCharacter->ActivatePrimarySkill();
 	}
 	else
@@ -148,7 +152,8 @@ void UCombatManager::HandleFirstTurn()
 	}
 }
 
-void UCombatManager::RegisterCombatListener(ACharacterBase* Character)
+//Add and listen combatmangers orders
+void UCombatManager::RegisterToCombatListener(ACharacterBase* Character)
 {
 	if (!IsValid(Character))
 		return;
@@ -157,9 +162,16 @@ void UCombatManager::RegisterCombatListener(ACharacterBase* Character)
 	{
 	case ETurnEnum::TE_Player:
 		CombatPlayerListeners.Add(Character);
+		if (!CombatPlayerListeners.Contains(Character))
+		{
+			CombatPlayerListeners.Add(Character);
+		}
 		break;
 	case ETurnEnum::TE_Enemy:
-		CombatEnemyListeners.Add(Character);
+		if (!CombatEnemyListeners.Contains(Character))
+		{
+			CombatEnemyListeners.Add(Character);
+		}
 		break;
 	case ETurnEnum::TE_None:
 		UE_LOG(LogTemp, Warning, TEXT("Charactertype is None"));
@@ -170,6 +182,7 @@ void UCombatManager::RegisterCombatListener(ACharacterBase* Character)
 	}
 }
 
+//Remove and dont listen orders
 void UCombatManager::UnRegisterCombatListener(ACharacterBase * Character)
 {
 	if (!IsValid(Character))
@@ -192,6 +205,7 @@ void UCombatManager::UnRegisterCombatListener(ACharacterBase * Character)
 	}
 }
 
+//Skills to activate this turn
 void UCombatManager::AddSkillActionToQueue(ACharacterBase* InCharacter)
 {
 	if (IsValid(InCharacter))

@@ -33,6 +33,10 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBase() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EnemyCount_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_EnemyCount;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EnemyCountText_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EnemyCountText;
@@ -51,14 +55,23 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBase() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCount_MetaData[] = {
+		{ "ModuleRelativePath", "EnemyBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCount = { "EnemyCount", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemyBase, EnemyCount), METADATA_PARAMS(Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCount_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCount_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCountText_MetaData[] = {
 		{ "Category", "EnemyBase" },
+		{ "Comment", "//temp stat visualization\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "EnemyBase.h" },
+		{ "ToolTip", "temp stat visualization" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCountText = { "EnemyCountText", nullptr, (EPropertyFlags)0x00400000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemyBase, EnemyCountText), Z_Construct_UClass_UTextRenderComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCountText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCountText_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyBase_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCount,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyCountText,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemyBase_Statics::StaticCppClassTypeInfo = {
@@ -88,7 +101,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemyBase, 3241692794);
+	IMPLEMENT_CLASS(AEnemyBase, 553366543);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<AEnemyBase>()
 	{
 		return AEnemyBase::StaticClass();

@@ -26,13 +26,15 @@ void USoulTrialManager::Initialize()
 	TrialHUDWidget->AddToViewport();
 }
 
+//Create randomized character
 FCharacterAttributes USoulTrialManager::GetRandomizedCharacterAttributes()
 {
 	FCharacterAttributes RandomizeAttributes = FCharacterAttributes();
-	RandomizeAttributes.RandomizeAttributes(AllPossiblePrimarySkills, AllPossiblePassiveSkills);
+	RandomizeAttributes.RandomizeAttributes(AllPossiblePrimarySkillClasses, AllPossiblePassiveSkillClasses);
 	return RandomizeAttributes;
 }
 
+//Characterwidget can be removed in pairs if status is No_Coin
 void USoulTrialManager::SetActiveCharacterWidget(UCharacterDataWidget * Widget)
 {
 	if (IsValid(Widget))
@@ -59,6 +61,7 @@ void USoulTrialManager::SetActiveCharacterWidget(UCharacterDataWidget * Widget)
 	}
 }
 
+//Called from combatmanager when game starts
 FCharacterAttributes USoulTrialManager::GetSelectedCharacterAttributes()
 {
 	if (SelectedCharacterAttributes.Num() > 0)

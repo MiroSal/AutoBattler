@@ -8,13 +8,12 @@
 #include "SoulTrialManager.h"
 #include "CharacterBase.generated.h"
 
-
 UCLASS()
 class AUTOBATTLERPROTO_API ACharacterBase : public AActor
 {
 	GENERATED_BODY()
 
-		//Character Stats
+//Character Stats
 private:
 	UPROPERTY()
 	int32 Health;
@@ -32,26 +31,24 @@ private:
 	class USkillBase* PassiveSkill;
 
 	UPROPERTY(EditDefaultsOnly)
-	TArray<TSubclassOf<USkillBase>> AllPossiblePrimarySkills;
+	TArray<TSubclassOf<USkillBase>> AllPossiblePrimarySkillClasses;
 
 	UPROPERTY(EditDefaultsOnly)
-	TArray<TSubclassOf<USkillBase>> AllPossiblePassiveSkills;
+	TArray<TSubclassOf<USkillBase>> AllPossiblePassiveSkillClasses;
 
+	//Is player or enemy
 	UPROPERTY(EditAnywhere, Category = "Character Stats")
 	ETurnEnum CharacterType = ETurnEnum::TE_None;
 
 	UPROPERTY(VisibleAnywhere, Category = "Character Stats")
 	ASlotBase* CurrentSlot;
 
-protected:
-	UFUNCTION()
-		virtual void SkillUsed(ACharacterBase* InCharacter, ESkillType InSkillType) {};
-
 public:
 	ACharacterBase();
 
 	virtual void Initialize(class ASlotBase* Slot, FCharacterAttributes InAttributes);
 
+//DefaultSubObjects
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class USceneComponent* Root;
@@ -62,36 +59,42 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	class UTextRenderComponent* StatsText;
 
-	//overriden in derived classes
+protected:
+	virtual void OnDeath();
+	//Called when someone uses skill
+	UFUNCTION()
+	virtual void SkillUsed(ACharacterBase* InCharacter, const ESkillType InSkillType) {};
+
 public:
 	virtual void ActivatePrimarySkill() {};
 	virtual void ActivatePassiveSkill() {};
-	virtual bool HealthReduce(int32 Amount) { return false; };
-	virtual bool HealthAdd(int32 Amount) { return false; };
+	virtual bool HealthReduce(const int32 Amount) { return false; };
+	virtual bool HealthAdd(const int32 Amount) { return false; };
 	virtual void Attack() {};
 
+	//temp for stat visualization
 	UFUNCTION(BlueprintCallable)
 		virtual void UpdateDataText() {};
 
-	//BlueprintImplementableEvents
+//BlueprintImplementableEvents
 public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_Attack();
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void BP_SkillUsed(class USkillBase * Skill);
+	void BP_SkillUsed(const class USkillBase * Skill);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_SetActiveDecal();
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void BP_DamageTaken(int32 Amount);
+	void BP_DamageTaken(const int32 Amount);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_OnDeath();
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void BP_HealthAdded(int32 Amount);
+	void BP_HealthAdded(const int32 Amount);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_StartTurn();
@@ -102,7 +105,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void AttackEnd();
 
-	//Getter&&Setters
+//Getter&&Setters
 public:
 	FORCEINLINE ETurnEnum GetCharacterType() { return CharacterType; };
 	FORCEINLINE virtual class ASlotBase* GetSlot() { return CurrentSlot; };
@@ -114,28 +117,28 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetCurrentSlot(ASlotBase* NewCurrentSlot) {CurrentSlot = NewCurrentSlot;};
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintPure)
 	ASlotBase* GetCurrentSlot() { return CurrentSlot; };
 
-	//Character stats
+////Character stats
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-	void SetHealth(int32 InHealth);
+	void SetHealth(const int32 InHealth);
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-	void SetSin(int32 InSin);
+	void SetSin(const int32 InSin);
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-	void SetStr(int32 InStr);
+	void SetStr(const int32 InStr);
 
-	UFUNCTION(BlueprintCallable, Category = "Character Stats")
+	UFUNCTION(BlueprintPure, Category = "Character Stats")
 	int32 GetHealth() {return Health;};
 
-	UFUNCTION(BlueprintCallable, Category = "Character Stats")
+	UFUNCTION(Blueprintpure, Category = "Character Stats")
 	int32 GetSin() {return Sin;};
 
-	UFUNCTION(BlueprintCallable, Category = "Character Stats")
+	UFUNCTION(BlueprintPure, Category = "Character Stats")
 	int32 GetStr() {return Str;};
 
-	UFUNCTION(BlueprintCallable, Category = "Character Stats")
+	UFUNCTION(BlueprintPure, Category = "Character Stats")
 	bool IsAlive();
 };

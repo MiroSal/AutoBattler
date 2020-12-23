@@ -51,9 +51,10 @@ void EmptyLinkFunctionForGeneratedCodeDragWidget() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDragWidget_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n *\n */" },
+		{ "Comment", "/**\n *Widget that is shown when dragging\n */" },
 		{ "IncludePath", "Widgets/DragWidget.h" },
 		{ "ModuleRelativePath", "Widgets/DragWidget.h" },
+		{ "ToolTip", "Widget that is shown when dragging" },
 	};
 #endif
 #if WITH_METADATA
@@ -104,7 +105,7 @@ void EmptyLinkFunctionForGeneratedCodeDragWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UDragWidget, 405994463);
+	IMPLEMENT_CLASS(UDragWidget, 985189348);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<UDragWidget>()
 	{
 		return UDragWidget::StaticClass();

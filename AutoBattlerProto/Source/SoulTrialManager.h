@@ -29,19 +29,19 @@ public:
 		PassiveSkill = nullptr;
 	};
 
-	void RandomizeAttributes(TArray<TSubclassOf<class USkillBase>> AllPossiblePrimarySkills,
-		TArray<TSubclassOf<class USkillBase>> AllPossiblePassiveSkills)
+	void RandomizeAttributes(TArray<TSubclassOf<class USkillBase>> AllPossiblePrimarySkillClasses,
+		TArray<TSubclassOf<class USkillBase>> AllPossiblePassiveSkillClasses)
 	{
 		TrialStatus = ETrialStatus(FMath::RandRange(0, ((int)ETrialStatus::TS_None) - 1));
 		Health = FMath::RandRange(1, 10);
 		Sin = FMath::RandRange(1, 10);
 		Str = FMath::RandRange(1, 10);
 
-		if (AllPossiblePrimarySkills.Num() > 0)
-			PrimarySkill = AllPossiblePrimarySkills[FMath::RandRange(0, AllPossiblePrimarySkills.Num() - 1)];
+		if (AllPossiblePrimarySkillClasses.Num() > 0)
+			PrimarySkill = AllPossiblePrimarySkillClasses[FMath::RandRange(0, AllPossiblePrimarySkillClasses.Num() - 1)];
 
-		if (AllPossiblePassiveSkills.Num() > 0)
-			PassiveSkill = AllPossiblePassiveSkills[FMath::RandRange(0, AllPossiblePassiveSkills.Num() - 1)];
+		if (AllPossiblePassiveSkillClasses.Num() > 0)
+			PassiveSkill = AllPossiblePassiveSkillClasses[FMath::RandRange(0, AllPossiblePassiveSkillClasses.Num() - 1)];
 	};
 
 	UPROPERTY()
@@ -49,8 +49,10 @@ public:
 
 	UPROPERTY()
 		int32 Health;
+		
 	UPROPERTY()
 		int32 Sin;
+
 	UPROPERTY()
 		int32 Str;
 
@@ -73,6 +75,19 @@ private:
 	UPROPERTY()
 	TArray<FCharacterAttributes> SelectedCharacterAttributes;
 
+//random characters to SoulTrial is created from these classes
+protected:
+	UPROPERTY(EditDefaultsOnly)
+	TArray<TSubclassOf<class USkillBase>> AllPossiblePrimarySkillClasses;
+
+	UPROPERTY(EditDefaultsOnly)
+	TArray<TSubclassOf<class USkillBase>> AllPossiblePassiveSkillClasses;
+
+public:
+	USoulTrialManager();
+
+	void Initialize();
+
 //Widgets
 private:
 
@@ -85,25 +100,13 @@ private:
 	UPROPERTY()
 	class UCharacterDataWidget* ActiveCharacterWidget;
 
-protected:
-	UPROPERTY(EditDefaultsOnly)
-	TArray<TSubclassOf<class USkillBase>> AllPossiblePrimarySkills;
-
-	UPROPERTY(EditDefaultsOnly)
-	TArray<TSubclassOf<class USkillBase>> AllPossiblePassiveSkills;
-
-public:
-	USoulTrialManager();
-
-	void Initialize();
-
 //Getters&&Setters
 public:
 	/**Returns Character Attributes that was selected in SoulTrial UI*/
 	FORCEINLINE FCharacterAttributes GetSelectedCharacterAttributes();
 
 	/** Add Selected Character attributes that is used in combat */
-	FORCEINLINE void AddSelectedCharacterAttributes(FCharacterAttributes CharacterAttributes) { SelectedCharacterAttributes.Add(CharacterAttributes); };
+	FORCEINLINE void AddSelectedCharacterAttributes(const FCharacterAttributes CharacterAttributes) { SelectedCharacterAttributes.Add(CharacterAttributes); };
 
 	FCharacterAttributes GetRandomizedCharacterAttributes();
 

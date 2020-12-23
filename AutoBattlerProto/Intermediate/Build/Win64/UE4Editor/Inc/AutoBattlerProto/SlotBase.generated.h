@@ -25,11 +25,11 @@ class ACharacterBase;
 		P_NATIVE_END; \
 	} \
  \
-	DECLARE_FUNCTION(execRemoveCharacterFromSlot) \
+	DECLARE_FUNCTION(execRemoveCurrentCharacterFromSlot) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->RemoveCharacterFromSlot(); \
+		P_THIS->RemoveCurrentCharacterFromSlot(); \
 		P_NATIVE_END; \
 	}
 
@@ -44,11 +44,11 @@ class ACharacterBase;
 		P_NATIVE_END; \
 	} \
  \
-	DECLARE_FUNCTION(execRemoveCharacterFromSlot) \
+	DECLARE_FUNCTION(execRemoveCurrentCharacterFromSlot) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->RemoveCharacterFromSlot(); \
+		P_THIS->RemoveCurrentCharacterFromSlot(); \
 		P_NATIVE_END; \
 	}
 

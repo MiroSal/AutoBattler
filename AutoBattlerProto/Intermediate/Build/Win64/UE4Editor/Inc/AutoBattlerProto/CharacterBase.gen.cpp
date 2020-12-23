@@ -52,7 +52,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		ProcessEvent(FindFunctionChecked(NAME_ACharacterBase_BP_Attack),NULL);
 	}
 	static FName NAME_ACharacterBase_BP_DamageTaken = FName(TEXT("BP_DamageTaken"));
-	void ACharacterBase::BP_DamageTaken(int32 Amount)
+	void ACharacterBase::BP_DamageTaken(const int32 Amount)
 	{
 		CharacterBase_eventBP_DamageTaken_Parms Parms;
 		Parms.Amount=Amount;
@@ -64,7 +64,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		ProcessEvent(FindFunctionChecked(NAME_ACharacterBase_BP_EndTurn),NULL);
 	}
 	static FName NAME_ACharacterBase_BP_HealthAdded = FName(TEXT("BP_HealthAdded"));
-	void ACharacterBase::BP_HealthAdded(int32 Amount)
+	void ACharacterBase::BP_HealthAdded(const int32 Amount)
 	{
 		CharacterBase_eventBP_HealthAdded_Parms Parms;
 		Parms.Amount=Amount;
@@ -81,7 +81,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		ProcessEvent(FindFunctionChecked(NAME_ACharacterBase_BP_SetActiveDecal),NULL);
 	}
 	static FName NAME_ACharacterBase_BP_SkillUsed = FName(TEXT("BP_SkillUsed"));
-	void ACharacterBase::BP_SkillUsed(USkillBase* Skill)
+	void ACharacterBase::BP_SkillUsed(const USkillBase* Skill)
 	{
 		CharacterBase_eventBP_SkillUsed_Parms Parms;
 		Parms.Skill=Skill;
@@ -157,6 +157,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	}
 	struct Z_Construct_UFunction_ACharacterBase_BP_DamageTaken_Statics
 	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Amount_MetaData[];
+#endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Amount;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -164,7 +167,12 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_BP_DamageTaken_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventBP_DamageTaken_Parms, Amount), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_BP_DamageTaken_Statics::NewProp_Amount_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_BP_DamageTaken_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventBP_DamageTaken_Parms, Amount), METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_BP_DamageTaken_Statics::NewProp_Amount_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_BP_DamageTaken_Statics::NewProp_Amount_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterBase_BP_DamageTaken_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_BP_DamageTaken_Statics::NewProp_Amount,
 	};
@@ -207,6 +215,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	}
 	struct Z_Construct_UFunction_ACharacterBase_BP_HealthAdded_Statics
 	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Amount_MetaData[];
+#endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Amount;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -214,7 +225,12 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_BP_HealthAdded_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventBP_HealthAdded_Parms, Amount), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_BP_HealthAdded_Statics::NewProp_Amount_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_BP_HealthAdded_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventBP_HealthAdded_Parms, Amount), METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_BP_HealthAdded_Statics::NewProp_Amount_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_BP_HealthAdded_Statics::NewProp_Amount_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterBase_BP_HealthAdded_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_BP_HealthAdded_Statics::NewProp_Amount,
 	};
@@ -279,6 +295,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	}
 	struct Z_Construct_UFunction_ACharacterBase_BP_SkillUsed_Statics
 	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Skill_MetaData[];
+#endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Skill;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -286,7 +305,12 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ACharacterBase_BP_SkillUsed_Statics::NewProp_Skill = { "Skill", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventBP_SkillUsed_Parms, Skill), Z_Construct_UClass_USkillBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_BP_SkillUsed_Statics::NewProp_Skill_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ACharacterBase_BP_SkillUsed_Statics::NewProp_Skill = { "Skill", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventBP_SkillUsed_Parms, Skill), Z_Construct_UClass_USkillBase_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_BP_SkillUsed_Statics::NewProp_Skill_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_BP_SkillUsed_Statics::NewProp_Skill_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterBase_BP_SkillUsed_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_BP_SkillUsed_Statics::NewProp_Skill,
 	};
@@ -349,7 +373,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{ "ModuleRelativePath", "CharacterBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "GetCurrentSlot", nullptr, nullptr, sizeof(CharacterBase_eventGetCurrentSlot_Parms), Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "GetCurrentSlot", nullptr, nullptr, sizeof(CharacterBase_eventGetCurrentSlot_Parms), Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetCurrentSlot_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_ACharacterBase_GetCurrentSlot()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -382,7 +406,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{ "ModuleRelativePath", "CharacterBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "GetHealth", nullptr, nullptr, sizeof(CharacterBase_eventGetHealth_Parms), Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "GetHealth", nullptr, nullptr, sizeof(CharacterBase_eventGetHealth_Parms), Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetHealth_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_ACharacterBase_GetHealth()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -415,7 +439,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{ "ModuleRelativePath", "CharacterBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_GetSin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "GetSin", nullptr, nullptr, sizeof(CharacterBase_eventGetSin_Parms), Z_Construct_UFunction_ACharacterBase_GetSin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetSin_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_GetSin_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetSin_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_GetSin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "GetSin", nullptr, nullptr, sizeof(CharacterBase_eventGetSin_Parms), Z_Construct_UFunction_ACharacterBase_GetSin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetSin_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_GetSin_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetSin_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_ACharacterBase_GetSin()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -448,7 +472,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{ "ModuleRelativePath", "CharacterBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_GetStr_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "GetStr", nullptr, nullptr, sizeof(CharacterBase_eventGetStr_Parms), Z_Construct_UFunction_ACharacterBase_GetStr_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetStr_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_GetStr_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetStr_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_GetStr_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "GetStr", nullptr, nullptr, sizeof(CharacterBase_eventGetStr_Parms), Z_Construct_UFunction_ACharacterBase_GetStr_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetStr_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_GetStr_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_GetStr_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_ACharacterBase_GetStr()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -486,7 +510,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{ "ModuleRelativePath", "CharacterBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "IsAlive", nullptr, nullptr, sizeof(CharacterBase_eventIsAlive_Parms), Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "IsAlive", nullptr, nullptr, sizeof(CharacterBase_eventIsAlive_Parms), Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_IsAlive_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_ACharacterBase_IsAlive()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -534,6 +558,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{
 			int32 InHealth;
 		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_InHealth_MetaData[];
+#endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_InHealth;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -541,16 +568,21 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::NewProp_InHealth = { "InHealth", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSetHealth_Parms, InHealth), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::NewProp_InHealth_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::NewProp_InHealth = { "InHealth", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSetHealth_Parms, InHealth), METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::NewProp_InHealth_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::NewProp_InHealth_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::NewProp_InHealth,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Character Stats" },
-		{ "Comment", "//Character stats\n" },
+		{ "Comment", "////Character stats\n" },
 		{ "ModuleRelativePath", "CharacterBase.h" },
-		{ "ToolTip", "Character stats" },
+		{ "ToolTip", "/Character stats" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "SetHealth", nullptr, nullptr, sizeof(CharacterBase_eventSetHealth_Parms), Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_SetHealth_Statics::Function_MetaDataParams)) };
@@ -569,6 +601,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{
 			int32 InSin;
 		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_InSin_MetaData[];
+#endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_InSin;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -576,7 +611,12 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_SetSin_Statics::NewProp_InSin = { "InSin", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSetSin_Parms, InSin), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_SetSin_Statics::NewProp_InSin_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_SetSin_Statics::NewProp_InSin = { "InSin", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSetSin_Parms, InSin), METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_SetSin_Statics::NewProp_InSin_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_SetSin_Statics::NewProp_InSin_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterBase_SetSin_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_SetSin_Statics::NewProp_InSin,
 	};
@@ -602,6 +642,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		{
 			int32 InStr;
 		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_InStr_MetaData[];
+#endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_InStr;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -609,7 +652,12 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_SetStr_Statics::NewProp_InStr = { "InStr", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSetStr_Parms, InStr), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_SetStr_Statics::NewProp_InStr_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACharacterBase_SetStr_Statics::NewProp_InStr = { "InStr", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSetStr_Parms, InStr), METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_SetStr_Statics::NewProp_InStr_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_SetStr_Statics::NewProp_InStr_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterBase_SetStr_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACharacterBase_SetStr_Statics::NewProp_InStr,
 	};
@@ -636,6 +684,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 			ACharacterBase* InCharacter;
 			ESkillType InSkillType;
 		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_InSkillType_MetaData[];
+#endif
 		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_InSkillType;
 		static const UE4CodeGen_Private::FBytePropertyParams NewProp_InSkillType_Underlying;
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_InCharacter;
@@ -645,7 +696,12 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType = { "InSkillType", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSkillUsed_Parms, InSkillType), Z_Construct_UEnum_AutoBattlerProto_ESkillType, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType = { "InSkillType", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSkillUsed_Parms, InSkillType), Z_Construct_UEnum_AutoBattlerProto_ESkillType, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType_MetaData)) };
 	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InSkillType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::NewProp_InCharacter = { "InCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CharacterBase_eventSkillUsed_Parms, InCharacter), Z_Construct_UClass_ACharacterBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::PropPointers[] = {
@@ -655,7 +711,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//Called when someone uses skill\n" },
 		{ "ModuleRelativePath", "CharacterBase.h" },
+		{ "ToolTip", "Called when someone uses skill" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "SkillUsed", nullptr, nullptr, sizeof(CharacterBase_eventSkillUsed_Parms), Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_SkillUsed_Statics::Function_MetaDataParams)) };
@@ -677,7 +735,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_UpdateDataText_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//temp for stat visualization\n" },
 		{ "ModuleRelativePath", "CharacterBase.h" },
+		{ "ToolTip", "temp for stat visualization" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_UpdateDataText_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "UpdateDataText", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_UpdateDataText_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_UpdateDataText_Statics::Function_MetaDataParams)) };
@@ -723,15 +783,15 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_CharacterType;
 		static const UE4CodeGen_Private::FBytePropertyParams NewProp_CharacterType_Underlying;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AllPossiblePassiveSkills_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AllPossiblePassiveSkillClasses_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_AllPossiblePassiveSkills;
-		static const UE4CodeGen_Private::FClassPropertyParams NewProp_AllPossiblePassiveSkills_Inner;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_AllPossiblePassiveSkillClasses;
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_AllPossiblePassiveSkillClasses_Inner;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AllPossiblePrimarySkills_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AllPossiblePrimarySkillClasses_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_AllPossiblePrimarySkills;
-		static const UE4CodeGen_Private::FClassPropertyParams NewProp_AllPossiblePrimarySkills_Inner;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_AllPossiblePrimarySkillClasses;
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_AllPossiblePrimarySkillClasses_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PassiveSkill_MetaData[];
 #endif
@@ -763,24 +823,24 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACharacterBase_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ACharacterBase_AttackEnd, "AttackEnd" }, // 291479199
 		{ &Z_Construct_UFunction_ACharacterBase_BP_Attack, "BP_Attack" }, // 1744925933
-		{ &Z_Construct_UFunction_ACharacterBase_BP_DamageTaken, "BP_DamageTaken" }, // 3661282129
+		{ &Z_Construct_UFunction_ACharacterBase_BP_DamageTaken, "BP_DamageTaken" }, // 427409050
 		{ &Z_Construct_UFunction_ACharacterBase_BP_EndTurn, "BP_EndTurn" }, // 2222572367
-		{ &Z_Construct_UFunction_ACharacterBase_BP_HealthAdded, "BP_HealthAdded" }, // 4106576554
+		{ &Z_Construct_UFunction_ACharacterBase_BP_HealthAdded, "BP_HealthAdded" }, // 360489291
 		{ &Z_Construct_UFunction_ACharacterBase_BP_OnDeath, "BP_OnDeath" }, // 2471537982
 		{ &Z_Construct_UFunction_ACharacterBase_BP_SetActiveDecal, "BP_SetActiveDecal" }, // 242433733
-		{ &Z_Construct_UFunction_ACharacterBase_BP_SkillUsed, "BP_SkillUsed" }, // 1280798229
+		{ &Z_Construct_UFunction_ACharacterBase_BP_SkillUsed, "BP_SkillUsed" }, // 2840183148
 		{ &Z_Construct_UFunction_ACharacterBase_BP_StartTurn, "BP_StartTurn" }, // 3808521065
-		{ &Z_Construct_UFunction_ACharacterBase_GetCurrentSlot, "GetCurrentSlot" }, // 3035988158
-		{ &Z_Construct_UFunction_ACharacterBase_GetHealth, "GetHealth" }, // 2043117003
-		{ &Z_Construct_UFunction_ACharacterBase_GetSin, "GetSin" }, // 370967656
-		{ &Z_Construct_UFunction_ACharacterBase_GetStr, "GetStr" }, // 2784741531
-		{ &Z_Construct_UFunction_ACharacterBase_IsAlive, "IsAlive" }, // 3184000292
+		{ &Z_Construct_UFunction_ACharacterBase_GetCurrentSlot, "GetCurrentSlot" }, // 810369746
+		{ &Z_Construct_UFunction_ACharacterBase_GetHealth, "GetHealth" }, // 2549758804
+		{ &Z_Construct_UFunction_ACharacterBase_GetSin, "GetSin" }, // 1643011939
+		{ &Z_Construct_UFunction_ACharacterBase_GetStr, "GetStr" }, // 3875496130
+		{ &Z_Construct_UFunction_ACharacterBase_IsAlive, "IsAlive" }, // 1590769469
 		{ &Z_Construct_UFunction_ACharacterBase_SetCurrentSlot, "SetCurrentSlot" }, // 2385160876
-		{ &Z_Construct_UFunction_ACharacterBase_SetHealth, "SetHealth" }, // 1077400990
-		{ &Z_Construct_UFunction_ACharacterBase_SetSin, "SetSin" }, // 2997029297
-		{ &Z_Construct_UFunction_ACharacterBase_SetStr, "SetStr" }, // 2149573101
-		{ &Z_Construct_UFunction_ACharacterBase_SkillUsed, "SkillUsed" }, // 754660180
-		{ &Z_Construct_UFunction_ACharacterBase_UpdateDataText, "UpdateDataText" }, // 2492805129
+		{ &Z_Construct_UFunction_ACharacterBase_SetHealth, "SetHealth" }, // 656634837
+		{ &Z_Construct_UFunction_ACharacterBase_SetSin, "SetSin" }, // 1258492990
+		{ &Z_Construct_UFunction_ACharacterBase_SetStr, "SetStr" }, // 2358927858
+		{ &Z_Construct_UFunction_ACharacterBase_SkillUsed, "SkillUsed" }, // 2828678829
+		{ &Z_Construct_UFunction_ACharacterBase_UpdateDataText, "UpdateDataText" }, // 3660602916
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::Class_MetaDataParams[] = {
@@ -822,27 +882,29 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_CharacterType_MetaData[] = {
 		{ "Category", "Character Stats" },
+		{ "Comment", "//Is player or enemy\n" },
 		{ "ModuleRelativePath", "CharacterBase.h" },
+		{ "ToolTip", "Is player or enemy" },
 	};
 #endif
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_CharacterType = { "CharacterType", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, CharacterType), Z_Construct_UEnum_AutoBattlerProto_ETurnEnum, METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_CharacterType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_CharacterType_MetaData)) };
 	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_CharacterType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkills_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkillClasses_MetaData[] = {
 		{ "Category", "CharacterBase" },
 		{ "ModuleRelativePath", "CharacterBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkills = { "AllPossiblePassiveSkills", nullptr, (EPropertyFlags)0x0044000000010001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, AllPossiblePassiveSkills), METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkills_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkills_MetaData)) };
-	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkills_Inner = { "AllPossiblePassiveSkills", nullptr, (EPropertyFlags)0x0004000000000000, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USkillBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkillClasses = { "AllPossiblePassiveSkillClasses", nullptr, (EPropertyFlags)0x0044000000010001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, AllPossiblePassiveSkillClasses), METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkillClasses_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkillClasses_MetaData)) };
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkillClasses_Inner = { "AllPossiblePassiveSkillClasses", nullptr, (EPropertyFlags)0x0004000000000000, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USkillBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkills_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkillClasses_MetaData[] = {
 		{ "Category", "CharacterBase" },
 		{ "ModuleRelativePath", "CharacterBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkills = { "AllPossiblePrimarySkills", nullptr, (EPropertyFlags)0x0044000000010001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, AllPossiblePrimarySkills), METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkills_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkills_MetaData)) };
-	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkills_Inner = { "AllPossiblePrimarySkills", nullptr, (EPropertyFlags)0x0004000000000000, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USkillBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkillClasses = { "AllPossiblePrimarySkillClasses", nullptr, (EPropertyFlags)0x0044000000010001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, AllPossiblePrimarySkillClasses), METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkillClasses_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkillClasses_MetaData)) };
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkillClasses_Inner = { "AllPossiblePrimarySkillClasses", nullptr, (EPropertyFlags)0x0004000000000000, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USkillBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_PassiveSkill_MetaData[] = {
 		{ "Category", "CharacterBase" },
@@ -882,10 +944,10 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_CurrentSlot,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_CharacterType,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_CharacterType_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkills,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkills_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkills,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkills_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkillClasses,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePassiveSkillClasses_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkillClasses,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_AllPossiblePrimarySkillClasses_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_PassiveSkill,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_PrimarySkill,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_Str,
@@ -919,7 +981,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterBase, 3162760123);
+	IMPLEMENT_CLASS(ACharacterBase, 2880960229);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<ACharacterBase>()
 	{
 		return ACharacterBase::StaticClass();

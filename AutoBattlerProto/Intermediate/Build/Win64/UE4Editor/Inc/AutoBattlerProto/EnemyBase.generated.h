@@ -59,7 +59,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEnemyBase); \
 
 
 #define AutoBattlerProto_Source_EnemyBase_h_10_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__EnemyCountText() { return STRUCT_OFFSET(AEnemyBase, EnemyCountText); }
+	FORCEINLINE static uint32 __PPO__EnemyCountText() { return STRUCT_OFFSET(AEnemyBase, EnemyCountText); } \
+	FORCEINLINE static uint32 __PPO__EnemyCount() { return STRUCT_OFFSET(AEnemyBase, EnemyCount); }
 
 
 #define AutoBattlerProto_Source_EnemyBase_h_7_PROLOG

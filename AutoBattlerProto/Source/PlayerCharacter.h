@@ -11,14 +11,11 @@ class AUTOBATTLERPROTO_API APlayerCharacter : public ACharacterBase
 {
 	GENERATED_BODY()
 
-private:
-
-	UPROPERTY(VisibleAnywhere)
-	class UTextRenderComponent* SoulStatusText;
-
 protected:
+	virtual void OnDeath() override;
 
-	virtual void SkillUsed(ACharacterBase* InCharacter, ESkillType InSkillType) override;
+	//Called when someone uses skill
+	virtual void SkillUsed(ACharacterBase* InCharacter, const ESkillType InSkillType) override;
 
 public:
 	APlayerCharacter();
@@ -29,5 +26,7 @@ public:
 	virtual void ActivatePrimarySkill() override;
 	virtual void ActivatePassiveSkill() override;
 	virtual void Attack() override;
+
+	//temp stat visualization
 	virtual void UpdateDataText() override;
 };

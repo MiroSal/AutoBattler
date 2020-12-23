@@ -10,7 +10,6 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ACharacterBase;
 enum class EAffectRange : uint8;
-enum class ESkillType : uint8;
 #ifdef AUTOBATTLERPROTO_SkillBase_generated_h
 #error "SkillBase.generated.h already included, missing '#pragma once' in SkillBase.h"
 #endif
@@ -51,14 +50,11 @@ enum class ESkillType : uint8;
 		P_NATIVE_END; \
 	} \
  \
-	DECLARE_FUNCTION(execInitSkills) \
+	DECLARE_FUNCTION(execDeactivateSkill) \
 	{ \
-		P_GET_PROPERTY(UStrProperty,Z_Param_SkillInfoText); \
-		P_GET_OBJECT(ACharacterBase,Z_Param_Character); \
-		P_GET_ENUM(ESkillType,Z_Param_SkillTypeEnum); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->InitSkills(Z_Param_SkillInfoText,Z_Param_Character,ESkillType(Z_Param_SkillTypeEnum)); \
+		P_THIS->DeactivateSkill(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -67,14 +63,6 @@ enum class ESkillType : uint8;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->Activate(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execDeactivateSkill) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->DeactivateSkill(); \
 		P_NATIVE_END; \
 	}
 
@@ -113,14 +101,11 @@ enum class ESkillType : uint8;
 		P_NATIVE_END; \
 	} \
  \
-	DECLARE_FUNCTION(execInitSkills) \
+	DECLARE_FUNCTION(execDeactivateSkill) \
 	{ \
-		P_GET_PROPERTY(UStrProperty,Z_Param_SkillInfoText); \
-		P_GET_OBJECT(ACharacterBase,Z_Param_Character); \
-		P_GET_ENUM(ESkillType,Z_Param_SkillTypeEnum); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->InitSkills(Z_Param_SkillInfoText,Z_Param_Character,ESkillType(Z_Param_SkillTypeEnum)); \
+		P_THIS->DeactivateSkill(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -129,14 +114,6 @@ enum class ESkillType : uint8;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->Activate(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execDeactivateSkill) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->DeactivateSkill(); \
 		P_NATIVE_END; \
 	}
 

@@ -87,9 +87,9 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_CharacterDataWidgetClass;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Count_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FullCount_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Count;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_FullCount;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -149,18 +149,18 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterDataWidgetClass = { "CharacterDataWidgetClass", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, CharacterDataWidgetClass), Z_Construct_UClass_UCharacterDataWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterDataWidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterDataWidgetClass_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_Count_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_FullCount_MetaData[] = {
 		{ "ModuleRelativePath", "Widgets/TrialHUDWidget.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_Count = { "Count", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, Count), METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_Count_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_Count_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_FullCount = { "FullCount", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UTrialHUDWidget, FullCount), METADATA_PARAMS(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_FullCount_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_FullCount_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UTrialHUDWidget_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterWrapBox,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CountText,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_StartButton,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_DropVerticalBox,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_CharacterDataWidgetClass,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_Count,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTrialHUDWidget_Statics::NewProp_FullCount,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UTrialHUDWidget_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UTrialHUDWidget>::IsAbstract,
@@ -189,7 +189,7 @@ void EmptyLinkFunctionForGeneratedCodeTrialHUDWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTrialHUDWidget, 3264633300);
+	IMPLEMENT_CLASS(UTrialHUDWidget, 1609249797);
 	template<> AUTOBATTLERPROTO_API UClass* StaticClass<UTrialHUDWidget>()
 	{
 		return UTrialHUDWidget::StaticClass();

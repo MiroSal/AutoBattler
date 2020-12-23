@@ -79,7 +79,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTrialHUDWidget); \
 
 
 #define AutoBattlerProto_Source_Widgets_TrialHUDWidget_h_22_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__Count() { return STRUCT_OFFSET(UTrialHUDWidget, Count); } \
+	FORCEINLINE static uint32 __PPO__FullCount() { return STRUCT_OFFSET(UTrialHUDWidget, FullCount); } \
 	FORCEINLINE static uint32 __PPO__CharacterDataWidgetClass() { return STRUCT_OFFSET(UTrialHUDWidget, CharacterDataWidgetClass); } \
 	FORCEINLINE static uint32 __PPO__DropVerticalBox() { return STRUCT_OFFSET(UTrialHUDWidget, DropVerticalBox); } \
 	FORCEINLINE static uint32 __PPO__StartButton() { return STRUCT_OFFSET(UTrialHUDWidget, StartButton); } \

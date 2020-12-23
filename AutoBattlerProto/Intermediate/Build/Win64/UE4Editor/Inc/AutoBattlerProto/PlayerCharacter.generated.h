@@ -58,10 +58,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APlayerCharacter)
 
 
-#define AutoBattlerProto_Source_PlayerCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__SoulStatusText() { return STRUCT_OFFSET(APlayerCharacter, SoulStatusText); }
-
-
+#define AutoBattlerProto_Source_PlayerCharacter_h_12_PRIVATE_PROPERTY_OFFSET
 #define AutoBattlerProto_Source_PlayerCharacter_h_9_PROLOG
 #define AutoBattlerProto_Source_PlayerCharacter_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

@@ -10,6 +10,9 @@
 #include "SlotBase.h"
 #include "SkillBase.h"
 
+#define MAX_STATVALUE 10
+#define MIN_STATVALUE 0
+
 ACharacterBase::ACharacterBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -32,11 +35,11 @@ ACharacterBase::ACharacterBase()
 		StatsText->SetupAttachment(RootComponent);
 	}
 
-	 PrimarySkill = nullptr;
+	PrimarySkill = nullptr;
 	PassiveSkill = nullptr;
 
-	AllPossiblePrimarySkills = TArray<TSubclassOf<USkillBase>>();
-	AllPossiblePassiveSkills = TArray<TSubclassOf<USkillBase>>();
+	AllPossiblePrimarySkillClasses = TArray<TSubclassOf<USkillBase>>();
+	AllPossiblePassiveSkillClasses = TArray<TSubclassOf<USkillBase>>();
 
 	Health = 0;
 	Sin = 0;
@@ -57,6 +60,7 @@ void ACharacterBase::Initialize(ASlotBase * Slot, FCharacterAttributes InAttribu
 		PrimarySkill = NewObject<USkillBase>(this, InAttributes.PrimarySkill);
 	}
 
+	//temp for stat visualization
 	if (IsValid(GetPassiveSkill()) && IsValid(GetPrimarySkill()) && IsValid(StatsText))
 	{
 		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), GetHealth(), GetSin(), GetStr(), *GetPrimarySkill()->GetSkillInfo(), *GetPassiveSkill()->GetSkillInfo());
@@ -64,6 +68,7 @@ void ACharacterBase::Initialize(ASlotBase * Slot, FCharacterAttributes InAttribu
 	}
 }
 
+//Change turn after attack
 void ACharacterBase::AttackEnd()
 {
 	check(IsValid(GetWorld()));
@@ -76,35 +81,59 @@ void ACharacterBase::AttackEnd()
 	CombatManager->ChangeTurn();
 }
 
-void ACharacterBase::SetStr(int32 InStr)
+void ACharacterBase::SetStr(const int32 InStr)
 {
-	if (GetStr() >= 0 && GetStr() <= 10 && Health > 0)
+	if (GetStr() >= MIN_STATVALUE && GetStr() <= MAX_STATVALUE && Health > MIN_STATVALUE)
 	{
-		Str = FMath::Clamp(GetStr() - InStr, 0, 10);
+		Str = FMath::Clamp(GetStr() + InStr, MIN_STATVALUE, MAX_STATVALUE);
 	}
+
+	UpdateDataText();
 }
 
-void ACharacterBase::SetSin(int32 InSin)
+void ACharacterBase::SetSin(const int32 InSin)
 {
-	if (GetSin() >= 0 && GetSin() <= 10 && Health > 0)
+	if (GetSin() >= MIN_STATVALUE && GetSin() <= MAX_STATVALUE && Health > MIN_STATVALUE)
 	{
-		Sin = FMath::Clamp(GetSin() - InSin, 0, 10);
+		Sin = FMath::Clamp(GetSin() + InSin, MIN_STATVALUE, MAX_STATVALUE);
 	}
+
+	UpdateDataText();
 }
 
-void ACharacterBase::SetHealth(int32 InHealth)
+void ACharacterBase::SetHealth(const int32 InHealth)
 {
-	if (GetHealth() > 0 && GetHealth() < 10)
+	if (GetHealth() > MIN_STATVALUE && GetHealth() <= MAX_STATVALUE)
 	{
-		Health = FMath::Clamp(GetHealth() + InHealth, 0, 10);
+		Health = FMath::Clamp(GetHealth() + InHealth, MIN_STATVALUE, MAX_STATVALUE);
+		if (InHealth <= MIN_STATVALUE)
+		{
+			BP_DamageTaken(InHealth);
+		}
+
+		if (!IsAlive())
+		{
+			OnDeath();
+		}
+
+		UpdateDataText();
 	}
 }
 
 bool ACharacterBase::IsAlive()
 {
-	if (GetHealth() > 0)
+	if (GetHealth() > MIN_STATVALUE)
 	{
 		return true;
 	}
 	return false;
+}
+
+void ACharacterBase::OnDeath()
+{
+	BP_OnDeath();
+	if (IsValid(CurrentSlot))
+	{
+		CurrentSlot->CharacterIsDead();
+	}
 }

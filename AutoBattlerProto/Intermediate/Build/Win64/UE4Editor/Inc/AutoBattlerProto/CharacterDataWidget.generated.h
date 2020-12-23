@@ -61,13 +61,14 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCharacterDataWidget); \
 
 
 #define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_16_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__Attributes() { return STRUCT_OFFSET(UCharacterDataWidget, Attributes); } \
 	FORCEINLINE static uint32 __PPO__StatusText() { return STRUCT_OFFSET(UCharacterDataWidget, StatusText); } \
 	FORCEINLINE static uint32 __PPO__PassiveText() { return STRUCT_OFFSET(UCharacterDataWidget, PassiveText); } \
 	FORCEINLINE static uint32 __PPO__PrimaryText() { return STRUCT_OFFSET(UCharacterDataWidget, PrimaryText); } \
 	FORCEINLINE static uint32 __PPO__HealthText() { return STRUCT_OFFSET(UCharacterDataWidget, HealthText); } \
 	FORCEINLINE static uint32 __PPO__SinText() { return STRUCT_OFFSET(UCharacterDataWidget, SinText); } \
 	FORCEINLINE static uint32 __PPO__StrText() { return STRUCT_OFFSET(UCharacterDataWidget, StrText); } \
-	FORCEINLINE static uint32 __PPO__DragWidget() { return STRUCT_OFFSET(UCharacterDataWidget, DragWidget); }
+	FORCEINLINE static uint32 __PPO__DragWidgetClass() { return STRUCT_OFFSET(UCharacterDataWidget, DragWidgetClass); }
 
 
 #define AutoBattlerProto_Source_Widgets_CharacterDataWidget_h_13_PROLOG

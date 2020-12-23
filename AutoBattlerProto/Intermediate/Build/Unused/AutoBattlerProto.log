@@ -1,4 +1,16 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (E:\Lautturi).
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Binaries\Win64\UE4Editor-AutoBattlerProto-0001.dll
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Binaries\Win64\UE4Editor-AutoBattlerProto-0002.dll
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Binaries\Win64\UE4Editor-AutoBattlerProto-0003.dll
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Binaries\Win64\UE4Editor-AutoBattlerProto-0005.dll
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Binaries\Win64\UE4Editor-AutoBattlerProto-0006.dll
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Binaries\Win64\UE4Editor-AutoBattlerProto-0010.dll
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0001.lib
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0002.lib
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0003.lib
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0005.lib
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0006.lib
+  Deleted hot-reload file: E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto-0010.lib
   Building AutoBattlerProtoEditor...
   Using Visual Studio 2017 14.16.27035 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.16299.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -8,12 +20,11 @@
   [Upgrade]     PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs   => Set in build.cs files to enables IWYU-style PCH model. See https://docs.unrealengine.com/en-US/Programming/BuildTools/UnrealBuildTool/IWYU/index.html. (Previously: PCHUsageMode.UseSharedPCHs).
   [Upgrade] Suppress this message by setting 'DefaultBuildSettings = BuildSettingsVersion.V2;' in AutoBattlerProtoEditor.Target.cs, and explicitly overriding settings that differ from the new defaults.
   [Upgrade]
-  Building 4 actions with 24 processes...
-    [1/4] SoulTrialManager.cpp
-    [2/4] UE4Editor-AutoBattlerProto.lib
+  Building 3 actions with 24 processes...
+    [1/3] UE4Editor-AutoBattlerProto.lib
        Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.exp
-    [3/4] UE4Editor-AutoBattlerProto.dll
+    [2/3] UE4Editor-AutoBattlerProto.dll
        Creating library E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.lib and object E:\Lautturi\AutoBattlerProto\Intermediate\Build\Win64\UE4Editor\Development\AutoBattlerProto\UE4Editor-AutoBattlerProto.suppressed.exp
-    [4/4] AutoBattlerProtoEditor.target
-  Total time in Parallel executor: 4,11 seconds
-  Total execution time: 4,58 seconds
+    [3/3] AutoBattlerProtoEditor.target
+  Total time in Parallel executor: 1,19 seconds
+  Total execution time: 1,65 seconds

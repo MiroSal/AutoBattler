@@ -99,7 +99,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCombatManager); \
 	FORCEINLINE static uint32 __PPO__CombatPlayerListeners() { return STRUCT_OFFSET(UCombatManager, CombatPlayerListeners); } \
 	FORCEINLINE static uint32 __PPO__CombatEnemyListeners() { return STRUCT_OFFSET(UCombatManager, CombatEnemyListeners); } \
 	FORCEINLINE static uint32 __PPO__ActionQueue() { return STRUCT_OFFSET(UCombatManager, ActionQueue); } \
-	FORCEINLINE static uint32 __PPO__CharacterIndex() { return STRUCT_OFFSET(UCombatManager, CharacterIndex); } \
+	FORCEINLINE static uint32 __PPO__PlayerIndex() { return STRUCT_OFFSET(UCombatManager, PlayerIndex); } \
 	FORCEINLINE static uint32 __PPO__EnemyIndex() { return STRUCT_OFFSET(UCombatManager, EnemyIndex); } \
 	FORCEINLINE static uint32 __PPO__ActiveCharacter() { return STRUCT_OFFSET(UCombatManager, ActiveCharacter); } \
 	FORCEINLINE static uint32 __PPO__CurrentCombatTurn() { return STRUCT_OFFSET(UCombatManager, CurrentCombatTurn); } \

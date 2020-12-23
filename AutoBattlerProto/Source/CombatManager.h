@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright © 2020 by Miro Salminen
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
@@ -27,27 +27,34 @@ private:
 	UPROPERTY()
 	TArray<ACharacterBase*> CombatEnemyListeners;
 
+	//Skill in queue
 	UPROPERTY()
 	TArray<ACharacterBase*> ActionQueue;
 
+	//Keeps track whose player's turn
 	UPROPERTY()
-	int32 CharacterIndex;
+	int32 PlayerIndex;
 
+	//Keeps track whose enemy's turn
 	UPROPERTY()
 	int32 EnemyIndex;
 
+	//Active at current turn
 	UPROPERTY()
 	class ACharacterBase* ActiveCharacter;
 
+	//is it player or enemy turn
 	UPROPERTY(VisibleAnywhere)
 	ETurnEnum CurrentCombatTurn;
 
 	UPROPERTY()
-	bool bIsFirstTurn = true;
+	bool bIsFirstTurn;
 
+	//Temp for stat visualization
 	UPROPERTY()
 	int32 TotalEnemyCount;
 
+	//Temp for stat visualization
 	UPROPERTY()
 	int32 CurrentEnemyCount;
 
@@ -72,13 +79,16 @@ public:
 	UPROPERTY()
 	FSkillUsedDelegate SkillUsedDelegate;
 
-	//Getter&&Setters
+//Getter&&Setters
 public:
 
 	FORCEINLINE TArray<ACharacterBase*> GetCombatEnemyListeners() { return CombatEnemyListeners; };
 	FORCEINLINE TArray<ACharacterBase*> GetCombatPlayerListeners() { return CombatPlayerListeners; };
-	FORCEINLINE void RegisterCombatListener(ACharacterBase* Character);
+
+	//adds or remove player to listen combatManagers orders
+	FORCEINLINE void RegisterToCombatListener(ACharacterBase* Character);
 	FORCEINLINE void UnRegisterCombatListener(ACharacterBase* Character);
+
 	FORCEINLINE void AddSkillActionToQueue(ACharacterBase* Character);
 	FORCEINLINE int32 GetCurrentEnemyCount() { return CurrentEnemyCount; };
 	FORCEINLINE int32 GetTotalEnemyCount() { return TotalEnemyCount; };
