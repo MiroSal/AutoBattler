@@ -3,9 +3,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SkillTypeEnums.h"
-#include "CombatManager.h"
 #include "SkillBase.h"
-#include "SoulTrialManager.h"
 #include "CharacterBase.generated.h"
 
 UCLASS()
@@ -40,7 +38,7 @@ private:
 public:
 	ACharacterBase();
 
-	virtual void Initialize(class ASlotBase* Slot, FCharacterAttributes InAttributes);
+	virtual void Initialize(class ASlotBase* Slot, struct FCharacterAttributes InAttributes);
 
 //DefaultSubObjects
 protected:
@@ -52,6 +50,15 @@ protected:
 
 	UPROPERTY(VisibleAnywhere)
 	class UTextRenderComponent* StatsText;
+
+	UPROPERTY()
+	class UAutoBattlerProtoGameInstance* GameInstance;
+
+	UPROPERTY()
+	class USoulTrialManager* TrialManager;
+
+	UPROPERTY()
+	class UCombatManager* CombatManager;
 
 protected:
 	virtual void OnDeath();
@@ -76,7 +83,7 @@ public:
 	void BP_Attack();
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void BP_SkillUsed(const class USkillBase * Skill);
+	float BP_SkillUsed(const class USkillBase * Skill);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_SetActiveDecal();

@@ -7,14 +7,6 @@
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSkillUsedDelegate, ACharacterBase*, Character, ESkillType , SkillType);
 
-UENUM()
-enum class ETurnEnum :uint8
-{
-	TE_Player UMETA(DisplayName = "Player"),
-	TE_Enemy UMETA(DisplayName = "Enemy"),
-	TE_None UMETA(DisplayName = "None")
-};
-
 UCLASS()
 class AUTOBATTLERPROTO_API UCombatManager : public UObject
 {

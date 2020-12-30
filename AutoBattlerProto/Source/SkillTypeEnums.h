@@ -2,6 +2,23 @@
 #pragma once
 #include "CoreMinimal.h"
 
+UENUM()
+enum class ETurnEnum :uint8
+{
+	TE_Player UMETA(DisplayName = "Player"),
+	TE_Enemy UMETA(DisplayName = "Enemy"),
+	TE_None UMETA(DisplayName = "None")
+};
+
+UENUM()
+enum class ETrialStatus :uint8
+{
+	TS_HasCoin UMETA(DisplayName = "Coin"),
+	TS_NoCoin UMETA(DisplayName = "No Coin"),
+	TS_Alive UMETA(DisplayName = "Alive"),
+	TS_None UMETA(DisplayName = "None")
+};
+
 UENUM(BlueprintType)
 enum class ESkillType :uint8
 {

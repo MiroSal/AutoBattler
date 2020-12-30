@@ -2,16 +2,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "SkillTypeEnums.h"
 #include "SoulTrialManager.generated.h"
-
-UENUM()
-enum class ETrialStatus :uint8
-{
-	TS_HasCoin UMETA(DisplayName = "Coin"),
-	TS_NoCoin UMETA(DisplayName = "No Coin"),
-	TS_Alive UMETA(DisplayName = "Alive"),
-	TS_None UMETA(DisplayName = "None")
-};
 
 USTRUCT()
 struct FCharacterAttributes

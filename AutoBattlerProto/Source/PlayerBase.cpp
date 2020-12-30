@@ -20,17 +20,12 @@ void APlayerBase::Initialize(ASlotBase* Slot, FCharacterAttributes InAttributes)
 {
 	Super::Initialize(Slot, InAttributes);
 
-	check(IsValid(GetWorld()));
-
-	UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
-	check(IsValid(GameInstance));
-
-	UCombatManager* combatManager = GameInstance->GetCombatManager();
-	check(IsValid(combatManager));
-
 	SetCurrentSlot(Slot);
-	combatManager->RegisterToCombatListener(this);
-	combatManager->SkillUsedDelegate.AddDynamic(this, &APlayerBase::SkillUsed);
+	if (ensure(IsValid(CombatManager)))
+	{
+		CombatManager->RegisterToCombatListener(this);
+		CombatManager->SkillUsedDelegate.AddDynamic(this, &APlayerBase::SkillUsed);
+	}
 
 	UpdateDataText();
 }
@@ -42,14 +37,8 @@ void APlayerBase::SkillUsed(ACharacterBase* InCharacter, const ESkillType InSkil
 	{
 		if (InSkillType == GetPassiveSkillType())
 		{
-			check(IsValid(GetWorld()));
-			UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
-			check(IsValid(GameInstance));
-
-			UCombatManager* CombatManager = GameInstance->GetCombatManager();
-			check(IsValid(CombatManager));
-
-			CombatManager->AddSkillActionToQueue(InCharacter);
+			if (ensure(IsValid(CombatManager)))
+				CombatManager->AddSkillActionToQueue(InCharacter);
 		}
 	}
 }
@@ -60,8 +49,8 @@ void APlayerBase::ActivatePrimarySkill()
 	{
 		if (GetHealth() > 0)
 		{
-			GetPrimarySkill()->BP_ActivateSkill();
-			BP_SkillUsed(GetPrimarySkill());
+			float Delay = BP_SkillUsed(GetPrimarySkill());
+			GetPrimarySkill()->Activate(Delay);
 		}
 		else
 		{
@@ -76,8 +65,8 @@ void APlayerBase::ActivatePassiveSkill()
 	{
 		if (GetHealth() > 0)
 		{
-			GetPassiveSkill()->BP_ActivateSkill();
-			BP_SkillUsed(GetPassiveSkill());
+			float Delay = BP_SkillUsed(GetPassiveSkill());
+			GetPassiveSkill()->Activate(Delay);
 		}
 		else
 		{
@@ -88,26 +77,21 @@ void APlayerBase::ActivatePassiveSkill()
 
 void APlayerBase::Attack()
 {
-	check(IsValid(GetWorld()));
-
-	UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
-	check(IsValid(GameInstance));
-
-	UCombatManager* CombatManager = GameInstance->GetCombatManager();
-	check(IsValid(CombatManager));
-
-	BP_Attack();
-	TArray<ACharacterBase*> Enemies = CombatManager->GetCombatEnemyListeners();
-	if (Enemies.Num() > 0)
+	if (ensure(IsValid(CombatManager)))
 	{
-		ACharacterBase* Enemy = Enemies[FMath::RandRange(0, Enemies.Num() - 1)];
-		if (IsValid(Enemy))
+		BP_Attack();
+		TArray<ACharacterBase*> Enemies = CombatManager->GetCombatEnemyListeners();
+		if (Enemies.Num() > 0)
 		{
-			Enemy->AdjustHealth(-GetStr());
-		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Attacked Non Valid enemy"));
+			ACharacterBase* Enemy = Enemies[FMath::RandRange(0, Enemies.Num() - 1)];
+			if (IsValid(Enemy))
+			{
+				Enemy->AdjustHealth(-GetStr());
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Attacked Non Valid enemy"));
+			}
 		}
 	}
 }
@@ -125,15 +109,10 @@ void APlayerBase::UpdateDataText()
 
 void APlayerBase::OnDeath()
 {
-	check(IsValid(GetWorld()));
-
-	UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
-	check(IsValid(GameInstance));
-
-	UCombatManager* combatManager = GameInstance->GetCombatManager();
-	check(IsValid(combatManager));
-
-	combatManager->UnRegisterCombatListener(this);
-	combatManager->SkillUsedDelegate.RemoveDynamic(this, &APlayerBase::SkillUsed);
+	if (ensure(IsValid(CombatManager)))
+	{
+		CombatManager->UnRegisterCombatListener(this);
+		CombatManager->SkillUsedDelegate.RemoveDynamic(this, &APlayerBase::SkillUsed);
+	}
 	Super::OnDeath();
 }

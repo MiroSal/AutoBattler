@@ -9,6 +9,10 @@
 #include "AutoBattlerProtoGameModeBase.h"
 #include "SlotBase.h"
 #include "SkillBase.h"
+#include "AutoBattlerProtoGameModeBase.h"
+#include "AutoBattlerProtoGameInstance.h"
+#include "SoulTrialManager.h"
+#include "CombatManager.h"
 
 #define MAX_STATVALUE 10
 #define MIN_STATVALUE 0
@@ -37,6 +41,9 @@ ACharacterBase::ACharacterBase()
 
 	PrimarySkill = nullptr;
 	PassiveSkill = nullptr;
+	GameInstance = nullptr;
+	TrialManager = nullptr;
+	CombatManager = nullptr;
 
 	Health = 0;
 	Sin = 0;
@@ -45,16 +52,29 @@ ACharacterBase::ACharacterBase()
 
 void ACharacterBase::Initialize(ASlotBase * Slot, FCharacterAttributes InAttributes)
 {
+	check(IsValid(GetWorld()));
+
+	GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
+	check(IsValid(GameInstance));
+
+	TrialManager = GameInstance->GetSoulTrialManager();
+	check(IsValid(TrialManager));
+
+	CombatManager = GameInstance->GetCombatManager();
+	check(IsValid(CombatManager));
+
 	Health = InAttributes.Health;
 	Sin = InAttributes.Sin;
 	Str = InAttributes.Str;
 	if (InAttributes.PassiveSkill != nullptr)
 	{
 		PassiveSkill = NewObject<USkillBase>(this, InAttributes.PassiveSkill);
+		PassiveSkill->Initialize(this);
 	}
 	if (InAttributes.PrimarySkill != nullptr)
 	{
 		PrimarySkill = NewObject<USkillBase>(this, InAttributes.PrimarySkill);
+		PrimarySkill->Initialize(this);
 	}
 
 	//temp for stat visualization
@@ -68,14 +88,8 @@ void ACharacterBase::Initialize(ASlotBase * Slot, FCharacterAttributes InAttribu
 //Change turn after attack
 void ACharacterBase::AttackEnd()
 {
-	check(IsValid(GetWorld()));
-	UAutoBattlerProtoGameInstance* GameInstance = Cast<UAutoBattlerProtoGameInstance>(GetWorld()->GetGameInstance());
-	check(IsValid(GameInstance));
-
-	UCombatManager* CombatManager = GameInstance->GetCombatManager();
-	check(IsValid(CombatManager));
-
-	CombatManager->ChangeTurn();
+	if (ensure(IsValid(CombatManager)))
+		CombatManager->ChangeTurn();
 }
 
 void ACharacterBase::AdjustStr(const int32 InStr, bool bSetToValue)
