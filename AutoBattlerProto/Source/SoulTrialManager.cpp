@@ -12,7 +12,7 @@
 USoulTrialManager::USoulTrialManager()
 {
 	SelectedCharacterAttributes = TArray<FCharacterAttributes>();
-	ConstructorHelpers::FClassFinder<UUserWidget> TrialHUDBPClass(TEXT("/Game/TestingContent/Widgets/WBP_TrialHUD"));
+	ConstructorHelpers::FClassFinder<UUserWidget> TrialHUDBPClass(TEXT("/Game/Content/Widgets/WBP_TrialHUD"));
 	if (!ensure(TrialHUDBPClass.Class != nullptr)) return;
 	TrialHUDWidgetClass = TrialHUDBPClass.Class;
 }

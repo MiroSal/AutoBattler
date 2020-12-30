@@ -122,13 +122,13 @@ public:
 
 ////Character stats
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-	void SetHealth(const int32 InHealth);
+	void AdjustHealth(const int32 InHealth, bool bSetToValue = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-	void SetSin(const int32 InSin);
+	void AdjustSin(const int32 InSin, bool bSetToValue = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Character Stats")
-	void SetStr(const int32 InStr);
+	void AdjustStr(const int32 InStr, bool bSetToValue = false);
 
 	UFUNCTION(BlueprintPure, Category = "Character Stats")
 	int32 GetHealth() {return Health;};

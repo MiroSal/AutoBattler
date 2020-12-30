@@ -103,12 +103,12 @@ private:
 //Getters&&Setters
 public:
 	/**Returns Character Attributes that was selected in SoulTrial UI*/
-	FORCEINLINE FCharacterAttributes GetSelectedCharacterAttributes();
+	FCharacterAttributes GetSelectedCharacterAttributes();
+
+	FCharacterAttributes GetRandomizedCharacterAttributes();
 
 	/** Add Selected Character attributes that is used in combat */
 	FORCEINLINE void AddSelectedCharacterAttributes(const FCharacterAttributes CharacterAttributes) { SelectedCharacterAttributes.Add(CharacterAttributes); };
-
-	FCharacterAttributes GetRandomizedCharacterAttributes();
 
 	FORCEINLINE class UTrialHUDWidget* GetTrialHUDWidget() { return TrialHUDWidget; };
 

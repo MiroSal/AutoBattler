@@ -103,7 +103,7 @@ void APlayerCharacter::Attack()
 		ACharacterBase* Enemy = Enemies[FMath::RandRange(0, Enemies.Num() - 1)];
 		if (IsValid(Enemy))
 		{
-			Enemy->SetHealth(-GetStr());
+			Enemy->AdjustHealth(-GetStr());
 		}
 		else
 		{

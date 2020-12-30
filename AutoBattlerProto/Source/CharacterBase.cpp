@@ -81,9 +81,14 @@ void ACharacterBase::AttackEnd()
 	CombatManager->ChangeTurn();
 }
 
-void ACharacterBase::SetStr(const int32 InStr)
+void ACharacterBase::AdjustStr(const int32 InStr, bool bSetToValue)
 {
-	if (GetStr() >= MIN_STATVALUE && GetStr() <= MAX_STATVALUE && Health > MIN_STATVALUE)
+	if (bSetToValue)
+	{
+		Str = FMath::Clamp(GetStr() + InStr, MIN_STATVALUE, MAX_STATVALUE);
+
+	}
+	else
 	{
 		Str = FMath::Clamp(GetStr() + InStr, MIN_STATVALUE, MAX_STATVALUE);
 	}
@@ -91,9 +96,14 @@ void ACharacterBase::SetStr(const int32 InStr)
 	UpdateDataText();
 }
 
-void ACharacterBase::SetSin(const int32 InSin)
+void ACharacterBase::AdjustSin(const int32 InSin, bool bSetToValue)
 {
-	if (GetSin() >= MIN_STATVALUE && GetSin() <= MAX_STATVALUE && Health > MIN_STATVALUE)
+	if (bSetToValue)
+	{
+		Sin = FMath::Clamp(InSin, MIN_STATVALUE, MAX_STATVALUE);
+
+	}
+	else
 	{
 		Sin = FMath::Clamp(GetSin() + InSin, MIN_STATVALUE, MAX_STATVALUE);
 	}
@@ -101,23 +111,26 @@ void ACharacterBase::SetSin(const int32 InSin)
 	UpdateDataText();
 }
 
-void ACharacterBase::SetHealth(const int32 InHealth)
+void ACharacterBase::AdjustHealth(const int32 InHealth, bool bSetToValue)
 {
-	if (GetHealth() > MIN_STATVALUE && GetHealth() <= MAX_STATVALUE)
+
+	if (bSetToValue)
+	{
+		Health = FMath::Clamp(InHealth, MIN_STATVALUE, MAX_STATVALUE);
+	}
+	else
 	{
 		Health = FMath::Clamp(GetHealth() + InHealth, MIN_STATVALUE, MAX_STATVALUE);
-		if (InHealth <= MIN_STATVALUE)
-		{
-			BP_DamageTaken(InHealth);
-		}
-
-		if (!IsAlive())
-		{
-			OnDeath();
-		}
-
-		UpdateDataText();
 	}
+	if (InHealth < 0)
+		BP_DamageTaken(InHealth);
+
+	if (!IsAlive())
+	{
+		OnDeath();
+	}
+
+	UpdateDataText();
 }
 
 bool ACharacterBase::IsAlive()

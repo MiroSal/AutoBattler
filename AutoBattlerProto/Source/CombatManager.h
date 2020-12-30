@@ -86,10 +86,10 @@ public:
 	FORCEINLINE TArray<ACharacterBase*> GetCombatPlayerListeners() { return CombatPlayerListeners; };
 
 	//adds or remove player to listen combatManagers orders
-	FORCEINLINE void RegisterToCombatListener(ACharacterBase* Character);
-	FORCEINLINE void UnRegisterCombatListener(ACharacterBase* Character);
+	void RegisterToCombatListener(ACharacterBase* Character);
+	void UnRegisterCombatListener(ACharacterBase* Character);
+	void AddSkillActionToQueue(ACharacterBase* Character);
 
-	FORCEINLINE void AddSkillActionToQueue(ACharacterBase* Character);
 	FORCEINLINE int32 GetCurrentEnemyCount() { return CurrentEnemyCount; };
 	FORCEINLINE int32 GetTotalEnemyCount() { return TotalEnemyCount; };
 };
