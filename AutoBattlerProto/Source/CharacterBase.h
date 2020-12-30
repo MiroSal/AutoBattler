@@ -30,12 +30,6 @@ private:
 	UPROPERTY(VisibleInstanceOnly)
 	class USkillBase* PassiveSkill;
 
-	UPROPERTY(EditDefaultsOnly)
-	TArray<TSubclassOf<USkillBase>> AllPossiblePrimarySkillClasses;
-
-	UPROPERTY(EditDefaultsOnly)
-	TArray<TSubclassOf<USkillBase>> AllPossiblePassiveSkillClasses;
-
 	//Is player or enemy
 	UPROPERTY(EditAnywhere, Category = "Character Stats")
 	ETurnEnum CharacterType = ETurnEnum::TE_None;

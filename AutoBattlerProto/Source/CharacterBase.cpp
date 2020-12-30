@@ -38,9 +38,6 @@ ACharacterBase::ACharacterBase()
 	PrimarySkill = nullptr;
 	PassiveSkill = nullptr;
 
-	AllPossiblePrimarySkillClasses = TArray<TSubclassOf<USkillBase>>();
-	AllPossiblePassiveSkillClasses = TArray<TSubclassOf<USkillBase>>();
-
 	Health = 0;
 	Sin = 0;
 	Str = 0;
@@ -63,7 +60,7 @@ void ACharacterBase::Initialize(ASlotBase * Slot, FCharacterAttributes InAttribu
 	//temp for stat visualization
 	if (IsValid(GetPassiveSkill()) && IsValid(GetPrimarySkill()) && IsValid(StatsText))
 	{
-		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d\nPrimary:\n %s\n Passive:\n %s"), GetHealth(), GetSin(), GetStr(), *GetPrimarySkill()->GetSkillInfo(), *GetPassiveSkill()->GetSkillInfo());
+		FString Stats = FString::Printf(TEXT("HP: %d\nSin: %d\nStr:%d"), GetHealth(), GetSin(), GetStr());
 		StatsText->SetText(FText::FromString(Stats));
 	}
 }

@@ -3,7 +3,7 @@
 #include "SoulTrialManager.h"
 #include "AutoBattlerProtoGameModeBase.h"
 #include "AutoBattlerProtoGameInstance.h"
-#include "PlayerCharacter.h"
+#include "PlayerBase.h"
 #include "Widgets\CharacterDataWidget.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Widgets\TrialHUDWidget.h"
