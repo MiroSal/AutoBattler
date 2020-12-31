@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"E:\\Lautturi\\AutoBattlerProto\\Source\\AutoBattlerProto.Build.cs",
-		"E:\\Lautturi\\AutoBattlerProto\\Source\\AutoBattlerProto.Target.cs",
-		"E:\\Lautturi\\AutoBattlerProto\\Source\\AutoBattlerProtoEditor.Target.cs"
-	],
-	"EngineVersion": "4.24.3"
-}
