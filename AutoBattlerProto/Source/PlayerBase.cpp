@@ -79,10 +79,10 @@ void APlayerBase::Attack()
 {
 	if (ensure(IsValid(CombatManager)))
 	{
-		BP_Attack();
 		TArray<ACharacterBase*> Enemies = CombatManager->GetCombatEnemyListeners();
 		if (Enemies.Num() > 0)
 		{
+			BP_Attack();
 			ACharacterBase* Enemy = Enemies[FMath::RandRange(0, Enemies.Num() - 1)];
 			if (IsValid(Enemy))
 			{

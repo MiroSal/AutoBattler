@@ -2,6 +2,9 @@
 
 #include "CombatManager.h"
 #include "CharacterBase.h"
+#include "AutoBattlerProtoGameInstance.h"
+
+#define TOTALENEMYCOUNT  5
 
 UCombatManager::UCombatManager()
 {
@@ -15,14 +18,16 @@ UCombatManager::UCombatManager()
 	PlayerIndex = 0;
 	EnemyIndex = 0;
 
-	TotalEnemyCount = 5;
-	CurrentEnemyCount = 1;
+	CurrentEnemyCount = 0;
 
 	bIsFirstTurn = true;
 }
 
-void UCombatManager::Initialize()
+void UCombatManager::Initialize(UAutoBattlerProtoGameInstance* Instance)
 {
+	AutoBattlerProtoGameInstance = Instance;
+	check(AutoBattlerProtoGameInstance);
+	AutoBattlerProtoGameInstance->EndCombatDelegate.AddDynamic(this, &UCombatManager::CombatEnded);
 	CurrentCombatTurn = ETurnEnum::TE_Enemy;
 }
 
@@ -51,8 +56,8 @@ void UCombatManager::PopNextSkillFromQueue()
 		{
 			if (ActiveCharacter->IsAlive())
 			{
-				ActiveCharacter->Attack(); //Character will attack and run blueprint functionality, calls ChangeTurn() from Blueprint when ready.
 				UE_LOG(LogTemp, Warning, TEXT("Character: %s attacks"), *ActiveCharacter->GetFName().ToString());
+				ActiveCharacter->Attack(); //Character will attack and run blueprint functionality, calls ChangeTurn() from Blueprint when ready.
 			}
 			else
 			{
@@ -192,9 +197,18 @@ void UCombatManager::UnRegisterCombatListener(ACharacterBase * Character)
 	{
 	case ETurnEnum::TE_Player:
 		CombatPlayerListeners.Remove(Character);
+		if (CombatPlayerListeners.Num() <= 0)
+		{
+			AutoBattlerProtoGameInstance->EndCombat();
+		}
 		break;
 	case ETurnEnum::TE_Enemy:
 		CombatEnemyListeners.Remove(Character);
+		CurrentEnemyCount++;
+		if (CurrentEnemyCount >= TOTALENEMYCOUNT)
+		{
+			AutoBattlerProtoGameInstance->EndCombat();
+		}
 		break;
 	case ETurnEnum::TE_None:
 		UE_LOG(LogTemp, Warning, TEXT("Charactertype is None"));
@@ -213,4 +227,21 @@ void UCombatManager::AddSkillActionToQueue(ACharacterBase* InCharacter)
 		ActionQueue.Add(InCharacter);
 		UE_LOG(LogTemp, Display, TEXT("Skill Action In Queue: %i"), ActionQueue.Num());
 	}
+}
+
+void UCombatManager::CombatEnded()
+{
+	CombatPlayerListeners.Empty();
+	CombatEnemyListeners.Empty();
+	ActionQueue.Empty();
+
+	ActiveCharacter = nullptr;
+	CurrentCombatTurn = ETurnEnum::TE_None;
+
+	PlayerIndex = 0;
+	EnemyIndex = 0;
+
+	CurrentEnemyCount = 0;
+
+	bIsFirstTurn = true;
 }

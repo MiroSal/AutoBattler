@@ -17,11 +17,14 @@ USoulTrialManager::USoulTrialManager()
 	TrialHUDWidgetClass = TrialHUDBPClass.Class;
 }
 
-void USoulTrialManager::Initialize()
+void USoulTrialManager::Initialize(UAutoBattlerProtoGameInstance* Instance)
 {
 	check(IsValid(GetWorld()));
+	AutoBattlerProtoGameInstance = Instance;
+	check(AutoBattlerProtoGameInstance);
+	AutoBattlerProtoGameInstance->EndCombatDelegate.AddDynamic(this, &USoulTrialManager::CombatEnded);
 
-	TrialHUDWidget = CreateWidget<UTrialHUDWidget>(GetWorld()->GetGameInstance(), TrialHUDWidgetClass);
+	TrialHUDWidget = CreateWidget<UTrialHUDWidget>(AutoBattlerProtoGameInstance, TrialHUDWidgetClass);
 	check(IsValid(TrialHUDWidget));
 	TrialHUDWidget->AddToViewport();
 }
@@ -61,7 +64,7 @@ void USoulTrialManager::SetActiveCharacterWidget(UCharacterDataWidget * Widget)
 	}
 }
 
-//Called from combatmanager when game starts
+//Called from Combatmanager when game starts
 FCharacterAttributes USoulTrialManager::GetSelectedCharacterAttributes()
 {
 	if (SelectedCharacterAttributes.Num() > 0)
@@ -69,4 +72,14 @@ FCharacterAttributes USoulTrialManager::GetSelectedCharacterAttributes()
 		return SelectedCharacterAttributes.Pop();
 	}
 	return FCharacterAttributes();
+}
+
+void USoulTrialManager::CombatEnded()
+{
+	SelectedCharacterAttributes.Empty();
+	ActiveCharacterWidget = nullptr;
+
+	TrialHUDWidget = CreateWidget<UTrialHUDWidget>(AutoBattlerProtoGameInstance, TrialHUDWidgetClass);
+	check(IsValid(TrialHUDWidget));
+	TrialHUDWidget->AddToViewport();
 }

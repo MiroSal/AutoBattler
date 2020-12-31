@@ -96,7 +96,7 @@ void ACharacterBase::AdjustStr(const int32 InStr, bool bSetToValue)
 {
 	if (bSetToValue)
 	{
-		Str = FMath::Clamp(GetStr() + InStr, MIN_STATVALUE, MAX_STATVALUE);
+		Str = FMath::Clamp(InStr, MIN_STATVALUE, MAX_STATVALUE);
 
 	}
 	else
@@ -133,7 +133,7 @@ void ACharacterBase::AdjustHealth(const int32 InHealth, bool bSetToValue)
 	{
 		Health = FMath::Clamp(GetHealth() + InHealth, MIN_STATVALUE, MAX_STATVALUE);
 	}
-	if (InHealth < 0)
+	if (InHealth <= 0)
 		BP_DamageTaken(InHealth);
 
 	if (!IsAlive())
@@ -158,6 +158,6 @@ void ACharacterBase::OnDeath()
 	BP_OnDeath();
 	if (IsValid(CurrentSlot))
 	{
-		CurrentSlot->CharacterIsDead();
+		CurrentSlot->CharacterInSlotIsDead();
 	}
 }

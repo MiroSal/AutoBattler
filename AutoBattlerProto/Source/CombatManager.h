@@ -14,6 +14,9 @@ class AUTOBATTLERPROTO_API UCombatManager : public UObject
 
 private:
 	UPROPERTY()
+	class UAutoBattlerProtoGameInstance* AutoBattlerProtoGameInstance;
+
+	UPROPERTY()
 	TArray<ACharacterBase*> CombatPlayerListeners;
 
 	UPROPERTY()
@@ -55,11 +58,14 @@ private:
 
 	void ChangeActiveCharacter();
 
+	UFUNCTION()
+	void CombatEnded();
+
 
 public:
 	UCombatManager();
 
-	void Initialize();
+	void Initialize(class UAutoBattlerProtoGameInstance* Instance);
 
 	void ChangeTurn();
 

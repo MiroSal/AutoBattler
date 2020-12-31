@@ -5,6 +5,8 @@
 #include "SkillTypeEnums.h"
 #include "SoulTrialManager.generated.h"
 
+
+//Characters are randomized from these attributes
 USTRUCT()
 struct FCharacterAttributes
 {
@@ -65,7 +67,13 @@ class AUTOBATTLERPROTO_API USoulTrialManager : public UObject
 
 private:
 	UPROPERTY()
+	class UAutoBattlerProtoGameInstance* AutoBattlerProtoGameInstance;
+
+	UPROPERTY()
 	TArray<FCharacterAttributes> SelectedCharacterAttributes;
+
+	UFUNCTION()
+	void CombatEnded();
 
 //random characters to SoulTrial is created from these classes
 protected:
@@ -78,7 +86,7 @@ protected:
 public:
 	USoulTrialManager();
 
-	void Initialize();
+	void Initialize(class UAutoBattlerProtoGameInstance* Instance);
 
 //Widgets
 private:
